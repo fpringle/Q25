@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import LetterButton from './button';
 import { colors } from '../styles';
-
+/*
 function GridLetterButton(props) {
   // props: { letter, pressed, onLetterPress }
   let textColor = props.pressed ? colors.darkGrey : colors.lightGrey;
@@ -29,46 +29,43 @@ function GridLetterButton(props) {
     />
   );
 };
+*/
 
-class Grid extends Component {
-
-  render() {
-    let grid = [];
-    let letters = this.props.letters.slice();
-    while (letters.length < this.props.rows * this.props.columns) {
-      letters.push('');
-    }
-    for (let i=0; i<letters.length; i+=this.props.columns) {
-      grid.push(
-        <View
-          style={{display:'flex', flex: 1, flexDirection: 'row', justifyContent:'space-between'}}
-          key={'row'+(i/this.props.columns)}
-        >
-          {letters.slice(i, i+this.props.columns).map((letter, idx) => (
-            <View
-              style={{flex: 1, margin: 5}}
-              key={i+idx}
-            >
-              <GridLetterButton
-                letter={letter}
-                onLetterPress={() => this.props.onLetterPress(i+idx)}
-                pressed={this.props.pressedButtons.includes(i+idx)}
-              />
-            </View>
-          ))}
-        </View>
-      );
-    }
-    return (
-      <View style={[{display:'flex', flexDirection:'column', justifyContent:'space-between'}, this.props.style]}>
-        {grid}
+export default function Grid(props) {
+  const data = props.letters.map((l, idx) => ({
+    letter: l,
+    index: idx,
+    pressed: false,
+  }));
+  for (let idx of props.pressedButtons) data[idx].pressed = true;
+  const renderItem = ({ item }) => {
+    const style = {
+      backgroundColor: item.pressed ? colors.lightGrey : colors.darkGrey,
+      margin: '5%',
+    };
+    return(
+      <View style={{flex: 1/5, aspectRatio: 1}}>
+        <LetterButton
+          onPress={() => props.onLetterPress(item.index)}
+          style={style}
+          textColor={item.pressed ? colors.darkGrey : colors.lightGrey}
+          letter={item.letter}
+        />
       </View>
     );
-  }
+  };
+
+  return (
+    <FlatList
+      style={{flex: 1, width: '95%'}}
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={item => item.index}
+      horizontal={false}
+      numColumns={5}
+    />
+  );
 };
-
-export default Grid;
-
 
 const styles = StyleSheet.create({
   letterButton: {

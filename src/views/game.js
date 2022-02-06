@@ -129,12 +129,16 @@ export default function Game({route, navigation}) {
             <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1, width: '100%'}}>
               <LetterButton
                 letter={'Pick level'}
-                onPress={()=>{}}
+                onPress={() => {
+                  navigation.navigate('Levels');
+                }}
                 style={{fontSize: 10, margin: '4%'}}
               />
               <LetterButton
                 letter={'Improve'}
-                onPress={()=>{}}
+                onPress={() => {
+                  setEndModalVisible(false);
+                }}
                 style={{fontSize: 10, margin: '4%'}}
               />
               <LetterButton

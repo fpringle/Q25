@@ -1,0 +1,5 @@
+
+
+- settings
+- better word list
+

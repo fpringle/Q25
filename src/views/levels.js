@@ -16,11 +16,13 @@ export default function Levels({route, navigation}) {
   }, []);
 
   const renderItem = ({ item }) => (
-    <LetterButton
-      onPress={() => navigation.navigate('Play', {level: item.number})}
-      style={{fontSize: 16, width: '100%', aspectRatio: 1, margin: '1%'}}
-      letter={item.number}
-    />
+    <View style={{width: '100%', aspectRatio: 1, flex:1/5}}>
+      <LetterButton
+        onPress={() => navigation.navigate('Play', {level: item.number})}
+        style={{fontSize: 16, width: '100%', aspectRatio: 1, margin: '5%'}}
+        letter={item.number}
+      />
+    </View>
   );
 
   return (
