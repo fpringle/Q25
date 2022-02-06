@@ -9,6 +9,10 @@ export const isValid = (word) => {
   return word.length >= 3 && word_list.includes(word.toLowerCase());
 };
 
-export const getLevel = (index) => {
-  return levelData[index];
+export const getLevel = (number) => {
+  return levelData[number-1];
+};
+
+export const getAllLevels = () => {
+  return levelData.slice();
 };

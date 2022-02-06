@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './views/home';
 import Game from './views/game';
+import Levels from './views/levels';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,11 @@ export default function App() {
         <Stack.Screen
           name='Home'
           component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name='Levels'
+          component={Levels}
           options={{headerShown: false}}
         />
         <Stack.Screen

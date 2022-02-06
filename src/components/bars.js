@@ -71,9 +71,14 @@ export function BottomBar(props) {
 
   return (
     <View style={styles.bottomBar}>
-      <View style={{marginRight: 50}}>
+      <View style={{marginRight: 20}}>
         <Text style={{color: colors.lightGrey}}>
-          {score}
+          {'Score: ' + props.score.toString().padStart(3, ' ')}
+        </Text>
+      </View>
+      <View style={{marginRight: 20}}>
+        <Text style={{color: colors.lightGrey}}>
+          {'Best score: ' + props.bestScore.toString().padStart(3, ' ')}
         </Text>
       </View>
       <ButtonBarButton text={"Submit"} onPress={props.onSubmit}/>
