@@ -5,12 +5,27 @@ import Grid from '../components/grid';
 import {LetterBar, BottomBar, ButtonBar, WordBar} from '../components/bars';
 import {colors} from '../styles';
 
-const _letters = 'abcdefghijklmnopqrstuvwxy'.split('');
+import { getLevel, points, isValid } from '../backend';
 
-const points = word => word.length ** 2;
+// random integer in [0, lim]
+const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
 
-export default function Game() {
-  const [letters, setLetters] = useState(_letters.slice());
+export default function Game({route, navigation}) {
+
+  const levelData = getLevel(route.params.level);
+  const origLetters = levelData.letters.split('');
+
+  const scrambled = () => {
+    let lets = origLetters.slice();
+    let n = lets.length;
+    for (let i=n-1; i>0; i--) {
+      let j = randInt(i);
+      [lets[i], lets[j]] = [lets[j], lets[i]];
+    }
+    return lets;
+  }
+
+  const [letters, setLetters] = useState(scrambled());
   const [bar, setBar] = useState([]);
   const [pressedButtons, setPressedButtons] = useState([]);
   const [words, setWords] = useState([]);
@@ -29,6 +44,7 @@ export default function Game() {
   const saveWord = () => {
     if (bar.length === 0) return;
     const word = bar.join('');
+    if (!isValid(word)) return;
     const wordScore = points(word)
     const newScore = score + wordScore;
     const newWords = words.slice();
@@ -51,7 +67,7 @@ export default function Game() {
   };
 
   const reset = () => {
-    setLetters(_letters.slice());
+    setLetters(scrambled());
     setBar([]);
     setPressedButtons([]);
     setWords([]);
@@ -79,7 +95,7 @@ export default function Game() {
         onSaveWord={() => saveWord()}
       />
       <WordBar words={words}/>
-      <BottomBar score={score} onSubmit={() => submit()}/>
+      <BottomBar score={score} maxScore={levelData.best_score} onSubmit={() => submit()}/>
     </View>
   );
 }

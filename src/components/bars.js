@@ -61,11 +61,19 @@ export function WordBar(props) {
 };
 
 export function BottomBar(props) {
+
+  const score = (
+    'Score: ' +
+    props.score.toString().padStart(3, ' ')/* +
+    ' / ' +
+    props.maxScore.toString()*/
+  );
+
   return (
     <View style={styles.bottomBar}>
       <View style={{marginRight: 50}}>
         <Text style={{color: colors.lightGrey}}>
-          {'Score: ' + props.score}
+          {score}
         </Text>
       </View>
       <ButtonBarButton text={"Submit"} onPress={props.onSubmit}/>

@@ -21,7 +21,7 @@ export default function Home({navigation}) {
         <LetterButton
           letter={'Play'}
           style={styles.button}
-          onPress={() => navigation.navigate('Play')}
+          onPress={() => navigation.navigate('Play', { level: 0 })}
         />
       </View>
       <View style={styles.buttonContainer}>
