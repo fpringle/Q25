@@ -10,9 +10,6 @@ export const Level = {
   getBestScore: (level) => {
     return AsyncStorage.getItem(makeLevelProgressKey(level)).then(val => {
       return val ? JSON.parse(val) : 0;
-    }).then(x => {
-      console.log(`best score on level ${level}: ${x}`);
-      return x;
     });
   },
   setBestScore: (level, score) => {

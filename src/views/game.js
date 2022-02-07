@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { BackHandler, Modal, StyleSheet, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { connect } from 'react-redux';
 
 import Grid from '../components/grid';
 import { LetterBar, BottomBar, ButtonBar, WordBar } from '../components/bars';
-import { colors } from '../styles';
+import { themes } from '../styles';
 import { getLevel, points, isValid } from '../backend';
 import { Level } from '../storage';
 import LetterButton from '../components/button';
@@ -12,11 +13,13 @@ import LetterButton from '../components/button';
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
 
-export default function Game({route, navigation}) {
+function Game(props) {
 
-  const level = route.params.level;
+  const level = props.route.params.level;
   const levelData = getLevel(level);
   const origLetters = levelData.letters.split('');
+  const theme = props.theme;
+  const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
 
   const scrambled = () => {
     let lets = origLetters.slice();
@@ -41,11 +44,19 @@ export default function Game({route, navigation}) {
       setBestScore(best_score);
     });
   }, []);
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerStyle: {
+        backgroundColor,
+      },
+      headerTintColor: foregroundColor,
+    });
+  });
 
   useFocusEffect(
     useCallback(() => {
       const onBackPress = () => {
-        navigation.popToTop();
+        props.navigation.popToTop();
         return true;
       };
 
@@ -99,9 +110,7 @@ export default function Game({route, navigation}) {
   };
 
   const submit = () => {
-    //set
     Level.getBestScore(level).then(_bestScore => {
-      //console.log('current best score:', _bestScore)
       setEndModalVisible(true);
       if (score <= _bestScore) return;
       setBestScore(score);
@@ -112,17 +121,17 @@ export default function Game({route, navigation}) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor}]}>
       <Modal
         animationType={'fade'}
         transparent={true}
         visible={endModalVisible}
         onRequestClose={() => setEndModalVisible(false)}
       >
-        <View style={styles.modalStyle}>
-          <View style={styles.modalBoxStyle}>
+        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
             <View style={{flex: 1, justifyContent: 'center'}}>
-              <Text style={{color: colors.lightGrey, fontSize: 24}}>
+              <Text style={{color: foregroundColor, fontSize: 24}}>
                 {'Level cleared'.toUpperCase()}
               </Text>
             </View>
@@ -130,24 +139,27 @@ export default function Game({route, navigation}) {
               <LetterButton
                 letter={'Pick level'}
                 onPress={() => {
-                  navigation.navigate('Levels');
+                  props.navigation.navigate('Levels');
                 }}
-                style={{fontSize: 10, margin: '4%'}}
+                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
+                textColor={foregroundColor}
               />
               <LetterButton
                 letter={'Improve'}
                 onPress={() => {
                   setEndModalVisible(false);
                 }}
-                style={{fontSize: 10, margin: '4%'}}
+                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
+                textColor={foregroundColor}
               />
               <LetterButton
                 letter={'Next level'}
                 onPress={() => {
                   setEndModalVisible(false);
-                  navigation.push('Play', {level: level + 1});
+                  props.navigation.push('Play', {level: level + 1});
                 }}
-                style={{fontSize: 10, margin: '4%'}}
+                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
+                textColor={foregroundColor}
               />
             </View>
           </View>
@@ -157,22 +169,24 @@ export default function Game({route, navigation}) {
         columns={5}
         rows={5}
         letters={letters}
-        style={{width:'100%', aspectRatio: 1}}
+        style={{width:'100%', aspectRatio: 1, foregroundColor, backgroundColor}}
         onLetterPress={onLetterPress}
         pressedButtons={pressedButtons}
       />
-      <LetterBar letters={bar}/>
+      <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
       <ButtonBar
         onReset={() => reset()}
         onClearWord={() => clearWord()}
         onSaveWord={() => saveWord()}
+        style={{foregroundColor, backgroundColor}}
       />
-      <WordBar words={words}/>
+      <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
       <BottomBar
         score={score}
         bestScore={bestScore}
         maxScore={levelData.best_score}
         onSubmit={() => submit()}
+        style={{foregroundColor, backgroundColor}}
       />
     </View>
   );
@@ -181,23 +195,19 @@ export default function Game({route, navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.darkGrey,
     alignItems: 'center',
     justifyContent: 'space-around',
     display: 'flex',
     padding: '10%',
     paddingBottom: 0,
-    paddingTop: '15%',
+    paddingTop: 0,
   },
   modalStyle: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.darkGreyTransparent,
   },
   modalBoxStyle: {
-    borderColor: colors.lightGrey,
-    backgroundColor: colors.darkGrey,
     borderWidth: 3,
     justifyContent: 'center',
     alignItems: 'center',
@@ -205,3 +215,9 @@ const styles = StyleSheet.create({
     aspectRatio: 2.5,
   },
 });
+
+const mapStateToProps = state => {
+  return { theme: state.theme.current };
+}
+
+export default connect(mapStateToProps)(Game);
