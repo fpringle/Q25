@@ -1,27 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { SvgXml } from 'react-native-svg';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import Svg, { Line, Circle, Rect, Path, SvgXml } from 'react-native-svg';
 
+import Text from './text';
 import { colors } from '../styles';
-import svgPathString from './svg';
-
-const makeXml = (size, cornerRadius, centerRadius, bg, fg, score, maxScore, xOffset, yOffset, level) => {
-  return `<svg version="1.1" width="${size+xOffset}" height="${size+yOffset}" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="bg">
-        <stop stop-color="${bg}"/>
-      </linearGradient>
-      <linearGradient id="fg">
-        <stop stop-color="${fg}"/>
-      </linearGradient>
-    </defs>
-    <!--<rect x="0" y="0" width="100%" height="100%" fill="url(#bg)"/>-->
-    <rect x="${xOffset}" y="${yOffset}" width="${size}" height="${size}" fill="url(#bg)" rx="${cornerRadius}" ry="${cornerRadius}" stroke="url(#fg)" stroke-width="2"/>
-    ${svgPathString(size, cornerRadius, centerRadius, score, maxScore, xOffset, yOffset)}
-    <text x="50%" y="55%" text-anchor="middle" alignment-baseline="middle" font-size="12" fill="url(#fg)">${level}</text>
-  </svg>
-  `;
-}
+import svgPathString from '../svg';
 
 export default function LetterButton(props) {
   return (
@@ -37,15 +20,50 @@ export default function LetterButton(props) {
   );
 }
 
+function CustomXml(props) {
+  const pathString = svgPathString(props.size, props.borderRadius, props.centerRadius, props.score, props.maxScore);
+  return (
+    <Svg height={props.size} width={props.size} style={{borderWidth: 1, borderColor: props.foregroundColor, borderRadius: props.borderRadius, }}
+    >
+      <Path
+        d={pathString}
+        fill={props.foregroundColor}
+        stroke="none"
+      />
+      {props.score === props.maxScore ? (
+        <Circle
+          cx={props.size / 2}
+          cy={props.size / 2}
+          r={props.centerRadius}
+          fill={props.backgroundColor}
+          stroke="none"
+        />
+      ) : null}
+      <Line
+        x1={props.size/2}
+        y1={props.size/2+props.centerRadius}
+        x2={props.size/2}
+        y2={props.size}
+        stroke={(props.score * 2 > props.maxScore) ? props.backgroundColor : props.foregroundColor}
+        strokeWidth="1"
+      />
+
+      <View style={{height: '100%', width: '100%', borderWidth: 0, borderColor: 'red', justifyContent: 'center'}}>
+        <Text
+          style={{color: props.foregroundColor, borderWidth: 0, width: '100%', textAlign: 'center', fontFamily:"monospace"}}
+          fontSize={props.fontSize}
+        >
+          {props.levelNumber.toString()}
+        </Text>
+      </View>
+    </Svg>
+  )
+};
+
 export function LetterButtonSvg(props) {
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState(50);
   const onLayout = (e) => {
     setSize(e.nativeEvent.layout.height);
-  }
-  const xml = makeXml( size, 5, size/4, props.style.backgroundColor, props.textColor.toUpperCase(), props.score, props.maxScore, 0, 0, props.letter);
-  if (props.letter === 1) {
-    console.log(props.letter.toString().toUpperCase());
-    console.log(xml);
   }
   return (
     <TouchableOpacity
@@ -54,8 +72,17 @@ export function LetterButtonSvg(props) {
       disabled={props.disabled || false}
       onLayout={e => onLayout(e)}
     >
-      <SvgXml xml={xml} height={'100%'} width={'100%'}>
-      </SvgXml>
+      <CustomXml
+        backgroundColor={props.style.backgroundColor}
+        foregroundColor={props.style.foregroundColor}
+        borderRadius={props.style.borderRadius}
+        size={size}
+        centerRadius={size / 3}
+        score={props.score}
+        maxScore={props.maxScore}
+        levelNumber={props.letter}
+        fontSize={props.style.fontSize}
+      />
     </TouchableOpacity>
   );
 };

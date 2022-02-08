@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 
+import Text from '../components/text';
 import LetterButton from '../components/button';
 import { themes } from '../styles';
 

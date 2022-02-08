@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 
+import Text from './text';
 import LetterButton from './button';
 import { colors } from '../styles';
 

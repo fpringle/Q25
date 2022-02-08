@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity, View } from 'react-native';
 
+import Text from './text';
 import { themes } from '../styles';
 
 export function LetterBar(props) {
@@ -27,7 +28,7 @@ function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
   return (
     <TouchableOpacity style={[styles.button, {borderColor: foregroundColor}]} onPress={props.onPress}>
-      <Text style={{color: foregroundColor}}>
+      <Text style={{color: foregroundColor, fontSize: 12}}>
         {props.text}
       </Text>
     </TouchableOpacity>
@@ -77,14 +78,9 @@ export function BottomBar(props) {
 
   return (
     <View style={styles.bottomBar}>
-      <View style={{marginRight: 20}}>
+      <View style={{marginRight: 5}}>
         <Text style={{color: foregroundColor}}>
-          {'Score: ' + props.score.toString().padStart(3, ' ')}
-        </Text>
-      </View>
-      <View style={{marginRight: 20}}>
-        <Text style={{color: foregroundColor}}>
-          {'Best score: ' + props.bestScore.toString().padStart(3, ' ')}
+          {'Score: ' + props.score.toString().padStart(3, ' ') + ' (best ' + props.bestScore.toString().padStart(3, ' ') + ')'}
         </Text>
       </View>
       <ButtonBarButton text={"Submit"} onPress={props.onSubmit} style={props.style}/>
@@ -131,7 +127,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'solid',
     padding: 5,
-    width: '28%',
+    width: '30%',
     alignItems:'center',
   }
 });

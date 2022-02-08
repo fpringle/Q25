@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BackHandler, Modal, StyleSheet, Text, View } from 'react-native';
+import { BackHandler, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { connect } from 'react-redux';
 
 import Grid from '../components/grid';
+import Text from '../components/text';
 import { LetterBar, BottomBar, ButtonBar, WordBar } from '../components/bars';
 import { themes } from '../styles';
 import { getLevel, points, isValid } from '../backend';
@@ -52,6 +53,17 @@ function Game(props) {
       headerTintColor: foregroundColor,
     });
   });
+
+  const makeTitle = () => {
+    const f = s => s.toString().padStart(3, ' ');
+    return `Level ${level} - ${f(score)} / ${f(bestScore)} / ${f(levelData.best_score)}`;
+  };
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerTitle: makeTitle(),
+    });
+  }, [score, bestScore]);
 
   useFocusEffect(
     useCallback(() => {

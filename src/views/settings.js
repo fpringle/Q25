@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
 
+import Text from '../components/text';
 import LetterButton from '../components/button';
 import { themes } from '../styles';
 import { changeTheme } from '../settings';

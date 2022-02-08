@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 
+import Text from '../components/text';
 import LetterButton, { LetterButtonSvg } from '../components/button';
 import { themes } from '../styles';
 import { getAllLevels } from '../backend';
@@ -32,11 +33,11 @@ function Levels(props) {
     <View style={{width: '100%', aspectRatio: 1, flex:1/5}}>
       <LetterButtonSvg
         onPress={() => props.navigation.push('Play', {level: item.number})}
-        style={{fontSize: 16, width: '100%', aspectRatio: 1, margin: '5%', backgroundColor, borderColor: foregroundColor}}
+        style={{fontSize: 12, width: '100%', aspectRatio: 1, margin: '5%', backgroundColor, borderColor: foregroundColor, borderRadius: 5, foregroundColor}}
         letter={item.number}
         textColor={foregroundColor}
-        maxScore={levelData[item.number-1].best_score || 1}
-        score={bestPlayerScores[item.number-1] || 0}
+        maxScore={+(levelData[item.number-1].best_score || 1)}
+        score={+(bestPlayerScores[item.number-1] || 0)}
       />
     </View>
   );
