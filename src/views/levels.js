@@ -2,18 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import LetterButton from '../components/button';
+import LetterButton, { LetterButtonSvg } from '../components/button';
 import { themes } from '../styles';
 import { getAllLevels } from '../backend';
+import { Level } from '../storage';
 
 function Levels(props) {
   const theme = props.theme;
   const { backgroundColor, foregroundColor } = themes[theme];
   const [levelData, setLevelData] = useState([]);
+  const [bestPlayerScores, setBestPlayerScores] = useState([]);
 
   useEffect(() => {
     const levels = getAllLevels();
     setLevelData(levels);
+    Level.getAllBestScores(levels.length).then(res => setBestPlayerScores(res));
   }, []);
 
   useEffect(() => {
@@ -27,11 +30,13 @@ function Levels(props) {
 
   const renderItem = ({ item }) => (
     <View style={{width: '100%', aspectRatio: 1, flex:1/5}}>
-      <LetterButton
+      <LetterButtonSvg
         onPress={() => props.navigation.push('Play', {level: item.number})}
         style={{fontSize: 16, width: '100%', aspectRatio: 1, margin: '5%', backgroundColor, borderColor: foregroundColor}}
         letter={item.number}
         textColor={foregroundColor}
+        maxScore={levelData[item.number-1].best_score || 1}
+        score={bestPlayerScores[item.number-1] || 0}
       />
     </View>
   );

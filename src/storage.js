@@ -37,5 +37,11 @@ export const Level = {
       [makeLevelSolutionKey(level), JSON.stringify(solution)],
     ];
     return AsyncStorage.multiSet(keyValPairs);
-  }
+  },
+
+  getAllBestScores: (maxLevel) => {
+    const keys = [];
+    for (let i=1; i<=maxLevel; i++) keys.push(makeLevelProgressKey(i));
+    return AsyncStorage.multiGet(keys).then(results => results.map(([k, v]) => v));
+  },
 };
