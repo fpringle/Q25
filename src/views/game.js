@@ -14,26 +14,25 @@ import { doUpdateUserProgress } from '../storage/features/levels';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
+const scrambleArray = (array) => {
+  const arr = array.slice();
+  let n = arr.length;
+  for (let i=n-1; i>0; i--) {
+    let j = randInt(i);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
 
 function Game(props) {
 
   const level = props.route.params.level;
   const levelData = props.levelData;
-  const origLetters = levelData.letters.split('');
+  const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
 
-  const scrambled = () => {
-    let lets = origLetters.slice();
-    let n = lets.length;
-    for (let i=n-1; i>0; i--) {
-      let j = randInt(i);
-      [lets[i], lets[j]] = [lets[j], lets[i]];
-    }
-    return lets;
-  }
-
-  const [letters, setLetters] = useState(scrambled());
+  const [letters, setLetters] = useState(origLetters);
   const [bar, setBar] = useState([]);
   const [pressedButtons, setPressedButtons] = useState([]);
   const [words, setWords] = useState([]);
@@ -109,11 +108,25 @@ function Game(props) {
   };
 
   const reset = () => {
-    setLetters(scrambled());
+    setLetters(origLetters.slice());
     setBar([]);
     setPressedButtons([]);
     setWords([]);
     setScore(0);
+  };
+
+  const undo = () => {
+    if (pressedButtons.length === 0) return;
+    const newBar = bar.slice();
+    const newButtons = pressedButtons.slice();
+    newBar.pop();
+    newButtons.pop();
+    setBar(newBar);
+    setPressedButtons(newButtons);
+  };
+
+  const scramble = () => {
+    setLetters(scrambleArray(letters));
   };
 
   const submit = () => {
@@ -179,17 +192,16 @@ function Game(props) {
       />
       <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
       <ButtonBar
-        onReset={() => reset()}
+        onUndo={() => undo()}
         onClearWord={() => clearWord()}
         onSaveWord={() => saveWord()}
         style={{foregroundColor, backgroundColor}}
       />
       <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
       <BottomBar
-        score={score}
-        bestScore={levelData.bestUserScore}
-        maxScore={levelData.maxScore}
         onSubmit={() => submit()}
+        onScramble={() => scramble()}
+        onReset={() => reset()}
         style={{foregroundColor, backgroundColor}}
       />
     </View>

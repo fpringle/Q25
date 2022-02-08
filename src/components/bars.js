@@ -38,7 +38,7 @@ function ButtonBarButton(props) {
 export function ButtonBar(props) {
   return (
     <View style={styles.buttonBar}>
-      <ButtonBarButton text={"Reset"} onPress={props.onReset} style={props.style}/>
+      <ButtonBarButton text={"Undo"} onPress={props.onUndo} style={props.style}/>
       <ButtonBarButton text={"Clear word"} onPress={props.onClearWord} style={props.style}/>
       <ButtonBarButton text={"Save word"} onPress={props.onSaveWord} style={props.style}/>
     </View>
@@ -69,20 +69,11 @@ export function WordBar(props) {
 
 export function BottomBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
-  const score = (
-    'Score: ' +
-    props.score.toString().padStart(3, ' ')/* +
-    ' / ' +
-    props.maxScore.toString()*/
-  );
 
   return (
     <View style={styles.bottomBar}>
-      <View style={{marginRight: 5}}>
-        <Text style={{color: foregroundColor}}>
-          {'Score: ' + props.score.toString().padStart(3, ' ') + ' (best ' + props.bestScore.toString().padStart(3, ' ') + ')'}
-        </Text>
-      </View>
+      <ButtonBarButton text={"Scramble"} onPress={props.onScramble} style={props.style}/>
+      <ButtonBarButton text={"Reset"} onPress={props.onReset} style={props.style}/>
       <ButtonBarButton text={"Submit"} onPress={props.onSubmit} style={props.style}/>
     </View>
   )

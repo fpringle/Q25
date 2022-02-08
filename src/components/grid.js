@@ -35,6 +35,7 @@ export default function Grid(props) {
   return (
     <FlatList
       style={{flex: 1, width: '90%'}}
+      contentContainerStyle={{justifyContent: 'center', flex: 1}}
       data={data}
       renderItem={renderItem}
       keyExtractor={item => item.index}
