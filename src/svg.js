@@ -76,7 +76,7 @@ export default function svgPathString ( size, cornerRadius, centerRadius, score,
   ];
   if (+score === +maxScore) {
     return fullCommands.map(x => x.join(' ')).join(' ');
-  } else if (maxScore === 230 ) console.log('not equal: ', score, maxScore);
+  }
 
   let commands = fullCommands.slice(0, lineIndex+1);
   const absTheta = Math.PI / 2 - theta - refTheta;

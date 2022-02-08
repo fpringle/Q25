@@ -14,7 +14,6 @@ const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
 function Settings(props) {
   let { theme, themeOptions, dispatch } = props;
-  console.log(props);
   const { backgroundColor, foregroundColor } = themes[theme];
 
   useEffect(() => {
