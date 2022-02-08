@@ -2,6 +2,5 @@
 
 - better word list
 - min score to pass each level
-- backspace button
-- shuffle button
+- rank levels by difficulty?
 - remember current game state

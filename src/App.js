@@ -37,14 +37,16 @@ export default function App() {
             <Stack.Screen
               name='Play'
               component={Game}
-              options={{
-                headerShown: true,
-                title: '',
-                headerShadowVisible: false,
-                headerTitleStyle: {
-                  fontSize: 14,
-                  fontFamily: 'monospace',
-                },
+              options={({navigation}) => {
+                return {
+                  headerShown: true,
+                  title: '',
+                  headerShadowVisible: false,
+                  headerTitleStyle: {
+                    fontSize: 14,
+                    fontFamily: 'monospace',
+                  },
+                };
               }}
             />
             <Stack.Screen

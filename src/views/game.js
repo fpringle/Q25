@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { BackHandler, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -55,9 +56,19 @@ function Game(props) {
 
   useEffect(() => {
     props.navigation.setOptions({
-      headerTitle: makeTitle(),
+      title: makeTitle(),
     });
   }, [score, levelData.bestUserScore]);
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerLeft: () => (
+        <HeaderBackButton
+          onPress={() => props.navigation.popToTop()}
+        />
+      ),
+    });
+  }, []);
 
   useFocusEffect(
     useCallback(() => {

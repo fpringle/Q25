@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { BackHandler, FlatList, StyleSheet, View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
 
 import Text from '../components/text';
@@ -18,6 +20,29 @@ function Levels(props) {
       headerTintColor: foregroundColor,
     });
   });
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerLeft: () => (
+        <HeaderBackButton
+          onPress={() => props.navigation.popToTop()}
+        />
+      ),
+    });
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      const onBackPress = () => {
+        props.navigation.popToTop();
+        return true;
+      };
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, [])
+  );
 
   const renderItem = ({ item }) => (
     <View style={{width: '100%', aspectRatio: 1, flex:1/5}}>
