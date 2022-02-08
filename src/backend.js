@@ -16,3 +16,7 @@ export const getLevel = (number) => {
 export const getAllLevels = () => {
   return levelData.slice();
 };
+
+export const getNumLevels = () => {
+  return levelData.length;
+};

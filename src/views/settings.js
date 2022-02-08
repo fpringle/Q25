@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
 
@@ -7,6 +7,7 @@ import Text from '../components/text';
 import LetterButton from '../components/button';
 import { themes } from '../styles';
 import { changeTheme } from '../settings';
+import { Level } from '../storage';
 
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
@@ -24,6 +25,29 @@ function Settings(props) {
       headerTintColor: foregroundColor,
     });
   });
+
+  const resetProgress = () => {
+    return Level.resetAllBestScores();
+  };
+
+  const resetProgressDialog = () => {
+    Alert.alert(
+      'WARNING',
+      'This will reset all your progress on every level. Are you sure?',
+      [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Reset',
+          onPress: () => resetProgress(),
+        }
+      ],
+      {
+        cancelable: true,
+      },
+    );
+  };
 
   const SettingsPicker = ({label, current, options, dispatcher}) => (
     <View style={{flexDirection: 'row', borderWidth: 0, borderColor: foregroundColor, alignItems: 'center', justifyContent: 'center'}}>
@@ -56,6 +80,13 @@ function Settings(props) {
         options={options}
         dispatcher={val => dispatch(changeTheme(val))}
       />
+      <View style={{height: '15%', width: '100%', padding: 10}}>
+        <LetterButton
+          letter={'Reset progress'}
+          style={{fontSize: 20}}
+          onPress={() => resetProgressDialog()}
+        />
+      </View>
     </View>
   )
 };

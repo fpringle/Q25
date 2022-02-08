@@ -1,5 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { getNumLevels } from './backend';
+
 const appPrefix = '@q25';
 
 const makeLevelKey = (number) => appPrefix + ':level' + number;
@@ -44,4 +46,10 @@ export const Level = {
     for (let i=1; i<=maxLevel; i++) keys.push(makeLevelProgressKey(i));
     return AsyncStorage.multiGet(keys).then(results => results.map(([k, v]) => v));
   },
+  resetAllBestScores: () => {
+    const keys = [];
+    const numLevels = getNumLevels();
+    for (let i=1; i<=numLevels; i++) keys.push(makeLevelProgressKey(i));
+    return AsyncStorage.multiRemove(keys);
+  }
 };

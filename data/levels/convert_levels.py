@@ -13,7 +13,7 @@ with open(file) as f:
         puzzles.append(puzzle)
         #idx += 1
 
-puzzles.sort(lambda puzzle: puzzle["best_score"])
+puzzles.sort(key=lambda puzzle: puzzle["best_score"])
 for number, puzzle in enumerate(puzzles, idx):
     puzzle["number"] = number
 

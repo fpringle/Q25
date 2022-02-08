@@ -1,370 +1,92 @@
 [
   {
-    "letters": "aabcddeeghhiijlmnnoossttu",
-    "best_score": 230,
+    "letters": "aaaffghhiiiklmnprssttuuww",
+    "best_score": 170,
     "solutions": [
       [
-        "documentation",
-        "blades",
-        "highs"
+        "mauritius",
+        "flashing",
+        "hawk",
+        "ftp"
       ]
     ],
     "number": 1
   },
   {
-    "letters": "aaceefhhhiilmnnoossttuuww",
-    "best_score": 197,
+    "letters": "aaceeghhimnnoooqqssttuuvw",
+    "best_score": 174,
     "solutions": [
       [
-        "humanities",
-        "holocaust",
-        "when"
+        "quotations",
+        "changes",
+        "whom",
+        "que"
       ]
     ],
     "number": 2
   },
   {
-    "letters": "aaceeeghhhiilmnnoorsstuwx",
-    "best_score": 209,
+    "letters": "acceeefgghhjnoooorrsttuwy",
+    "best_score": 180,
     "solutions": [
       [
-        "technologies",
-        "anaheim",
-        "rush"
+        "warehouse",
+        "forgotten",
+        "gcc",
+        "joy"
       ]
     ],
     "number": 3
   },
   {
-    "letters": "adeeefghhiijlmnnoorsstttu",
-    "best_score": 234,
+    "letters": "cddefggghhiimnoooqrssttuw",
+    "best_score": 181,
     "solutions": [
       [
-        "determination",
-        "jelsoft",
-        "hugh"
+        "microsoft",
+        "weddings",
+        "though"
       ]
     ],
     "number": 4
   },
   {
-    "letters": "aacdeeghhhiilmnnoooossttu",
-    "best_score": 234,
+    "letters": "aceeeffghhiiknnnpprssttuw",
+    "best_score": 185,
     "solutions": [
       [
-        "negotiations",
-        "household",
-        "mac"
+        "sufficient",
+        "kenneth",
+        "graphs"
       ]
     ],
     "number": 5
   },
   {
-    "letters": "aadeeghhiilmnnnnprssttuwy",
-    "best_score": 224,
+    "letters": "aceeeefghhiimnoorssttwwwz",
+    "best_score": 187,
     "solutions": [
       [
-        "instrumental",
-        "highways",
-        "penn"
+        "recognize",
+        "showtimes",
+        "what",
+        "few"
       ]
     ],
     "number": 6
   },
   {
-    "letters": "abcdeeefgghiilmnnorssttwy",
-    "best_score": 227,
+    "letters": "aeeefhhmmnnnoorsssstuvwwy",
+    "best_score": 187,
     "solutions": [
       [
-        "establishment",
-        "growing",
-        "dec"
+        "measurements",
+        "shows",
+        "non",
+        "why"
       ]
     ],
     "number": 7
-  },
-  {
-    "letters": "aaccdeeeffhhiilnoorssttuz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "certificates",
-        "household",
-        "fan"
-      ]
-    ],
-    "number": 8
-  },
-  {
-    "letters": "aaaccdeeefghiilmnooprsttw",
-    "best_score": 242,
-    "solutions": [
-      [
-        "complications",
-        "gathered",
-        "few"
-      ]
-    ],
-    "number": 9
-  },
-  {
-    "letters": "aacddeeegiilmnnoorssttuuw",
-    "best_score": 270,
-    "solutions": [
-      [
-        "congratulations",
-        "seemed",
-        "dui"
-      ]
-    ],
-    "number": 10
-  },
-  {
-    "letters": "aaceeefhhjlmmnnooqrssttwy",
-    "best_score": 205,
-    "solutions": [
-      [
-        "commonwealth",
-        "jersey",
-        "shaft"
-      ]
-    ],
-    "number": 11
-  },
-  {
-    "letters": "aaccdeeefhhiiiklmnnrrstuw",
-    "best_score": 219,
-    "solutions": [
-      [
-        "mediterranean",
-        "which",
-        "sick",
-        "flu"
-      ]
-    ],
-    "number": 12
-  },
-  {
-    "letters": "aacddeeefhiilnnnooorsstuy",
-    "best_score": 241,
-    "solutions": [
-      [
-        "considerations",
-        "handle",
-        "you"
-      ]
-    ],
-    "number": 13
-  },
-  {
-    "letters": "aaddeeefghhijlnnnorssttuw",
-    "best_score": 221,
-    "solutions": [
-      [
-        "understanding",
-        "health",
-        "jose"
-      ]
-    ],
-    "number": 14
-  },
-  {
-    "letters": "acdeeefgghiilmnnooossttuw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "documentation",
-        "wheels",
-        "gis",
-        "fog"
-      ]
-    ],
-    "number": 15
-  },
-  {
-    "letters": "aaceeeffghilmnnnoorsstuyy",
-    "best_score": 210,
-    "solutions": [
-      [
-        "congressional",
-        "they",
-        "fame",
-        "fun"
-      ]
-    ],
-    "number": 16
-  },
-  {
-    "letters": "aaacdeeefghhinnooprssttux",
-    "best_score": 217,
-    "solutions": [
-      [
-        "expectations",
-        "honduras",
-        "age"
-      ]
-    ],
-    "number": 17
-  },
-  {
-    "letters": "aacceeefhhiimnnnoorsttuww",
-    "best_score": 223,
-    "solutions": [
-      [
-        "concentrations",
-        "him",
-        "few",
-        "eau"
-      ]
-    ],
-    "number": 18
-  },
-  {
-    "letters": "aaacdeeeffghhiijlnoossttu",
-    "best_score": 201,
-    "solutions": [
-      [
-        "technologies",
-        "ahead",
-        "fast",
-        "fuji"
-      ]
-    ],
-    "number": 19
-  },
-  {
-    "letters": "aadeeeffghhimnnoorssttwwy",
-    "best_score": 211,
-    "solutions": [
-      [
-        "demonstrates",
-        "highway",
-        "new",
-        "off"
-      ]
-    ],
-    "number": 20
-  },
-  {
-    "letters": "aacefghhiilmmnnoooprsstuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "sample",
-        "whom"
-      ]
-    ],
-    "number": 21
-  },
-  {
-    "letters": "aacdeefghhiimnnnoorssttwz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "demonstration",
-        "washing",
-        "chef"
-      ]
-    ],
-    "number": 22
-  },
-  {
-    "letters": "aaceeeefghilmnnoorssttwww",
-    "best_score": 227,
-    "solutions": [
-      [
-        "congressional",
-        "matthew",
-        "few"
-      ]
-    ],
-    "number": 23
-  },
-  {
-    "letters": "aacceeefghhiimnnopqrtttuw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "authentication",
-        "chem",
-        "few",
-        "rpg"
-      ]
-    ],
-    "number": 24
-  },
-  {
-    "letters": "aacdfgghiillmnnoorsstttuv",
-    "best_score": 266,
-    "solutions": [
-      [
-        "congratulations",
-        "films",
-        "hdtv"
-      ]
-    ],
-    "number": 25
-  },
-  {
-    "letters": "aacdeeeefghlmnnoorrsttuwx",
-    "best_score": 218,
-    "solutions": [
-      [
-        "arrangements",
-        "exclude",
-        "howto"
-      ]
-    ],
-    "number": 26
-  },
-  {
-    "letters": "aacdeffghhiilmnooprsstuwy",
-    "best_score": 211,
-    "solutions": [
-      [
-        "scholarship",
-        "magnitude",
-        "off"
-      ]
-    ],
-    "number": 27
-  },
-  {
-    "letters": "aaeeeffgghilmnnoorssttuuw",
-    "best_score": 209,
-    "solutions": [
-      [
-        "housewares",
-        "meaningful",
-        "got"
-      ]
-    ],
-    "number": 28
-  },
-  {
-    "letters": "aadeeeghhhiijlmnnoorstttu",
-    "best_score": 242,
-    "solutions": [
-      [
-        "determination",
-        "although",
-        "she"
-      ]
-    ],
-    "number": 29
-  },
-  {
-    "letters": "ceeefhhiilmnnooqrrrsstuwx",
-    "best_score": 205,
-    "solutions": [
-      [
-        "requirements",
-        "floors",
-        "which"
-      ]
-    ],
-    "number": 30
   },
   {
     "letters": "aaadeefghhiikmmnnoosstuvw",
@@ -377,80 +99,45 @@
         "duke"
       ]
     ],
-    "number": 31
+    "number": 8
   },
   {
-    "letters": "aeeeffghhiillmnnoqrssttvw",
-    "best_score": 205,
+    "letters": "aaceeefghhhklmnoorsstttux",
+    "best_score": 194,
     "solutions": [
       [
-        "governmental",
-        "wishes",
-        "fifth"
+        "transexuales",
+        "theft",
+        "hook",
+        "gmc"
       ]
     ],
-    "number": 32
+    "number": 9
   },
   {
-    "letters": "aaadeeefghhiilmoooprssttu",
-    "best_score": 210,
+    "letters": "aaaaceefghhiinnqrssttuwwy",
+    "best_score": 195,
     "solutions": [
       [
-        "authorities",
-        "homepage",
-        "loads"
+        "afghanistan",
+        "acquire",
+        "west",
+        "why"
       ]
     ],
-    "number": 33
+    "number": 10
   },
   {
-    "letters": "aadeeefhiiklnnnoorsstttux",
-    "best_score": 234,
+    "letters": "aaceefhhhiilmnnoossttuuww",
+    "best_score": 197,
     "solutions": [
       [
-        "stakeholders",
-        "intention",
-        "fax"
+        "humanities",
+        "holocaust",
+        "when"
       ]
     ],
-    "number": 34
-  },
-  {
-    "letters": "aaddeeefhiklmmnnooprsttuw",
-    "best_score": 224,
-    "solutions": [
-      [
-        "fundamentals",
-        "homework",
-        "edit"
-      ]
-    ],
-    "number": 35
-  },
-  {
-    "letters": "aabdeeefghhiilnnoopsstuuw",
-    "best_score": 206,
-    "solutions": [
-      [
-        "headphones",
-        "beautiful",
-        "wings"
-      ]
-    ],
-    "number": 36
-  },
-  {
-    "letters": "aaccdeeeghhiillmnnnosttuw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "liechtenstein",
-        "launch",
-        "dog",
-        "wma"
-      ]
-    ],
-    "number": 37
+    "number": 11
   },
   {
     "letters": "aaaeeefghhiilmmnnooqsttuw",
@@ -462,28 +149,349 @@
         "game"
       ]
     ],
-    "number": 38
+    "number": 12
   },
   {
-    "letters": "acddeeeghilmnnooqrsssttuw",
-    "best_score": 219,
+    "letters": "aaeeeffggghlmmnnoorrssttt",
+    "best_score": 198,
+    "solutions": [
+      [
+        "arrangements",
+        "hotels",
+        "off",
+        "gmt"
+      ]
+    ],
+    "number": 13
+  },
+  {
+    "letters": "aaacdeeeffghhiijlnoossttu",
+    "best_score": 201,
+    "solutions": [
+      [
+        "technologies",
+        "ahead",
+        "fast",
+        "fuji"
+      ]
+    ],
+    "number": 14
+  },
+  {
+    "letters": "aaceeefhhjlmmnnooqrssttwy",
+    "best_score": 205,
+    "solutions": [
+      [
+        "commonwealth",
+        "jersey",
+        "shaft"
+      ]
+    ],
+    "number": 15
+  },
+  {
+    "letters": "ceeefhhiilmnnooqrrrsstuwx",
+    "best_score": 205,
+    "solutions": [
+      [
+        "requirements",
+        "floors",
+        "which"
+      ]
+    ],
+    "number": 16
+  },
+  {
+    "letters": "aeeeffghhiillmnnoqrssttvw",
+    "best_score": 205,
+    "solutions": [
+      [
+        "governmental",
+        "wishes",
+        "fifth"
+      ]
+    ],
+    "number": 17
+  },
+  {
+    "letters": "aadeeeghhiilmnnoossttuwwy",
+    "best_score": 205,
+    "solutions": [
+      [
+        "destinations",
+        "league",
+        "whom",
+        "why"
+      ]
+    ],
+    "number": 18
+  },
+  {
+    "letters": "aacdeeefghhilmnnoooqrstuw",
+    "best_score": 205,
+    "solutions": [
+      [
+        "technologies",
+        "howard",
+        "menu",
+        "faq"
+      ]
+    ],
+    "number": 19
+  },
+  {
+    "letters": "aabdeeefghhiilnnoopsstuuw",
+    "best_score": 206,
+    "solutions": [
+      [
+        "headphones",
+        "beautiful",
+        "wings"
+      ]
+    ],
+    "number": 20
+  },
+  {
+    "letters": "aaccdeeefghhiilnnosstuvwx",
+    "best_score": 206,
+    "solutions": [
+      [
+        "washington",
+        "exclusive",
+        "faced"
+      ]
+    ],
+    "number": 21
+  },
+  {
+    "letters": "aaceeeghhhiilmnnoorsstuwx",
+    "best_score": 209,
+    "solutions": [
+      [
+        "technologies",
+        "anaheim",
+        "rush"
+      ]
+    ],
+    "number": 22
+  },
+  {
+    "letters": "aaeeeffgghilmnnoorssttuuw",
+    "best_score": 209,
+    "solutions": [
+      [
+        "housewares",
+        "meaningful",
+        "got"
+      ]
+    ],
+    "number": 23
+  },
+  {
+    "letters": "aabdeeefghhhiiiklnnoorsst",
+    "best_score": 209,
+    "solutions": [
+      [
+        "establishing",
+        "refined",
+        "hook"
+      ]
+    ],
+    "number": 24
+  },
+  {
+    "letters": "aacdeeeffghhilmmnooqrstwx",
+    "best_score": 209,
+    "solutions": [
+      [
+        "commonwealth",
+        "sheriff",
+        "aged"
+      ]
+    ],
+    "number": 25
+  },
+  {
+    "letters": "aadddeeeefghhlnnoorsstuuw",
+    "best_score": 209,
+    "solutions": [
+      [
+        "guaranteed",
+        "households",
+        "new"
+      ]
+    ],
+    "number": 26
+  },
+  {
+    "letters": "aadddeefghhiilmmnnoosttuw",
+    "best_score": 209,
+    "solutions": [
+      [
+        "downloaded",
+        "humanities",
+        "gmt"
+      ]
+    ],
+    "number": 27
+  },
+  {
+    "letters": "aaceeeffghilmnnnoorsstuyy",
+    "best_score": 210,
+    "solutions": [
+      [
+        "congressional",
+        "they",
+        "fame",
+        "fun"
+      ]
+    ],
+    "number": 28
+  },
+  {
+    "letters": "aaadeeefghhiilmoooprssttu",
+    "best_score": 210,
+    "solutions": [
+      [
+        "authorities",
+        "homepage",
+        "loads"
+      ]
+    ],
+    "number": 29
+  },
+  {
+    "letters": "aacdeegghhimnnoorssttuwww",
+    "best_score": 210,
     "solutions": [
       [
         "documentation",
-        "dress",
-        "welsh"
+        "greg",
+        "hash",
+        "www"
+      ]
+    ],
+    "number": 30
+  },
+  {
+    "letters": "adeffghhiilmnnoorrssttuwx",
+    "best_score": 210,
+    "solutions": [
+      [
+        "furnishings",
+        "footwear",
+        "xhtml"
+      ]
+    ],
+    "number": 31
+  },
+  {
+    "letters": "aacdeeefhhikmmnoorrssttuw",
+    "best_score": 210,
+    "solutions": [
+      [
+        "merchandise",
+        "software",
+        "mouth"
+      ]
+    ],
+    "number": 32
+  },
+  {
+    "letters": "aaaceeehiijjlmnnooqssttuy",
+    "best_score": 210,
+    "solutions": [
+      [
+        "liechtenstein",
+        "soma",
+        "aqua",
+        "joy"
+      ]
+    ],
+    "number": 33
+  },
+  {
+    "letters": "aadeeeffghhimnnoorssttwwy",
+    "best_score": 211,
+    "solutions": [
+      [
+        "demonstrates",
+        "highway",
+        "new",
+        "off"
+      ]
+    ],
+    "number": 34
+  },
+  {
+    "letters": "aacdeffghhiilmnooprsstuwy",
+    "best_score": 211,
+    "solutions": [
+      [
+        "scholarship",
+        "magnitude",
+        "off"
+      ]
+    ],
+    "number": 35
+  },
+  {
+    "letters": "aacdeeefhhhiilmmnosssttuw",
+    "best_score": 211,
+    "solutions": [
+      [
+        "mathematics",
+        "slideshow",
+        "fun"
+      ]
+    ],
+    "number": 36
+  },
+  {
+    "letters": "aabcdeeeefhhiilnooqrssttw",
+    "best_score": 211,
+    "solutions": [
+      [
+        "established",
+        "interface",
+        "who"
+      ]
+    ],
+    "number": 37
+  },
+  {
+    "letters": "aacdeeefgghhiillooqrssttw",
+    "best_score": 211,
+    "solutions": [
+      [
+        "theoretical",
+        "slideshow",
+        "faq"
+      ]
+    ],
+    "number": 38
+  },
+  {
+    "letters": "acdeefgghhiiilmnnorssstww",
+    "best_score": 211,
+    "solutions": [
+      [
+        "magnificent",
+        "slideshow",
+        "hrs"
       ]
     ],
     "number": 39
   },
   {
-    "letters": "aacdeefgghhhiinnnoosstuwx",
-    "best_score": 218,
+    "letters": "aacdeeeghhiinnoooprsttwwy",
+    "best_score": 212,
     "solutions": [
       [
-        "foundations",
-        "exchanges",
-        "high"
+        "consideration",
+        "wheat",
+        "why",
+        "geo"
       ]
     ],
     "number": 40
@@ -501,6 +509,175 @@
     "number": 41
   },
   {
+    "letters": "aacdeeeffghhiijlnoorssttu",
+    "best_score": 216,
+    "solutions": [
+      [
+        "affiliated",
+        "screenshot",
+        "hugo"
+      ]
+    ],
+    "number": 42
+  },
+  {
+    "letters": "aacddeeefghhiilnorsstuuwz",
+    "best_score": 216,
+    "solutions": [
+      [
+        "authorized",
+        "scheduling",
+        "safe"
+      ]
+    ],
+    "number": 43
+  },
+  {
+    "letters": "aacddeeghhiijlmnooorsstuw",
+    "best_score": 216,
+    "solutions": [
+      [
+        "technologies",
+        "madrid",
+        "joshua"
+      ]
+    ],
+    "number": 44
+  },
+  {
+    "letters": "aeeeghhiilmnnnooosssttuvw",
+    "best_score": 216,
+    "solutions": [
+      [
+        "nottingham",
+        "housewives",
+        "ones"
+      ]
+    ],
+    "number": 45
+  },
+  {
+    "letters": "aaacdeeefghhinnooprssttux",
+    "best_score": 217,
+    "solutions": [
+      [
+        "expectations",
+        "honduras",
+        "age"
+      ]
+    ],
+    "number": 46
+  },
+  {
+    "letters": "aaccdeefghhiillmnnorssstw",
+    "best_score": 217,
+    "solutions": [
+      [
+        "findarticles",
+        "showcase",
+        "nhl"
+      ]
+    ],
+    "number": 47
+  },
+  {
+    "letters": "aadeefghiilmnnoqrsssttuwx",
+    "best_score": 217,
+    "solutions": [
+      [
+        "demonstrates",
+        "flashing",
+        "qui"
+      ]
+    ],
+    "number": 48
+  },
+  {
+    "letters": "aacddeeefgghhhiilmnnoostw",
+    "best_score": 217,
+    "solutions": [
+      [
+        "technologies",
+        "handmade",
+        "fig"
+      ]
+    ],
+    "number": 49
+  },
+  {
+    "letters": "aacdeeeefghlmnnoorrsttuwx",
+    "best_score": 218,
+    "solutions": [
+      [
+        "arrangements",
+        "exclude",
+        "howto"
+      ]
+    ],
+    "number": 50
+  },
+  {
+    "letters": "aacdeefgghhhiinnnoosstuwx",
+    "best_score": 218,
+    "solutions": [
+      [
+        "foundations",
+        "exchanges",
+        "high"
+      ]
+    ],
+    "number": 51
+  },
+  {
+    "letters": "acdeeeeghhiimnnorsssttuww",
+    "best_score": 218,
+    "solutions": [
+      [
+        "merchandise",
+        "southwest",
+        "wine"
+      ]
+    ],
+    "number": 52
+  },
+  {
+    "letters": "aaddeeehiillmnnnoopstttuw",
+    "best_score": 218,
+    "solutions": [
+      [
+        "destination",
+        "halloween",
+        "dump"
+      ]
+    ],
+    "number": 53
+  },
+  {
+    "letters": "aaccdeeefhhiiiklmnnrrstuw",
+    "best_score": 219,
+    "solutions": [
+      [
+        "mediterranean",
+        "which",
+        "sick",
+        "flu"
+      ]
+    ],
+    "number": 54
+  },
+  {
+    "letters": "acddeeeghilmnnooqrsssttuw",
+    "best_score": 219,
+    "solutions": [
+      [
+        "documentation",
+        "dress",
+        "welsh"
+      ]
+    ],
+    "number": 55
+  },
+  {
     "letters": "aaccdeefghhiimnnoossttuwx",
     "best_score": 219,
     "solutions": [
@@ -510,92 +687,7 @@
         "highs"
       ]
     ],
-    "number": 42
-  },
-  {
-    "letters": "aaceeefghhhklmnoorsstttux",
-    "best_score": 194,
-    "solutions": [
-      [
-        "transexuales",
-        "theft",
-        "hook",
-        "gmc"
-      ]
-    ],
-    "number": 43
-  },
-  {
-    "letters": "aaccdeefhhiillmnnoorsstty",
-    "best_score": 241,
-    "solutions": [
-      [
-        "considerations",
-        "health",
-        "fly"
-      ]
-    ],
-    "number": 44
-  },
-  {
-    "letters": "aabcdeeefghiijlmnnprssttu",
-    "best_score": 230,
-    "solutions": [
-      [
-        "adjustments",
-        "beneficial",
-        "rpg"
-      ]
-    ],
-    "number": 45
-  },
-  {
-    "letters": "aacdeeeghilmmnnooqqrssstt",
-    "best_score": 259,
-    "solutions": [
-      [
-        "recommendations",
-        "glass",
-        "the"
-      ]
-    ],
-    "number": 46
-  },
-  {
-    "letters": "aacdeeefhhhiilmmnosssttuw",
-    "best_score": 211,
-    "solutions": [
-      [
-        "mathematics",
-        "slideshow",
-        "fun"
-      ]
-    ],
-    "number": 47
-  },
-  {
-    "letters": "aacdeeeghhhhiilnnorssttww",
-    "best_score": 221,
-    "solutions": [
-      [
-        "liechtenstein",
-        "howard",
-        "wash"
-      ]
-    ],
-    "number": 48
-  },
-  {
-    "letters": "aabcdeeeefgiimnnnoorsstuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "sweden",
-        "beam"
-      ]
-    ],
-    "number": 49
+    "number": 56
   },
   {
     "letters": "aacdeeeffghhilnnoooprsstt",
@@ -608,166 +700,7 @@
         "off"
       ]
     ],
-    "number": 50
-  },
-  {
-    "letters": "acdeefghiijlmnnooqrssstwy",
-    "best_score": 223,
-    "solutions": [
-      [
-        "considerations",
-        "why",
-        "sql",
-        "gem"
-      ]
-    ],
-    "number": 51
-  },
-  {
-    "letters": "aacddeefghhiilmnnooorsssw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "congressional",
-        "showed",
-        "him",
-        "fda"
-      ]
-    ],
-    "number": 52
-  },
-  {
-    "letters": "aacdeeeffghhiijlnoorssttu",
-    "best_score": 216,
-    "solutions": [
-      [
-        "affiliated",
-        "screenshot",
-        "hugo"
-      ]
-    ],
-    "number": 53
-  },
-  {
-    "letters": "aaccdeefghhiillmnnorssstw",
-    "best_score": 217,
-    "solutions": [
-      [
-        "findarticles",
-        "showcase",
-        "nhl"
-      ]
-    ],
-    "number": 54
-  },
-  {
-    "letters": "aabdeeefghhhiiiklnnoorsst",
-    "best_score": 209,
-    "solutions": [
-      [
-        "establishing",
-        "refined",
-        "hook"
-      ]
-    ],
-    "number": 55
-  },
-  {
-    "letters": "acdeeefgghhiijlnoorssttux",
-    "best_score": 234,
-    "solutions": [
-      [
-        "technologies",
-        "daughters",
-        "fix"
-      ]
-    ],
-    "number": 56
-  },
-  {
-    "letters": "aabcdeeeeffghiimnnorrsttw",
-    "best_score": 227,
-    "solutions": [
-      [
-        "determination",
-        "charges",
-        "web"
-      ]
-    ],
     "number": 57
-  },
-  {
-    "letters": "aadeefghiilmnnoqrsssttuwx",
-    "best_score": 217,
-    "solutions": [
-      [
-        "demonstrates",
-        "flashing",
-        "qui"
-      ]
-    ],
-    "number": 58
-  },
-  {
-    "letters": "aacdeegghhimnnoorssttuwww",
-    "best_score": 210,
-    "solutions": [
-      [
-        "documentation",
-        "greg",
-        "hash",
-        "www"
-      ]
-    ],
-    "number": 59
-  },
-  {
-    "letters": "aaadeeghhiilmmnnoprssttuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "implementation",
-        "awards",
-        "hugh"
-      ]
-    ],
-    "number": 60
-  },
-  {
-    "letters": "acddeeehhiklmnnoorsssttuv",
-    "best_score": 248,
-    "solutions": [
-      [
-        "advertisements",
-        "hudson",
-        "lock"
-      ]
-    ],
-    "number": 61
-  },
-  {
-    "letters": "aabcdeefhiijlmnnoorrttuwy",
-    "best_score": 230,
-    "solutions": [
-      [
-        "functionality",
-        "hebrew",
-        "major"
-      ]
-    ],
-    "number": 62
-  },
-  {
-    "letters": "aacddeefggiiilmnnoossstuw",
-    "best_score": 227,
-    "solutions": [
-      [
-        "modifications",
-        "angeles",
-        "usd"
-      ]
-    ],
-    "number": 63
   },
   {
     "letters": "aaacddeeghhiillnnnoosstuw",
@@ -779,67 +712,7 @@
         "handles"
       ]
     ],
-    "number": 64
-  },
-  {
-    "letters": "aaacdeeeefhiilmnnoorssttu",
-    "best_score": 249,
-    "solutions": [
-      [
-        "informational",
-        "deutsche",
-        "ease"
-      ]
-    ],
-    "number": 65
-  },
-  {
-    "letters": "aacdeeeefghhiilmnnoorstuu",
-    "best_score": 230,
-    "solutions": [
-      [
-        "educational",
-        "greenhouse",
-        "him"
-      ]
-    ],
-    "number": 66
-  },
-  {
-    "letters": "aaaeeefgiillnnoorssttuvwy",
-    "best_score": 230,
-    "solutions": [
-      [
-        "alternatively",
-        "fusion",
-        "wages"
-      ]
-    ],
-    "number": 67
-  },
-  {
-    "letters": "aabcdeeeefhhiilnooqrssttw",
-    "best_score": 211,
-    "solutions": [
-      [
-        "established",
-        "interface",
-        "who"
-      ]
-    ],
-    "number": 68
-  },
-  {
-    "letters": "aacddeeefghhiilnorsstuuwz",
-    "best_score": 216,
-    "solutions": [
-      [
-        "authorized",
-        "scheduling",
-        "safe"
-      ]
-    ],
-    "number": 69
+    "number": 58
   },
   {
     "letters": "aabcdeeeeghhiilmnossttuwy",
@@ -852,7 +725,244 @@
         "cow"
       ]
     ],
+    "number": 59
+  },
+  {
+    "letters": "aaddeeefghhijlnnnorssttuw",
+    "best_score": 221,
+    "solutions": [
+      [
+        "understanding",
+        "health",
+        "jose"
+      ]
+    ],
+    "number": 60
+  },
+  {
+    "letters": "aacdeeeghhhhiilnnorssttww",
+    "best_score": 221,
+    "solutions": [
+      [
+        "liechtenstein",
+        "howard",
+        "wash"
+      ]
+    ],
+    "number": 61
+  },
+  {
+    "letters": "aaceeegghhiikmnnoorsstuwz",
+    "best_score": 221,
+    "solutions": [
+      [
+        "organizations",
+        "scheme",
+        "huge"
+      ]
+    ],
+    "number": 62
+  },
+  {
+    "letters": "accdeeefgghhiilmnoopsstuw",
+    "best_score": 221,
+    "solutions": [
+      [
+        "complications",
+        "hughes",
+        "feed"
+      ]
+    ],
+    "number": 63
+  },
+  {
+    "letters": "aaacdeeeefghhilmnnrssttuy",
+    "best_score": 221,
+    "solutions": [
+      [
+        "afghanistan",
+        "deutsche",
+        "merely"
+      ]
+    ],
+    "number": 64
+  },
+  {
+    "letters": "aaccdeeefhhilmnnoopprsttw",
+    "best_score": 221,
+    "solutions": [
+      [
+        "demonstration",
+        "chapel",
+        "chef"
+      ]
+    ],
+    "number": 65
+  },
+  {
+    "letters": "aaabceeeefghiilmnnossttwy",
+    "best_score": 221,
+    "solutions": [
+      [
+        "establishment",
+        "agency",
+        "wife"
+      ]
+    ],
+    "number": 66
+  },
+  {
+    "letters": "aaceeeehiilmnnoorsttuwyzz",
+    "best_score": 221,
+    "solutions": [
+      [
+        "authorization",
+        "enzyme",
+        "else"
+      ]
+    ],
+    "number": 67
+  },
+  {
+    "letters": "acdeeefgghiilmnnooossttuw",
+    "best_score": 223,
+    "solutions": [
+      [
+        "documentation",
+        "wheels",
+        "gis",
+        "fog"
+      ]
+    ],
+    "number": 68
+  },
+  {
+    "letters": "aacceeefhhiimnnnoorsttuww",
+    "best_score": 223,
+    "solutions": [
+      [
+        "concentrations",
+        "him",
+        "few",
+        "eau"
+      ]
+    ],
+    "number": 69
+  },
+  {
+    "letters": "aaccdeeeghhiillmnnnosttuw",
+    "best_score": 223,
+    "solutions": [
+      [
+        "liechtenstein",
+        "launch",
+        "dog",
+        "wma"
+      ]
+    ],
     "number": 70
+  },
+  {
+    "letters": "acdeefghiijlmnnooqrssstwy",
+    "best_score": 223,
+    "solutions": [
+      [
+        "considerations",
+        "why",
+        "sql",
+        "gem"
+      ]
+    ],
+    "number": 71
+  },
+  {
+    "letters": "aacddeefghhiilmnnooorsssw",
+    "best_score": 223,
+    "solutions": [
+      [
+        "congressional",
+        "showed",
+        "him",
+        "fda"
+      ]
+    ],
+    "number": 72
+  },
+  {
+    "letters": "acdeeefghhiilmnoprssttuwy",
+    "best_score": 223,
+    "solutions": [
+      [
+        "sophisticated",
+        "hungry",
+        "few",
+        "mel"
+      ]
+    ],
+    "number": 73
+  },
+  {
+    "letters": "aaaceeefgghhiilnnoorssttw",
+    "best_score": 223,
+    "solutions": [
+      [
+        "congressional",
+        "height",
+        "few",
+        "ata"
+      ]
+    ],
+    "number": 74
+  },
+  {
+    "letters": "aaacdefghhiijnooprssttttw",
+    "best_score": 223,
+    "solutions": [
+      [
+        "sophisticated",
+        "growth",
+        "jan",
+        "fat"
+      ]
+    ],
+    "number": 75
+  },
+  {
+    "letters": "aabcdeeeffhillmnnorssttwz",
+    "best_score": 223,
+    "solutions": [
+      [
+        "establishment",
+        "frozen",
+        "cal",
+        "fwd"
+      ]
+    ],
+    "number": 76
+  },
+  {
+    "letters": "aadeeghhiilmnnnnprssttuwy",
+    "best_score": 224,
+    "solutions": [
+      [
+        "instrumental",
+        "highways",
+        "penn"
+      ]
+    ],
+    "number": 77
+  },
+  {
+    "letters": "aaddeeefhiklmmnnooprsttuw",
+    "best_score": 224,
+    "solutions": [
+      [
+        "fundamentals",
+        "homework",
+        "edit"
+      ]
+    ],
+    "number": 78
   },
   {
     "letters": "aaaacddeefghhiilmnnoopsst",
@@ -864,68 +974,7 @@
         "fame"
       ]
     ],
-    "number": 71
-  },
-  {
-    "letters": "aacddeeefgghhhiilmnnoostw",
-    "best_score": 217,
-    "solutions": [
-      [
-        "technologies",
-        "handmade",
-        "fig"
-      ]
-    ],
-    "number": 72
-  },
-  {
-    "letters": "aadeeeghhiilmnnoossttuwwy",
-    "best_score": 205,
-    "solutions": [
-      [
-        "destinations",
-        "league",
-        "whom",
-        "why"
-      ]
-    ],
-    "number": 73
-  },
-  {
-    "letters": "aacddeeghhiijlmnooorsstuw",
-    "best_score": 216,
-    "solutions": [
-      [
-        "technologies",
-        "madrid",
-        "joshua"
-      ]
-    ],
-    "number": 74
-  },
-  {
-    "letters": "adeffghhiilmnnoorrssttuwx",
-    "best_score": 210,
-    "solutions": [
-      [
-        "furnishings",
-        "footwear",
-        "xhtml"
-      ]
-    ],
-    "number": 75
-  },
-  {
-    "letters": "aacddeeefghhilnooorsstuvz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "technologies",
-        "hazardous",
-        "dev"
-      ]
-    ],
-    "number": 76
+    "number": 79
   },
   {
     "letters": "aaccddeeeeghhiilmnnoosstw",
@@ -937,7 +986,188 @@
         "dead"
       ]
     ],
-    "number": 77
+    "number": 80
+  },
+  {
+    "letters": "aaacddeeghhiiilmnoorsttuw",
+    "best_score": 224,
+    "solutions": [
+      [
+        "administered",
+        "although",
+        "iowa"
+      ]
+    ],
+    "number": 81
+  },
+  {
+    "letters": "aacdeeeefghiiklmnooqrsstt",
+    "best_score": 224,
+    "solutions": [
+      [
+        "technologies",
+        "diameter",
+        "faqs"
+      ]
+    ],
+    "number": 82
+  },
+  {
+    "letters": "aabbcdeehillmnnoorrsstuwx",
+    "best_score": 224,
+    "solutions": [
+      [
+        "transexuales",
+        "richmond",
+        "blow"
+      ]
+    ],
+    "number": 83
+  },
+  {
+    "letters": "abcdeeefgghiilmnnorssttwy",
+    "best_score": 227,
+    "solutions": [
+      [
+        "establishment",
+        "growing",
+        "dec"
+      ]
+    ],
+    "number": 84
+  },
+  {
+    "letters": "aaceeeefghilmnnoorssttwww",
+    "best_score": 227,
+    "solutions": [
+      [
+        "congressional",
+        "matthew",
+        "few"
+      ]
+    ],
+    "number": 85
+  },
+  {
+    "letters": "aabcdeeeeffghiimnnorrsttw",
+    "best_score": 227,
+    "solutions": [
+      [
+        "determination",
+        "charges",
+        "web"
+      ]
+    ],
+    "number": 86
+  },
+  {
+    "letters": "aacddeefggiiilmnnoossstuw",
+    "best_score": 227,
+    "solutions": [
+      [
+        "modifications",
+        "angeles",
+        "usd"
+      ]
+    ],
+    "number": 87
+  },
+  {
+    "letters": "aaddeeefgiilmnnoorsttuwxy",
+    "best_score": 227,
+    "solutions": [
+      [
+        "determination",
+        "douglas",
+        "few"
+      ]
+    ],
+    "number": 88
+  },
+  {
+    "letters": "aaceeefghiilmnnoossttuwyz",
+    "best_score": 227,
+    "solutions": [
+      [
+        "functionality",
+        "message",
+        "who"
+      ]
+    ],
+    "number": 89
+  },
+  {
+    "letters": "aabcddeeghhiijlmnnoossttu",
+    "best_score": 230,
+    "solutions": [
+      [
+        "documentation",
+        "blades",
+        "highs"
+      ]
+    ],
+    "number": 90
+  },
+  {
+    "letters": "aacceeefghhiimnnopqrtttuw",
+    "best_score": 230,
+    "solutions": [
+      [
+        "authentication",
+        "chem",
+        "few",
+        "rpg"
+      ]
+    ],
+    "number": 91
+  },
+  {
+    "letters": "aabcdeeefghiijlmnnprssttu",
+    "best_score": 230,
+    "solutions": [
+      [
+        "adjustments",
+        "beneficial",
+        "rpg"
+      ]
+    ],
+    "number": 92
+  },
+  {
+    "letters": "aabcdeefhiijlmnnoorrttuwy",
+    "best_score": 230,
+    "solutions": [
+      [
+        "functionality",
+        "hebrew",
+        "major"
+      ]
+    ],
+    "number": 93
+  },
+  {
+    "letters": "aacdeeeefghhiilmnnoorstuu",
+    "best_score": 230,
+    "solutions": [
+      [
+        "educational",
+        "greenhouse",
+        "him"
+      ]
+    ],
+    "number": 94
+  },
+  {
+    "letters": "aaaeeefgiillnnoorssttuvwy",
+    "best_score": 230,
+    "solutions": [
+      [
+        "alternatively",
+        "fusion",
+        "wages"
+      ]
+    ],
+    "number": 95
   },
   {
     "letters": "aacdeeeffhhiinnoorssttuvw",
@@ -950,20 +1180,151 @@
         "thu"
       ]
     ],
-    "number": 78
+    "number": 96
   },
   {
-    "letters": "aacdeeefghhilmnnoooqrstuw",
-    "best_score": 205,
+    "letters": "aaceeefgiijlmnnorsstttuvw",
+    "best_score": 230,
+    "solutions": [
+      [
+        "investigators",
+        "cement",
+        "awful"
+      ]
+    ],
+    "number": 97
+  },
+  {
+    "letters": "aaceeefghhiikmnnorssttuuw",
+    "best_score": 230,
+    "solutions": [
+      [
+        "magnificent",
+        "housewares",
+        "thu"
+      ]
+    ],
+    "number": 98
+  },
+  {
+    "letters": "aacdeeeghhhiiklmnnorsstuw",
+    "best_score": 230,
+    "solutions": [
+      [
+        "acknowledge",
+        "humanities",
+        "hrs"
+      ]
+    ],
+    "number": 99
+  },
+  {
+    "letters": "adeeefghhiijlmnnoorsstttu",
+    "best_score": 234,
+    "solutions": [
+      [
+        "determination",
+        "jelsoft",
+        "hugh"
+      ]
+    ],
+    "number": 100
+  },
+  {
+    "letters": "aacdeeghhhiilmnnoooossttu",
+    "best_score": 234,
+    "solutions": [
+      [
+        "negotiations",
+        "household",
+        "mac"
+      ]
+    ],
+    "number": 101
+  },
+  {
+    "letters": "aaccdeeeffhhiilnoorssttuz",
+    "best_score": 234,
+    "solutions": [
+      [
+        "certificates",
+        "household",
+        "fan"
+      ]
+    ],
+    "number": 102
+  },
+  {
+    "letters": "aacdeefghhiimnnnoorssttwz",
+    "best_score": 234,
+    "solutions": [
+      [
+        "demonstration",
+        "washing",
+        "chef"
+      ]
+    ],
+    "number": 103
+  },
+  {
+    "letters": "aadeeefhiiklnnnoorsstttux",
+    "best_score": 234,
+    "solutions": [
+      [
+        "stakeholders",
+        "intention",
+        "fax"
+      ]
+    ],
+    "number": 104
+  },
+  {
+    "letters": "acdeeefgghhiijlnoorssttux",
+    "best_score": 234,
     "solutions": [
       [
         "technologies",
-        "howard",
-        "menu",
-        "faq"
+        "daughters",
+        "fix"
       ]
     ],
-    "number": 79
+    "number": 105
+  },
+  {
+    "letters": "aacddeeefghhilnooorsstuvz",
+    "best_score": 234,
+    "solutions": [
+      [
+        "technologies",
+        "hazardous",
+        "dev"
+      ]
+    ],
+    "number": 106
+  },
+  {
+    "letters": "aaccdeeefghhiiimnooqrsstu",
+    "best_score": 234,
+    "solutions": [
+      [
+        "modifications",
+        "reaches",
+        "huge"
+      ]
+    ],
+    "number": 107
+  },
+  {
+    "letters": "aabcddeeehhiiiilmnorrsstz",
+    "best_score": 234,
+    "solutions": [
+      [
+        "dictionaries",
+        "desirable",
+        "mhz"
+      ]
+    ],
+    "number": 108
   },
   {
     "letters": "aacdeefghhiijmnnoorsstuwz",
@@ -976,91 +1337,7 @@
         "mhz"
       ]
     ],
-    "number": 80
-  },
-  {
-    "letters": "aaddeeefgiilmnnoorsttuwxy",
-    "best_score": 227,
-    "solutions": [
-      [
-        "determination",
-        "douglas",
-        "few"
-      ]
-    ],
-    "number": 81
-  },
-  {
-    "letters": "aaacddeeghhiiilmnoorsttuw",
-    "best_score": 224,
-    "solutions": [
-      [
-        "administered",
-        "although",
-        "iowa"
-      ]
-    ],
-    "number": 82
-  },
-  {
-    "letters": "acceeefghiiilmnnoorsstuuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "wheels",
-        "mice"
-      ]
-    ],
-    "number": 83
-  },
-  {
-    "letters": "aeeeghhiilmnnnooosssttuvw",
-    "best_score": 216,
-    "solutions": [
-      [
-        "nottingham",
-        "housewives",
-        "ones"
-      ]
-    ],
-    "number": 84
-  },
-  {
-    "letters": "aaceeefgiijlmnnorsstttuvw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "investigators",
-        "cement",
-        "awful"
-      ]
-    ],
-    "number": 85
-  },
-  {
-    "letters": "acdeefghhiiilmnnooprrsstw",
-    "best_score": 242,
-    "solutions": [
-      [
-        "relationships",
-        "richmond",
-        "few"
-      ]
-    ],
-    "number": 86
-  },
-  {
-    "letters": "aaceefghhilmnoorrssttuuvy",
-    "best_score": 242,
-    "solutions": [
-      [
-        "manufacturers",
-        "theology",
-        "his"
-      ]
-    ],
-    "number": 87
+    "number": 109
   },
   {
     "letters": "aacdeeefghhiiklmnnoorstwy",
@@ -1073,19 +1350,187 @@
         "hay"
       ]
     ],
-    "number": 88
+    "number": 110
   },
   {
-    "letters": "aacdeeefgghhiillooqrssttw",
-    "best_score": 211,
+    "letters": "aacddeeefhiilnnnooorsstuy",
+    "best_score": 241,
     "solutions": [
       [
-        "theoretical",
-        "slideshow",
-        "faq"
+        "considerations",
+        "handle",
+        "you"
       ]
     ],
-    "number": 89
+    "number": 111
+  },
+  {
+    "letters": "aaccdeefhhiillmnnoorsstty",
+    "best_score": 241,
+    "solutions": [
+      [
+        "considerations",
+        "health",
+        "fly"
+      ]
+    ],
+    "number": 112
+  },
+  {
+    "letters": "aacdeeefghhiilmnorrssttwy",
+    "best_score": 241,
+    "solutions": [
+      [
+        "administrators",
+        "fleece",
+        "why"
+      ]
+    ],
+    "number": 113
+  },
+  {
+    "letters": "aaaccdeeefghiilmnooprsttw",
+    "best_score": 242,
+    "solutions": [
+      [
+        "complications",
+        "gathered",
+        "few"
+      ]
+    ],
+    "number": 114
+  },
+  {
+    "letters": "aadeeeghhhiijlmnnoorstttu",
+    "best_score": 242,
+    "solutions": [
+      [
+        "determination",
+        "although",
+        "she"
+      ]
+    ],
+    "number": 115
+  },
+  {
+    "letters": "acdeefghhiiilmnnooprrsstw",
+    "best_score": 242,
+    "solutions": [
+      [
+        "relationships",
+        "richmond",
+        "few"
+      ]
+    ],
+    "number": 116
+  },
+  {
+    "letters": "aaceefghhilmnoorrssttuuvy",
+    "best_score": 242,
+    "solutions": [
+      [
+        "manufacturers",
+        "theology",
+        "his"
+      ]
+    ],
+    "number": 117
+  },
+  {
+    "letters": "aacefghhiilmmnnoooprsstuw",
+    "best_score": 248,
+    "solutions": [
+      [
+        "configurations",
+        "sample",
+        "whom"
+      ]
+    ],
+    "number": 118
+  },
+  {
+    "letters": "aabcdeeeefgiimnnnoorsstuw",
+    "best_score": 248,
+    "solutions": [
+      [
+        "configurations",
+        "sweden",
+        "beam"
+      ]
+    ],
+    "number": 119
+  },
+  {
+    "letters": "aaadeeghhiilmmnnoprssttuw",
+    "best_score": 248,
+    "solutions": [
+      [
+        "implementation",
+        "awards",
+        "hugh"
+      ]
+    ],
+    "number": 120
+  },
+  {
+    "letters": "acddeeehhiklmnnoorsssttuv",
+    "best_score": 248,
+    "solutions": [
+      [
+        "advertisements",
+        "hudson",
+        "lock"
+      ]
+    ],
+    "number": 121
+  },
+  {
+    "letters": "acceeefghiiilmnnoorsstuuw",
+    "best_score": 248,
+    "solutions": [
+      [
+        "configurations",
+        "wheels",
+        "mice"
+      ]
+    ],
+    "number": 122
+  },
+  {
+    "letters": "aaceeefghhiimnnoorrssttuv",
+    "best_score": 248,
+    "solutions": [
+      [
+        "transformation",
+        "hughes",
+        "vice"
+      ]
+    ],
+    "number": 123
+  },
+  {
+    "letters": "aacdeeehhiijlnnnnooorsstw",
+    "best_score": 248,
+    "solutions": [
+      [
+        "considerations",
+        "helena",
+        "john"
+      ]
+    ],
+    "number": 124
+  },
+  {
+    "letters": "aaacdeeeefhiilmnnoorssttu",
+    "best_score": 249,
+    "solutions": [
+      [
+        "informational",
+        "deutsche",
+        "ease"
+      ]
+    ],
+    "number": 125
   },
   {
     "letters": "accddeefghiimnnooprsssttu",
@@ -1097,55 +1542,103 @@
         "mpg"
       ]
     ],
-    "number": 90
+    "number": 126
   },
   {
-    "letters": "aacdeeeghhiinnoooprsttwwy",
-    "best_score": 212,
+    "letters": "aaacdeefghiiijlmnnoorsstt",
+    "best_score": 254,
     "solutions": [
       [
-        "consideration",
-        "wheat",
-        "why",
-        "geo"
+        "administration",
+        "chelsea",
+        "fog"
       ]
     ],
-    "number": 91
+    "number": 127
   },
   {
-    "letters": "aacdeeeffghhilmmnooqrstwx",
-    "best_score": 209,
+    "letters": "aacdeeeghilmmnnooqqrssstt",
+    "best_score": 259,
     "solutions": [
       [
-        "commonwealth",
-        "sheriff",
-        "aged"
+        "recommendations",
+        "glass",
+        "the"
       ]
     ],
-    "number": 92
+    "number": 128
   },
   {
-    "letters": "aaceeegghhiikmnnoorsstuwz",
-    "best_score": 221,
+    "letters": "aacceeeghhiillmnnooprsstt",
+    "best_score": 259,
     "solutions": [
       [
-        "organizations",
-        "scheme",
-        "huge"
+        "technological",
+        "stephanie",
+        "mrs"
       ]
     ],
-    "number": 93
+    "number": 129
   },
   {
-    "letters": "aaceeefghiilmnnoossttuwyz",
-    "best_score": 227,
+    "letters": "aaceeefghhiillmnnoorssttu",
+    "best_score": 259,
     "solutions": [
       [
-        "functionality",
-        "message",
-        "who"
+        "congratulations",
+        "feel",
+        "she",
+        "him"
       ]
     ],
-    "number": 94
+    "number": 130
+  },
+  {
+    "letters": "aaceeeffghiilmnnoorrsstuw",
+    "best_score": 261,
+    "solutions": [
+      [
+        "configurations",
+        "welfare",
+        "mesh"
+      ]
+    ],
+    "number": 131
+  },
+  {
+    "letters": "aacdfgghiillmnnoorsstttuv",
+    "best_score": 266,
+    "solutions": [
+      [
+        "congratulations",
+        "films",
+        "hdtv"
+      ]
+    ],
+    "number": 132
+  },
+  {
+    "letters": "aacddeefghiiilmnnoooottwy",
+    "best_score": 266,
+    "solutions": [
+      [
+        "confidentiality",
+        "omega",
+        "wood"
+      ]
+    ],
+    "number": 133
+  },
+  {
+    "letters": "aacddeeegiilmnnoorssttuuw",
+    "best_score": 270,
+    "solutions": [
+      [
+        "congratulations",
+        "seemed",
+        "dui"
+      ]
+    ],
+    "number": 134
   }
 ]
