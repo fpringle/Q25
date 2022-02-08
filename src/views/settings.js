@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
 
 import Text from '../components/text';
 import LetterButton from '../components/button';
 import { themes } from '../styles';
-import { changeTheme } from '../settings';
-import { Level } from '../storage';
+import { doChangeTheme } from '../storage/features/settings';
+import { doResetUserProgress } from '../storage/features/levels';
 
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
 function Settings(props) {
-  let { theme , dispatch } = props;
-  const options = theme.options;
-  theme = theme.current;
+  let { theme, themeOptions, dispatch } = props;
+  console.log(props);
   const { backgroundColor, foregroundColor } = themes[theme];
 
   useEffect(() => {
@@ -26,10 +26,6 @@ function Settings(props) {
     });
   });
 
-  const resetProgress = () => {
-    return Level.resetAllBestScores();
-  };
-
   const resetProgressDialog = () => {
     Alert.alert(
       'WARNING',
@@ -40,7 +36,7 @@ function Settings(props) {
         },
         {
           text: 'Reset',
-          onPress: () => resetProgress(),
+          onPress: () => props.resetProgress(),
         }
       ],
       {
@@ -77,13 +73,14 @@ function Settings(props) {
       <SettingsPicker
         label={'Theme'}
         current={theme}
-        options={options}
-        dispatcher={val => dispatch(changeTheme(val))}
+        options={themeOptions}
+        dispatcher={val => props.changeTheme(val)}
       />
       <View style={{height: '15%', width: '100%', padding: 10}}>
         <LetterButton
           letter={'Reset progress'}
-          style={{fontSize: 20}}
+          style={{fontSize: 20, backgroundColor, borderColor: foregroundColor}}
+          textColor={foregroundColor}
           onPress={() => resetProgressDialog()}
         />
       </View>
@@ -114,7 +111,16 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  return { theme: state.theme };
-}
+  return {
+    theme: state.settings.theme.current,
+    themeOptions: state.settings.theme.options,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    changeTheme: doChangeTheme,
+    resetProgress: doResetUserProgress,
+  }, dispatch);
+};
 
-export default connect(mapStateToProps)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

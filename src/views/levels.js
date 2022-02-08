@@ -5,20 +5,10 @@ import { connect } from 'react-redux';
 import Text from '../components/text';
 import LetterButton, { LetterButtonSvg } from '../components/button';
 import { themes } from '../styles';
-import { getAllLevels } from '../backend';
-import { Level } from '../storage';
 
 function Levels(props) {
-  const theme = props.theme;
+  const { theme, levelData } = props;
   const { backgroundColor, foregroundColor } = themes[theme];
-  const [levelData, setLevelData] = useState([]);
-  const [bestPlayerScores, setBestPlayerScores] = useState([]);
-
-  useEffect(() => {
-    const levels = getAllLevels();
-    setLevelData(levels);
-    Level.getAllBestScores(levels.length).then(res => setBestPlayerScores(res));
-  }, []);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -36,8 +26,9 @@ function Levels(props) {
         style={{fontSize: 12, width: '100%', aspectRatio: 1, margin: '5%', backgroundColor, borderColor: foregroundColor, borderRadius: 5, foregroundColor}}
         letter={item.number}
         textColor={foregroundColor}
-        maxScore={+(levelData[item.number-1].best_score || 1)}
-        score={+(bestPlayerScores[item.number-1] || 0)}
+        maxScore={item.maxScore}
+        score={item.bestUserScore}
+        passingScore={item.passingScore}
       />
     </View>
   );
@@ -69,7 +60,13 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  return { theme: state.theme.current };
+  const levelData = [];
+  for (let i=1; i<=state.levels.numLevels; i++) {
+    levelData.push(state.levels.levels[i]);
+  }
+  return {
+    theme: state.settings.theme.current,
+    levelData,
+  };
 }
-
 export default connect(mapStateToProps)(Levels);

@@ -1,7 +1,18 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers } from 'redux';
 
 
+///////////////////////////
 // theme
+
+// actions
+const CHANGE_THEME = 'settings/theme/change';
+
+// action creators
+export function doChangeTheme(theme) {
+  return {type: CHANGE_THEME, payload: theme};
+};
+
+// initial state
 const initialThemeState = {
   current: 'classic',
   options: [
@@ -11,10 +22,10 @@ const initialThemeState = {
   ],
 };
 
-
+// reducer
 function themeReducer(state=initialThemeState, action) {
   switch (action.type) {
-    case 'theme/changed':
+    case CHANGE_THEME:
       if (!state.options.includes(action.payload)) return state;
       return {...state, current: action.payload};
     default:
@@ -22,16 +33,16 @@ function themeReducer(state=initialThemeState, action) {
   }
 }
 
+
+
+
+
+
+
+////////////////////////////
 // root
 
-const rootReducer = combineReducers({
+export const settingsReducer = combineReducers({
   theme: themeReducer,
 });
 
-export default createStore(rootReducer);
-
-
-// actions
-export function changeTheme(theme) {
-  return {type: 'theme/changed', payload: theme};
-};

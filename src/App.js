@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
-import settingsStore from './settings';
+import { store } from './storage/storage';
 
 import Home from './views/home';
 import Game from './views/game';
@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Provider store={settingsStore}>
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName={'Home'}>
           <Stack.Screen

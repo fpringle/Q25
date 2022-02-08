@@ -13,9 +13,20 @@ with open(file) as f:
         puzzles.append(puzzle)
         #idx += 1
 
-puzzles.sort(key=lambda puzzle: puzzle["best_score"])
+puzzles.sort(key=lambda puzzle: puzzle["maxScore"])
 for number, puzzle in enumerate(puzzles, idx):
     puzzle["number"] = number
 
-with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "all_levels.json"), "w") as f:
-    json.dump(puzzles, f, indent=2)
+cleaned = {}
+for puzzle in puzzles:
+    print(puzzle)
+    cleaned[puzzle["number"]] = {
+        "number": puzzle["number"],
+        "letters": puzzle["letters"],
+        "maxScore": puzzle["maxScore"],
+        "bestUserScore": 0,
+        "bestUserSolution": [],
+    }
+
+#with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "all_levels.json"), "w") as f:
+#    json.dump(cleaned, f, indent=2)

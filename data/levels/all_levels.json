@@ -1,1644 +1,940 @@
-[
-  {
+{
+  "1": {
+    "number": 1,
     "letters": "aaaffghhiiiklmnprssttuuww",
-    "best_score": 170,
-    "solutions": [
-      [
-        "mauritius",
-        "flashing",
-        "hawk",
-        "ftp"
-      ]
-    ],
-    "number": 1
+    "maxScore": 170,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "2": {
+    "number": 2,
     "letters": "aaceeghhimnnoooqqssttuuvw",
-    "best_score": 174,
-    "solutions": [
-      [
-        "quotations",
-        "changes",
-        "whom",
-        "que"
-      ]
-    ],
-    "number": 2
+    "maxScore": 174,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "3": {
+    "number": 3,
     "letters": "acceeefgghhjnoooorrsttuwy",
-    "best_score": 180,
-    "solutions": [
-      [
-        "warehouse",
-        "forgotten",
-        "gcc",
-        "joy"
-      ]
-    ],
-    "number": 3
+    "maxScore": 180,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "4": {
+    "number": 4,
     "letters": "cddefggghhiimnoooqrssttuw",
-    "best_score": 181,
-    "solutions": [
-      [
-        "microsoft",
-        "weddings",
-        "though"
-      ]
-    ],
-    "number": 4
+    "maxScore": 181,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "5": {
+    "number": 5,
     "letters": "aceeeffghhiiknnnpprssttuw",
-    "best_score": 185,
-    "solutions": [
-      [
-        "sufficient",
-        "kenneth",
-        "graphs"
-      ]
-    ],
-    "number": 5
+    "maxScore": 185,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "6": {
+    "number": 6,
     "letters": "aceeeefghhiimnoorssttwwwz",
-    "best_score": 187,
-    "solutions": [
-      [
-        "recognize",
-        "showtimes",
-        "what",
-        "few"
-      ]
-    ],
-    "number": 6
+    "maxScore": 187,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "7": {
+    "number": 7,
     "letters": "aeeefhhmmnnnoorsssstuvwwy",
-    "best_score": 187,
-    "solutions": [
-      [
-        "measurements",
-        "shows",
-        "non",
-        "why"
-      ]
-    ],
-    "number": 7
+    "maxScore": 187,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "8": {
+    "number": 8,
     "letters": "aaadeefghhiikmmnnoosstuvw",
-    "best_score": 189,
-    "solutions": [
-      [
-        "afghanistan",
-        "movies",
-        "whom",
-        "duke"
-      ]
-    ],
-    "number": 8
+    "maxScore": 189,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "9": {
+    "number": 9,
     "letters": "aaceeefghhhklmnoorsstttux",
-    "best_score": 194,
-    "solutions": [
-      [
-        "transexuales",
-        "theft",
-        "hook",
-        "gmc"
-      ]
-    ],
-    "number": 9
+    "maxScore": 194,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "10": {
+    "number": 10,
     "letters": "aaaaceefghhiinnqrssttuwwy",
-    "best_score": 195,
-    "solutions": [
-      [
-        "afghanistan",
-        "acquire",
-        "west",
-        "why"
-      ]
-    ],
-    "number": 10
+    "maxScore": 195,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "11": {
+    "number": 11,
     "letters": "aaceefhhhiilmnnoossttuuww",
-    "best_score": 197,
-    "solutions": [
-      [
-        "humanities",
-        "holocaust",
-        "when"
-      ]
-    ],
-    "number": 11
+    "maxScore": 197,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "12": {
+    "number": 12,
     "letters": "aaaeeefghhiilmmnnooqsttuw",
-    "best_score": 197,
-    "solutions": [
-      [
-        "quotations",
-        "meanwhile",
-        "game"
-      ]
-    ],
-    "number": 12
+    "maxScore": 197,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "13": {
+    "number": 13,
     "letters": "aaeeeffggghlmmnnoorrssttt",
-    "best_score": 198,
-    "solutions": [
-      [
-        "arrangements",
-        "hotels",
-        "off",
-        "gmt"
-      ]
-    ],
-    "number": 13
+    "maxScore": 198,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "14": {
+    "number": 14,
     "letters": "aaacdeeeffghhiijlnoossttu",
-    "best_score": 201,
-    "solutions": [
-      [
-        "technologies",
-        "ahead",
-        "fast",
-        "fuji"
-      ]
-    ],
-    "number": 14
+    "maxScore": 201,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "15": {
+    "number": 15,
     "letters": "aaceeefhhjlmmnnooqrssttwy",
-    "best_score": 205,
-    "solutions": [
-      [
-        "commonwealth",
-        "jersey",
-        "shaft"
-      ]
-    ],
-    "number": 15
+    "maxScore": 205,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "16": {
+    "number": 16,
     "letters": "ceeefhhiilmnnooqrrrsstuwx",
-    "best_score": 205,
-    "solutions": [
-      [
-        "requirements",
-        "floors",
-        "which"
-      ]
-    ],
-    "number": 16
+    "maxScore": 205,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "17": {
+    "number": 17,
     "letters": "aeeeffghhiillmnnoqrssttvw",
-    "best_score": 205,
-    "solutions": [
-      [
-        "governmental",
-        "wishes",
-        "fifth"
-      ]
-    ],
-    "number": 17
+    "maxScore": 205,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "18": {
+    "number": 18,
     "letters": "aadeeeghhiilmnnoossttuwwy",
-    "best_score": 205,
-    "solutions": [
-      [
-        "destinations",
-        "league",
-        "whom",
-        "why"
-      ]
-    ],
-    "number": 18
+    "maxScore": 205,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "19": {
+    "number": 19,
     "letters": "aacdeeefghhilmnnoooqrstuw",
-    "best_score": 205,
-    "solutions": [
-      [
-        "technologies",
-        "howard",
-        "menu",
-        "faq"
-      ]
-    ],
-    "number": 19
+    "maxScore": 205,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "20": {
+    "number": 20,
     "letters": "aabdeeefghhiilnnoopsstuuw",
-    "best_score": 206,
-    "solutions": [
-      [
-        "headphones",
-        "beautiful",
-        "wings"
-      ]
-    ],
-    "number": 20
+    "maxScore": 206,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "21": {
+    "number": 21,
     "letters": "aaccdeeefghhiilnnosstuvwx",
-    "best_score": 206,
-    "solutions": [
-      [
-        "washington",
-        "exclusive",
-        "faced"
-      ]
-    ],
-    "number": 21
+    "maxScore": 206,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "22": {
+    "number": 22,
     "letters": "aaceeeghhhiilmnnoorsstuwx",
-    "best_score": 209,
-    "solutions": [
-      [
-        "technologies",
-        "anaheim",
-        "rush"
-      ]
-    ],
-    "number": 22
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "23": {
+    "number": 23,
     "letters": "aaeeeffgghilmnnoorssttuuw",
-    "best_score": 209,
-    "solutions": [
-      [
-        "housewares",
-        "meaningful",
-        "got"
-      ]
-    ],
-    "number": 23
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "24": {
+    "number": 24,
     "letters": "aabdeeefghhhiiiklnnoorsst",
-    "best_score": 209,
-    "solutions": [
-      [
-        "establishing",
-        "refined",
-        "hook"
-      ]
-    ],
-    "number": 24
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "25": {
+    "number": 25,
     "letters": "aacdeeeffghhilmmnooqrstwx",
-    "best_score": 209,
-    "solutions": [
-      [
-        "commonwealth",
-        "sheriff",
-        "aged"
-      ]
-    ],
-    "number": 25
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "26": {
+    "number": 26,
     "letters": "aadddeeeefghhlnnoorsstuuw",
-    "best_score": 209,
-    "solutions": [
-      [
-        "guaranteed",
-        "households",
-        "new"
-      ]
-    ],
-    "number": 26
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "27": {
+    "number": 27,
     "letters": "aadddeefghhiilmmnnoosttuw",
-    "best_score": 209,
-    "solutions": [
-      [
-        "downloaded",
-        "humanities",
-        "gmt"
-      ]
-    ],
-    "number": 27
+    "maxScore": 209,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "28": {
+    "number": 28,
     "letters": "aaceeeffghilmnnnoorsstuyy",
-    "best_score": 210,
-    "solutions": [
-      [
-        "congressional",
-        "they",
-        "fame",
-        "fun"
-      ]
-    ],
-    "number": 28
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "29": {
+    "number": 29,
     "letters": "aaadeeefghhiilmoooprssttu",
-    "best_score": 210,
-    "solutions": [
-      [
-        "authorities",
-        "homepage",
-        "loads"
-      ]
-    ],
-    "number": 29
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "30": {
+    "number": 30,
     "letters": "aacdeegghhimnnoorssttuwww",
-    "best_score": 210,
-    "solutions": [
-      [
-        "documentation",
-        "greg",
-        "hash",
-        "www"
-      ]
-    ],
-    "number": 30
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "31": {
+    "number": 31,
     "letters": "adeffghhiilmnnoorrssttuwx",
-    "best_score": 210,
-    "solutions": [
-      [
-        "furnishings",
-        "footwear",
-        "xhtml"
-      ]
-    ],
-    "number": 31
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "32": {
+    "number": 32,
     "letters": "aacdeeefhhikmmnoorrssttuw",
-    "best_score": 210,
-    "solutions": [
-      [
-        "merchandise",
-        "software",
-        "mouth"
-      ]
-    ],
-    "number": 32
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "33": {
+    "number": 33,
     "letters": "aaaceeehiijjlmnnooqssttuy",
-    "best_score": 210,
-    "solutions": [
-      [
-        "liechtenstein",
-        "soma",
-        "aqua",
-        "joy"
-      ]
-    ],
-    "number": 33
+    "maxScore": 210,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "34": {
+    "number": 34,
     "letters": "aadeeeffghhimnnoorssttwwy",
-    "best_score": 211,
-    "solutions": [
-      [
-        "demonstrates",
-        "highway",
-        "new",
-        "off"
-      ]
-    ],
-    "number": 34
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "35": {
+    "number": 35,
     "letters": "aacdeffghhiilmnooprsstuwy",
-    "best_score": 211,
-    "solutions": [
-      [
-        "scholarship",
-        "magnitude",
-        "off"
-      ]
-    ],
-    "number": 35
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "36": {
+    "number": 36,
     "letters": "aacdeeefhhhiilmmnosssttuw",
-    "best_score": 211,
-    "solutions": [
-      [
-        "mathematics",
-        "slideshow",
-        "fun"
-      ]
-    ],
-    "number": 36
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "37": {
+    "number": 37,
     "letters": "aabcdeeeefhhiilnooqrssttw",
-    "best_score": 211,
-    "solutions": [
-      [
-        "established",
-        "interface",
-        "who"
-      ]
-    ],
-    "number": 37
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "38": {
+    "number": 38,
     "letters": "aacdeeefgghhiillooqrssttw",
-    "best_score": 211,
-    "solutions": [
-      [
-        "theoretical",
-        "slideshow",
-        "faq"
-      ]
-    ],
-    "number": 38
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "39": {
+    "number": 39,
     "letters": "acdeefgghhiiilmnnorssstww",
-    "best_score": 211,
-    "solutions": [
-      [
-        "magnificent",
-        "slideshow",
-        "hrs"
-      ]
-    ],
-    "number": 39
+    "maxScore": 211,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "40": {
+    "number": 40,
     "letters": "aacdeeeghhiinnoooprsttwwy",
-    "best_score": 212,
-    "solutions": [
-      [
-        "consideration",
-        "wheat",
-        "why",
-        "geo"
-      ]
-    ],
-    "number": 40
+    "maxScore": 212,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "41": {
+    "number": 41,
     "letters": "acdeeeghiiilmnnoorsttuwxx",
-    "best_score": 216,
-    "solutions": [
-      [
-        "guidelines",
-        "extraction",
-        "whom"
-      ]
-    ],
-    "number": 41
+    "maxScore": 216,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "42": {
+    "number": 42,
     "letters": "aacdeeeffghhiijlnoorssttu",
-    "best_score": 216,
-    "solutions": [
-      [
-        "affiliated",
-        "screenshot",
-        "hugo"
-      ]
-    ],
-    "number": 42
+    "maxScore": 216,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "43": {
+    "number": 43,
     "letters": "aacddeeefghhiilnorsstuuwz",
-    "best_score": 216,
-    "solutions": [
-      [
-        "authorized",
-        "scheduling",
-        "safe"
-      ]
-    ],
-    "number": 43
+    "maxScore": 216,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "44": {
+    "number": 44,
     "letters": "aacddeeghhiijlmnooorsstuw",
-    "best_score": 216,
-    "solutions": [
-      [
-        "technologies",
-        "madrid",
-        "joshua"
-      ]
-    ],
-    "number": 44
+    "maxScore": 216,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "45": {
+    "number": 45,
     "letters": "aeeeghhiilmnnnooosssttuvw",
-    "best_score": 216,
-    "solutions": [
-      [
-        "nottingham",
-        "housewives",
-        "ones"
-      ]
-    ],
-    "number": 45
+    "maxScore": 216,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "46": {
+    "number": 46,
     "letters": "aaacdeeefghhinnooprssttux",
-    "best_score": 217,
-    "solutions": [
-      [
-        "expectations",
-        "honduras",
-        "age"
-      ]
-    ],
-    "number": 46
+    "maxScore": 217,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "47": {
+    "number": 47,
     "letters": "aaccdeefghhiillmnnorssstw",
-    "best_score": 217,
-    "solutions": [
-      [
-        "findarticles",
-        "showcase",
-        "nhl"
-      ]
-    ],
-    "number": 47
+    "maxScore": 217,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "48": {
+    "number": 48,
     "letters": "aadeefghiilmnnoqrsssttuwx",
-    "best_score": 217,
-    "solutions": [
-      [
-        "demonstrates",
-        "flashing",
-        "qui"
-      ]
-    ],
-    "number": 48
+    "maxScore": 217,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "49": {
+    "number": 49,
     "letters": "aacddeeefgghhhiilmnnoostw",
-    "best_score": 217,
-    "solutions": [
-      [
-        "technologies",
-        "handmade",
-        "fig"
-      ]
-    ],
-    "number": 49
+    "maxScore": 217,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "50": {
+    "number": 50,
     "letters": "aacdeeeefghlmnnoorrsttuwx",
-    "best_score": 218,
-    "solutions": [
-      [
-        "arrangements",
-        "exclude",
-        "howto"
-      ]
-    ],
-    "number": 50
+    "maxScore": 218,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "51": {
+    "number": 51,
     "letters": "aacdeefgghhhiinnnoosstuwx",
-    "best_score": 218,
-    "solutions": [
-      [
-        "foundations",
-        "exchanges",
-        "high"
-      ]
-    ],
-    "number": 51
+    "maxScore": 218,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "52": {
+    "number": 52,
     "letters": "acdeeeeghhiimnnorsssttuww",
-    "best_score": 218,
-    "solutions": [
-      [
-        "merchandise",
-        "southwest",
-        "wine"
-      ]
-    ],
-    "number": 52
+    "maxScore": 218,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "53": {
+    "number": 53,
     "letters": "aaddeeehiillmnnnoopstttuw",
-    "best_score": 218,
-    "solutions": [
-      [
-        "destination",
-        "halloween",
-        "dump"
-      ]
-    ],
-    "number": 53
+    "maxScore": 218,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "54": {
+    "number": 54,
     "letters": "aaccdeeefhhiiiklmnnrrstuw",
-    "best_score": 219,
-    "solutions": [
-      [
-        "mediterranean",
-        "which",
-        "sick",
-        "flu"
-      ]
-    ],
-    "number": 54
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "55": {
+    "number": 55,
     "letters": "acddeeeghilmnnooqrsssttuw",
-    "best_score": 219,
-    "solutions": [
-      [
-        "documentation",
-        "dress",
-        "welsh"
-      ]
-    ],
-    "number": 55
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "56": {
+    "number": 56,
     "letters": "aaccdeefghhiimnnoossttuwx",
-    "best_score": 219,
-    "solutions": [
-      [
-        "documentation",
-        "faces",
-        "highs"
-      ]
-    ],
-    "number": 56
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "57": {
+    "number": 57,
     "letters": "aacdeeeffghhilnnoooprsstt",
-    "best_score": 219,
-    "solutions": [
-      [
-        "congressional",
-        "depth",
-        "heat",
-        "off"
-      ]
-    ],
-    "number": 57
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "58": {
+    "number": 58,
     "letters": "aaacddeeghhiillnnnoosstuw",
-    "best_score": 219,
-    "solutions": [
-      [
-        "educational",
-        "showing",
-        "handles"
-      ]
-    ],
-    "number": 58
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "59": {
+    "number": 59,
     "letters": "aabcdeeeeghhiilmnossttuwy",
-    "best_score": 219,
-    "solutions": [
-      [
-        "establishment",
-        "guide",
-        "yeah",
-        "cow"
-      ]
-    ],
-    "number": 59
+    "maxScore": 219,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "60": {
+    "number": 60,
     "letters": "aaddeeefghhijlnnnorssttuw",
-    "best_score": 221,
-    "solutions": [
-      [
-        "understanding",
-        "health",
-        "jose"
-      ]
-    ],
-    "number": 60
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "61": {
+    "number": 61,
     "letters": "aacdeeeghhhhiilnnorssttww",
-    "best_score": 221,
-    "solutions": [
-      [
-        "liechtenstein",
-        "howard",
-        "wash"
-      ]
-    ],
-    "number": 61
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "62": {
+    "number": 62,
     "letters": "aaceeegghhiikmnnoorsstuwz",
-    "best_score": 221,
-    "solutions": [
-      [
-        "organizations",
-        "scheme",
-        "huge"
-      ]
-    ],
-    "number": 62
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "63": {
+    "number": 63,
     "letters": "accdeeefgghhiilmnoopsstuw",
-    "best_score": 221,
-    "solutions": [
-      [
-        "complications",
-        "hughes",
-        "feed"
-      ]
-    ],
-    "number": 63
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "64": {
+    "number": 64,
     "letters": "aaacdeeeefghhilmnnrssttuy",
-    "best_score": 221,
-    "solutions": [
-      [
-        "afghanistan",
-        "deutsche",
-        "merely"
-      ]
-    ],
-    "number": 64
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "65": {
+    "number": 65,
     "letters": "aaccdeeefhhilmnnoopprsttw",
-    "best_score": 221,
-    "solutions": [
-      [
-        "demonstration",
-        "chapel",
-        "chef"
-      ]
-    ],
-    "number": 65
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "66": {
+    "number": 66,
     "letters": "aaabceeeefghiilmnnossttwy",
-    "best_score": 221,
-    "solutions": [
-      [
-        "establishment",
-        "agency",
-        "wife"
-      ]
-    ],
-    "number": 66
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "67": {
+    "number": 67,
     "letters": "aaceeeehiilmnnoorsttuwyzz",
-    "best_score": 221,
-    "solutions": [
-      [
-        "authorization",
-        "enzyme",
-        "else"
-      ]
-    ],
-    "number": 67
+    "maxScore": 221,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "68": {
+    "number": 68,
     "letters": "acdeeefgghiilmnnooossttuw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "documentation",
-        "wheels",
-        "gis",
-        "fog"
-      ]
-    ],
-    "number": 68
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "69": {
+    "number": 69,
     "letters": "aacceeefhhiimnnnoorsttuww",
-    "best_score": 223,
-    "solutions": [
-      [
-        "concentrations",
-        "him",
-        "few",
-        "eau"
-      ]
-    ],
-    "number": 69
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "70": {
+    "number": 70,
     "letters": "aaccdeeeghhiillmnnnosttuw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "liechtenstein",
-        "launch",
-        "dog",
-        "wma"
-      ]
-    ],
-    "number": 70
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "71": {
+    "number": 71,
     "letters": "acdeefghiijlmnnooqrssstwy",
-    "best_score": 223,
-    "solutions": [
-      [
-        "considerations",
-        "why",
-        "sql",
-        "gem"
-      ]
-    ],
-    "number": 71
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "72": {
+    "number": 72,
     "letters": "aacddeefghhiilmnnooorsssw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "congressional",
-        "showed",
-        "him",
-        "fda"
-      ]
-    ],
-    "number": 72
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "73": {
+    "number": 73,
     "letters": "acdeeefghhiilmnoprssttuwy",
-    "best_score": 223,
-    "solutions": [
-      [
-        "sophisticated",
-        "hungry",
-        "few",
-        "mel"
-      ]
-    ],
-    "number": 73
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "74": {
+    "number": 74,
     "letters": "aaaceeefgghhiilnnoorssttw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "congressional",
-        "height",
-        "few",
-        "ata"
-      ]
-    ],
-    "number": 74
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "75": {
+    "number": 75,
     "letters": "aaacdefghhiijnooprssttttw",
-    "best_score": 223,
-    "solutions": [
-      [
-        "sophisticated",
-        "growth",
-        "jan",
-        "fat"
-      ]
-    ],
-    "number": 75
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "76": {
+    "number": 76,
     "letters": "aabcdeeeffhillmnnorssttwz",
-    "best_score": 223,
-    "solutions": [
-      [
-        "establishment",
-        "frozen",
-        "cal",
-        "fwd"
-      ]
-    ],
-    "number": 76
+    "maxScore": 223,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "77": {
+    "number": 77,
     "letters": "aadeeghhiilmnnnnprssttuwy",
-    "best_score": 224,
-    "solutions": [
-      [
-        "instrumental",
-        "highways",
-        "penn"
-      ]
-    ],
-    "number": 77
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "78": {
+    "number": 78,
     "letters": "aaddeeefhiklmmnnooprsttuw",
-    "best_score": 224,
-    "solutions": [
-      [
-        "fundamentals",
-        "homework",
-        "edit"
-      ]
-    ],
-    "number": 78
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "79": {
+    "number": 79,
     "letters": "aaaacddeefghhiilmnnoopsst",
-    "best_score": 224,
-    "solutions": [
-      [
-        "consolidated",
-        "shanghai",
-        "fame"
-      ]
-    ],
-    "number": 79
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "80": {
+    "number": 80,
     "letters": "aaccddeeeeghhiilmnnoosstw",
-    "best_score": 224,
-    "solutions": [
-      [
-        "technologies",
-        "machines",
-        "dead"
-      ]
-    ],
-    "number": 80
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "81": {
+    "number": 81,
     "letters": "aaacddeeghhiiilmnoorsttuw",
-    "best_score": 224,
-    "solutions": [
-      [
-        "administered",
-        "although",
-        "iowa"
-      ]
-    ],
-    "number": 81
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "82": {
+    "number": 82,
     "letters": "aacdeeeefghiiklmnooqrsstt",
-    "best_score": 224,
-    "solutions": [
-      [
-        "technologies",
-        "diameter",
-        "faqs"
-      ]
-    ],
-    "number": 82
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "83": {
+    "number": 83,
     "letters": "aabbcdeehillmnnoorrsstuwx",
-    "best_score": 224,
-    "solutions": [
-      [
-        "transexuales",
-        "richmond",
-        "blow"
-      ]
-    ],
-    "number": 83
+    "maxScore": 224,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "84": {
+    "number": 84,
     "letters": "abcdeeefgghiilmnnorssttwy",
-    "best_score": 227,
-    "solutions": [
-      [
-        "establishment",
-        "growing",
-        "dec"
-      ]
-    ],
-    "number": 84
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "85": {
+    "number": 85,
     "letters": "aaceeeefghilmnnoorssttwww",
-    "best_score": 227,
-    "solutions": [
-      [
-        "congressional",
-        "matthew",
-        "few"
-      ]
-    ],
-    "number": 85
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "86": {
+    "number": 86,
     "letters": "aabcdeeeeffghiimnnorrsttw",
-    "best_score": 227,
-    "solutions": [
-      [
-        "determination",
-        "charges",
-        "web"
-      ]
-    ],
-    "number": 86
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "87": {
+    "number": 87,
     "letters": "aacddeefggiiilmnnoossstuw",
-    "best_score": 227,
-    "solutions": [
-      [
-        "modifications",
-        "angeles",
-        "usd"
-      ]
-    ],
-    "number": 87
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "88": {
+    "number": 88,
     "letters": "aaddeeefgiilmnnoorsttuwxy",
-    "best_score": 227,
-    "solutions": [
-      [
-        "determination",
-        "douglas",
-        "few"
-      ]
-    ],
-    "number": 88
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "89": {
+    "number": 89,
     "letters": "aaceeefghiilmnnoossttuwyz",
-    "best_score": 227,
-    "solutions": [
-      [
-        "functionality",
-        "message",
-        "who"
-      ]
-    ],
-    "number": 89
+    "maxScore": 227,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "90": {
+    "number": 90,
     "letters": "aabcddeeghhiijlmnnoossttu",
-    "best_score": 230,
-    "solutions": [
-      [
-        "documentation",
-        "blades",
-        "highs"
-      ]
-    ],
-    "number": 90
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "91": {
+    "number": 91,
     "letters": "aacceeefghhiimnnopqrtttuw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "authentication",
-        "chem",
-        "few",
-        "rpg"
-      ]
-    ],
-    "number": 91
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "92": {
+    "number": 92,
     "letters": "aabcdeeefghiijlmnnprssttu",
-    "best_score": 230,
-    "solutions": [
-      [
-        "adjustments",
-        "beneficial",
-        "rpg"
-      ]
-    ],
-    "number": 92
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "93": {
+    "number": 93,
     "letters": "aabcdeefhiijlmnnoorrttuwy",
-    "best_score": 230,
-    "solutions": [
-      [
-        "functionality",
-        "hebrew",
-        "major"
-      ]
-    ],
-    "number": 93
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "94": {
+    "number": 94,
     "letters": "aacdeeeefghhiilmnnoorstuu",
-    "best_score": 230,
-    "solutions": [
-      [
-        "educational",
-        "greenhouse",
-        "him"
-      ]
-    ],
-    "number": 94
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "95": {
+    "number": 95,
     "letters": "aaaeeefgiillnnoorssttuvwy",
-    "best_score": 230,
-    "solutions": [
-      [
-        "alternatively",
-        "fusion",
-        "wages"
-      ]
-    ],
-    "number": 95
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "96": {
+    "number": 96,
     "letters": "aacdeeeffhhiinnoorssttuvw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "considerations",
-        "have",
-        "few",
-        "thu"
-      ]
-    ],
-    "number": 96
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "97": {
+    "number": 97,
     "letters": "aaceeefgiijlmnnorsstttuvw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "investigators",
-        "cement",
-        "awful"
-      ]
-    ],
-    "number": 97
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "98": {
+    "number": 98,
     "letters": "aaceeefghhiikmnnorssttuuw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "magnificent",
-        "housewares",
-        "thu"
-      ]
-    ],
-    "number": 98
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "99": {
+    "number": 99,
     "letters": "aacdeeeghhhiiklmnnorsstuw",
-    "best_score": 230,
-    "solutions": [
-      [
-        "acknowledge",
-        "humanities",
-        "hrs"
-      ]
-    ],
-    "number": 99
+    "maxScore": 230,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "100": {
+    "number": 100,
     "letters": "adeeefghhiijlmnnoorsstttu",
-    "best_score": 234,
-    "solutions": [
-      [
-        "determination",
-        "jelsoft",
-        "hugh"
-      ]
-    ],
-    "number": 100
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "101": {
+    "number": 101,
     "letters": "aacdeeghhhiilmnnoooossttu",
-    "best_score": 234,
-    "solutions": [
-      [
-        "negotiations",
-        "household",
-        "mac"
-      ]
-    ],
-    "number": 101
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "102": {
+    "number": 102,
     "letters": "aaccdeeeffhhiilnoorssttuz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "certificates",
-        "household",
-        "fan"
-      ]
-    ],
-    "number": 102
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "103": {
+    "number": 103,
     "letters": "aacdeefghhiimnnnoorssttwz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "demonstration",
-        "washing",
-        "chef"
-      ]
-    ],
-    "number": 103
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "104": {
+    "number": 104,
     "letters": "aadeeefhiiklnnnoorsstttux",
-    "best_score": 234,
-    "solutions": [
-      [
-        "stakeholders",
-        "intention",
-        "fax"
-      ]
-    ],
-    "number": 104
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "105": {
+    "number": 105,
     "letters": "acdeeefgghhiijlnoorssttux",
-    "best_score": 234,
-    "solutions": [
-      [
-        "technologies",
-        "daughters",
-        "fix"
-      ]
-    ],
-    "number": 105
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "106": {
+    "number": 106,
     "letters": "aacddeeefghhilnooorsstuvz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "technologies",
-        "hazardous",
-        "dev"
-      ]
-    ],
-    "number": 106
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "107": {
+    "number": 107,
     "letters": "aaccdeeefghhiiimnooqrsstu",
-    "best_score": 234,
-    "solutions": [
-      [
-        "modifications",
-        "reaches",
-        "huge"
-      ]
-    ],
-    "number": 107
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "108": {
+    "number": 108,
     "letters": "aabcddeeehhiiiilmnorrsstz",
-    "best_score": 234,
-    "solutions": [
-      [
-        "dictionaries",
-        "desirable",
-        "mhz"
-      ]
-    ],
-    "number": 108
+    "maxScore": 234,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "109": {
+    "number": 109,
     "letters": "aacdeefghhiijmnnoorsstuwz",
-    "best_score": 237,
-    "solutions": [
-      [
-        "configurations",
-        "head",
-        "jews",
-        "mhz"
-      ]
-    ],
-    "number": 109
+    "maxScore": 237,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "110": {
+    "number": 110,
     "letters": "aacdeeefghhiiklmnnoorstwy",
-    "best_score": 239,
-    "solutions": [
-      [
-        "knowledgestorm",
-        "chief",
-        "ian",
-        "hay"
-      ]
-    ],
-    "number": 110
+    "maxScore": 239,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "111": {
+    "number": 111,
     "letters": "aacddeeefhiilnnnooorsstuy",
-    "best_score": 241,
-    "solutions": [
-      [
-        "considerations",
-        "handle",
-        "you"
-      ]
-    ],
-    "number": 111
+    "maxScore": 241,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "112": {
+    "number": 112,
     "letters": "aaccdeefhhiillmnnoorsstty",
-    "best_score": 241,
-    "solutions": [
-      [
-        "considerations",
-        "health",
-        "fly"
-      ]
-    ],
-    "number": 112
+    "maxScore": 241,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "113": {
+    "number": 113,
     "letters": "aacdeeefghhiilmnorrssttwy",
-    "best_score": 241,
-    "solutions": [
-      [
-        "administrators",
-        "fleece",
-        "why"
-      ]
-    ],
-    "number": 113
+    "maxScore": 241,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "114": {
+    "number": 114,
     "letters": "aaaccdeeefghiilmnooprsttw",
-    "best_score": 242,
-    "solutions": [
-      [
-        "complications",
-        "gathered",
-        "few"
-      ]
-    ],
-    "number": 114
+    "maxScore": 242,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "115": {
+    "number": 115,
     "letters": "aadeeeghhhiijlmnnoorstttu",
-    "best_score": 242,
-    "solutions": [
-      [
-        "determination",
-        "although",
-        "she"
-      ]
-    ],
-    "number": 115
+    "maxScore": 242,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "116": {
+    "number": 116,
     "letters": "acdeefghhiiilmnnooprrsstw",
-    "best_score": 242,
-    "solutions": [
-      [
-        "relationships",
-        "richmond",
-        "few"
-      ]
-    ],
-    "number": 116
+    "maxScore": 242,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "117": {
+    "number": 117,
     "letters": "aaceefghhilmnoorrssttuuvy",
-    "best_score": 242,
-    "solutions": [
-      [
-        "manufacturers",
-        "theology",
-        "his"
-      ]
-    ],
-    "number": 117
+    "maxScore": 242,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "118": {
+    "number": 118,
     "letters": "aacefghhiilmmnnoooprsstuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "sample",
-        "whom"
-      ]
-    ],
-    "number": 118
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "119": {
+    "number": 119,
     "letters": "aabcdeeeefgiimnnnoorsstuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "sweden",
-        "beam"
-      ]
-    ],
-    "number": 119
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "120": {
+    "number": 120,
     "letters": "aaadeeghhiilmmnnoprssttuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "implementation",
-        "awards",
-        "hugh"
-      ]
-    ],
-    "number": 120
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "121": {
+    "number": 121,
     "letters": "acddeeehhiklmnnoorsssttuv",
-    "best_score": 248,
-    "solutions": [
-      [
-        "advertisements",
-        "hudson",
-        "lock"
-      ]
-    ],
-    "number": 121
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "122": {
+    "number": 122,
     "letters": "acceeefghiiilmnnoorsstuuw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "configurations",
-        "wheels",
-        "mice"
-      ]
-    ],
-    "number": 122
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "123": {
+    "number": 123,
     "letters": "aaceeefghhiimnnoorrssttuv",
-    "best_score": 248,
-    "solutions": [
-      [
-        "transformation",
-        "hughes",
-        "vice"
-      ]
-    ],
-    "number": 123
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "124": {
+    "number": 124,
     "letters": "aacdeeehhiijlnnnnooorsstw",
-    "best_score": 248,
-    "solutions": [
-      [
-        "considerations",
-        "helena",
-        "john"
-      ]
-    ],
-    "number": 124
+    "maxScore": 248,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "125": {
+    "number": 125,
     "letters": "aaacdeeeefhiilmnnoorssttu",
-    "best_score": 249,
-    "solutions": [
-      [
-        "informational",
-        "deutsche",
-        "ease"
-      ]
-    ],
-    "number": 125
+    "maxScore": 249,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "126": {
+    "number": 126,
     "letters": "accddeefghiimnnooprsssttu",
-    "best_score": 254,
-    "solutions": [
-      [
-        "considerations",
-        "deutsch",
-        "mpg"
-      ]
-    ],
-    "number": 126
+    "maxScore": 254,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "127": {
+    "number": 127,
     "letters": "aaacdeefghiiijlmnnoorsstt",
-    "best_score": 254,
-    "solutions": [
-      [
-        "administration",
-        "chelsea",
-        "fog"
-      ]
-    ],
-    "number": 127
+    "maxScore": 254,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "128": {
+    "number": 128,
     "letters": "aacdeeeghilmmnnooqqrssstt",
-    "best_score": 259,
-    "solutions": [
-      [
-        "recommendations",
-        "glass",
-        "the"
-      ]
-    ],
-    "number": 128
+    "maxScore": 259,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "129": {
+    "number": 129,
     "letters": "aacceeeghhiillmnnooprsstt",
-    "best_score": 259,
-    "solutions": [
-      [
-        "technological",
-        "stephanie",
-        "mrs"
-      ]
-    ],
-    "number": 129
+    "maxScore": 259,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "130": {
+    "number": 130,
     "letters": "aaceeefghhiillmnnoorssttu",
-    "best_score": 259,
-    "solutions": [
-      [
-        "congratulations",
-        "feel",
-        "she",
-        "him"
-      ]
-    ],
-    "number": 130
+    "maxScore": 259,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "131": {
+    "number": 131,
     "letters": "aaceeeffghiilmnnoorrsstuw",
-    "best_score": 261,
-    "solutions": [
-      [
-        "configurations",
-        "welfare",
-        "mesh"
-      ]
-    ],
-    "number": 131
+    "maxScore": 261,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "132": {
+    "number": 132,
     "letters": "aacdfgghiillmnnoorsstttuv",
-    "best_score": 266,
-    "solutions": [
-      [
-        "congratulations",
-        "films",
-        "hdtv"
-      ]
-    ],
-    "number": 132
+    "maxScore": 266,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "133": {
+    "number": 133,
     "letters": "aacddeefghiiilmnnoooottwy",
-    "best_score": 266,
-    "solutions": [
-      [
-        "confidentiality",
-        "omega",
-        "wood"
-      ]
-    ],
-    "number": 133
+    "maxScore": 266,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   },
-  {
+  "134": {
+    "number": 134,
     "letters": "aacddeeegiilmnnoorssttuuw",
-    "best_score": 270,
-    "solutions": [
-      [
-        "congratulations",
-        "seemed",
-        "dui"
-      ]
-    ],
-    "number": 134
+    "maxScore": 270,
+    "bestUserScore": 0,
+    "bestUserSolution": []
   }
-]
+}

@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { BackHandler, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
 import { LetterBar, BottomBar, ButtonBar, WordBar } from '../components/bars';
 import { themes } from '../styles';
-import { getLevel, points, isValid } from '../backend';
-import { Level } from '../storage';
+import { points, isValid } from '../backend';
 import LetterButton from '../components/button';
+import { doUpdateUserProgress } from '../storage/features/levels';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
@@ -17,7 +18,7 @@ const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
 function Game(props) {
 
   const level = props.route.params.level;
-  const levelData = getLevel(level);
+  const levelData = props.levelData;
   const origLetters = levelData.letters.split('');
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
@@ -37,14 +38,8 @@ function Game(props) {
   const [pressedButtons, setPressedButtons] = useState([]);
   const [words, setWords] = useState([]);
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
   const [endModalVisible, setEndModalVisible] = useState(false);
 
-  useEffect(() => {
-    Level.getBestScore(level).then(best_score => {
-      setBestScore(best_score);
-    });
-  }, []);
   useEffect(() => {
     props.navigation.setOptions({
       headerStyle: {
@@ -56,14 +51,14 @@ function Game(props) {
 
   const makeTitle = () => {
     const f = s => s.toString().padStart(3, ' ');
-    return `Level ${level} - ${f(score)} / ${f(bestScore)} / ${f(levelData.best_score)}`;
+    return `Level ${level} - ${f(score)} / ${f(levelData.bestUserScore)} / ${f(levelData.maxScore)}`;
   };
 
   useEffect(() => {
     props.navigation.setOptions({
       headerTitle: makeTitle(),
     });
-  }, [score, bestScore]);
+  }, [score, levelData.bestUserScore]);
 
   useFocusEffect(
     useCallback(() => {
@@ -122,14 +117,11 @@ function Game(props) {
   };
 
   const submit = () => {
-    Level.getBestScore(level).then(_bestScore => {
-      setEndModalVisible(true);
-      if (score <= _bestScore) return;
-      setBestScore(score);
-      const sortedWords = words.slice();
-      sortedWords.sort((x,y) => x.length - y.length);
-      return Level.setBestScoreAndSolution(level, score, sortedWords);
-    })
+    setEndModalVisible(true);
+    if (score <= levelData.bestUserScore) return;
+    const sortedWords = words.slice();
+    sortedWords.sort((x,y) => x.length - y.length);
+    props.updateUserProgress(level, score, sortedWords);
   };
 
   return (
@@ -195,8 +187,8 @@ function Game(props) {
       <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
       <BottomBar
         score={score}
-        bestScore={bestScore}
-        maxScore={levelData.best_score}
+        bestScore={levelData.bestUserScore}
+        maxScore={levelData.maxScore}
         onSubmit={() => submit()}
         style={{foregroundColor, backgroundColor}}
       />
@@ -228,8 +220,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  return { theme: state.theme.current };
-}
+const mapStateToProps = (state, ownProps) => {
+  const level = ownProps.route.params.level;
+  const levelData = state.levels.levels[level];
+  return {
+    theme: state.settings.theme.current,
+    levelData,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    updateUserProgress: doUpdateUserProgress,
+  }, dispatch);
+};
 
-export default connect(mapStateToProps)(Game);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

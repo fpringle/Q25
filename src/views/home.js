@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  return { theme: state.theme.current };
+  return { theme: state.settings.theme.current };
 }
 
 export default connect(mapStateToProps)(Home);
