@@ -22,8 +22,10 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#FAFAFA"
+      },
+      "package": "com.fpringle.q25",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
