@@ -13,6 +13,12 @@
     "production": {}
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "../Q25_dev_data/507392755138-6bf0b83eb2c9.json",
+        "track": "internal",
+        "releaseStatus": "draft"
+      }
+    }
   }
 }
