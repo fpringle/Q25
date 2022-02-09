@@ -44,7 +44,6 @@ function Game(props) {
   const [appStateVisible, setAppStateVisible] = useState(appState.current);
 
   const saveGameState = () => {
-    //console.log('words:', words.slice());
     props.updateGame(
       level,
       origLetters.slice(),
@@ -67,8 +66,6 @@ function Game(props) {
   };
 
   const tryLoadGame = () => {
-    console.log('\nTry to load game');
-    console.log('Game in progress?', props.gameInProgress);
     if (props.gameInProgress) {
       if (level === props.gameState.number) {
         loadGame();

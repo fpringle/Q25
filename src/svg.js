@@ -89,10 +89,10 @@ export default function svgPathString ( size, cornerRadius, centerRadius, score,
     case 6: [x, y] = [-s, -s * t]; break;
     case 0:
     case 8: [x, y] = [s / t, s]; break;
-    case 3: [x, y] = [c, -c]; break;
-    case 5: [x, y] = [-c, -c]; break;
-    case 7: [x, y] = [-c, c]; break;
-    case 1: [x, y] = [c, c]; break;
+    case 3: [x, y] = /*[c, -c]*/[s, -(s-r)]; break;
+    case 5: [x, y] = /*[-c, -c]*/[-s, -(s-r)]; break;
+    case 7: [x, y] = /*[-c, c]*/[s, s-r]; break;
+    case 1: [x, y] = /*[c, c]*/[-s, s-r]; break;
   }
   let [X, Y] = relToAbs(x, y);
   X = Math.round(X * 1000) / 1000;

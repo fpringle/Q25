@@ -61,8 +61,6 @@ const initialGameState = {
 export function gameReducer(state=initialGameState, action) {
   switch (action.type) {
     case UPDATE_GAME: {
-      console.log('reducer: update game with payload:');
-      console.log(action.payload);
       return {
         ...state,
         gameInProgress: true,
