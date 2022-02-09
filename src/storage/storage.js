@@ -11,15 +11,22 @@ import {
   settingsReducer,
   doChangeTheme,
 } from './features/settings';
+import {
+  gameReducer,
+  doUpdateGame,
+  doDeleteGame,
+} from './features/game';
 
 const rootReducer = combineReducers({
   levels: levelsReducer,
   settings: settingsReducer,
+  game: gameReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
+  blacklist: ['game'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -38,4 +45,12 @@ export const boundLevelActions = bindActionCreators(
 export const boundChangeTheme = bindActionCreators(
   doChangeTheme,
   store.dispatch,
+);
+
+export const boundGameActions = bindActionCreators(
+  {
+    update: doUpdateGame,
+    delete: doDeleteGame,
+  },
+  store.dispatch
 );

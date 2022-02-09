@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { BackHandler, Modal, StyleSheet, View } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { AppState, BackHandler, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
@@ -12,6 +12,7 @@ import { themes } from '../styles';
 import { points, isValid } from '../backend';
 import LetterButton from '../components/button';
 import { doUpdateUserProgress } from '../storage/features/levels';
+import { doDeleteGame, doUpdateGame } from '../storage/features/game';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
@@ -32,6 +33,7 @@ function Game(props) {
   const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
+  const appState = useRef(AppState.currentState);
 
   const [letters, setLetters] = useState(origLetters);
   const [bar, setBar] = useState([]);
@@ -39,6 +41,65 @@ function Game(props) {
   const [words, setWords] = useState([]);
   const [score, setScore] = useState(0);
   const [endModalVisible, setEndModalVisible] = useState(false);
+  const [appStateVisible, setAppStateVisible] = useState(appState.current);
+
+  const saveGameState = () => {
+    //console.log('words:', words.slice());
+    props.updateGame(
+      level,
+      origLetters.slice(),
+      letters.slice(),
+      bar.slice(),
+      pressedButtons.slice(),
+      words.slice(),
+      endModalVisible
+    );
+  };
+
+  const loadGame = () => {
+    const state = props.gameState;
+    setLetters(state.letters.slice());
+    setBar(state.bar.slice());
+    setPressedButtons(state.pressedButtons.slice());
+    setWords(state.words.slice());
+    setScore(state.words.map(points).reduce((x,y) => x+y, 0));
+    setEndModalVisible(state.endModalVisible);
+  };
+
+  const tryLoadGame = () => {
+    console.log('\nTry to load game');
+    console.log('Game in progress?', props.gameInProgress);
+    if (props.gameInProgress) {
+      if (level === props.gameState.number) {
+        loadGame();
+      } else {
+        props.deleteGame();
+      }
+    }
+  };
+
+  useEffect(() => {
+    tryLoadGame();
+  }, []);
+
+
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", function (nextAppState) {
+      if (
+        appState.current === 'active' &&
+        nextAppState.match(/inactive|background/)
+      ) {
+        saveGameState();
+      }
+
+      appState.current = nextAppState;
+      setAppStateVisible(appState.current);
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -60,20 +121,25 @@ function Game(props) {
     });
   }, [score, levelData.bestUserScore]);
 
+  const leave = () => {
+    saveGameState();
+    props.navigation.popToTop();
+  };
+
   useEffect(() => {
     props.navigation.setOptions({
       headerLeft: () => (
         <HeaderBackButton
-          onPress={() => props.navigation.popToTop()}
+          onPress={() => leave()}
         />
       ),
     });
-  }, []);
+  });
 
   useFocusEffect(
     useCallback(() => {
       const onBackPress = () => {
-        props.navigation.popToTop();
+        leave();
         return true;
       };
 
@@ -124,6 +190,7 @@ function Game(props) {
     setPressedButtons([]);
     setWords([]);
     setScore(0);
+    deleteGame();
   };
 
   const undo = () => {
@@ -249,11 +316,15 @@ const mapStateToProps = (state, ownProps) => {
   return {
     theme: state.settings.theme.current,
     levelData,
+    gameInProgress: state.game.gameInProgress,
+    gameState: state.game.currentGame,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateUserProgress: doUpdateUserProgress,
+    updateGame: doUpdateGame,
+    deleteGame: doDeleteGame,
   }, dispatch);
 };
 

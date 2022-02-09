@@ -74,7 +74,7 @@ export function BottomBar(props) {
     <View style={styles.bottomBar}>
       <ButtonBarButton text={"Scramble"} onPress={props.onScramble} style={props.style}/>
       <ButtonBarButton text={"Reset"} onPress={props.onReset} style={props.style}/>
-      <ButtonBarButton text={"Submit"} onPress={props.onSubmit} style={props.style}/>
+      <ButtonBarButton text={"Finish"} onPress={props.onSubmit} style={props.style}/>
     </View>
   )
 };

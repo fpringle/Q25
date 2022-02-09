@@ -27,7 +27,20 @@ function Home(props) {
         <LetterButton
           letter={'Play'}
           style={[styles.button, {backgroundColor, backgroundColor, borderColor: foregroundColor}]}
-          onPress={() => props.navigation.navigate('Play', { level: 1 })}
+          onPress={() => {
+            let level = 1;
+            if (props.gameInProgress) {
+              level = props.gameState.number;
+            } else {
+              for (let i=0; i<props.levelData.length; i++) {
+                if (props.levelData[i].bestUserScore == 0) {
+                  level = props.levelData[i].number;
+                  break;
+                }
+              }
+            }
+            props.navigation.navigate('Play', { level });
+          }}
           textColor={foregroundColor}
         />
       </View>
@@ -80,7 +93,16 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  return { theme: state.settings.theme.current };
+  const levelData = [];
+  for (let i=1; i<=state.levels.numLevels; i++) {
+    levelData.push(state.levels.levels[i]);
+  }
+  return {
+    theme: state.settings.theme.current,
+    gameInProgress: state.game.gameInProgress,
+    gameState: state.game.currentGame,
+    levelData,
+  };
 }
 
 export default connect(mapStateToProps)(Home);
