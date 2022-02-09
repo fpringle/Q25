@@ -1,940 +1,5502 @@
 {
   "1": {
     "number": 1,
-    "letters": "aaaffghhiiiklmnprssttuuww",
-    "maxScore": 170,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deeffgghhhmnorsstttvvvwwx",
+    "maxScore": 117
   },
   "2": {
     "number": 2,
-    "letters": "aaceeghhimnnoooqqssttuuvw",
-    "maxScore": 174,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cddeeffgijjjkmmnoopqttvvz",
+    "maxScore": 117
   },
   "3": {
     "number": 3,
-    "letters": "acceeefgghhjnoooorrsttuwy",
-    "maxScore": 180,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bccghhijlmnnnorrrttuuvvwz",
+    "maxScore": 125
   },
   "4": {
     "number": 4,
-    "letters": "cddefggghhiimnoooqrssttuw",
-    "maxScore": 181,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abccdddefhijlmnnrssssttwx",
+    "maxScore": 136
   },
   "5": {
     "number": 5,
-    "letters": "aceeeffghhiiknnnpprssttuw",
-    "maxScore": 185,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aceehhhkknnoqrssstttvxzzz",
+    "maxScore": 137
   },
   "6": {
     "number": 6,
-    "letters": "aceeeefghhiimnoorssttwwwz",
-    "maxScore": 187,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cceefffgghhiikllmmnssswxz",
+    "maxScore": 137
   },
   "7": {
     "number": 7,
-    "letters": "aeeefhhmmnnnoorsssstuvwwy",
-    "maxScore": 187,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabfgghhhhhiijjknoprswwxz",
+    "maxScore": 139
   },
   "8": {
     "number": 8,
-    "letters": "aaadeefghhiikmmnnoosstuvw",
-    "maxScore": 189,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aceeeffggghhhhlmnqqsstvwz",
+    "maxScore": 146
   },
   "9": {
     "number": 9,
-    "letters": "aaceeefghhhklmnoorsstttux",
-    "maxScore": 194,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdeeeffhlnnnnqqrrrtuvxx",
+    "maxScore": 149
   },
   "10": {
     "number": 10,
-    "letters": "aaaaceefghhiinnqrssttuwwy",
-    "maxScore": 195,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abcddeeffghkloqsstuvwwwyz",
+    "maxScore": 149
   },
   "11": {
     "number": 11,
-    "letters": "aaceefhhhiilmnnoossttuuww",
-    "maxScore": 197,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abcceeeeghjjjnnooqrrswyzz",
+    "maxScore": 152
   },
   "12": {
     "number": 12,
-    "letters": "aaaeeefghhiilmmnnooqsttuw",
-    "maxScore": 197,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabfghhjlmnnnpssttttuvyy",
+    "maxScore": 153
   },
   "13": {
     "number": 13,
-    "letters": "aaeeeffggghlmmnnoorrssttt",
-    "maxScore": 198,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbddeeefhhikllooppuvwzz",
+    "maxScore": 155
   },
   "14": {
     "number": 14,
-    "letters": "aaacdeeeffghhiijlnoossttu",
-    "maxScore": 201,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bcdeegghhilllnnrsstuvwwxz",
+    "maxScore": 157
   },
   "15": {
     "number": 15,
-    "letters": "aaceeefhhjlmmnnooqrssttwy",
-    "maxScore": 205,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabccdfgghiijjjlmnnnqrssx",
+    "maxScore": 157
   },
   "16": {
     "number": 16,
-    "letters": "ceeefhhiilmnnooqrrrsstuwx",
-    "maxScore": 205,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabeffijmnnnnnooqqqrstwz",
+    "maxScore": 158
   },
   "17": {
     "number": 17,
-    "letters": "aeeeffghhiillmnnoqrssttvw",
-    "maxScore": 205,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabcdeeefhhhhikooortuuww",
+    "maxScore": 159
   },
   "18": {
     "number": 18,
-    "letters": "aadeeeghhiilmnnoossttuwwy",
-    "maxScore": 205,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabdeeeeefhhklmottuuvwxyz",
+    "maxScore": 159
   },
   "19": {
     "number": 19,
-    "letters": "aacdeeefghhilmnnoooqrstuw",
-    "maxScore": 205,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cdeegghhhjkmnooopsssttwxx",
+    "maxScore": 160
   },
   "20": {
     "number": 20,
-    "letters": "aabdeeefghhiilnnoopsstuuw",
-    "maxScore": 206,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bbcdeefgjllnorrsstuvvwwzz",
+    "maxScore": 160
   },
   "21": {
     "number": 21,
-    "letters": "aaccdeeefghhiilnnosstuvwx",
-    "maxScore": 206,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdefjklmnnooossuuuvwwxx",
+    "maxScore": 161
   },
   "22": {
     "number": 22,
-    "letters": "aaceeeghhhiilmnnoorsstuwx",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bceeeefhhiilmmmqqssttuvww",
+    "maxScore": 161
   },
   "23": {
     "number": 23,
-    "letters": "aaeeeffgghilmnnoorssttuuw",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aeeefiiiikllnooqqttvwwxyy",
+    "maxScore": 161
   },
   "24": {
     "number": 24,
-    "letters": "aabdeeefghhhiiiklnnoorsst",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deeehhhiiiijmnoopqrtuvwxy",
+    "maxScore": 161
   },
   "25": {
     "number": 25,
-    "letters": "aacdeeeffghhilmmnooqrstwx",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdeeeeegiklmnooooooruxx",
+    "maxScore": 162
   },
   "26": {
     "number": 26,
-    "letters": "aadddeeeefghhlnnoorsstuuw",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaccdeghklmnnnnpsstuvvwwy",
+    "maxScore": 164
   },
   "27": {
     "number": 27,
-    "letters": "aadddeefghhiilmmnnoosttuw",
-    "maxScore": 209,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aceefgghhijjjmnnoopqruxxz",
+    "maxScore": 164
   },
   "28": {
     "number": 28,
-    "letters": "aaceeeffghilmnnnoorsstuyy",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deeefgghhiijjkmmoorsttvww",
+    "maxScore": 165
   },
   "29": {
     "number": 29,
-    "letters": "aaadeeefghhiilmoooprssttu",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deeghkmnnooqrrtttuuuuvwwx",
+    "maxScore": 166
   },
   "30": {
     "number": 30,
-    "letters": "aacdeegghhimnnoorssttuwww",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "adeeeffhhlmnnnnoqqrssstvx",
+    "maxScore": 169
   },
   "31": {
     "number": 31,
-    "letters": "adeffghhiilmnnoorrssttuwx",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbbceeeffghhjjlmmnrstuw",
+    "maxScore": 169
   },
   "32": {
     "number": 32,
-    "letters": "aacdeeefhhikmmnoorrssttuw",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "beehhhhkmmmnnoqrrssttuuwz",
+    "maxScore": 169
   },
   "33": {
     "number": 33,
-    "letters": "aaaceeehiijjlmnnooqssttuy",
-    "maxScore": 210,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabcdehhhhlnnoqrrssttttwx",
+    "maxScore": 169
   },
   "34": {
     "number": 34,
-    "letters": "aadeeeffghhimnnoorssttwwy",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abbcceefhhiijmnpqqrstttxy",
+    "maxScore": 169
   },
   "35": {
     "number": 35,
-    "letters": "aacdeffghhiilmnooprsstuwy",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "adeeefgimmorsstttttvvwwxz",
+    "maxScore": 169
   },
   "36": {
     "number": 36,
-    "letters": "aacdeeefhhhiilmmnosssttuw",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cdeghhhhhlnooprrssssstttv",
+    "maxScore": 170
   },
   "37": {
     "number": 37,
-    "letters": "aabcdeeeefhhiilnooqrssttw",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaacdffhhjjmmmnnorrsstuwz",
+    "maxScore": 170
   },
   "38": {
     "number": 38,
-    "letters": "aacdeeefgghhiillooqrssttw",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabbbcccfhilmnnprsssuuwx",
+    "maxScore": 170
   },
   "39": {
     "number": 39,
-    "letters": "acdeefgghhiiilmnnorssstww",
-    "maxScore": 211,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cdeefhhiiiklmnnnooouuwwww",
+    "maxScore": 170
   },
   "40": {
     "number": 40,
-    "letters": "aacdeeeghhiinnoooprsttwwy",
-    "maxScore": 212,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacceffghhiiiikklllmnouuw",
+    "maxScore": 170
   },
   "41": {
     "number": 41,
-    "letters": "acdeeeghiiilmnnoorsttuwxx",
-    "maxScore": 216,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aceefggiklmoqqrssttuuwwwz",
+    "maxScore": 170
   },
   "42": {
     "number": 42,
-    "letters": "aacdeeeffghhiijlnoorssttu",
-    "maxScore": 216,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabeeeehhillmmqqsttuuuwz",
+    "maxScore": 171
   },
   "43": {
     "number": 43,
-    "letters": "aacddeeefghhiilnorsstuuwz",
-    "maxScore": 216,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "eeeefgiijmnnooopsttuuvvwz",
+    "maxScore": 171
   },
   "44": {
     "number": 44,
-    "letters": "aacddeeghhiijlmnooorsstuw",
-    "maxScore": 216,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaceeehiijkkklmmmooqrtwyy",
+    "maxScore": 171
   },
   "45": {
     "number": 45,
-    "letters": "aeeeghhiilmnnnooosssttuvw",
-    "maxScore": 216,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacddeeffghhhknnnooouuuwz",
+    "maxScore": 172
   },
   "46": {
     "number": 46,
-    "letters": "aaacdeeefghhinnooprssttux",
-    "maxScore": 217,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabdfhiinnnqrstttttuuwwy",
+    "maxScore": 173
   },
   "47": {
     "number": 47,
-    "letters": "aaccdeefghhiillmnnorssstw",
-    "maxScore": 217,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ccdeehiillmmnnnnsssttvwwy",
+    "maxScore": 173
   },
   "48": {
     "number": 48,
-    "letters": "aadeefghiilmnnoqrsssttuwx",
-    "maxScore": 217,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacccdeeghhhhjjkmnosstttw",
+    "maxScore": 173
   },
   "49": {
     "number": 49,
-    "letters": "aacddeeefgghhhiilmnnoostw",
-    "maxScore": 217,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ddeefghhhiiklmmmnnotuvwxx",
+    "maxScore": 173
   },
   "50": {
     "number": 50,
-    "letters": "aacdeeeefghlmnnoorrsttuwx",
-    "maxScore": 218,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaacddeeefghiiimnooopwxy",
+    "maxScore": 173
   },
   "51": {
     "number": 51,
-    "letters": "aacdeefgghhhiinnnoosstuwx",
-    "maxScore": 218,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ddeefhiiiknnnooqqssuuwxxy",
+    "maxScore": 174
   },
   "52": {
     "number": 52,
-    "letters": "acdeeeeghhiimnnorsssttuww",
-    "maxScore": 218,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbcdeeeffhhkmmnnopqqrtt",
+    "maxScore": 174
   },
   "53": {
     "number": 53,
-    "letters": "aaddeeehiillmnnnoopstttuw",
-    "maxScore": 218,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdeeghhhhlnnoosstuwwwwz",
+    "maxScore": 174
   },
   "54": {
     "number": 54,
-    "letters": "aaccdeeefhhiiiklmnnrrstuw",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaadeeefghhhijmnnstuvwwwz",
+    "maxScore": 175
   },
   "55": {
     "number": 55,
-    "letters": "acddeeeghilmnnooqrsssttuw",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaddehhhiiiiikmosssssttxy",
+    "maxScore": 175
   },
   "56": {
     "number": 56,
-    "letters": "aaccdeefghhiimnnoossttuwx",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaceefhhhijjoopqrsttuuwx",
+    "maxScore": 175
   },
   "57": {
     "number": 57,
-    "letters": "aacdeeeffghhilnnoooprsstt",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ceehhiikkmmmnooppqrstuwxz",
+    "maxScore": 176
   },
   "58": {
     "number": 58,
-    "letters": "aaacddeeghhiillnnnoosstuw",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdeefhhhhiimnooorsuvvzz",
+    "maxScore": 178
   },
   "59": {
     "number": 59,
-    "letters": "aabcdeeeeghhiilmnossttuwy",
-    "maxScore": 219,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "acdeeefgghiiinnooqstwwxxx",
+    "maxScore": 178
   },
   "60": {
     "number": 60,
-    "letters": "aaddeeefghhijlnnnorssttuw",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabeeeghhhijkkmmnsssttuvv",
+    "maxScore": 178
   },
   "61": {
     "number": 61,
-    "letters": "aacdeeeghhhhiilnnorssttww",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeeehiiiijjmnnrttuvwwxx",
+    "maxScore": 178
   },
   "62": {
     "number": 62,
-    "letters": "aaceeegghhiikmnnoorsstuwz",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaccfhhiijkllmnoopqqsuxyy",
+    "maxScore": 178
   },
   "63": {
     "number": 63,
-    "letters": "accdeeefgghhiilmnoopsstuw",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaccdeeehhinnooqrtuvvwwwz",
+    "maxScore": 178
   },
   "64": {
     "number": 64,
-    "letters": "aaacdeeeefghhilmnnrssttuy",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaacdeefhhhiiiimoorstuuw",
+    "maxScore": 178
   },
   "65": {
     "number": 65,
-    "letters": "aaccdeeefhhilmnnoopprsttw",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abcccdeeegghhhimoqsttttvv",
+    "maxScore": 179
   },
   "66": {
     "number": 66,
-    "letters": "aaabceeeefghiilmnnossttwy",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeeefgiijmmnnnotuuvwxyy",
+    "maxScore": 179
   },
   "67": {
     "number": 67,
-    "letters": "aaceeeehiilmnnoorsttuwyzz",
-    "maxScore": 221,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabdeeehhhijlmnnoopuwyzz",
+    "maxScore": 180
   },
   "68": {
     "number": 68,
-    "letters": "acdeeefgghiilmnnooossttuw",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabceeeffgiijkkmnnoqttvxx",
+    "maxScore": 180
   },
   "69": {
     "number": 69,
-    "letters": "aacceeefhhiimnnnoorsttuww",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deefgghhiilmmnorttttuwxxx",
+    "maxScore": 180
   },
   "70": {
     "number": 70,
-    "letters": "aaccdeeeghhiillmnnnosttuw",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bccdeeehklmmnnostttuuwwww",
+    "maxScore": 180
   },
   "71": {
     "number": 71,
-    "letters": "acdeefghiijlmnnooqrssstwy",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "acccdefhjkklnoopqrssttuxz",
+    "maxScore": 180
   },
   "72": {
     "number": 72,
-    "letters": "aacddeefghhiilmnnooorsssw",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabceeefghhiijknnprrwxxz",
+    "maxScore": 180
   },
   "73": {
     "number": 73,
-    "letters": "acdeeefghhiilmnoprssttuwy",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabdeffhhhikkklnnooqrrsst",
+    "maxScore": 180
   },
   "74": {
     "number": 74,
-    "letters": "aaaceeefgghhiilnnoorssttw",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaaaacdddeeefhilmmmnntww",
+    "maxScore": 181
   },
   "75": {
     "number": 75,
-    "letters": "aaacdefghhiijnooprssttttw",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacddeehhhiiiiloqttuuvwyz",
+    "maxScore": 182
   },
   "76": {
     "number": 76,
-    "letters": "aabcdeeeffhillmnnorssttwz",
-    "maxScore": 223,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ccddeeeefffhijklmnoosstwx",
+    "maxScore": 182
   },
   "77": {
     "number": 77,
-    "letters": "aadeeghhiilmnnnnprssttuwy",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaeeeeefffghhiimorsttuuw",
+    "maxScore": 182
   },
   "78": {
     "number": 78,
-    "letters": "aaddeeefhiklmmnnooprsttuw",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "acdeegghhhhhiinnnoootwwyz",
+    "maxScore": 182
   },
   "79": {
     "number": 79,
-    "letters": "aaaacddeefghhiilmnnoopsst",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "eeefhiikllnnnoooopqqsstuw",
+    "maxScore": 182
   },
   "80": {
     "number": 80,
-    "letters": "aaccddeeeeghhiilmnnoosstw",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ccdefhhiikmnnnooqssuuvwzz",
+    "maxScore": 182
   },
   "81": {
     "number": 81,
-    "letters": "aaacddeeghhiiilmnoorsttuw",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "eeehhiiiilnnnoooqsttuuuwx",
+    "maxScore": 183
   },
   "82": {
     "number": 82,
-    "letters": "aacdeeeefghiiklmnooqrsstt",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaceefffghhijjlmmnnssttux",
+    "maxScore": 185
   },
   "83": {
     "number": 83,
-    "letters": "aabbcdeehillmnnoorrsstuwx",
-    "maxScore": 224,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaccceefggilloopsssttwwxz",
+    "maxScore": 185
   },
   "84": {
     "number": 84,
-    "letters": "abcdeeefgghiilmnnorssttwy",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aeeefghhiilmmnooqstttvvwz",
+    "maxScore": 185
   },
   "85": {
     "number": 85,
-    "letters": "aaceeeefghilmnnoorssttwww",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaddeefghhjkllmmmnopqrttu",
+    "maxScore": 185
   },
   "86": {
     "number": 86,
-    "letters": "aabcdeeeeffghiimnnorrsttw",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabffghhijlmmnnnossttuwyy",
+    "maxScore": 185
   },
   "87": {
     "number": 87,
-    "letters": "aacddeefggiiilmnnoossstuw",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabceeffgghhmnnoopsttuxx",
+    "maxScore": 185
   },
   "88": {
     "number": 88,
-    "letters": "aaddeeefgiilmnnoorsttuwxy",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aceeeeeefffghijlnnooortxz",
+    "maxScore": 185
   },
   "89": {
     "number": 89,
-    "letters": "aaceeefghiilmnnoossttuwyz",
-    "maxScore": 227,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabddeghhijnoqsssttttvxz",
+    "maxScore": 185
   },
   "90": {
     "number": 90,
-    "letters": "aabcddeeghhiijlmnnoossttu",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cdeehhiiknnnoooqqqsttuxyz",
+    "maxScore": 185
   },
   "91": {
     "number": 91,
-    "letters": "aacceeefghhiimnnopqrtttuw",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaeeffgghhmmnnopqrrsttwyz",
+    "maxScore": 185
   },
   "92": {
     "number": 92,
-    "letters": "aabcdeeefghiijlmnnprssttu",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaceeeeeffiijjkmoorstuvwx",
+    "maxScore": 185
   },
   "93": {
     "number": 93,
-    "letters": "aabcdeefhiijlmnnoorrttuwy",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "deeeffhhiiilmmmnnooqsttux",
+    "maxScore": 186
   },
   "94": {
     "number": 94,
-    "letters": "aacdeeeefghhiilmnnoorstuu",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaddeeeeghhjjkkmnosstttu",
+    "maxScore": 186
   },
   "95": {
     "number": 95,
-    "letters": "aaaeeefgiillnnoorssttuvwy",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaaaceeefghhjllnnoopruwx",
+    "maxScore": 187
   },
   "96": {
     "number": 96,
-    "letters": "aacdeeeffhhiinnoorssttuvw",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabcddeeeffjkmmmnoossuuux",
+    "maxScore": 187
   },
   "97": {
     "number": 97,
-    "letters": "aaceeefgiijlmnnorsstttuvw",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabcdeeghhiiknrsssuuvwwyz",
+    "maxScore": 188
   },
   "98": {
     "number": 98,
-    "letters": "aaceeefghhiikmnnorssttuuw",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "accddefffggiklnnoostttuux",
+    "maxScore": 188
   },
   "99": {
     "number": 99,
-    "letters": "aacdeeeghhhiiklmnnorsstuw",
-    "maxScore": 230,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "accdfghiillmnnnsstttuwxyy",
+    "maxScore": 189
   },
   "100": {
     "number": 100,
-    "letters": "adeeefghhiijlmnnoorsstttu",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaccdeeeghjjmnnrsttttyyy",
+    "maxScore": 189
   },
   "101": {
     "number": 101,
-    "letters": "aacdeeghhhiilmnnoooossttu",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "bbeeghhhijllnoorsttuvvwxy",
+    "maxScore": 189
   },
   "102": {
     "number": 102,
-    "letters": "aaccdeeeffhhiilnoorssttuz",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaacdffghhiilooqrrrsstuvz",
+    "maxScore": 189
   },
   "103": {
     "number": 103,
-    "letters": "aacdeefghhiimnnnoorssttwz",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabccdeeffghiiioopttuuwyz",
+    "maxScore": 189
   },
   "104": {
     "number": 104,
-    "letters": "aadeeefhiiklnnnoorsstttux",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeeefffhmnnoosssttuvvyy",
+    "maxScore": 189
   },
   "105": {
     "number": 105,
-    "letters": "acdeeefgghhiijlnoorssttux",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeeffghjllnnoooopqrstwz",
+    "maxScore": 189
   },
   "106": {
     "number": 106,
-    "letters": "aacddeeefghhilnooorsstuvz",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbccdeeefghhilmooptttww",
+    "maxScore": 189
   },
   "107": {
     "number": 107,
-    "letters": "aaccdeeefghhiiimnooqrsstu",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abcdeeeefgijkmnoosttuwwxy",
+    "maxScore": 190
   },
   "108": {
     "number": 108,
-    "letters": "aabcddeeehhiiiilmnorrsstz",
-    "maxScore": 234,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaaacdeefhhiiikkmnqsstwy",
+    "maxScore": 190
   },
   "109": {
     "number": 109,
-    "letters": "aacdeefghhiijmnnoorsstuwz",
-    "maxScore": 237,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabdeeeeeghmmmnnoqsttwxy",
+    "maxScore": 190
   },
   "110": {
     "number": 110,
-    "letters": "aacdeeefghhiiklmnnoorstwy",
-    "maxScore": 239,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "acddeeefghhhhiiiilnnooosy",
+    "maxScore": 190
   },
   "111": {
     "number": 111,
-    "letters": "aacddeeefhiilnnnooorsstuy",
-    "maxScore": 241,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaacceefhhiijkklmmqqrttuw",
+    "maxScore": 193
   },
   "112": {
     "number": 112,
-    "letters": "aaccdeefhhiillmnnoorsstty",
-    "maxScore": 241,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaddfghhhijlnnnoooprrsstw",
+    "maxScore": 193
   },
   "113": {
     "number": 113,
-    "letters": "aacdeeefghhiilmnorrssttwy",
-    "maxScore": 241,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaabeeeghjknnnnoosstttuww",
+    "maxScore": 193
   },
   "114": {
     "number": 114,
-    "letters": "aaaccdeeefghiilmnooprsttw",
-    "maxScore": 242,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeeeffffghhhillmnooorsy",
+    "maxScore": 193
   },
   "115": {
     "number": 115,
-    "letters": "aadeeeghhhiijlmnnoorstttu",
-    "maxScore": 242,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbdeegilnnpqqrssttuwwxy",
+    "maxScore": 193
   },
   "116": {
     "number": 116,
-    "letters": "acdeefghhiiilmnnooprrsstw",
-    "maxScore": 242,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aadeffghhhilmnoprsuvwwxxy",
+    "maxScore": 193
   },
   "117": {
     "number": 117,
-    "letters": "aaceefghhilmnoorrssttuuvy",
-    "maxScore": 242,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aacdeeehhhkkkkmnoorsttuuw",
+    "maxScore": 194
   },
   "118": {
     "number": 118,
-    "letters": "aacefghhiilmmnnoooprsstuw",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaadeeefgiijjklnoqqrsttuw",
+    "maxScore": 194
   },
   "119": {
     "number": 119,
-    "letters": "aabcdeeeefgiimnnnoorsstuw",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaaceeghhhiiijklmossttuw",
+    "maxScore": 194
   },
   "120": {
     "number": 120,
-    "letters": "aaadeeghhiilmmnnoprssttuw",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abceeefgghhlmnoorsstvwxxy",
+    "maxScore": 194
   },
   "121": {
     "number": 121,
-    "letters": "acddeeehhiklmnnoorsssttuv",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaeeghhijlllnrssstuuwwxxy",
+    "maxScore": 194
   },
   "122": {
     "number": 122,
-    "letters": "acceeefghiiilmnnoorsstuuw",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabbddeeefhiijmopqsstttwy",
+    "maxScore": 194
   },
   "123": {
     "number": 123,
-    "letters": "aaceeefghhiimnnoorrssttuv",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abeeffgghijkllllnnooorrtt",
+    "maxScore": 194
   },
   "124": {
     "number": 124,
-    "letters": "aacdeeehhiijlnnnnooorsstw",
-    "maxScore": 248,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaddeeegghhhjmnoorstttvwy",
+    "maxScore": 194
   },
   "125": {
     "number": 125,
-    "letters": "aaacdeeeefhiilmnnoorssttu",
-    "maxScore": 249,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ccddeefgijllmnnooprsstvww",
+    "maxScore": 194
   },
   "126": {
     "number": 126,
-    "letters": "accddeefghiimnnooprsssttu",
-    "maxScore": 254,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaacdeghhhijlmnossstuuxxy",
+    "maxScore": 194
   },
   "127": {
     "number": 127,
-    "letters": "aaacdeefghiiijlmnnoorsstt",
-    "maxScore": 254,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "adeeffghhilmnnorsttvvvwwy",
+    "maxScore": 194
   },
   "128": {
     "number": 128,
-    "letters": "aacdeeeghilmmnnooqqrssstt",
-    "maxScore": 259,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "ceefghhiiijjjnnnoosttuuwy",
+    "maxScore": 194
   },
   "129": {
     "number": 129,
-    "letters": "aacceeeghhiillmnnooprsstt",
-    "maxScore": 259,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaaacefghiijjnoosstttuvww",
+    "maxScore": 194
   },
   "130": {
     "number": 130,
-    "letters": "aaceeefghhiillmnnoorssttu",
-    "maxScore": 259,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aabefhhhiiinnopqrsssstvwy",
+    "maxScore": 194
   },
   "131": {
     "number": 131,
-    "letters": "aaceeeffghiilmnnoorrsstuw",
-    "maxScore": 261,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "abceeegghhimnnnooostuwxxx",
+    "maxScore": 194
   },
   "132": {
     "number": 132,
-    "letters": "aacdfgghiillmnnoorsstttuv",
-    "maxScore": 266,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "cccddeeefgilnnopqrrrssttx",
+    "maxScore": 194
   },
   "133": {
     "number": 133,
-    "letters": "aacddeefghiiilmnnoooottwy",
-    "maxScore": 266,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "eeeefhhhhiillmnpprrssttzz",
+    "maxScore": 194
   },
   "134": {
     "number": 134,
-    "letters": "aacddeeegiilmnnoorssttuuw",
-    "maxScore": 270,
-    "bestUserScore": 0,
-    "bestUserSolution": []
+    "letters": "aaddeefhijlmooqrstttwwwyz",
+    "maxScore": 194
+  },
+  "135": {
+    "number": 135,
+    "letters": "abceeefgiiiimmnnoopqtuvxz",
+    "maxScore": 194
+  },
+  "136": {
+    "number": 136,
+    "letters": "aabcdeeffhhhinnssttuuvxyz",
+    "maxScore": 194
+  },
+  "137": {
+    "number": 137,
+    "letters": "aaacceeeefgijlnnossttxxyz",
+    "maxScore": 195
+  },
+  "138": {
+    "number": 138,
+    "letters": "aabbdeeffhiikklmnoopprruw",
+    "maxScore": 195
+  },
+  "139": {
+    "number": 139,
+    "letters": "aaaceeeghhlmnnooqssttuwwz",
+    "maxScore": 195
+  },
+  "140": {
+    "number": 140,
+    "letters": "aacdeefhhhiillnssstvwwyyz",
+    "maxScore": 195
+  },
+  "141": {
+    "number": 141,
+    "letters": "aabbbbdeeeefhhiiilmossstx",
+    "maxScore": 195
+  },
+  "142": {
+    "number": 142,
+    "letters": "aaacddggghiiimmnoorsuvvww",
+    "maxScore": 195
+  },
+  "143": {
+    "number": 143,
+    "letters": "aabddeeeghhiilmnoottwwzzz",
+    "maxScore": 195
+  },
+  "144": {
+    "number": 144,
+    "letters": "bcefkllnnnnooorssstttuuvw",
+    "maxScore": 195
+  },
+  "145": {
+    "number": 145,
+    "letters": "aabeeefggiiijloosstttvyzz",
+    "maxScore": 195
+  },
+  "146": {
+    "number": 146,
+    "letters": "aaaceeeeeeefghhiimnorsstw",
+    "maxScore": 195
+  },
+  "147": {
+    "number": 147,
+    "letters": "aadeefiilnoqqssttttuuwwyz",
+    "maxScore": 196
+  },
+  "148": {
+    "number": 148,
+    "letters": "aadeegghhilnnoooqssttwwzz",
+    "maxScore": 196
+  },
+  "149": {
+    "number": 149,
+    "letters": "abbcddeeeeghhjmnnooprttwz",
+    "maxScore": 196
+  },
+  "150": {
+    "number": 150,
+    "letters": "adeehhiijlnnooooosttuuvwx",
+    "maxScore": 196
+  },
+  "151": {
+    "number": 151,
+    "letters": "acddeeehhhhiijmnnoqsstttz",
+    "maxScore": 196
+  },
+  "152": {
+    "number": 152,
+    "letters": "adeeefhhhhiilmmooooqrsstx",
+    "maxScore": 196
+  },
+  "153": {
+    "number": 153,
+    "letters": "aabcceeeffgiijlmmnoqstttw",
+    "maxScore": 196
+  },
+  "154": {
+    "number": 154,
+    "letters": "aaabeeefffilmnnnoooopqrtt",
+    "maxScore": 196
+  },
+  "155": {
+    "number": 155,
+    "letters": "aaacddeefhhikoopqrsttvwwx",
+    "maxScore": 196
+  },
+  "156": {
+    "number": 156,
+    "letters": "abceeefghhhijllnnoorrstvx",
+    "maxScore": 196
+  },
+  "157": {
+    "number": 157,
+    "letters": "adeefhhiklmmnnnoosstuuuzz",
+    "maxScore": 196
+  },
+  "158": {
+    "number": 158,
+    "letters": "aaeeefhhhhilnnnoorsssuwyz",
+    "maxScore": 197
+  },
+  "159": {
+    "number": 159,
+    "letters": "aabcddeeefgiillooortwwwzz",
+    "maxScore": 198
+  },
+  "160": {
+    "number": 160,
+    "letters": "aaaceeeeefhilnnootttuxyyy",
+    "maxScore": 198
+  },
+  "161": {
+    "number": 161,
+    "letters": "aceeefffgghiknnpqrsttuwyy",
+    "maxScore": 198
+  },
+  "162": {
+    "number": 162,
+    "letters": "aabbdeegghhhiiijmnoosttzz",
+    "maxScore": 198
+  },
+  "163": {
+    "number": 163,
+    "letters": "aacdeeeghhiijjjlmmoopttuw",
+    "maxScore": 198
+  },
+  "164": {
+    "number": 164,
+    "letters": "aaaccceeeegiiijmnnoqsstww",
+    "maxScore": 198
+  },
+  "165": {
+    "number": 165,
+    "letters": "aaadeeeeffghiilnoopstuuuw",
+    "maxScore": 199
+  },
+  "166": {
+    "number": 166,
+    "letters": "aadeegiilmmooqrrrrttvvwxy",
+    "maxScore": 200
+  },
+  "167": {
+    "number": 167,
+    "letters": "aaaeeefhhhiiikllnoqsttuww",
+    "maxScore": 201
+  },
+  "168": {
+    "number": 168,
+    "letters": "aacceeegghiiiikkmmnnqsstx",
+    "maxScore": 201
+  },
+  "169": {
+    "number": 169,
+    "letters": "aaaeeefggghklmoooprsstuww",
+    "maxScore": 201
+  },
+  "170": {
+    "number": 170,
+    "letters": "aacddeeefhhiiloooqssstwxy",
+    "maxScore": 201
+  },
+  "171": {
+    "number": 171,
+    "letters": "aabbbccceeeefhhooprssttuv",
+    "maxScore": 201
+  },
+  "172": {
+    "number": 172,
+    "letters": "aaacdeeehhiilmooqqrsssuwy",
+    "maxScore": 201
+  },
+  "173": {
+    "number": 173,
+    "letters": "cdddeeefhhhhilmmnoostuuyy",
+    "maxScore": 201
+  },
+  "174": {
+    "number": 174,
+    "letters": "aaacdeefhhklmnprsssstuwxz",
+    "maxScore": 201
+  },
+  "175": {
+    "number": 175,
+    "letters": "aaabbeeefghhhnnnooqrssttz",
+    "maxScore": 202
+  },
+  "176": {
+    "number": 176,
+    "letters": "deeeghhikklmnnorrrssstttx",
+    "maxScore": 202
+  },
+  "177": {
+    "number": 177,
+    "letters": "beeefgghhikllmmnorrtttuxy",
+    "maxScore": 202
+  },
+  "178": {
+    "number": 178,
+    "letters": "abbccddeefhhhiilmnnooqstt",
+    "maxScore": 202
+  },
+  "179": {
+    "number": 179,
+    "letters": "aaeeeffffghhiiilmnnqsstvz",
+    "maxScore": 202
+  },
+  "180": {
+    "number": 180,
+    "letters": "aaadeeefhhiiimmoosssttuwy",
+    "maxScore": 202
+  },
+  "181": {
+    "number": 181,
+    "letters": "aadeffgghjmnnoorrrsttttux",
+    "maxScore": 202
+  },
+  "182": {
+    "number": 182,
+    "letters": "aabbccdeeefghnnopqsstttuw",
+    "maxScore": 202
+  },
+  "183": {
+    "number": 183,
+    "letters": "aabbceeeefghijkllnnnooqsw",
+    "maxScore": 202
+  },
+  "184": {
+    "number": 184,
+    "letters": "acdeeeffhhhiklmooqrsttuwz",
+    "maxScore": 202
+  },
+  "185": {
+    "number": 185,
+    "letters": "aaacdeeeffghhlmmnnosttwxz",
+    "maxScore": 202
+  },
+  "186": {
+    "number": 186,
+    "letters": "cdeeeeffgggiijllmmnnostty",
+    "maxScore": 202
+  },
+  "187": {
+    "number": 187,
+    "letters": "aacddeefghikkmnooqssttuvx",
+    "maxScore": 202
+  },
+  "188": {
+    "number": 188,
+    "letters": "aaabcdeeefghhhiimoossttvv",
+    "maxScore": 203
+  },
+  "189": {
+    "number": 189,
+    "letters": "aaaeeeffghhijlnnnoorsstwy",
+    "maxScore": 203
+  },
+  "190": {
+    "number": 190,
+    "letters": "aaaddeeefgghhiijlmnoossuw",
+    "maxScore": 203
+  },
+  "191": {
+    "number": 191,
+    "letters": "accdeeeghiinnnopqqstuvwyz",
+    "maxScore": 203
+  },
+  "192": {
+    "number": 192,
+    "letters": "abceeefghhhiilnnnoopptuuw",
+    "maxScore": 203
+  },
+  "193": {
+    "number": 193,
+    "letters": "aaceeeeffgghhiiijklnnosuy",
+    "maxScore": 203
+  },
+  "194": {
+    "number": 194,
+    "letters": "aaeeehhhiillmmnnooorssvwy",
+    "maxScore": 203
+  },
+  "195": {
+    "number": 195,
+    "letters": "aabcdddeeffgghiikmrrsttux",
+    "maxScore": 203
+  },
+  "196": {
+    "number": 196,
+    "letters": "cddefggiiijklnnooostuuuvw",
+    "maxScore": 203
+  },
+  "197": {
+    "number": 197,
+    "letters": "aaaabbceefijlmnooqtttuuwx",
+    "maxScore": 203
+  },
+  "198": {
+    "number": 198,
+    "letters": "aeehhiillmnooprrrtttuwxxz",
+    "maxScore": 205
+  },
+  "199": {
+    "number": 199,
+    "letters": "aacceeefgghhiijlmnoossuwx",
+    "maxScore": 205
+  },
+  "200": {
+    "number": 200,
+    "letters": "aaabdeeeghikkllnoppqssttx",
+    "maxScore": 205
+  },
+  "201": {
+    "number": 201,
+    "letters": "aaaceeehiiijkkmnnooopqrtw",
+    "maxScore": 205
+  },
+  "202": {
+    "number": 202,
+    "letters": "aabcdehiiklmnnnopqsttuvvw",
+    "maxScore": 205
+  },
+  "203": {
+    "number": 203,
+    "letters": "aadeggghiijlmoopqssttuuww",
+    "maxScore": 205
+  },
+  "204": {
+    "number": 204,
+    "letters": "aacdefgghhiillmnnossttwwz",
+    "maxScore": 205
+  },
+  "205": {
+    "number": 205,
+    "letters": "abeeehhhiiikkkllmnrstttuy",
+    "maxScore": 205
+  },
+  "206": {
+    "number": 206,
+    "letters": "abcdeghhiillmmnnorrvvwxyz",
+    "maxScore": 205
+  },
+  "207": {
+    "number": 207,
+    "letters": "aabceefghhhhhikllmorsstty",
+    "maxScore": 205
+  },
+  "208": {
+    "number": 208,
+    "letters": "bcceegiiiillnnoopsttuvxxx",
+    "maxScore": 205
+  },
+  "209": {
+    "number": 209,
+    "letters": "aabccdeeeefghiikknpssuuux",
+    "maxScore": 205
+  },
+  "210": {
+    "number": 210,
+    "letters": "aaabeefgghhinoooqrsstttyy",
+    "maxScore": 205
+  },
+  "211": {
+    "number": 211,
+    "letters": "aadefghhilnnnoorssssttwwx",
+    "maxScore": 205
+  },
+  "212": {
+    "number": 212,
+    "letters": "aaddeeefhiiiklloppstttuuw",
+    "maxScore": 206
+  },
+  "213": {
+    "number": 213,
+    "letters": "aaccdeeeghhhiklmnnprsswxy",
+    "maxScore": 206
+  },
+  "214": {
+    "number": 214,
+    "letters": "aaaceefhlmnnnooosstttuvyy",
+    "maxScore": 206
+  },
+  "215": {
+    "number": 215,
+    "letters": "aabcddhilmmnnnoossttuwwwx",
+    "maxScore": 208
+  },
+  "216": {
+    "number": 216,
+    "letters": "adddeegiiknnooopsstuwwwww",
+    "maxScore": 208
+  },
+  "217": {
+    "number": 217,
+    "letters": "aacddeeeefhhijkllnooppstz",
+    "maxScore": 208
+  },
+  "218": {
+    "number": 218,
+    "letters": "acdeeefghhillmmnnoossuwxx",
+    "maxScore": 208
+  },
+  "219": {
+    "number": 219,
+    "letters": "acdefghiijkllmnnosssttvwz",
+    "maxScore": 208
+  },
+  "220": {
+    "number": 220,
+    "letters": "acdeeeefghhijklmnnssttuvx",
+    "maxScore": 208
+  },
+  "221": {
+    "number": 221,
+    "letters": "adeeeeefffghhhhlmnorssttw",
+    "maxScore": 208
+  },
+  "222": {
+    "number": 222,
+    "letters": "aabccdegggiijmmmnrssttuuv",
+    "maxScore": 208
+  },
+  "223": {
+    "number": 223,
+    "letters": "aabbddeeegghhhilmnnrsstww",
+    "maxScore": 208
+  },
+  "224": {
+    "number": 224,
+    "letters": "aabcceefffggiiknorssttwyz",
+    "maxScore": 208
+  },
+  "225": {
+    "number": 225,
+    "letters": "bbcceefghiilllmnnooqrsttw",
+    "maxScore": 208
+  },
+  "226": {
+    "number": 226,
+    "letters": "aaccddeefhhhijllmnnnnoost",
+    "maxScore": 208
+  },
+  "227": {
+    "number": 227,
+    "letters": "cdeeeffhiijklmnnooqrsstww",
+    "maxScore": 208
+  },
+  "228": {
+    "number": 228,
+    "letters": "aacccddeeegiknnooqtttuwxx",
+    "maxScore": 208
+  },
+  "229": {
+    "number": 229,
+    "letters": "abddeeehijnnnnnoprsssttvz",
+    "maxScore": 208
+  },
+  "230": {
+    "number": 230,
+    "letters": "aacdeeffiikmoooppqrsstuvz",
+    "maxScore": 209
+  },
+  "231": {
+    "number": 231,
+    "letters": "aabceeeefkmnooooqrstttuvx",
+    "maxScore": 209
+  },
+  "232": {
+    "number": 232,
+    "letters": "aabcddeeeefghilmnostuuvwz",
+    "maxScore": 209
+  },
+  "233": {
+    "number": 233,
+    "letters": "acdeeefggghhhiiklnoqsttvw",
+    "maxScore": 209
+  },
+  "234": {
+    "number": 234,
+    "letters": "abceeeehhiiinnnrrstuuwyzz",
+    "maxScore": 209
+  },
+  "235": {
+    "number": 235,
+    "letters": "adeeeffhhiilmnossstttvwzz",
+    "maxScore": 209
+  },
+  "236": {
+    "number": 236,
+    "letters": "bcdeeefghillnnooqrsstwxyz",
+    "maxScore": 209
+  },
+  "237": {
+    "number": 237,
+    "letters": "aadeeeefhnnooooprssttvvwx",
+    "maxScore": 209
+  },
+  "238": {
+    "number": 238,
+    "letters": "adeeeffhhiilmnnoosstuwwxz",
+    "maxScore": 209
+  },
+  "239": {
+    "number": 239,
+    "letters": "bcccdegghhiimnnnnooosuwxy",
+    "maxScore": 209
+  },
+  "240": {
+    "number": 240,
+    "letters": "acddeeeefhiiikmmooorsswzz",
+    "maxScore": 209
+  },
+  "241": {
+    "number": 241,
+    "letters": "aaceeeffhnnnooorssttuxyyy",
+    "maxScore": 209
+  },
+  "242": {
+    "number": 242,
+    "letters": "aabeeffhiiijknnooopqrrttu",
+    "maxScore": 209
+  },
+  "243": {
+    "number": 243,
+    "letters": "aaeeefgghhiimmmnnoostuuyz",
+    "maxScore": 210
+  },
+  "244": {
+    "number": 244,
+    "letters": "aaeeeffghhiiknnoopstuvwyy",
+    "maxScore": 210
+  },
+  "245": {
+    "number": 245,
+    "letters": "aaceeefffghhiiiknooqrstuu",
+    "maxScore": 210
+  },
+  "246": {
+    "number": 246,
+    "letters": "aacdeeefgghhiklmnoqtttuuw",
+    "maxScore": 210
+  },
+  "247": {
+    "number": 247,
+    "letters": "acdeeegghhiijkklmooqrsstu",
+    "maxScore": 210
+  },
+  "248": {
+    "number": 248,
+    "letters": "aaccceehhiiknnoosstuuwzzz",
+    "maxScore": 210
+  },
+  "249": {
+    "number": 249,
+    "letters": "aaceeefhhijjkmnnnoorssttu",
+    "maxScore": 210
+  },
+  "250": {
+    "number": 250,
+    "letters": "adeghhijllmmnorssssuuwwyz",
+    "maxScore": 210
+  },
+  "251": {
+    "number": 251,
+    "letters": "aaaadeeefgiiilmmmnnooqsuy",
+    "maxScore": 210
+  },
+  "252": {
+    "number": 252,
+    "letters": "aaddeeeffhhhiillnnosstvww",
+    "maxScore": 210
+  },
+  "253": {
+    "number": 253,
+    "letters": "aaadeeefghhiiijnnorttttuy",
+    "maxScore": 210
+  },
+  "254": {
+    "number": 254,
+    "letters": "aaaeeefffhhijlllnossttuwx",
+    "maxScore": 210
+  },
+  "255": {
+    "number": 255,
+    "letters": "ceefffghhhiilnoqrrssttuxz",
+    "maxScore": 210
+  },
+  "256": {
+    "number": 256,
+    "letters": "aabddeeefhhillnnnooqsttwy",
+    "maxScore": 210
+  },
+  "257": {
+    "number": 257,
+    "letters": "aabceeefjlnoorrrsstuvwwyz",
+    "maxScore": 210
+  },
+  "258": {
+    "number": 258,
+    "letters": "cdeeehhiiillmnoqrrstttwwx",
+    "maxScore": 210
+  },
+  "259": {
+    "number": 259,
+    "letters": "ccddeeeefghhhiilmnnoorttv",
+    "maxScore": 210
+  },
+  "260": {
+    "number": 260,
+    "letters": "aadeeefghlmnnnnssttttuwwx",
+    "maxScore": 210
+  },
+  "261": {
+    "number": 261,
+    "letters": "cdeefhhhiijklmnnooorrstuy",
+    "maxScore": 210
+  },
+  "262": {
+    "number": 262,
+    "letters": "aabbcddeeeghhhilmnoqstuxy",
+    "maxScore": 211
+  },
+  "263": {
+    "number": 263,
+    "letters": "aaaaddeehhhllmnnoorsttuyz",
+    "maxScore": 211
+  },
+  "264": {
+    "number": 264,
+    "letters": "aaadeeefghhhiilnnooqtuvxy",
+    "maxScore": 211
+  },
+  "265": {
+    "number": 265,
+    "letters": "aaacdeeeeghhimmooqssttuwy",
+    "maxScore": 211
+  },
+  "266": {
+    "number": 266,
+    "letters": "aabcceeeeefgiiikoorssttuy",
+    "maxScore": 211
+  },
+  "267": {
+    "number": 267,
+    "letters": "ddeeefhiillnnooooossttwwz",
+    "maxScore": 211
+  },
+  "268": {
+    "number": 268,
+    "letters": "abddeeehhiijjllmopprssttw",
+    "maxScore": 211
+  },
+  "269": {
+    "number": 269,
+    "letters": "aceeeffhhikmmnooqsstttuwx",
+    "maxScore": 211
+  },
+  "270": {
+    "number": 270,
+    "letters": "aaeeeefhhilnnrrrrsttuuuww",
+    "maxScore": 211
+  },
+  "271": {
+    "number": 271,
+    "letters": "aadeeeghhijklmmnnstttuuww",
+    "maxScore": 211
+  },
+  "272": {
+    "number": 272,
+    "letters": "aacddeeffgghiimooqrrsttvy",
+    "maxScore": 211
+  },
+  "273": {
+    "number": 273,
+    "letters": "aabdeeefghhlmnnnoopssuuxy",
+    "maxScore": 211
+  },
+  "274": {
+    "number": 274,
+    "letters": "cdeeefgghhiimmnnootttuwxy",
+    "maxScore": 211
+  },
+  "275": {
+    "number": 275,
+    "letters": "aaaeefghhhiiijmnnoosttuuw",
+    "maxScore": 211
+  },
+  "276": {
+    "number": 276,
+    "letters": "aabeeffghhhhiiijklmnprrtt",
+    "maxScore": 212
+  },
+  "277": {
+    "number": 277,
+    "letters": "aaacddeeeffggijmnoostuwzz",
+    "maxScore": 212
+  },
+  "278": {
+    "number": 278,
+    "letters": "acdeeefklmmnnnoorsssuwwxx",
+    "maxScore": 212
+  },
+  "279": {
+    "number": 279,
+    "letters": "aacdeeefghhijlmnnooossuww",
+    "maxScore": 212
+  },
+  "280": {
+    "number": 280,
+    "letters": "aceeeeffghhiilmnnooostxxy",
+    "maxScore": 212
+  },
+  "281": {
+    "number": 281,
+    "letters": "acddeefhhijmmmnnooqrttuxx",
+    "maxScore": 212
+  },
+  "282": {
+    "number": 282,
+    "letters": "adeeffghhhiijnnoorsttuvxz",
+    "maxScore": 212
+  },
+  "283": {
+    "number": 283,
+    "letters": "aabeeefghhijkmnnooqssttuy",
+    "maxScore": 212
+  },
+  "284": {
+    "number": 284,
+    "letters": "aaeeefgghhlmnnooopstttuuw",
+    "maxScore": 213
+  },
+  "285": {
+    "number": 285,
+    "letters": "aadefhilnooorsssttuuuvwzz",
+    "maxScore": 214
+  },
+  "286": {
+    "number": 286,
+    "letters": "aabcdeeeffhiijlnnoqqrttww",
+    "maxScore": 214
+  },
+  "287": {
+    "number": 287,
+    "letters": "aabdeeefghhiiklmnnnoopqst",
+    "maxScore": 214
+  },
+  "288": {
+    "number": 288,
+    "letters": "acdefhhiijklmnnoqsstttuuw",
+    "maxScore": 214
+  },
+  "289": {
+    "number": 289,
+    "letters": "aaaceeehhiijkkllnoorsttvw",
+    "maxScore": 214
+  },
+  "290": {
+    "number": 290,
+    "letters": "acdeefghhillmnnorsstttvww",
+    "maxScore": 214
+  },
+  "291": {
+    "number": 291,
+    "letters": "aaaceeeffhhiijkmmnpsttwxz",
+    "maxScore": 214
+  },
+  "292": {
+    "number": 292,
+    "letters": "abeeeefghhhijmmooprssttuw",
+    "maxScore": 214
+  },
+  "293": {
+    "number": 293,
+    "letters": "aacdeeefghhllnnoooqrsstvv",
+    "maxScore": 214
+  },
+  "294": {
+    "number": 294,
+    "letters": "aaaeeeffgghhlmnoorsstuvxx",
+    "maxScore": 214
+  },
+  "295": {
+    "number": 295,
+    "letters": "aaddeefggghijjjlnnnorsttu",
+    "maxScore": 214
+  },
+  "296": {
+    "number": 296,
+    "letters": "aaaabdeehiijlmmoosstuuuxy",
+    "maxScore": 214
+  },
+  "297": {
+    "number": 297,
+    "letters": "aaabbcceehhhimmnnnoostuuv",
+    "maxScore": 216
+  },
+  "298": {
+    "number": 298,
+    "letters": "aaceeefghhlllnorssttuvwww",
+    "maxScore": 216
+  },
+  "299": {
+    "number": 299,
+    "letters": "aaceeefhhknnooorssttuuwwy",
+    "maxScore": 216
+  },
+  "300": {
+    "number": 300,
+    "letters": "acdeeeeffhhhhikllmoorstwx",
+    "maxScore": 217
+  },
+  "301": {
+    "number": 301,
+    "letters": "aaacdehhilmnnoqrrsssuvvwy",
+    "maxScore": 217
+  },
+  "302": {
+    "number": 302,
+    "letters": "aacdeeeghhhiiklooqrtttuwx",
+    "maxScore": 217
+  },
+  "303": {
+    "number": 303,
+    "letters": "aacdddeeefghhiimmoooprtvx",
+    "maxScore": 217
+  },
+  "304": {
+    "number": 304,
+    "letters": "aaceeefghhhilmmmnoqrrssuv",
+    "maxScore": 217
+  },
+  "305": {
+    "number": 305,
+    "letters": "aacdeeeeffghhjlmmnnooortw",
+    "maxScore": 217
+  },
+  "306": {
+    "number": 306,
+    "letters": "acddeeeghhhiinooqrstttwwz",
+    "maxScore": 217
+  },
+  "307": {
+    "number": 307,
+    "letters": "aacddefghhiilllmmnnootwwz",
+    "maxScore": 217
+  },
+  "308": {
+    "number": 308,
+    "letters": "abcdddeeghhiijlnooprsttvx",
+    "maxScore": 217
+  },
+  "309": {
+    "number": 309,
+    "letters": "abcdddeefhhillnnoostuuwxz",
+    "maxScore": 217
+  },
+  "310": {
+    "number": 310,
+    "letters": "abdeeeefggilmnoorrsssuyyy",
+    "maxScore": 217
+  },
+  "311": {
+    "number": 311,
+    "letters": "acdddeeeefhiikmnooqrrstwx",
+    "maxScore": 217
+  },
+  "312": {
+    "number": 312,
+    "letters": "aaeeeeffghhiiillmnnpttuvz",
+    "maxScore": 217
+  },
+  "313": {
+    "number": 313,
+    "letters": "aabdeeeffhhiiijllnnssttww",
+    "maxScore": 217
+  },
+  "314": {
+    "number": 314,
+    "letters": "adeeeffgghhhiiklqrrssstuz",
+    "maxScore": 217
+  },
+  "315": {
+    "number": 315,
+    "letters": "aaeefghhiijlmmnnnoosstuvv",
+    "maxScore": 217
+  },
+  "316": {
+    "number": 316,
+    "letters": "cdeeeefggiikmnnnrttttuuww",
+    "maxScore": 217
+  },
+  "317": {
+    "number": 317,
+    "letters": "aacdddeeehhiiijjmnnrsssvx",
+    "maxScore": 217
+  },
+  "318": {
+    "number": 318,
+    "letters": "aaddeeefghhiiilmmnnoqrswy",
+    "maxScore": 217
+  },
+  "319": {
+    "number": 319,
+    "letters": "abbdeeefhhhilmmooorrsstwz",
+    "maxScore": 217
+  },
+  "320": {
+    "number": 320,
+    "letters": "bcdeeefgghiinoorssstuuvwz",
+    "maxScore": 218
+  },
+  "321": {
+    "number": 321,
+    "letters": "aaadeefghiijkmmnnnorssssw",
+    "maxScore": 218
+  },
+  "322": {
+    "number": 322,
+    "letters": "aaadeeefghjmmnnooorssstux",
+    "maxScore": 218
+  },
+  "323": {
+    "number": 323,
+    "letters": "aadeeeffghhhilmmnnoosstty",
+    "maxScore": 218
+  },
+  "324": {
+    "number": 324,
+    "letters": "aaaccdeeffghhimnnnortttvz",
+    "maxScore": 218
+  },
+  "325": {
+    "number": 325,
+    "letters": "aaceeeggghilmmnnoqrssttwx",
+    "maxScore": 218
+  },
+  "326": {
+    "number": 326,
+    "letters": "aabdeeeffhhilnnoorssttvwx",
+    "maxScore": 218
+  },
+  "327": {
+    "number": 327,
+    "letters": "ddeeefghhijjklmnoooorsttw",
+    "maxScore": 218
+  },
+  "328": {
+    "number": 328,
+    "letters": "abcdddeegiiilnnprttuuwxyy",
+    "maxScore": 218
+  },
+  "329": {
+    "number": 329,
+    "letters": "aabcddeeeffhhiinoqrstuuwz",
+    "maxScore": 218
+  },
+  "330": {
+    "number": 330,
+    "letters": "aabcceeeehhiklmrrssttwwxz",
+    "maxScore": 218
+  },
+  "331": {
+    "number": 331,
+    "letters": "aabeeefffhhhiinnnoorssttw",
+    "maxScore": 218
+  },
+  "332": {
+    "number": 332,
+    "letters": "aabdeeeefhiinnqrsssttuwwy",
+    "maxScore": 218
+  },
+  "333": {
+    "number": 333,
+    "letters": "aaddeeeghhiilmnorssstvwxz",
+    "maxScore": 218
+  },
+  "334": {
+    "number": 334,
+    "letters": "aaacdeeeefghhiimnnopqsswz",
+    "maxScore": 218
+  },
+  "335": {
+    "number": 335,
+    "letters": "aacdeefgghhiiilnorssuwwyz",
+    "maxScore": 218
+  },
+  "336": {
+    "number": 336,
+    "letters": "cceeefglmmnnnnooooppssstu",
+    "maxScore": 218
+  },
+  "337": {
+    "number": 337,
+    "letters": "aaaeefgijlmnooorrstuuwyzz",
+    "maxScore": 218
+  },
+  "338": {
+    "number": 338,
+    "letters": "abcdeeffgghhiilmnossttuvz",
+    "maxScore": 218
+  },
+  "339": {
+    "number": 339,
+    "letters": "aaccdeeeghiiilmoosttttvww",
+    "maxScore": 218
+  },
+  "340": {
+    "number": 340,
+    "letters": "aacdeeefggiikmmmossttuvwx",
+    "maxScore": 218
+  },
+  "341": {
+    "number": 341,
+    "letters": "abdeeefhhiiillmnooostttvx",
+    "maxScore": 218
+  },
+  "342": {
+    "number": 342,
+    "letters": "aaccdeeefgghhmnnoossttuuw",
+    "maxScore": 218
+  },
+  "343": {
+    "number": 343,
+    "letters": "aaaeffghhhilmmmnnoorrsssw",
+    "maxScore": 218
+  },
+  "344": {
+    "number": 344,
+    "letters": "aaacddeeeeefghnosstttuuvz",
+    "maxScore": 218
+  },
+  "345": {
+    "number": 345,
+    "letters": "cdeeefgghhhiiikklmnnttuwx",
+    "maxScore": 218
+  },
+  "346": {
+    "number": 346,
+    "letters": "aaacdeeghhiknoprssuvvwyzz",
+    "maxScore": 218
+  },
+  "347": {
+    "number": 347,
+    "letters": "aaceeefhhiiklnnoooprstuww",
+    "maxScore": 218
+  },
+  "348": {
+    "number": 348,
+    "letters": "aabcddeeeeffghhiilnrssuvz",
+    "maxScore": 218
+  },
+  "349": {
+    "number": 349,
+    "letters": "aaaddeeeegilllnnooppuvwwx",
+    "maxScore": 218
+  },
+  "350": {
+    "number": 350,
+    "letters": "aaaabeeeefhhiiijlmnnosstz",
+    "maxScore": 218
+  },
+  "351": {
+    "number": 351,
+    "letters": "ceeeeeffgimnnoorssttuwwxz",
+    "maxScore": 219
+  },
+  "352": {
+    "number": 352,
+    "letters": "ceeeefghiimmnoopssttttuwx",
+    "maxScore": 219
+  },
+  "353": {
+    "number": 353,
+    "letters": "abccddeeeghhiimnoosssttxx",
+    "maxScore": 219
+  },
+  "354": {
+    "number": 354,
+    "letters": "aaabeeefghhjlmnnnoopssttt",
+    "maxScore": 219
+  },
+  "355": {
+    "number": 355,
+    "letters": "ccdeeeeefghhhilmmnnnootuw",
+    "maxScore": 219
+  },
+  "356": {
+    "number": 356,
+    "letters": "aacddeeefhhiimmnnoooptvxz",
+    "maxScore": 219
+  },
+  "357": {
+    "number": 357,
+    "letters": "abceeefhhiiiiikmnnrssttvx",
+    "maxScore": 219
+  },
+  "358": {
+    "number": 358,
+    "letters": "aaceefhhhllmnnnooqrrrsstu",
+    "maxScore": 219
+  },
+  "359": {
+    "number": 359,
+    "letters": "acdeeffhhiilmmmnorrtttuuw",
+    "maxScore": 219
+  },
+  "360": {
+    "number": 360,
+    "letters": "aadeeffhhijlllmnnorssttvy",
+    "maxScore": 221
+  },
+  "361": {
+    "number": 361,
+    "letters": "bbceeehhillmmnnnossttxxzz",
+    "maxScore": 221
+  },
+  "362": {
+    "number": 362,
+    "letters": "aaddefghhiikmnnoorssttwxx",
+    "maxScore": 221
+  },
+  "363": {
+    "number": 363,
+    "letters": "aaccefhhiiijmmnooqqrssstw",
+    "maxScore": 221
+  },
+  "364": {
+    "number": 364,
+    "letters": "aaabeehhllmmnnooopqsstuyy",
+    "maxScore": 221
+  },
+  "365": {
+    "number": 365,
+    "letters": "aaacdffghhiilmnnoorssttvw",
+    "maxScore": 221
+  },
+  "366": {
+    "number": 366,
+    "letters": "cddeeeillnnnnnopprrrsttuw",
+    "maxScore": 221
+  },
+  "367": {
+    "number": 367,
+    "letters": "aabdeeegiijllmmmnnrssuvwy",
+    "maxScore": 221
+  },
+  "368": {
+    "number": 368,
+    "letters": "aaadeeeghhhhiiiimnnosttvy",
+    "maxScore": 221
+  },
+  "369": {
+    "number": 369,
+    "letters": "aabceeefghhiikmnnoortuvyz",
+    "maxScore": 221
+  },
+  "370": {
+    "number": 370,
+    "letters": "aaadeeghhhimmopqrsssttuxy",
+    "maxScore": 221
+  },
+  "371": {
+    "number": 371,
+    "letters": "adeeeffhhiijnnoooprrsstuz",
+    "maxScore": 221
+  },
+  "372": {
+    "number": 372,
+    "letters": "aacceeefhijklmnnooosstttw",
+    "maxScore": 221
+  },
+  "373": {
+    "number": 373,
+    "letters": "aaceeeefhiklmnnpqrssttwwy",
+    "maxScore": 221
+  },
+  "374": {
+    "number": 374,
+    "letters": "aadghhiiklmnnooqrrrssttwz",
+    "maxScore": 221
+  },
+  "375": {
+    "number": 375,
+    "letters": "aaccdeeefffghhilnnooorrvy",
+    "maxScore": 221
+  },
+  "376": {
+    "number": 376,
+    "letters": "aaceeefghhijlnnnoqrsstvwy",
+    "maxScore": 221
+  },
+  "377": {
+    "number": 377,
+    "letters": "aaaaeeghhikmnnnprrrtttuvy",
+    "maxScore": 221
+  },
+  "378": {
+    "number": 378,
+    "letters": "aaeffgghhhiiikmnnorssssst",
+    "maxScore": 221
+  },
+  "379": {
+    "number": 379,
+    "letters": "aaacdeeeffghhiklmnnoosstv",
+    "maxScore": 221
+  },
+  "380": {
+    "number": 380,
+    "letters": "aaaaeeeffhhiiimmmmnnsttwy",
+    "maxScore": 221
+  },
+  "381": {
+    "number": 381,
+    "letters": "aaabcdeeeffiilnoopssstvwz",
+    "maxScore": 221
+  },
+  "382": {
+    "number": 382,
+    "letters": "eeegiiikkmnnooppprsttwxyy",
+    "maxScore": 221
+  },
+  "383": {
+    "number": 383,
+    "letters": "aaeeffghiikmnnoqrrsstuvwz",
+    "maxScore": 221
+  },
+  "384": {
+    "number": 384,
+    "letters": "aacceeefffghknnoorssstuvw",
+    "maxScore": 221
+  },
+  "385": {
+    "number": 385,
+    "letters": "aaabdeeefhiikklmnoosstuvx",
+    "maxScore": 221
+  },
+  "386": {
+    "number": 386,
+    "letters": "aaaccdehhhiijkmnooqqrsstt",
+    "maxScore": 221
+  },
+  "387": {
+    "number": 387,
+    "letters": "aabcceefghhjlmnnoorssttwx",
+    "maxScore": 221
+  },
+  "388": {
+    "number": 388,
+    "letters": "aacdeefiilmooorrstttvvwyz",
+    "maxScore": 221
+  },
+  "389": {
+    "number": 389,
+    "letters": "aadeegghhiiijjlmmnnnoosss",
+    "maxScore": 221
+  },
+  "390": {
+    "number": 390,
+    "letters": "aadeeeeegghhhilnopprstuux",
+    "maxScore": 223
+  },
+  "391": {
+    "number": 391,
+    "letters": "aaaeefhhiiiikmnnnoosttuxx",
+    "maxScore": 223
+  },
+  "392": {
+    "number": 392,
+    "letters": "aadeeefghiiimnnoorstuuwwy",
+    "maxScore": 223
+  },
+  "393": {
+    "number": 393,
+    "letters": "aabeeefghhhiillmnnoopstuz",
+    "maxScore": 223
+  },
+  "394": {
+    "number": 394,
+    "letters": "aaaddeeefhhiilmnnortuuuvw",
+    "maxScore": 223
+  },
+  "395": {
+    "number": 395,
+    "letters": "aaaabcceeginnnooqrsstwwwx",
+    "maxScore": 223
+  },
+  "396": {
+    "number": 396,
+    "letters": "aaaaaceeeghiimmnoootttuwz",
+    "maxScore": 223
+  },
+  "397": {
+    "number": 397,
+    "letters": "aabcdeeeeehhjllnnnoorsuwz",
+    "maxScore": 224
+  },
+  "398": {
+    "number": 398,
+    "letters": "acceefffhiiiinnoooqrsstwz",
+    "maxScore": 224
+  },
+  "399": {
+    "number": 399,
+    "letters": "adeeeefghhhiikmmnoorsttuw",
+    "maxScore": 224
+  },
+  "400": {
+    "number": 400,
+    "letters": "aaabbceefiiikllnqrrsstwxy",
+    "maxScore": 224
+  },
+  "401": {
+    "number": 401,
+    "letters": "aaacccdeeeffgglnnoorrsuuw",
+    "maxScore": 224
+  },
+  "402": {
+    "number": 402,
+    "letters": "aabdeeeghhilnnoosstuuwwxy",
+    "maxScore": 224
+  },
+  "403": {
+    "number": 403,
+    "letters": "aabcccdddeeefgijklnoosstw",
+    "maxScore": 224
+  },
+  "404": {
+    "number": 404,
+    "letters": "aaacceeefhhikmmnoorsstvxy",
+    "maxScore": 224
+  },
+  "405": {
+    "number": 405,
+    "letters": "aacdeeeeefghhhhiiilnnsttu",
+    "maxScore": 224
+  },
+  "406": {
+    "number": 406,
+    "letters": "aabcdeeeehiiklnnoosstvwyy",
+    "maxScore": 224
+  },
+  "407": {
+    "number": 407,
+    "letters": "aadeeeghhhlnnnoorssttuwyz",
+    "maxScore": 224
+  },
+  "408": {
+    "number": 408,
+    "letters": "aceeeghhhiilnoorsttuuwwyz",
+    "maxScore": 224
+  },
+  "409": {
+    "number": 409,
+    "letters": "aacddeeefgghhiiimnnpstwxy",
+    "maxScore": 224
+  },
+  "410": {
+    "number": 410,
+    "letters": "deeeghhiiijlllmnnooosttuw",
+    "maxScore": 224
+  },
+  "411": {
+    "number": 411,
+    "letters": "acceeeffghhiiiknoorstuuvx",
+    "maxScore": 224
+  },
+  "412": {
+    "number": 412,
+    "letters": "acdeeeffghhiilmoossttuwwy",
+    "maxScore": 224
+  },
+  "413": {
+    "number": 413,
+    "letters": "ccdeeefhhijjlmnnorsstttuu",
+    "maxScore": 225
+  },
+  "414": {
+    "number": 414,
+    "letters": "abcdefiijmnnoooooprsttttv",
+    "maxScore": 225
+  },
+  "415": {
+    "number": 415,
+    "letters": "aaddeefgghhikmnoorsssttux",
+    "maxScore": 225
+  },
+  "416": {
+    "number": 416,
+    "letters": "ceeghhhlmnooooqrrrssstuvw",
+    "maxScore": 225
+  },
+  "417": {
+    "number": 417,
+    "letters": "ceeegghhiilnnoppprsssttzz",
+    "maxScore": 225
+  },
+  "418": {
+    "number": 418,
+    "letters": "acdefghiilmnprrssttuuvwyz",
+    "maxScore": 225
+  },
+  "419": {
+    "number": 419,
+    "letters": "aaadeeeegggmnnooqrrsssstu",
+    "maxScore": 225
+  },
+  "420": {
+    "number": 420,
+    "letters": "acceffhhiiilmoorrrrssttuu",
+    "maxScore": 225
+  },
+  "421": {
+    "number": 421,
+    "letters": "aceefhhhiilmmnnooosttuvwx",
+    "maxScore": 225
+  },
+  "422": {
+    "number": 422,
+    "letters": "aadeghhiiillllmmnorrssuwy",
+    "maxScore": 225
+  },
+  "423": {
+    "number": 423,
+    "letters": "aaeefghhikllmnnoorrsuuwyz",
+    "maxScore": 225
+  },
+  "424": {
+    "number": 424,
+    "letters": "addeeghhiijlmnopqrssttuwz",
+    "maxScore": 225
+  },
+  "425": {
+    "number": 425,
+    "letters": "accdfgghhiilnnoorssttttuw",
+    "maxScore": 225
+  },
+  "426": {
+    "number": 426,
+    "letters": "accceeehillmmnnooqrrssuyz",
+    "maxScore": 225
+  },
+  "427": {
+    "number": 427,
+    "letters": "aaddeeegghhiilmosstttuwyy",
+    "maxScore": 225
+  },
+  "428": {
+    "number": 428,
+    "letters": "bdeeeffhilmnnoorssttuvwxy",
+    "maxScore": 225
+  },
+  "429": {
+    "number": 429,
+    "letters": "aadeeeeghhllmnnnoopqssuuw",
+    "maxScore": 225
+  },
+  "430": {
+    "number": 430,
+    "letters": "aacceeffgghiijlnnoopsttuv",
+    "maxScore": 225
+  },
+  "431": {
+    "number": 431,
+    "letters": "aabeeeeefhhhiinnopssttuwz",
+    "maxScore": 225
+  },
+  "432": {
+    "number": 432,
+    "letters": "aadeeghllmnnooorssttttuvw",
+    "maxScore": 225
+  },
+  "433": {
+    "number": 433,
+    "letters": "abcddeeghiijllmnnopsttwyy",
+    "maxScore": 227
+  },
+  "434": {
+    "number": 434,
+    "letters": "aaeeefhiinnnoopppqrrssuww",
+    "maxScore": 227
+  },
+  "435": {
+    "number": 435,
+    "letters": "aaaceeefghhhillnnnorrsttw",
+    "maxScore": 227
+  },
+  "436": {
+    "number": 436,
+    "letters": "aabceeeefhhlnooqrsssttuuw",
+    "maxScore": 227
+  },
+  "437": {
+    "number": 437,
+    "letters": "aabbdeeefghiiimnoopppstvy",
+    "maxScore": 227
+  },
+  "438": {
+    "number": 438,
+    "letters": "acddeeeeefggijjmnnorsstty",
+    "maxScore": 227
+  },
+  "439": {
+    "number": 439,
+    "letters": "aacdeeefghhiijlmnpqsssttw",
+    "maxScore": 227
+  },
+  "440": {
+    "number": 440,
+    "letters": "aabdeeefghilmmnoorstuwwwz",
+    "maxScore": 227
+  },
+  "441": {
+    "number": 441,
+    "letters": "aadeghiiiilllmnnnoorsuuuw",
+    "maxScore": 227
+  },
+  "442": {
+    "number": 442,
+    "letters": "aaacdeeefghhhnnoorssttuwz",
+    "maxScore": 227
+  },
+  "443": {
+    "number": 443,
+    "letters": "cefghhiiiklmmnnnoprssttyy",
+    "maxScore": 227
+  },
+  "444": {
+    "number": 444,
+    "letters": "addeeeegghijmnooorsstuwxz",
+    "maxScore": 227
+  },
+  "445": {
+    "number": 445,
+    "letters": "abbcddeeeefghhiinnorstuvv",
+    "maxScore": 227
+  },
+  "446": {
+    "number": 446,
+    "letters": "aabeeeehhijllnnoooprttuwy",
+    "maxScore": 227
+  },
+  "447": {
+    "number": 447,
+    "letters": "aacdeeeehhiiilllmnossuuuv",
+    "maxScore": 227
+  },
+  "448": {
+    "number": 448,
+    "letters": "aaceeefghhiiiklooqrrstttz",
+    "maxScore": 227
+  },
+  "449": {
+    "number": 449,
+    "letters": "ceeeefghhiilmnoooorrstuwx",
+    "maxScore": 227
+  },
+  "450": {
+    "number": 450,
+    "letters": "aaadeefgghiijlmnnnoosstxx",
+    "maxScore": 227
+  },
+  "451": {
+    "number": 451,
+    "letters": "aacdeeefghhilmnnoprsuuwyz",
+    "maxScore": 227
+  },
+  "452": {
+    "number": 452,
+    "letters": "aaceeegghiilnnrssstuuvwxx",
+    "maxScore": 227
+  },
+  "453": {
+    "number": 453,
+    "letters": "aaeeefghhhiillnnnorrstuvw",
+    "maxScore": 228
+  },
+  "454": {
+    "number": 454,
+    "letters": "acdeefghhiijllmnnooqrsttw",
+    "maxScore": 228
+  },
+  "455": {
+    "number": 455,
+    "letters": "deeefghhilmnnoooqqrssttuw",
+    "maxScore": 228
+  },
+  "456": {
+    "number": 456,
+    "letters": "aaccceeeefghhhmmnossstttu",
+    "maxScore": 229
+  },
+  "457": {
+    "number": 457,
+    "letters": "aaddeeeiiilmmnoooorsttuux",
+    "maxScore": 230
+  },
+  "458": {
+    "number": 458,
+    "letters": "aaceeeefhikknnooprrsstuwx",
+    "maxScore": 230
+  },
+  "459": {
+    "number": 459,
+    "letters": "aacdeeefgghhiilmoossttuwx",
+    "maxScore": 230
+  },
+  "460": {
+    "number": 460,
+    "letters": "adeeeffghhhiiilnprrsttuvw",
+    "maxScore": 230
+  },
+  "461": {
+    "number": 461,
+    "letters": "aaabbcdeeeffiilnnoooqsstw",
+    "maxScore": 230
+  },
+  "462": {
+    "number": 462,
+    "letters": "aaddeeeeghiillnnostttvwxx",
+    "maxScore": 230
+  },
+  "463": {
+    "number": 463,
+    "letters": "aaceefgghhinnoqrrssstuvwz",
+    "maxScore": 230
+  },
+  "464": {
+    "number": 464,
+    "letters": "aaceeefffgiiijlnnoooqsstx",
+    "maxScore": 230
+  },
+  "465": {
+    "number": 465,
+    "letters": "aaaacddfghiiijllmnnosttwz",
+    "maxScore": 230
+  },
+  "466": {
+    "number": 466,
+    "letters": "aaeeeffghhiilmmnppsssttuw",
+    "maxScore": 230
+  },
+  "467": {
+    "number": 467,
+    "letters": "aceefghijlmnnooorsstttuwz",
+    "maxScore": 230
+  },
+  "468": {
+    "number": 468,
+    "letters": "aaaddeefhiiiklnooorsttxyz",
+    "maxScore": 230
+  },
+  "469": {
+    "number": 469,
+    "letters": "acdeefghiiillmnoopsstuuvv",
+    "maxScore": 230
+  },
+  "470": {
+    "number": 470,
+    "letters": "aaaaceeefghiikmnnnqrsstuz",
+    "maxScore": 230
+  },
+  "471": {
+    "number": 471,
+    "letters": "aaaacdeefhhhiijlnnoqrsstu",
+    "maxScore": 230
+  },
+  "472": {
+    "number": 472,
+    "letters": "aadefhhhiiklnnoqrrsssttuw",
+    "maxScore": 230
+  },
+  "473": {
+    "number": 473,
+    "letters": "aaccdeefgghhiimmnnnootuuv",
+    "maxScore": 230
+  },
+  "474": {
+    "number": 474,
+    "letters": "aacdeeefghhilnnooossttuwz",
+    "maxScore": 230
+  },
+  "475": {
+    "number": 475,
+    "letters": "aacdeeegghhilmnnoqssttuuw",
+    "maxScore": 230
+  },
+  "476": {
+    "number": 476,
+    "letters": "aaacdeeeefghhiilmnossttwy",
+    "maxScore": 230
+  },
+  "477": {
+    "number": 477,
+    "letters": "bceehiikmnnnnooorssstuvww",
+    "maxScore": 230
+  },
+  "478": {
+    "number": 478,
+    "letters": "abeefghhlnnnnooqqssttuuvw",
+    "maxScore": 230
+  },
+  "479": {
+    "number": 479,
+    "letters": "aeeeehiilmnnooqqrsttvwxyz",
+    "maxScore": 230
+  },
+  "480": {
+    "number": 480,
+    "letters": "aaceeefggghhhiilmoorsstwz",
+    "maxScore": 230
+  },
+  "481": {
+    "number": 481,
+    "letters": "aadeefffhhimmnnoorssttuxx",
+    "maxScore": 230
+  },
+  "482": {
+    "number": 482,
+    "letters": "accdeghiiklmnnoooqssttwyy",
+    "maxScore": 230
+  },
+  "483": {
+    "number": 483,
+    "letters": "cdeeefghhilmmnnoopprsswxy",
+    "maxScore": 232
+  },
+  "484": {
+    "number": 484,
+    "letters": "aacdeeeffghiklnnosttuvwxy",
+    "maxScore": 232
+  },
+  "485": {
+    "number": 485,
+    "letters": "aacehhiiikllmnoorrssttvvv",
+    "maxScore": 232
+  },
+  "486": {
+    "number": 486,
+    "letters": "ccddeeefghhijlmnoorssttuw",
+    "maxScore": 232
+  },
+  "487": {
+    "number": 487,
+    "letters": "abceefghiiimnnopqqrsttuxz",
+    "maxScore": 232
+  },
+  "488": {
+    "number": 488,
+    "letters": "aaacegijjlmmnnnoopprssttv",
+    "maxScore": 232
+  },
+  "489": {
+    "number": 489,
+    "letters": "bbcdeeeffgghiimnnoqrsstuw",
+    "maxScore": 232
+  },
+  "490": {
+    "number": 490,
+    "letters": "aaacceeegghhiikmmnssttvwx",
+    "maxScore": 232
+  },
+  "491": {
+    "number": 491,
+    "letters": "acddeefghiiklmnpprrssttuw",
+    "maxScore": 233
+  },
+  "492": {
+    "number": 492,
+    "letters": "adeeefghhhiillmnnoqsstuwz",
+    "maxScore": 233
+  },
+  "493": {
+    "number": 493,
+    "letters": "aaceeeeghhiillmmoopqqsttv",
+    "maxScore": 233
+  },
+  "494": {
+    "number": 494,
+    "letters": "abcefghhiijmnnoossssttuuw",
+    "maxScore": 233
+  },
+  "495": {
+    "number": 495,
+    "letters": "accdeefghhhilmnnoorsstvww",
+    "maxScore": 233
+  },
+  "496": {
+    "number": 496,
+    "letters": "aaaccdeghhiiklmnnnoqssttv",
+    "maxScore": 233
+  },
+  "497": {
+    "number": 497,
+    "letters": "aacdeeeeghkkmooprrsstttuz",
+    "maxScore": 233
+  },
+  "498": {
+    "number": 498,
+    "letters": "acddeeeghhnoqrrssstttuwwz",
+    "maxScore": 233
+  },
+  "499": {
+    "number": 499,
+    "letters": "aaeeegghhiimmnoqqrrrstuwx",
+    "maxScore": 233
+  },
+  "500": {
+    "number": 500,
+    "letters": "aadeeghhiiiijlmnnoprtttux",
+    "maxScore": 233
+  },
+  "501": {
+    "number": 501,
+    "letters": "acdefghhilmnnooorrsstuwzz",
+    "maxScore": 233
+  },
+  "502": {
+    "number": 502,
+    "letters": "abccddehiillnnoqrstttuuwz",
+    "maxScore": 233
+  },
+  "503": {
+    "number": 503,
+    "letters": "aaaabdefgijllmmnnoorsstww",
+    "maxScore": 233
+  },
+  "504": {
+    "number": 504,
+    "letters": "acdddeeehimmnnoopqrrrsuwx",
+    "maxScore": 233
+  },
+  "505": {
+    "number": 505,
+    "letters": "aaeeghhhiiilmnooqrrssttvv",
+    "maxScore": 233
+  },
+  "506": {
+    "number": 506,
+    "letters": "aacdeeeefghiilmnnsstuvwxz",
+    "maxScore": 233
+  },
+  "507": {
+    "number": 507,
+    "letters": "aaacdeehhiinnnooqrttuvvwz",
+    "maxScore": 233
+  },
+  "508": {
+    "number": 508,
+    "letters": "aabdeeeffhhiijlnnoqrstuwx",
+    "maxScore": 233
+  },
+  "509": {
+    "number": 509,
+    "letters": "aacddeeeghjlmnnorssttuwxz",
+    "maxScore": 233
+  },
+  "510": {
+    "number": 510,
+    "letters": "aaadeehhlmmnnoorrssttuvwz",
+    "maxScore": 233
+  },
+  "511": {
+    "number": 511,
+    "letters": "adeeeghijmnoprssttttuuwzz",
+    "maxScore": 233
+  },
+  "512": {
+    "number": 512,
+    "letters": "aadeeefghhhiklmnnoorstuww",
+    "maxScore": 234
+  },
+  "513": {
+    "number": 513,
+    "letters": "bcdeeefghhiilnnooorsttxxy",
+    "maxScore": 234
+  },
+  "514": {
+    "number": 514,
+    "letters": "aaccddeefhhiimnnoooosttwy",
+    "maxScore": 234
+  },
+  "515": {
+    "number": 515,
+    "letters": "aaadddeeffiikmmnnoorsstuw",
+    "maxScore": 234
+  },
+  "516": {
+    "number": 516,
+    "letters": "aaacdeeefhikllnnorrrssuuv",
+    "maxScore": 234
+  },
+  "517": {
+    "number": 517,
+    "letters": "aaaacddeeefghiknnrstttuwy",
+    "maxScore": 234
+  },
+  "518": {
+    "number": 518,
+    "letters": "aceeeegghhiijlmnooprsttwy",
+    "maxScore": 234
+  },
+  "519": {
+    "number": 519,
+    "letters": "abddeeefghhijlmmnoorstuww",
+    "maxScore": 234
+  },
+  "520": {
+    "number": 520,
+    "letters": "aaddeeeghhiijklnorrsstwwx",
+    "maxScore": 234
+  },
+  "521": {
+    "number": 521,
+    "letters": "aaacddeeehhhmmmnnnoossttw",
+    "maxScore": 234
+  },
+  "522": {
+    "number": 522,
+    "letters": "acceeefggiilnnoorrsssuwxz",
+    "maxScore": 234
+  },
+  "523": {
+    "number": 523,
+    "letters": "acdeeeeefghhijlnooorstttx",
+    "maxScore": 234
+  },
+  "524": {
+    "number": 524,
+    "letters": "aacceeefghjlmnnooqrrsssuw",
+    "maxScore": 234
+  },
+  "525": {
+    "number": 525,
+    "letters": "aacdeeeeghhlmnnoopqrsstww",
+    "maxScore": 234
+  },
+  "526": {
+    "number": 526,
+    "letters": "aacdeeefgghiilmmmnnortuvw",
+    "maxScore": 234
+  },
+  "527": {
+    "number": 527,
+    "letters": "aacddeeefghijlnnoosssttuw",
+    "maxScore": 234
+  },
+  "528": {
+    "number": 528,
+    "letters": "aaeeefghhijlmmnnoorssttvw",
+    "maxScore": 234
+  },
+  "529": {
+    "number": 529,
+    "letters": "aabddeeehiimoopqrrrssstvx",
+    "maxScore": 234
+  },
+  "530": {
+    "number": 530,
+    "letters": "aadeeeehhhiiiklnoqrsstuwx",
+    "maxScore": 234
+  },
+  "531": {
+    "number": 531,
+    "letters": "aaacdeeeiijklmmnorrtttuuw",
+    "maxScore": 234
+  },
+  "532": {
+    "number": 532,
+    "letters": "abccefgghiiinnoossssttuww",
+    "maxScore": 234
+  },
+  "533": {
+    "number": 533,
+    "letters": "aacceeefghhiilmnnoosstuwx",
+    "maxScore": 234
+  },
+  "534": {
+    "number": 534,
+    "letters": "aaaceeefghhiijmmnnoosstuz",
+    "maxScore": 234
+  },
+  "535": {
+    "number": 535,
+    "letters": "abcdeeeiiiilnosstttttuvwx",
+    "maxScore": 234
+  },
+  "536": {
+    "number": 536,
+    "letters": "aacdeeeehhiilmnooprsstuuu",
+    "maxScore": 234
+  },
+  "537": {
+    "number": 537,
+    "letters": "aaceeeegghhiinnooorrttuvw",
+    "maxScore": 234
+  },
+  "538": {
+    "number": 538,
+    "letters": "aaceeegghhiilllnoooosstuw",
+    "maxScore": 234
+  },
+  "539": {
+    "number": 539,
+    "letters": "aceeefiklmmnooorssttuuuwx",
+    "maxScore": 234
+  },
+  "540": {
+    "number": 540,
+    "letters": "acdeeefghhhilnnosstttuwwy",
+    "maxScore": 234
+  },
+  "541": {
+    "number": 541,
+    "letters": "aaeeghhilmmnnnprstuuuuwyy",
+    "maxScore": 234
+  },
+  "542": {
+    "number": 542,
+    "letters": "aaceeeghiijlmnoqrrsttuuwz",
+    "maxScore": 234
+  },
+  "543": {
+    "number": 543,
+    "letters": "aacddeeeehhilnnooooprsstu",
+    "maxScore": 234
+  },
+  "544": {
+    "number": 544,
+    "letters": "accdddeeefgiilnnoossttvww",
+    "maxScore": 234
+  },
+  "545": {
+    "number": 545,
+    "letters": "aaccdeeegghhiilmnssttuwxy",
+    "maxScore": 234
+  },
+  "546": {
+    "number": 546,
+    "letters": "abdeeeeffgkllmnnnoossttux",
+    "maxScore": 234
+  },
+  "547": {
+    "number": 547,
+    "letters": "aaaaceeefhhiklmmmnnoortuw",
+    "maxScore": 234
+  },
+  "548": {
+    "number": 548,
+    "letters": "aaacdeeeffhhiilmnnootttuw",
+    "maxScore": 234
+  },
+  "549": {
+    "number": 549,
+    "letters": "aaabcceeeffhhhiiorrssttwz",
+    "maxScore": 234
+  },
+  "550": {
+    "number": 550,
+    "letters": "aaabceeefhhhiilmnnoqrsttw",
+    "maxScore": 234
+  },
+  "551": {
+    "number": 551,
+    "letters": "aaaccdeehijnnoooprsstttyy",
+    "maxScore": 234
+  },
+  "552": {
+    "number": 552,
+    "letters": "aaabceefffhhhilmnprrssstw",
+    "maxScore": 234
+  },
+  "553": {
+    "number": 553,
+    "letters": "dddeeeffghiiinnooorrrsttv",
+    "maxScore": 234
+  },
+  "554": {
+    "number": 554,
+    "letters": "aacdeeeffhhiilnnooorttuwx",
+    "maxScore": 234
+  },
+  "555": {
+    "number": 555,
+    "letters": "aabcdeeehhinnoorsstuuvwyz",
+    "maxScore": 234
+  },
+  "556": {
+    "number": 556,
+    "letters": "aabeefghilmnnoorssttuvwwy",
+    "maxScore": 234
+  },
+  "557": {
+    "number": 557,
+    "letters": "aacdeeeffghhimnnoossttuwz",
+    "maxScore": 234
+  },
+  "558": {
+    "number": 558,
+    "letters": "abeeeghhiimnnooqsssttuuwx",
+    "maxScore": 234
+  },
+  "559": {
+    "number": 559,
+    "letters": "acdeeefhhikkllmnnooorsstx",
+    "maxScore": 234
+  },
+  "560": {
+    "number": 560,
+    "letters": "aacdefghhilmmnoqrssttuuww",
+    "maxScore": 234
+  },
+  "561": {
+    "number": 561,
+    "letters": "aabdeeehhilnnnorsstuuuwww",
+    "maxScore": 234
+  },
+  "562": {
+    "number": 562,
+    "letters": "adeeefgghhiijlmnoossttttw",
+    "maxScore": 234
+  },
+  "563": {
+    "number": 563,
+    "letters": "aabbeeeghhilnnoosssttuwyz",
+    "maxScore": 234
+  },
+  "564": {
+    "number": 564,
+    "letters": "acdeeegiiiikmnnoorsssuuwx",
+    "maxScore": 234
+  },
+  "565": {
+    "number": 565,
+    "letters": "aabcdeffghhiimnnoprsssttz",
+    "maxScore": 234
+  },
+  "566": {
+    "number": 566,
+    "letters": "aabbbceehiijllnorrstttuuw",
+    "maxScore": 234
+  },
+  "567": {
+    "number": 567,
+    "letters": "aacdddeefghhiijlnoosttuuw",
+    "maxScore": 234
+  },
+  "568": {
+    "number": 568,
+    "letters": "aabdeeefghiilnnoosstuwxxy",
+    "maxScore": 234
+  },
+  "569": {
+    "number": 569,
+    "letters": "aaabeeeefiijmnnnoorrsstuw",
+    "maxScore": 234
+  },
+  "570": {
+    "number": 570,
+    "letters": "aaabdeeefggjlllmmnnoorsst",
+    "maxScore": 234
+  },
+  "571": {
+    "number": 571,
+    "letters": "ccdeeeehhillnnoosstttuuwx",
+    "maxScore": 234
+  },
+  "572": {
+    "number": 572,
+    "letters": "aabeeefghhhiijlmnorssttwy",
+    "maxScore": 234
+  },
+  "573": {
+    "number": 573,
+    "letters": "aadeeegiiilmmnnnosttuuwwy",
+    "maxScore": 234
+  },
+  "574": {
+    "number": 574,
+    "letters": "aacdeeffghhiinooprrttuuvz",
+    "maxScore": 234
+  },
+  "575": {
+    "number": 575,
+    "letters": "aacddeeeefgghlnnooprsttww",
+    "maxScore": 234
+  },
+  "576": {
+    "number": 576,
+    "letters": "aeeeefghiikmmnnoqrsstuuwy",
+    "maxScore": 237
+  },
+  "577": {
+    "number": 577,
+    "letters": "aacdeefghhiilmnrrssttuwwx",
+    "maxScore": 237
+  },
+  "578": {
+    "number": 578,
+    "letters": "addeeefhhhiilmooorsssstxy",
+    "maxScore": 237
+  },
+  "579": {
+    "number": 579,
+    "letters": "aeeefhhhiilmnnooqrssttuwz",
+    "maxScore": 237
+  },
+  "580": {
+    "number": 580,
+    "letters": "aadeeefghhilmnnnoorssttwx",
+    "maxScore": 237
+  },
+  "581": {
+    "number": 581,
+    "letters": "aaccddeeehhhiiloosssttuww",
+    "maxScore": 237
+  },
+  "582": {
+    "number": 582,
+    "letters": "aaceeeefhhiikmnnoorsttuvz",
+    "maxScore": 237
+  },
+  "583": {
+    "number": 583,
+    "letters": "aacdeefghhinnoooprssttvyz",
+    "maxScore": 237
+  },
+  "584": {
+    "number": 584,
+    "letters": "aacdfghhiiilmmnnooqssttuw",
+    "maxScore": 237
+  },
+  "585": {
+    "number": 585,
+    "letters": "acdeefhhiimnnorsstttuuwzz",
+    "maxScore": 237
+  },
+  "586": {
+    "number": 586,
+    "letters": "acdeeffhhhiilmnnooprrsstx",
+    "maxScore": 237
+  },
+  "587": {
+    "number": 587,
+    "letters": "abccdeeeefffghiiijlnnprss",
+    "maxScore": 237
+  },
+  "588": {
+    "number": 588,
+    "letters": "aaceeeffghhiijklnnooqrstu",
+    "maxScore": 237
+  },
+  "589": {
+    "number": 589,
+    "letters": "acdeeefhhiimnopqrrrssvxyz",
+    "maxScore": 237
+  },
+  "590": {
+    "number": 590,
+    "letters": "deeeefhhiiillnnoosssttuux",
+    "maxScore": 237
+  },
+  "591": {
+    "number": 591,
+    "letters": "abcdeehhiimnnoorrsstuvwyz",
+    "maxScore": 237
+  },
+  "592": {
+    "number": 592,
+    "letters": "aabcceeefhhhiiilnooprttuw",
+    "maxScore": 237
+  },
+  "593": {
+    "number": 593,
+    "letters": "aceeeffhhiijllmmnnoorsstu",
+    "maxScore": 237
+  },
+  "594": {
+    "number": 594,
+    "letters": "acdeeehhhiilmnnorssttuwzz",
+    "maxScore": 237
+  },
+  "595": {
+    "number": 595,
+    "letters": "aaccdeeefhijlmnooqrsstuwz",
+    "maxScore": 237
+  },
+  "596": {
+    "number": 596,
+    "letters": "aacffghiikmnnooorsssstuwz",
+    "maxScore": 237
+  },
+  "597": {
+    "number": 597,
+    "letters": "acdefghhikllmnooostttuuvv",
+    "maxScore": 237
+  },
+  "598": {
+    "number": 598,
+    "letters": "aacdeeffhhiijnnoooprsstww",
+    "maxScore": 237
+  },
+  "599": {
+    "number": 599,
+    "letters": "abceegghiijnnoooorstttuuw",
+    "maxScore": 237
+  },
+  "600": {
+    "number": 600,
+    "letters": "adeefghhiikllnnoorsstuuwz",
+    "maxScore": 237
+  },
+  "601": {
+    "number": 601,
+    "letters": "aaddeeefhilmnnooqqrrsstuw",
+    "maxScore": 237
+  },
+  "602": {
+    "number": 602,
+    "letters": "acddeeeghhiikknorsstuvwxz",
+    "maxScore": 237
+  },
+  "603": {
+    "number": 603,
+    "letters": "aacdeeefhhhhiimnnooorttuw",
+    "maxScore": 239
+  },
+  "604": {
+    "number": 604,
+    "letters": "abcdeeeefhhiilmnnoostttuz",
+    "maxScore": 241
+  },
+  "605": {
+    "number": 605,
+    "letters": "aacdeeefghhiinnoossttuwyy",
+    "maxScore": 241
+  },
+  "606": {
+    "number": 606,
+    "letters": "adeeegghhiinnnopqrrstttvy",
+    "maxScore": 241
+  },
+  "607": {
+    "number": 607,
+    "letters": "aadeeeghhijlnnorsstuuuuvw",
+    "maxScore": 241
+  },
+  "608": {
+    "number": 608,
+    "letters": "aadeefgghhiiimnnossttuuwy",
+    "maxScore": 241
+  },
+  "609": {
+    "number": 609,
+    "letters": "aaabbeefghilmnnopqrrstuuw",
+    "maxScore": 241
+  },
+  "610": {
+    "number": 610,
+    "letters": "aaaceeffghiiklmnnoorttuvw",
+    "maxScore": 241
+  },
+  "611": {
+    "number": 611,
+    "letters": "aaceeeffhiiklmnnoosstuuww",
+    "maxScore": 241
+  },
+  "612": {
+    "number": 612,
+    "letters": "adeeeehhiiklmnnoosstttuwz",
+    "maxScore": 241
+  },
+  "613": {
+    "number": 613,
+    "letters": "acdeeefghhiillnnorsstuvww",
+    "maxScore": 241
+  },
+  "614": {
+    "number": 614,
+    "letters": "abcdeefghhiklnoorrrtttuuu",
+    "maxScore": 241
+  },
+  "615": {
+    "number": 615,
+    "letters": "aceeefghhiijmmnnoqrrssttx",
+    "maxScore": 241
+  },
+  "616": {
+    "number": 616,
+    "letters": "aabeeeffghhiikmnnrsttuuuz",
+    "maxScore": 241
+  },
+  "617": {
+    "number": 617,
+    "letters": "aaceeehhiillmmoorssttuwwy",
+    "maxScore": 241
+  },
+  "618": {
+    "number": 618,
+    "letters": "aacdeeefhhiiklmrsssstuvwy",
+    "maxScore": 241
+  },
+  "619": {
+    "number": 619,
+    "letters": "aaeeeeeghhiikklmnnoorssuu",
+    "maxScore": 241
+  },
+  "620": {
+    "number": 620,
+    "letters": "aceeefghiijlmnnoorsstuvww",
+    "maxScore": 241
+  },
+  "621": {
+    "number": 621,
+    "letters": "aaacdeefghhilmnnooqsttuuw",
+    "maxScore": 241
+  },
+  "622": {
+    "number": 622,
+    "letters": "aaacddeeghhiiimnoossttuuw",
+    "maxScore": 241
+  },
+  "623": {
+    "number": 623,
+    "letters": "acddeeefhiilmnooqrrstuwxy",
+    "maxScore": 241
+  },
+  "624": {
+    "number": 624,
+    "letters": "addeeeeeffghhijlmnrssttuv",
+    "maxScore": 241
+  },
+  "625": {
+    "number": 625,
+    "letters": "aacdeeeeefhhikmnooqrrsstt",
+    "maxScore": 241
+  },
+  "626": {
+    "number": 626,
+    "letters": "aaacdddeeeefhimnnnsttuvvw",
+    "maxScore": 241
+  },
+  "627": {
+    "number": 627,
+    "letters": "adeeeefhhiiklnnoossssttuw",
+    "maxScore": 241
+  },
+  "628": {
+    "number": 628,
+    "letters": "aadeeeffghhiillnoopssttuu",
+    "maxScore": 241
+  },
+  "629": {
+    "number": 629,
+    "letters": "aacdeeeffghlmnnooqrssttuw",
+    "maxScore": 242
+  },
+  "630": {
+    "number": 630,
+    "letters": "aabcddeefghhhiilnoqrrsttu",
+    "maxScore": 242
+  },
+  "631": {
+    "number": 631,
+    "letters": "aaaeeeehilmnnoopprssttuwy",
+    "maxScore": 242
+  },
+  "632": {
+    "number": 632,
+    "letters": "abddeeeffghiinooorssttvwx",
+    "maxScore": 242
+  },
+  "633": {
+    "number": 633,
+    "letters": "aceehhhiiillmnnooorsssstw",
+    "maxScore": 242
+  },
+  "634": {
+    "number": 634,
+    "letters": "aaadeeeghiijlmnnnrtttuwyy",
+    "maxScore": 242
+  },
+  "635": {
+    "number": 635,
+    "letters": "acddeeeefghhiilmnnooqstuy",
+    "maxScore": 242
+  },
+  "636": {
+    "number": 636,
+    "letters": "aacddeefghimnnooqrstttuvw",
+    "maxScore": 242
+  },
+  "637": {
+    "number": 637,
+    "letters": "aadeeefhhhhiimnoprsssttuw",
+    "maxScore": 242
+  },
+  "638": {
+    "number": 638,
+    "letters": "aaacddeeeefghimnnoostttuw",
+    "maxScore": 242
+  },
+  "639": {
+    "number": 639,
+    "letters": "acdeeefghiiklmmnnoorttuvx",
+    "maxScore": 242
+  },
+  "640": {
+    "number": 640,
+    "letters": "aabceefghhilmmnnoossttuvw",
+    "maxScore": 242
+  },
+  "641": {
+    "number": 641,
+    "letters": "aabcdeeefhhiimmnoorssttuw",
+    "maxScore": 242
+  },
+  "642": {
+    "number": 642,
+    "letters": "aeeefghiilnnnoorsstttwwxy",
+    "maxScore": 242
+  },
+  "643": {
+    "number": 643,
+    "letters": "abceeefghiklmnooprstttuyz",
+    "maxScore": 242
+  },
+  "644": {
+    "number": 644,
+    "letters": "aacccddeefghhiimnnoprstuw",
+    "maxScore": 242
+  },
+  "645": {
+    "number": 645,
+    "letters": "abdeeeeehiijlmmnnnoorstuv",
+    "maxScore": 242
+  },
+  "646": {
+    "number": 646,
+    "letters": "aaceehhhiilmnnnoprssttuxz",
+    "maxScore": 242
+  },
+  "647": {
+    "number": 647,
+    "letters": "aaaceeefghiimnnorsttuuxyz",
+    "maxScore": 242
+  },
+  "648": {
+    "number": 648,
+    "letters": "aacddeeefghllmnoorssttuvw",
+    "maxScore": 242
+  },
+  "649": {
+    "number": 649,
+    "letters": "aabbceeeehhiilmmnnoqssttt",
+    "maxScore": 242
+  },
+  "650": {
+    "number": 650,
+    "letters": "aacdehhhimmnnooprsstttuuw",
+    "maxScore": 242
+  },
+  "651": {
+    "number": 651,
+    "letters": "acdeeefhhijllmnnoosssttuw",
+    "maxScore": 242
+  },
+  "652": {
+    "number": 652,
+    "letters": "aaacceeeggiiikllnoostttuv",
+    "maxScore": 242
+  },
+  "653": {
+    "number": 653,
+    "letters": "aaceeefghhhiilnnoossttuwy",
+    "maxScore": 242
+  },
+  "654": {
+    "number": 654,
+    "letters": "acdeefgghhhiiknnorrsttuuw",
+    "maxScore": 242
+  },
+  "655": {
+    "number": 655,
+    "letters": "ccdeeeehhiklmnnoopssttuwy",
+    "maxScore": 243
+  },
+  "656": {
+    "number": 656,
+    "letters": "aceefhhhilmnoorrsssttuuwy",
+    "maxScore": 243
+  },
+  "657": {
+    "number": 657,
+    "letters": "abcdddeehiilmmnoorrsssuwy",
+    "maxScore": 243
+  },
+  "658": {
+    "number": 658,
+    "letters": "aaccdeeeffgghiilmnossttuw",
+    "maxScore": 243
+  },
+  "659": {
+    "number": 659,
+    "letters": "acdeeeghhhiimnnoorsstuvxz",
+    "maxScore": 243
+  },
+  "660": {
+    "number": 660,
+    "letters": "aacdeeehhhiimmmorrsssttuw",
+    "maxScore": 243
+  },
+  "661": {
+    "number": 661,
+    "letters": "aaeeefghhiijlnnooqrsstuww",
+    "maxScore": 243
+  },
+  "662": {
+    "number": 662,
+    "letters": "aacdeeeegghhiijmnnopsstty",
+    "maxScore": 243
+  },
+  "663": {
+    "number": 663,
+    "letters": "acdeeeeghiimnnooossstuuwx",
+    "maxScore": 243
+  },
+  "664": {
+    "number": 664,
+    "letters": "aceeeefghhiilnnooorsstuwx",
+    "maxScore": 243
+  },
+  "665": {
+    "number": 665,
+    "letters": "aaadefhhiiijllmnnnoorttuw",
+    "maxScore": 244
+  },
+  "666": {
+    "number": 666,
+    "letters": "aaccdeeefghhiilmnoqssstuy",
+    "maxScore": 244
+  },
+  "667": {
+    "number": 667,
+    "letters": "cdeeeghimnnnoorsssstttuwx",
+    "maxScore": 244
+  },
+  "668": {
+    "number": 668,
+    "letters": "addeeefghhiilmmnnooqrssuw",
+    "maxScore": 244
+  },
+  "669": {
+    "number": 669,
+    "letters": "adeeeegghiikmmnoopprsttxz",
+    "maxScore": 244
+  },
+  "670": {
+    "number": 670,
+    "letters": "aabcdeeeeffghhiiimnprsstw",
+    "maxScore": 244
+  },
+  "671": {
+    "number": 671,
+    "letters": "aaaccddeeghhiijlmnrsstuuw",
+    "maxScore": 244
+  },
+  "672": {
+    "number": 672,
+    "letters": "ddeeefghhilmmnnnoorrssstt",
+    "maxScore": 244
+  },
+  "673": {
+    "number": 673,
+    "letters": "cdeeeggghhiilmmnoorrssttw",
+    "maxScore": 244
+  },
+  "674": {
+    "number": 674,
+    "letters": "aadeeefghhiillmnoopssttuw",
+    "maxScore": 244
+  },
+  "675": {
+    "number": 675,
+    "letters": "aaaddeeeghhlmnnnoqrssttuw",
+    "maxScore": 244
+  },
+  "676": {
+    "number": 676,
+    "letters": "aaaceeeefhhijlnnosstttuuy",
+    "maxScore": 244
+  },
+  "677": {
+    "number": 677,
+    "letters": "aaacdeeefgghhiilmnoorsuuw",
+    "maxScore": 244
+  },
+  "678": {
+    "number": 678,
+    "letters": "aacccddeeehinnopsstttuuwz",
+    "maxScore": 244
+  },
+  "679": {
+    "number": 679,
+    "letters": "aaaadeeefillmnorsstttuuvx",
+    "maxScore": 245
+  },
+  "680": {
+    "number": 680,
+    "letters": "aaeeeffgiijjjnnoorrrstttu",
+    "maxScore": 245
+  },
+  "681": {
+    "number": 681,
+    "letters": "acddeeefhhhijlmnnnoorsttw",
+    "maxScore": 245
+  },
+  "682": {
+    "number": 682,
+    "letters": "acdeeeeffijkllnnooprssuwx",
+    "maxScore": 245
+  },
+  "683": {
+    "number": 683,
+    "letters": "aadeeefgghhijmnnoorrsstwz",
+    "maxScore": 245
+  },
+  "684": {
+    "number": 684,
+    "letters": "acdeefghiilmnnooqrssttvww",
+    "maxScore": 245
+  },
+  "685": {
+    "number": 685,
+    "letters": "aaccdeeghiilmmnnorssuvvwx",
+    "maxScore": 245
+  },
+  "686": {
+    "number": 686,
+    "letters": "aacdeefgiknnnoooprsttwxyz",
+    "maxScore": 245
+  },
+  "687": {
+    "number": 687,
+    "letters": "aabcdeeeffhhiikmnnooqrstw",
+    "maxScore": 245
+  },
+  "688": {
+    "number": 688,
+    "letters": "aabcefggghhiklmnorssttuux",
+    "maxScore": 245
+  },
+  "689": {
+    "number": 689,
+    "letters": "aaaefgghiiiimmnnsssttvwwy",
+    "maxScore": 245
+  },
+  "690": {
+    "number": 690,
+    "letters": "aaaceeeilllnnoorssttuuuvw",
+    "maxScore": 245
+  },
+  "691": {
+    "number": 691,
+    "letters": "aacdeeefhikklmnorrsttvwxz",
+    "maxScore": 245
+  },
+  "692": {
+    "number": 692,
+    "letters": "aacdeeeghhimnnoorsstttwxx",
+    "maxScore": 245
+  },
+  "693": {
+    "number": 693,
+    "letters": "aaccdeghhiiilmnoorssttvwz",
+    "maxScore": 246
+  },
+  "694": {
+    "number": 694,
+    "letters": "aacdeeeefgiiilmnnoosstuuy",
+    "maxScore": 246
+  },
+  "695": {
+    "number": 695,
+    "letters": "aaacdeeehhiiijmnoorssttuw",
+    "maxScore": 246
+  },
+  "696": {
+    "number": 696,
+    "letters": "acdeeeghhiilmmnnpqrrrttuw",
+    "maxScore": 246
+  },
+  "697": {
+    "number": 697,
+    "letters": "aaabcdeeeffghhiimnrssstuw",
+    "maxScore": 246
+  },
+  "698": {
+    "number": 698,
+    "letters": "acdeeefghhiikmnnnooossttw",
+    "maxScore": 248
+  },
+  "699": {
+    "number": 699,
+    "letters": "aaacdeeghiiilmnnoorstuuuw",
+    "maxScore": 248
+  },
+  "700": {
+    "number": 700,
+    "letters": "aaeefghhiillmnorssttuvwxy",
+    "maxScore": 248
+  },
+  "701": {
+    "number": 701,
+    "letters": "aeeefgijmmnnnoorrsstttttu",
+    "maxScore": 248
+  },
+  "702": {
+    "number": 702,
+    "letters": "aaccdeeeeffgiiiiinnoopssu",
+    "maxScore": 248
+  },
+  "703": {
+    "number": 703,
+    "letters": "aadefghhiijmnnoorsssttuuv",
+    "maxScore": 248
+  },
+  "704": {
+    "number": 704,
+    "letters": "aaccceeehhiilnnoorsttuwwz",
+    "maxScore": 248
+  },
+  "705": {
+    "number": 705,
+    "letters": "aadeeeghhiklmnnoorssttuvw",
+    "maxScore": 248
+  },
+  "706": {
+    "number": 706,
+    "letters": "aabdeeehhiijlmnnoorssttvv",
+    "maxScore": 248
+  },
+  "707": {
+    "number": 707,
+    "letters": "aadeefhiikllnoorsttuuwyyz",
+    "maxScore": 248
+  },
+  "708": {
+    "number": 708,
+    "letters": "aacceeefhhhilnnooqrssttww",
+    "maxScore": 248
+  },
+  "709": {
+    "number": 709,
+    "letters": "aacdeeeffghiilmnnoosstuww",
+    "maxScore": 248
+  },
+  "710": {
+    "number": 710,
+    "letters": "aadeeeefghhimnnoorstttuwx",
+    "maxScore": 248
+  },
+  "711": {
+    "number": 711,
+    "letters": "aaacdeefghiiiijlmnoorstux",
+    "maxScore": 248
+  },
+  "712": {
+    "number": 712,
+    "letters": "cdeeefghiilmnnnoorsttuuww",
+    "maxScore": 248
+  },
+  "713": {
+    "number": 713,
+    "letters": "aacdeeefhhikmnoqrsssttuvw",
+    "maxScore": 248
+  },
+  "714": {
+    "number": 714,
+    "letters": "abdeeefghiijloooorssttuww",
+    "maxScore": 248
+  },
+  "715": {
+    "number": 715,
+    "letters": "aacdeeeffghhiilnnooorttwx",
+    "maxScore": 248
+  },
+  "716": {
+    "number": 716,
+    "letters": "aacddeeeghiimnnnoosttuwxy",
+    "maxScore": 248
+  },
+  "717": {
+    "number": 717,
+    "letters": "aaccdeeefghhiilmmnrssttuw",
+    "maxScore": 248
+  },
+  "718": {
+    "number": 718,
+    "letters": "abceeeefghiiijnnoooprrttu",
+    "maxScore": 248
+  },
+  "719": {
+    "number": 719,
+    "letters": "deeegghiiiklnnoorsttuwwxy",
+    "maxScore": 249
+  },
+  "720": {
+    "number": 720,
+    "letters": "accdeeeghhiilmooqrrssttuw",
+    "maxScore": 249
+  },
+  "721": {
+    "number": 721,
+    "letters": "aaceeegghhhhiimnnoossttuw",
+    "maxScore": 249
+  },
+  "722": {
+    "number": 722,
+    "letters": "accdeeefgghhhiiinnopsstwy",
+    "maxScore": 249
+  },
+  "723": {
+    "number": 723,
+    "letters": "aadeeefhiiklmmnoorrstttww",
+    "maxScore": 249
+  },
+  "724": {
+    "number": 724,
+    "letters": "aaaeeefghhilmnoorrssstuwy",
+    "maxScore": 249
+  },
+  "725": {
+    "number": 725,
+    "letters": "aacdeeefghiilmnorrsttuvwz",
+    "maxScore": 249
+  },
+  "726": {
+    "number": 726,
+    "letters": "aceeegghhiiijllnnnosttuvz",
+    "maxScore": 249
+  },
+  "727": {
+    "number": 727,
+    "letters": "aacdeeefghhillmnnoprsstwy",
+    "maxScore": 249
+  },
+  "728": {
+    "number": 728,
+    "letters": "aaeeeffghhiiimnnorrsttvwx",
+    "maxScore": 249
+  },
+  "729": {
+    "number": 729,
+    "letters": "abcdeeeffghhiimnoorsssttw",
+    "maxScore": 250
+  },
+  "730": {
+    "number": 730,
+    "letters": "aaceefghhllmnnnoorrsttuuw",
+    "maxScore": 250
+  },
+  "731": {
+    "number": 731,
+    "letters": "aacceeefhiikklnnooqrssttw",
+    "maxScore": 250
+  },
+  "732": {
+    "number": 732,
+    "letters": "acceeefghhiilmmnnosssttuw",
+    "maxScore": 250
+  },
+  "733": {
+    "number": 733,
+    "letters": "aadeeeghhiijklmnnoqrsstty",
+    "maxScore": 250
+  },
+  "734": {
+    "number": 734,
+    "letters": "aaaddeefghhinoorssstttuwz",
+    "maxScore": 250
+  },
+  "735": {
+    "number": 735,
+    "letters": "adeeffghhiilmnnoorstttuww",
+    "maxScore": 250
+  },
+  "736": {
+    "number": 736,
+    "letters": "aacdeefghhhiimnoprssttuxz",
+    "maxScore": 250
+  },
+  "737": {
+    "number": 737,
+    "letters": "acdeeeefghiilmnooorsttwxz",
+    "maxScore": 250
+  },
+  "738": {
+    "number": 738,
+    "letters": "aadeeefgghhilmnnoorssttwx",
+    "maxScore": 250
+  },
+  "739": {
+    "number": 739,
+    "letters": "ceeefghhiiijlllnooprstuuy",
+    "maxScore": 250
+  },
+  "740": {
+    "number": 740,
+    "letters": "aacdeeefghhiimnnooprstttw",
+    "maxScore": 250
+  },
+  "741": {
+    "number": 741,
+    "letters": "aabdeefghhiikmnoorssttuzz",
+    "maxScore": 250
+  },
+  "742": {
+    "number": 742,
+    "letters": "aaabcddefghiimnnorssttuww",
+    "maxScore": 250
+  },
+  "743": {
+    "number": 743,
+    "letters": "aaceeefghiilnnopprssstwwz",
+    "maxScore": 250
+  },
+  "744": {
+    "number": 744,
+    "letters": "abeefghiilmnnoorsstttuvww",
+    "maxScore": 250
+  },
+  "745": {
+    "number": 745,
+    "letters": "aaccdefgghhiilmnnpqrssttu",
+    "maxScore": 250
+  },
+  "746": {
+    "number": 746,
+    "letters": "aaccdeeeghhiijlnnnnoottww",
+    "maxScore": 250
+  },
+  "747": {
+    "number": 747,
+    "letters": "aaaaeeeinnooopqrsssttuwwy",
+    "maxScore": 250
+  },
+  "748": {
+    "number": 748,
+    "letters": "aabcdeffghilllnnorrssttuy",
+    "maxScore": 250
+  },
+  "749": {
+    "number": 749,
+    "letters": "aacddeefghhiijlnoorssttuw",
+    "maxScore": 250
+  },
+  "750": {
+    "number": 750,
+    "letters": "aaaadeeghiiijlnnooprsstuu",
+    "maxScore": 250
+  },
+  "751": {
+    "number": 751,
+    "letters": "aaeefhhhiiiilnnoorrrstttw",
+    "maxScore": 250
+  },
+  "752": {
+    "number": 752,
+    "letters": "aacdeeeeghijllmnnnoosstuu",
+    "maxScore": 250
+  },
+  "753": {
+    "number": 753,
+    "letters": "acdeefghilmmnnoorstuuwwxy",
+    "maxScore": 250
+  },
+  "754": {
+    "number": 754,
+    "letters": "abbdeefghiimnoopprrssttuw",
+    "maxScore": 250
+  },
+  "755": {
+    "number": 755,
+    "letters": "accdeeefghhilmnnorssttuwz",
+    "maxScore": 250
+  },
+  "756": {
+    "number": 756,
+    "letters": "aadeeghhiilmmmnnoossttuww",
+    "maxScore": 250
+  },
+  "757": {
+    "number": 757,
+    "letters": "aabddeeeehijlmnnnooorstuw",
+    "maxScore": 250
+  },
+  "758": {
+    "number": 758,
+    "letters": "aacdeeeeffhhiilmnnopssttw",
+    "maxScore": 250
+  },
+  "759": {
+    "number": 759,
+    "letters": "aacceeeefhiiklnnoorstttuy",
+    "maxScore": 250
+  },
+  "760": {
+    "number": 760,
+    "letters": "acdeeefghhikmnorsstttuuwz",
+    "maxScore": 250
+  },
+  "761": {
+    "number": 761,
+    "letters": "aacdeeefhhillmnooprsttuuz",
+    "maxScore": 250
+  },
+  "762": {
+    "number": 762,
+    "letters": "aaceeefghhiiijmnnoossttuw",
+    "maxScore": 250
+  },
+  "763": {
+    "number": 763,
+    "letters": "aceeeefhhiilmmnoorsssttwx",
+    "maxScore": 250
+  },
+  "764": {
+    "number": 764,
+    "letters": "aadeeefhhiiiilmnpqrssstuz",
+    "maxScore": 250
+  },
+  "765": {
+    "number": 765,
+    "letters": "aaddehhiilmnnnooorsstuuwy",
+    "maxScore": 250
+  },
+  "766": {
+    "number": 766,
+    "letters": "aacdeeefhijlmnooorsssttuw",
+    "maxScore": 250
+  },
+  "767": {
+    "number": 767,
+    "letters": "aacdeeeghiiklmnnoorsssuwz",
+    "maxScore": 250
+  },
+  "768": {
+    "number": 768,
+    "letters": "aabccdeeefhhiilnnoossttuw",
+    "maxScore": 250
+  },
+  "769": {
+    "number": 769,
+    "letters": "aacdeeefghhhiilmnnooqrsst",
+    "maxScore": 250
+  },
+  "770": {
+    "number": 770,
+    "letters": "adeefghhiillmnnoqrssttuvw",
+    "maxScore": 250
+  },
+  "771": {
+    "number": 771,
+    "letters": "aacdeeeffghhijmnnoorsttuw",
+    "maxScore": 250
+  },
+  "772": {
+    "number": 772,
+    "letters": "abceefgghhiilmnnooprsttuz",
+    "maxScore": 250
+  },
+  "773": {
+    "number": 773,
+    "letters": "deeefgiijklmnnooooprssttu",
+    "maxScore": 250
+  },
+  "774": {
+    "number": 774,
+    "letters": "deefghhiimnnooopqrrrstttu",
+    "maxScore": 250
+  },
+  "775": {
+    "number": 775,
+    "letters": "accdeeeefghiinoorsstttuwy",
+    "maxScore": 250
+  },
+  "776": {
+    "number": 776,
+    "letters": "aaacdeeefghijklmnoorssttw",
+    "maxScore": 250
+  },
+  "777": {
+    "number": 777,
+    "letters": "aaaeeghhiklmnnooprrsstttw",
+    "maxScore": 250
+  },
+  "778": {
+    "number": 778,
+    "letters": "aacdfghhiilmnnoorsssttuww",
+    "maxScore": 250
+  },
+  "779": {
+    "number": 779,
+    "letters": "aacdeefhhiilmnnoorsstuwwy",
+    "maxScore": 250
+  },
+  "780": {
+    "number": 780,
+    "letters": "aaddeeefgghhilnoorssttuwx",
+    "maxScore": 250
+  },
+  "781": {
+    "number": 781,
+    "letters": "aadeeehhijmnnnooprssttuuw",
+    "maxScore": 252
+  },
+  "782": {
+    "number": 782,
+    "letters": "aaadeeehhiillmnoossstttux",
+    "maxScore": 253
+  },
+  "783": {
+    "number": 783,
+    "letters": "aceeeeeffgghhilnoorssttuv",
+    "maxScore": 253
+  },
+  "784": {
+    "number": 784,
+    "letters": "aacddeeegghhhiimmnooppprs",
+    "maxScore": 253
+  },
+  "785": {
+    "number": 785,
+    "letters": "aacddeeefghiikmnnoossttuw",
+    "maxScore": 254
+  },
+  "786": {
+    "number": 786,
+    "letters": "aceeeeghhiilnorssstuuuwxy",
+    "maxScore": 254
+  },
+  "787": {
+    "number": 787,
+    "letters": "aaceeeffhhiimnnoorsssttuw",
+    "maxScore": 254
+  },
+  "788": {
+    "number": 788,
+    "letters": "aaabeeeegiiijjmnnooprsstt",
+    "maxScore": 254
+  },
+  "789": {
+    "number": 789,
+    "letters": "aabceegghiimnnnooprsstttz",
+    "maxScore": 254
+  },
+  "790": {
+    "number": 790,
+    "letters": "aceeefghhiimnnooprrsttuwz",
+    "maxScore": 254
+  },
+  "791": {
+    "number": 791,
+    "letters": "aaceeefffhhiiillmnorssttu",
+    "maxScore": 254
+  },
+  "792": {
+    "number": 792,
+    "letters": "abcdeeefghhilnnosstttuuvw",
+    "maxScore": 254
+  },
+  "793": {
+    "number": 793,
+    "letters": "aacceeehhiimnnooprsstuwwz",
+    "maxScore": 254
+  },
+  "794": {
+    "number": 794,
+    "letters": "aaadeeefghhiiiilnoorsttvw",
+    "maxScore": 254
+  },
+  "795": {
+    "number": 795,
+    "letters": "aacddeeeffghiilmnnoosstwz",
+    "maxScore": 254
+  },
+  "796": {
+    "number": 796,
+    "letters": "aaccdeeefghhillmnnoorsswy",
+    "maxScore": 254
+  },
+  "797": {
+    "number": 797,
+    "letters": "aeeefhhiilmnnnoooorsstttw",
+    "maxScore": 254
+  },
+  "798": {
+    "number": 798,
+    "letters": "aabceeefghhhiimnnorssstuw",
+    "maxScore": 254
+  },
+  "799": {
+    "number": 799,
+    "letters": "adeeghhiiiklnooprsttuuvwy",
+    "maxScore": 254
+  },
+  "800": {
+    "number": 800,
+    "letters": "aaceeeghhiilmmmnnoossttuz",
+    "maxScore": 254
+  },
+  "801": {
+    "number": 801,
+    "letters": "acdeeefghhhiillmnnoorstux",
+    "maxScore": 254
+  },
+  "802": {
+    "number": 802,
+    "letters": "aabcdeeeeghhimnooooprstuy",
+    "maxScore": 254
+  },
+  "803": {
+    "number": 803,
+    "letters": "adeeeeeefhillmnorssttuvwz",
+    "maxScore": 254
+  },
+  "804": {
+    "number": 804,
+    "letters": "aacdeeehimnooqrrssstttuuz",
+    "maxScore": 254
+  },
+  "805": {
+    "number": 805,
+    "letters": "aadeeefghhiimnnnoossttuvw",
+    "maxScore": 254
+  },
+  "806": {
+    "number": 806,
+    "letters": "accdeeghhilmnnoooorrsttuw",
+    "maxScore": 254
+  },
+  "807": {
+    "number": 807,
+    "letters": "aaceeefghhiiimnnooqrssttw",
+    "maxScore": 254
+  },
+  "808": {
+    "number": 808,
+    "letters": "aacdeeeghhiijlmnoorsttuvw",
+    "maxScore": 254
+  },
+  "809": {
+    "number": 809,
+    "letters": "aaceeeehhiiiknoorrssttuuw",
+    "maxScore": 254
+  },
+  "810": {
+    "number": 810,
+    "letters": "aabceefhhiilmnnnoorsttuuw",
+    "maxScore": 254
+  },
+  "811": {
+    "number": 811,
+    "letters": "aacdeeehhhhiimnnnoorssttw",
+    "maxScore": 254
+  },
+  "812": {
+    "number": 812,
+    "letters": "aaeeefhhiilllmnnorssttuuw",
+    "maxScore": 254
+  },
+  "813": {
+    "number": 813,
+    "letters": "aacdefilmnnooooprstttuuwy",
+    "maxScore": 254
+  },
+  "814": {
+    "number": 814,
+    "letters": "aacddeeeffilnnoorsttttuvx",
+    "maxScore": 254
+  },
+  "815": {
+    "number": 815,
+    "letters": "aabdeeghiiilllnnoopsttuuy",
+    "maxScore": 254
+  },
+  "816": {
+    "number": 816,
+    "letters": "aaacdeeegiillnnoqrrstuwyy",
+    "maxScore": 254
+  },
+  "817": {
+    "number": 817,
+    "letters": "aaefhiijlmnooprsssstuwxzz",
+    "maxScore": 257
+  },
+  "818": {
+    "number": 818,
+    "letters": "aaacceeeffghhiinrrsstttwz",
+    "maxScore": 257
+  },
+  "819": {
+    "number": 819,
+    "letters": "aacddeeeeghhhlmmnopprrssu",
+    "maxScore": 257
+  },
+  "820": {
+    "number": 820,
+    "letters": "accdeeehhiiilmnnorssttuvw",
+    "maxScore": 257
+  },
+  "821": {
+    "number": 821,
+    "letters": "aacddeefghhiimmnnnossttty",
+    "maxScore": 257
+  },
+  "822": {
+    "number": 822,
+    "letters": "cdeefghhiilmnnooprssttuwx",
+    "maxScore": 257
+  },
+  "823": {
+    "number": 823,
+    "letters": "aacddeefghhhimnnoorssttuw",
+    "maxScore": 257
+  },
+  "824": {
+    "number": 824,
+    "letters": "aaceefghhiilmoorrssttuuvv",
+    "maxScore": 257
+  },
+  "825": {
+    "number": 825,
+    "letters": "aceeefghhiiklnnoorssttuww",
+    "maxScore": 257
+  },
+  "826": {
+    "number": 826,
+    "letters": "abceeeffghiijnnnoorsttttu",
+    "maxScore": 257
+  },
+  "827": {
+    "number": 827,
+    "letters": "aaeeefghiilmmmnnoorssttuw",
+    "maxScore": 259
+  },
+  "828": {
+    "number": 828,
+    "letters": "aaaceefghhimnnooprsssttuw",
+    "maxScore": 259
+  },
+  "829": {
+    "number": 829,
+    "letters": "ceeeefffghiilnnnoorssstuu",
+    "maxScore": 259
+  },
+  "830": {
+    "number": 830,
+    "letters": "aaaceeefghhiilmnoprssttux",
+    "maxScore": 259
+  },
+  "831": {
+    "number": 831,
+    "letters": "adeeefgghhiikmmnnorssttuu",
+    "maxScore": 259
+  },
+  "832": {
+    "number": 832,
+    "letters": "acdeeeefghhiilnnnoosttuuw",
+    "maxScore": 259
+  },
+  "833": {
+    "number": 833,
+    "letters": "aaabbeeefhhiilnnoorssttuz",
+    "maxScore": 259
+  },
+  "834": {
+    "number": 834,
+    "letters": "abbcdeeefhiimnnooorssstww",
+    "maxScore": 259
+  },
+  "835": {
+    "number": 835,
+    "letters": "aacceefghhhiilmnnoorsttuw",
+    "maxScore": 259
+  },
+  "836": {
+    "number": 836,
+    "letters": "aadeeffhhimmnnoorrssttuvw",
+    "maxScore": 259
+  },
+  "837": {
+    "number": 837,
+    "letters": "acdeeefgghhijlmnnorssstuw",
+    "maxScore": 259
+  },
+  "838": {
+    "number": 838,
+    "letters": "aaceeefggghiimnnoorsssttw",
+    "maxScore": 259
+  },
+  "839": {
+    "number": 839,
+    "letters": "aadeeefghhhiilmnnoossttuw",
+    "maxScore": 259
+  },
+  "840": {
+    "number": 840,
+    "letters": "aaeeefghiilmnnoorsstttuuw",
+    "maxScore": 259
+  },
+  "841": {
+    "number": 841,
+    "letters": "aceeefghiilnnooprrssttwwy",
+    "maxScore": 259
+  },
+  "842": {
+    "number": 842,
+    "letters": "aacdeeeghhiiloprsssttttwy",
+    "maxScore": 259
+  },
+  "843": {
+    "number": 843,
+    "letters": "aaccdeeefghhilmnnorsttwwy",
+    "maxScore": 259
+  },
+  "844": {
+    "number": 844,
+    "letters": "aadeeefghhiilmnoorssstvwy",
+    "maxScore": 259
+  },
+  "845": {
+    "number": 845,
+    "letters": "aaadeeghhiiillnoprsssttwx",
+    "maxScore": 259
+  },
+  "846": {
+    "number": 846,
+    "letters": "aadeeffhiilmnooorsttuwxyz",
+    "maxScore": 259
+  },
+  "847": {
+    "number": 847,
+    "letters": "eeeegghiinnnooooqrssttuuz",
+    "maxScore": 259
+  },
+  "848": {
+    "number": 848,
+    "letters": "aaacdeeefghhiilmnnooprssw",
+    "maxScore": 259
+  },
+  "849": {
+    "number": 849,
+    "letters": "adeefghiilmnnoorssttuvwwz",
+    "maxScore": 259
+  },
+  "850": {
+    "number": 850,
+    "letters": "aabcddeeefgghhiiilnnnnsty",
+    "maxScore": 259
+  },
+  "851": {
+    "number": 851,
+    "letters": "aaacceeeffiiiklnnoorsttuw",
+    "maxScore": 259
+  },
+  "852": {
+    "number": 852,
+    "letters": "cdeeefghhiiilmnnoooprsttw",
+    "maxScore": 259
+  },
+  "853": {
+    "number": 853,
+    "letters": "acddeeefghhiilmnnnooorsuw",
+    "maxScore": 259
+  },
+  "854": {
+    "number": 854,
+    "letters": "aaceeeghhhillmnnooprsstty",
+    "maxScore": 259
+  },
+  "855": {
+    "number": 855,
+    "letters": "aacdeeeeefhhhilmmnnssttuw",
+    "maxScore": 259
+  },
+  "856": {
+    "number": 856,
+    "letters": "acdeeffhhiimmnorssssttwyz",
+    "maxScore": 260
+  },
+  "857": {
+    "number": 857,
+    "letters": "aaddeeeghhiijmnnnoorssttz",
+    "maxScore": 260
+  },
+  "858": {
+    "number": 858,
+    "letters": "aacdeeeffhiijlmnnoorsstuw",
+    "maxScore": 260
+  },
+  "859": {
+    "number": 859,
+    "letters": "aaccdeeghiinnnnoostttuwxy",
+    "maxScore": 260
+  },
+  "860": {
+    "number": 860,
+    "letters": "acddegghiiklmnnoosssstuvw",
+    "maxScore": 260
+  },
+  "861": {
+    "number": 861,
+    "letters": "abcdefghhiiilnnoorsttuuuw",
+    "maxScore": 260
+  },
+  "862": {
+    "number": 862,
+    "letters": "aaceeefghhiijlmnnooprsstt",
+    "maxScore": 260
+  },
+  "863": {
+    "number": 863,
+    "letters": "aacdeeefghhhiimnnorssttwz",
+    "maxScore": 260
+  },
+  "864": {
+    "number": 864,
+    "letters": "acddeehiilnnooqrrsssttuww",
+    "maxScore": 260
+  },
+  "865": {
+    "number": 865,
+    "letters": "aadeefghhiilnnoorssttuuuw",
+    "maxScore": 260
+  },
+  "866": {
+    "number": 866,
+    "letters": "aabdeegghiikllnnrssstttuw",
+    "maxScore": 260
+  },
+  "867": {
+    "number": 867,
+    "letters": "aacdeeegiinooopprsstttuwz",
+    "maxScore": 260
+  },
+  "868": {
+    "number": 868,
+    "letters": "aaacdeefghhiinnoorssttuww",
+    "maxScore": 260
+  },
+  "869": {
+    "number": 869,
+    "letters": "aaaddefghiimnnooorssttuwx",
+    "maxScore": 260
+  },
+  "870": {
+    "number": 870,
+    "letters": "aaceeefghiiilmnnoorsttuwy",
+    "maxScore": 261
+  },
+  "871": {
+    "number": 871,
+    "letters": "aaddeeegiiijlmnnooqrsttux",
+    "maxScore": 261
+  },
+  "872": {
+    "number": 872,
+    "letters": "acdeeehiilnnnoqrsstttuwwx",
+    "maxScore": 261
+  },
+  "873": {
+    "number": 873,
+    "letters": "aaccdeeefghhillmnnoorssuz",
+    "maxScore": 261
+  },
+  "874": {
+    "number": 874,
+    "letters": "aaabcdeefhhiimmnoorsssstt",
+    "maxScore": 261
+  },
+  "875": {
+    "number": 875,
+    "letters": "aadeeefghhiilmnoorssttuwy",
+    "maxScore": 261
+  },
+  "876": {
+    "number": 876,
+    "letters": "aadeeefghhiimnnnoosssttuw",
+    "maxScore": 261
+  },
+  "877": {
+    "number": 877,
+    "letters": "aacefghiilnnnoorssttuwxxz",
+    "maxScore": 261
+  },
+  "878": {
+    "number": 878,
+    "letters": "aacdeeeffgiimmnnorsstuvyy",
+    "maxScore": 261
+  },
+  "879": {
+    "number": 879,
+    "letters": "aacdeeefghhiklmnnoqrssttu",
+    "maxScore": 261
+  },
+  "880": {
+    "number": 880,
+    "letters": "aaccdeeefhhillmnoorssttuw",
+    "maxScore": 261
+  },
+  "881": {
+    "number": 881,
+    "letters": "aacdeefghhiiklnooorssttwz",
+    "maxScore": 261
+  },
+  "882": {
+    "number": 882,
+    "letters": "aadeeefghhiilmnnoorssttwx",
+    "maxScore": 261
+  },
+  "883": {
+    "number": 883,
+    "letters": "aacdeeeefhhijmnnoorssttuw",
+    "maxScore": 261
+  },
+  "884": {
+    "number": 884,
+    "letters": "aaaceeeehiilmnnorsssttuwx",
+    "maxScore": 261
+  },
+  "885": {
+    "number": 885,
+    "letters": "adeeefghklmnnoqrsstttttuu",
+    "maxScore": 261
+  },
+  "886": {
+    "number": 886,
+    "letters": "acceeefghiijklmnoqrrsttuw",
+    "maxScore": 261
+  },
+  "887": {
+    "number": 887,
+    "letters": "aaaaceeeghhiklnnoorssttuw",
+    "maxScore": 261
+  },
+  "888": {
+    "number": 888,
+    "letters": "aadeeeefhhimmnooprsssstty",
+    "maxScore": 261
+  },
+  "889": {
+    "number": 889,
+    "letters": "aabcdeeefgghhilmnnorssttw",
+    "maxScore": 261
+  },
+  "890": {
+    "number": 890,
+    "letters": "aacdeefghhillmnnoorsstuww",
+    "maxScore": 261
+  },
+  "891": {
+    "number": 891,
+    "letters": "aaaceeefgillmnnooqrsttuwz",
+    "maxScore": 261
+  },
+  "892": {
+    "number": 892,
+    "letters": "acddeeefhhiilnnoqqrssttuw",
+    "maxScore": 261
+  },
+  "893": {
+    "number": 893,
+    "letters": "aaaacddeeehhiilmnorsssttz",
+    "maxScore": 261
+  },
+  "894": {
+    "number": 894,
+    "letters": "aacdeeefghhiiilmnoorsstuw",
+    "maxScore": 261
+  },
+  "895": {
+    "number": 895,
+    "letters": "aacdeefgghhhiiknnoorrrstt",
+    "maxScore": 261
+  },
+  "896": {
+    "number": 896,
+    "letters": "aacddeeeghiklmmnoorrrstuu",
+    "maxScore": 261
+  },
+  "897": {
+    "number": 897,
+    "letters": "aacddeeefghilmnnoqqrsstuy",
+    "maxScore": 261
+  },
+  "898": {
+    "number": 898,
+    "letters": "abccddeffgiiiillmnnnoottu",
+    "maxScore": 261
+  },
+  "899": {
+    "number": 899,
+    "letters": "acdeeefghhimnnnoooprssttw",
+    "maxScore": 261
+  },
+  "900": {
+    "number": 900,
+    "letters": "aabceeefhhiiimnnoorrssttw",
+    "maxScore": 261
+  },
+  "901": {
+    "number": 901,
+    "letters": "ceeefghhiiilmnnoorssttuwy",
+    "maxScore": 261
+  },
+  "902": {
+    "number": 902,
+    "letters": "aacdeeeefghhiiklnnnossttt",
+    "maxScore": 261
+  },
+  "903": {
+    "number": 903,
+    "letters": "aabcdeeefhhiikmnnopssttuw",
+    "maxScore": 261
+  },
+  "904": {
+    "number": 904,
+    "letters": "aacdeeefghhimnnnooorsttuw",
+    "maxScore": 261
+  },
+  "905": {
+    "number": 905,
+    "letters": "aaceeefhhiiilnoorsssttuuv",
+    "maxScore": 261
+  },
+  "906": {
+    "number": 906,
+    "letters": "aaadegghhiilmnooorrssttuw",
+    "maxScore": 261
+  },
+  "907": {
+    "number": 907,
+    "letters": "aacdeeefhhiilmnnnorrsstuw",
+    "maxScore": 261
+  },
+  "908": {
+    "number": 908,
+    "letters": "acdeeefghhiillmnnorsstuwz",
+    "maxScore": 261
+  },
+  "909": {
+    "number": 909,
+    "letters": "aaaaceeeghiimnnoorsssttuw",
+    "maxScore": 261
+  },
+  "910": {
+    "number": 910,
+    "letters": "aacdefghhillmnnooorsttuvw",
+    "maxScore": 261
+  },
+  "911": {
+    "number": 911,
+    "letters": "aaaabceeeefhhillnoorssttt",
+    "maxScore": 265
+  },
+  "912": {
+    "number": 912,
+    "letters": "aaaccdefhhiillnnoprsssttw",
+    "maxScore": 265
+  },
+  "913": {
+    "number": 913,
+    "letters": "aaceeeefghhinnnnooprsttty",
+    "maxScore": 265
+  },
+  "914": {
+    "number": 914,
+    "letters": "aaccdeeghhiiiknorssssttuu",
+    "maxScore": 265
+  },
+  "915": {
+    "number": 915,
+    "letters": "aaceeeffhhhiillmnrssttuww",
+    "maxScore": 265
+  },
+  "916": {
+    "number": 916,
+    "letters": "acdeeeefghhiilmnnoopssttw",
+    "maxScore": 265
+  },
+  "917": {
+    "number": 917,
+    "letters": "aaacdeeeefggilllnnorrsttw",
+    "maxScore": 265
+  },
+  "918": {
+    "number": 918,
+    "letters": "abddeegiijmnnoooprssttuuw",
+    "maxScore": 266
+  },
+  "919": {
+    "number": 919,
+    "letters": "aacdeeefghhiilmmnnoorstuy",
+    "maxScore": 266
+  },
+  "920": {
+    "number": 920,
+    "letters": "aaacdeefghhiiilmnorssttuw",
+    "maxScore": 266
+  },
+  "921": {
+    "number": 921,
+    "letters": "aaceeeghhiiilmnnorssttuvw",
+    "maxScore": 266
+  },
+  "922": {
+    "number": 922,
+    "letters": "aacdeeeghilmnnnooqrssttux",
+    "maxScore": 266
+  },
+  "923": {
+    "number": 923,
+    "letters": "acdeeeeghhiikkllnnrrrstuv",
+    "maxScore": 266
+  },
+  "924": {
+    "number": 924,
+    "letters": "acdeeeffghiilmmnoorsstuwx",
+    "maxScore": 266
+  },
+  "925": {
+    "number": 925,
+    "letters": "acddeefghhiiklmnnoorssttu",
+    "maxScore": 266
+  },
+  "926": {
+    "number": 926,
+    "letters": "aabddeefghhiimnnoorssttuy",
+    "maxScore": 266
+  },
+  "927": {
+    "number": 927,
+    "letters": "aabdeeeefghhiimnnrssttuww",
+    "maxScore": 266
+  },
+  "928": {
+    "number": 928,
+    "letters": "aaadeeefgghhiimnnrssttuuw",
+    "maxScore": 266
+  },
+  "929": {
+    "number": 929,
+    "letters": "aadeefghhiilmnnnoorssstuw",
+    "maxScore": 266
+  },
+  "930": {
+    "number": 930,
+    "letters": "aacdeeehhiiklmnoopsssttuu",
+    "maxScore": 266
+  },
+  "931": {
+    "number": 931,
+    "letters": "aadeeefghiimnnoopqrssttuw",
+    "maxScore": 266
+  },
+  "932": {
+    "number": 932,
+    "letters": "aaceeefghhiijlmnnoprssstu",
+    "maxScore": 266
+  },
+  "933": {
+    "number": 933,
+    "letters": "aaceeefghhiimnnooprsttuwx",
+    "maxScore": 266
+  },
+  "934": {
+    "number": 934,
+    "letters": "aadeeefghhiinnooprrstttuw",
+    "maxScore": 266
+  },
+  "935": {
+    "number": 935,
+    "letters": "acdeeghhiilmnnoorrssttuww",
+    "maxScore": 266
+  },
+  "936": {
+    "number": 936,
+    "letters": "adeeefghiijllmnnnoorssttu",
+    "maxScore": 266
+  },
+  "937": {
+    "number": 937,
+    "letters": "aacdeeeghiiilmnnosssttwxy",
+    "maxScore": 269
+  },
+  "938": {
+    "number": 938,
+    "letters": "aacdeefghhiijlmnnooorsstu",
+    "maxScore": 269
+  },
+  "939": {
+    "number": 939,
+    "letters": "aaaadeeefghhiimnnoorsstuw",
+    "maxScore": 269
+  },
+  "940": {
+    "number": 940,
+    "letters": "aabddeeghhhillmnooorrstuv",
+    "maxScore": 269
+  },
+  "941": {
+    "number": 941,
+    "letters": "aacdeeffghiilmmnoorsttuvw",
+    "maxScore": 269
+  },
+  "942": {
+    "number": 942,
+    "letters": "aacdeeefghiilmnnnoosstuww",
+    "maxScore": 269
+  },
+  "943": {
+    "number": 943,
+    "letters": "aacdeeeghiloooprsstttuuww",
+    "maxScore": 269
+  },
+  "944": {
+    "number": 944,
+    "letters": "aacdeeefghhiinnoorssttuuw",
+    "maxScore": 269
+  },
+  "945": {
+    "number": 945,
+    "letters": "aaceeefghhiimnnooprssttuw",
+    "maxScore": 269
+  },
+  "946": {
+    "number": 946,
+    "letters": "aacdeeefghhiilnnorsstuuwz",
+    "maxScore": 269
+  },
+  "947": {
+    "number": 947,
+    "letters": "aceeefghhiilmnnoorrssttuw",
+    "maxScore": 269
+  },
+  "948": {
+    "number": 948,
+    "letters": "aaceeeffgilnooppqrrssttuw",
+    "maxScore": 269
+  },
+  "949": {
+    "number": 949,
+    "letters": "accdeeefghiikllnnorrssttt",
+    "maxScore": 269
+  },
+  "950": {
+    "number": 950,
+    "letters": "acdeeeefhhiilnooprrsstttw",
+    "maxScore": 269
+  },
+  "951": {
+    "number": 951,
+    "letters": "aacdeeeghiillmmnoorsttuvv",
+    "maxScore": 269
+  },
+  "952": {
+    "number": 952,
+    "letters": "aaeeefghhiiklmnnoorssttuw",
+    "maxScore": 269
+  },
+  "953": {
+    "number": 953,
+    "letters": "aaacdeeeghhiilmnnoossttwz",
+    "maxScore": 269
+  },
+  "954": {
+    "number": 954,
+    "letters": "aaccdeeefghiimnnooqrrsttw",
+    "maxScore": 269
+  },
+  "955": {
+    "number": 955,
+    "letters": "aabceeghhiikllmnnnoorrstt",
+    "maxScore": 269
+  },
+  "956": {
+    "number": 956,
+    "letters": "aacdeeeffghhilllorsttuuwy",
+    "maxScore": 269
+  },
+  "957": {
+    "number": 957,
+    "letters": "aaceeeefhillmnnoorrrsttty",
+    "maxScore": 269
+  },
+  "958": {
+    "number": 958,
+    "letters": "aaceeeefghhiilnnoorsttuwz",
+    "maxScore": 269
+  },
+  "959": {
+    "number": 959,
+    "letters": "aadeeefgghhiiinnoorssttuw",
+    "maxScore": 269
+  },
+  "960": {
+    "number": 960,
+    "letters": "aacdeeefghhiilmnnoorstuxy",
+    "maxScore": 269
+  },
+  "961": {
+    "number": 961,
+    "letters": "aadeeefggghiilmnnoorsstuw",
+    "maxScore": 270
+  },
+  "962": {
+    "number": 962,
+    "letters": "aacdefghhiilmnnoosstttuuw",
+    "maxScore": 270
+  },
+  "963": {
+    "number": 963,
+    "letters": "aabceeefghhiilmnnoorsstuw",
+    "maxScore": 270
+  },
+  "964": {
+    "number": 964,
+    "letters": "aadeeefghiimnnooprssttuvw",
+    "maxScore": 270
+  },
+  "965": {
+    "number": 965,
+    "letters": "aaccdeeefghhiilnnrsssttuv",
+    "maxScore": 270
+  },
+  "966": {
+    "number": 966,
+    "letters": "aacdeeeefghhiklmnorssttuw",
+    "maxScore": 270
+  },
+  "967": {
+    "number": 967,
+    "letters": "aadeeefghhiimnnorrssttuuy",
+    "maxScore": 270
+  },
+  "968": {
+    "number": 968,
+    "letters": "acdeeefgiilmnnooorssttuwx",
+    "maxScore": 270
+  },
+  "969": {
+    "number": 969,
+    "letters": "acdeeehiijlmnnoorsstttuuw",
+    "maxScore": 270
+  },
+  "970": {
+    "number": 970,
+    "letters": "adeeeffhiiilmnnoopqrstttu",
+    "maxScore": 270
+  },
+  "971": {
+    "number": 971,
+    "letters": "aaceefghhilmnnoorsstttuwy",
+    "maxScore": 270
+  },
+  "972": {
+    "number": 972,
+    "letters": "aacdeeeghhiimnnoorssttuuw",
+    "maxScore": 270
+  },
+  "973": {
+    "number": 973,
+    "letters": "aacddeeefgghiilmmnoorsstv",
+    "maxScore": 270
+  },
+  "974": {
+    "number": 974,
+    "letters": "aacceeefghiiloooqrssttuxy",
+    "maxScore": 270
+  },
+  "975": {
+    "number": 975,
+    "letters": "aaccdeeeefhhilmnnnrssttuw",
+    "maxScore": 270
+  },
+  "976": {
+    "number": 976,
+    "letters": "aadeefghiiklmnnoorssttuwx",
+    "maxScore": 270
+  },
+  "977": {
+    "number": 977,
+    "letters": "aabceefghhiilmnnoorssttuw",
+    "maxScore": 270
+  },
+  "978": {
+    "number": 978,
+    "letters": "aacdeeeffghiilmnooprsstuw",
+    "maxScore": 270
+  },
+  "979": {
+    "number": 979,
+    "letters": "aaacdeeefghhilmnoorssttuw",
+    "maxScore": 270
+  },
+  "980": {
+    "number": 980,
+    "letters": "aadefghiiiimmnnooqrssstuz",
+    "maxScore": 270
+  },
+  "981": {
+    "number": 981,
+    "letters": "aaccdeeefghijlmnnoorsttuw",
+    "maxScore": 270
+  },
+  "982": {
+    "number": 982,
+    "letters": "aacdeefghhiijllmnnoorsttw",
+    "maxScore": 272
+  },
+  "983": {
+    "number": 983,
+    "letters": "aacdeeeghhiillnnorrrssttx",
+    "maxScore": 272
+  },
+  "984": {
+    "number": 984,
+    "letters": "aeeefgghhiilmnnooprsssttw",
+    "maxScore": 272
+  },
+  "985": {
+    "number": 985,
+    "letters": "aacdeeeffghhiilmnnnorsttw",
+    "maxScore": 272
+  },
+  "986": {
+    "number": 986,
+    "letters": "aacdeeefghhiilmnnoprsttwz",
+    "maxScore": 272
+  },
+  "987": {
+    "number": 987,
+    "letters": "aacceeeefgilmnooorrsttuwx",
+    "maxScore": 274
+  },
+  "988": {
+    "number": 988,
+    "letters": "aaceeefghhiilmnnooprssttw",
+    "maxScore": 274
+  },
+  "989": {
+    "number": 989,
+    "letters": "aacdeeegiijlmmmnnorsttuww",
+    "maxScore": 274
+  },
+  "990": {
+    "number": 990,
+    "letters": "aacefghhhiilmnnnoorrssttu",
+    "maxScore": 274
+  },
+  "991": {
+    "number": 991,
+    "letters": "abceeefghhhiilnnoorssttuz",
+    "maxScore": 274
+  },
+  "992": {
+    "number": 992,
+    "letters": "aacdddeeehhiilnooprrsttuv",
+    "maxScore": 274
+  },
+  "993": {
+    "number": 993,
+    "letters": "aacdeefghhilmnnoorssstuuw",
+    "maxScore": 274
+  },
+  "994": {
+    "number": 994,
+    "letters": "acdeeefghiilmmnoorsstttuw",
+    "maxScore": 274
+  },
+  "995": {
+    "number": 995,
+    "letters": "aadeegghiillmnnorssttuuwx",
+    "maxScore": 274
+  },
+  "996": {
+    "number": 996,
+    "letters": "aaccdeeefghhiilmnnosssttu",
+    "maxScore": 274
+  },
+  "997": {
+    "number": 997,
+    "letters": "acdeeghiilnnoorrsstttuvwz",
+    "maxScore": 274
+  },
+  "998": {
+    "number": 998,
+    "letters": "aacddeeefghhimnoorsstttuw",
+    "maxScore": 274
+  },
+  "999": {
+    "number": 999,
+    "letters": "aaacdeeefghhhiijlnnoorstt",
+    "maxScore": 274
+  },
+  "1000": {
+    "number": 1000,
+    "letters": "acdeefgghhiiilmnnoorssttu",
+    "maxScore": 274
+  },
+  "1001": {
+    "number": 1001,
+    "letters": "aacdeeeghhimmnnnooqrssttu",
+    "maxScore": 274
+  },
+  "1002": {
+    "number": 1002,
+    "letters": "aacdeeeghhiinnoorrssttuux",
+    "maxScore": 275
+  },
+  "1003": {
+    "number": 1003,
+    "letters": "aacdeeeefghiiklmnorssttuw",
+    "maxScore": 275
+  },
+  "1004": {
+    "number": 1004,
+    "letters": "aacdefhhiilmmnnoorsstttuw",
+    "maxScore": 275
+  },
+  "1005": {
+    "number": 1005,
+    "letters": "adeeegghiiilmnnooprssttxy",
+    "maxScore": 275
+  },
+  "1006": {
+    "number": 1006,
+    "letters": "aadeeeghhiilmnnoorssttwyy",
+    "maxScore": 275
+  },
+  "1007": {
+    "number": 1007,
+    "letters": "aacdeeeffghhiimnnorsstuvw",
+    "maxScore": 275
+  },
+  "1008": {
+    "number": 1008,
+    "letters": "aadeeghhiillmnnnooorssttu",
+    "maxScore": 277
+  },
+  "1009": {
+    "number": 1009,
+    "letters": "aadeeefghilmnnoorsssttuuw",
+    "maxScore": 277
+  },
+  "1010": {
+    "number": 1010,
+    "letters": "aaaceeghhiimnnnorrsttuuvz",
+    "maxScore": 277
+  },
+  "1011": {
+    "number": 1011,
+    "letters": "aaccdeeefghiilnooorssttuw",
+    "maxScore": 277
+  },
+  "1012": {
+    "number": 1012,
+    "letters": "aabcddeeeghhiilmnooqrsstu",
+    "maxScore": 277
+  },
+  "1013": {
+    "number": 1013,
+    "letters": "aadeefghhiklmnnooprsstuuw",
+    "maxScore": 277
+  },
+  "1014": {
+    "number": 1014,
+    "letters": "aabcdeeeghhiilmnnoorsstuw",
+    "maxScore": 277
+  },
+  "1015": {
+    "number": 1015,
+    "letters": "aaacdeefghiillmmnnosssttu",
+    "maxScore": 277
+  },
+  "1016": {
+    "number": 1016,
+    "letters": "aacdeefghiimnnnooorssttuw",
+    "maxScore": 277
+  },
+  "1017": {
+    "number": 1017,
+    "letters": "abbbcdeeefhiilnnoorssttuw",
+    "maxScore": 277
+  },
+  "1018": {
+    "number": 1018,
+    "letters": "acdeeeghiiilnnoorrssttuuw",
+    "maxScore": 277
+  },
+  "1019": {
+    "number": 1019,
+    "letters": "aacdeeeefghimnnnooprsstuz",
+    "maxScore": 277
+  },
+  "1020": {
+    "number": 1020,
+    "letters": "aacdeeehhiillmnoorsstuuwy",
+    "maxScore": 277
+  },
+  "1021": {
+    "number": 1021,
+    "letters": "aabceeefhhiilnnnoorrsstwy",
+    "maxScore": 277
+  },
+  "1022": {
+    "number": 1022,
+    "letters": "accddeeefghhhiinnoorssttw",
+    "maxScore": 277
+  },
+  "1023": {
+    "number": 1023,
+    "letters": "aaacdeeefghiiilmnnnossttu",
+    "maxScore": 277
+  },
+  "1024": {
+    "number": 1024,
+    "letters": "aaceeehhiiillmnnorssttuvw",
+    "maxScore": 277
+  },
+  "1025": {
+    "number": 1025,
+    "letters": "aacceegghiillmmnnnoorttuw",
+    "maxScore": 277
+  },
+  "1026": {
+    "number": 1026,
+    "letters": "aabccdeeeefghhiiinnorsstt",
+    "maxScore": 277
+  },
+  "1027": {
+    "number": 1027,
+    "letters": "aaceeghiimnnooqrrrsstttuv",
+    "maxScore": 277
+  },
+  "1028": {
+    "number": 1028,
+    "letters": "aacdeeefhhiiilmnnoorssstu",
+    "maxScore": 277
+  },
+  "1029": {
+    "number": 1029,
+    "letters": "aacdddeeffgilmnnorsstttuu",
+    "maxScore": 277
+  },
+  "1030": {
+    "number": 1030,
+    "letters": "aacdeefghhiikmnnoorstttuw",
+    "maxScore": 277
+  },
+  "1031": {
+    "number": 1031,
+    "letters": "abbceeehhiklmnnoorssssttw",
+    "maxScore": 277
+  },
+  "1032": {
+    "number": 1032,
+    "letters": "aaadefgghiilmnnoprrssttuu",
+    "maxScore": 277
+  },
+  "1033": {
+    "number": 1033,
+    "letters": "aabbdeeeghhiilmnnoorssttv",
+    "maxScore": 277
+  },
+  "1034": {
+    "number": 1034,
+    "letters": "aaaceeehiillmnnoorrsssttw",
+    "maxScore": 277
+  },
+  "1035": {
+    "number": 1035,
+    "letters": "aacdeeefghimnnooorrssttuz",
+    "maxScore": 277
+  },
+  "1036": {
+    "number": 1036,
+    "letters": "aacdeeeffhhiimnnnorsstttu",
+    "maxScore": 277
+  },
+  "1037": {
+    "number": 1037,
+    "letters": "aabcdeeefghiinnooprssttux",
+    "maxScore": 277
+  },
+  "1038": {
+    "number": 1038,
+    "letters": "acdeeefghiikllmnnoosttvwz",
+    "maxScore": 281
+  },
+  "1039": {
+    "number": 1039,
+    "letters": "aabcdeefghiilmnnorssttuwy",
+    "maxScore": 281
+  },
+  "1040": {
+    "number": 1040,
+    "letters": "aacdeeefghiiilnnoprsttuwx",
+    "maxScore": 281
+  },
+  "1041": {
+    "number": 1041,
+    "letters": "acdeeefghhiilmnoosssttuww",
+    "maxScore": 281
+  },
+  "1042": {
+    "number": 1042,
+    "letters": "aeeefghhhiilmnoooosssttuv",
+    "maxScore": 281
+  },
+  "1043": {
+    "number": 1043,
+    "letters": "aacdeeefhhiilnnorssttuuwx",
+    "maxScore": 281
+  },
+  "1044": {
+    "number": 1044,
+    "letters": "aaddeefgghiikmnnnrssttuvw",
+    "maxScore": 281
+  },
+  "1045": {
+    "number": 1045,
+    "letters": "aacdeeeghhiilmnnoqrssttuw",
+    "maxScore": 281
+  },
+  "1046": {
+    "number": 1046,
+    "letters": "aabcdeefghiijlnnoorsstttw",
+    "maxScore": 281
+  },
+  "1047": {
+    "number": 1047,
+    "letters": "aabcdeeffghhiinnnoosstttw",
+    "maxScore": 283
+  },
+  "1048": {
+    "number": 1048,
+    "letters": "acddeegghiiimnnooorssttuv",
+    "maxScore": 283
+  },
+  "1049": {
+    "number": 1049,
+    "letters": "aaaceeefhhiilnoorrssttuxy",
+    "maxScore": 283
+  },
+  "1050": {
+    "number": 1050,
+    "letters": "adeeeeghiilmnnoprsstttuwy",
+    "maxScore": 283
+  },
+  "1051": {
+    "number": 1051,
+    "letters": "aabcceeefhhillmnnorstttuw",
+    "maxScore": 283
+  },
+  "1052": {
+    "number": 1052,
+    "letters": "aacddeefhhiimnnnoorsssttw",
+    "maxScore": 283
+  },
+  "1053": {
+    "number": 1053,
+    "letters": "aacdeeeegiiiklnnooorrsstv",
+    "maxScore": 283
+  },
+  "1054": {
+    "number": 1054,
+    "letters": "aacdeefghhilmnnoorrssttuu",
+    "maxScore": 283
+  },
+  "1055": {
+    "number": 1055,
+    "letters": "aacdeeeghhiilmnnnoorsstuw",
+    "maxScore": 283
+  },
+  "1056": {
+    "number": 1056,
+    "letters": "aaddeeefgiimmnnooopprsstt",
+    "maxScore": 283
+  },
+  "1057": {
+    "number": 1057,
+    "letters": "aacdeeeghhiilmnnoorssstuz",
+    "maxScore": 283
+  },
+  "1058": {
+    "number": 1058,
+    "letters": "aaacdeefhhilmnnorrsssttuw",
+    "maxScore": 283
+  },
+  "1059": {
+    "number": 1059,
+    "letters": "aaacdeeefghhiilnnoorsttuw",
+    "maxScore": 288
+  },
+  "1060": {
+    "number": 1060,
+    "letters": "adeefgghiijlmnnoprrsttuuu",
+    "maxScore": 289
+  },
+  "1061": {
+    "number": 1061,
+    "letters": "aaccdeeeeghhilmnnoorssttw",
+    "maxScore": 289
+  },
+  "1062": {
+    "number": 1062,
+    "letters": "aaacefhilmmnnoorrssstttuv",
+    "maxScore": 289
+  },
+  "1063": {
+    "number": 1063,
+    "letters": "aacdeeefghilmnnorrsssttuw",
+    "maxScore": 289
+  },
+  "1064": {
+    "number": 1064,
+    "letters": "aaacceeehhiillmorssttuwxy",
+    "maxScore": 289
+  },
+  "1065": {
+    "number": 1065,
+    "letters": "aabceeeghhilmnnorrsstttuy",
+    "maxScore": 289
+  },
+  "1066": {
+    "number": 1066,
+    "letters": "aaabdeeeghiilmnnoooprstuv",
+    "maxScore": 289
+  },
+  "1067": {
+    "number": 1067,
+    "letters": "aacddeeefghillnnoorssttuw",
+    "maxScore": 289
+  },
+  "1068": {
+    "number": 1068,
+    "letters": "aaceeeefhiilmnoorrssttuvw",
+    "maxScore": 289
+  },
+  "1069": {
+    "number": 1069,
+    "letters": "aacdeeeghhiilmmnnoorssttu",
+    "maxScore": 290
+  },
+  "1070": {
+    "number": 1070,
+    "letters": "aaccdeeefghhiilnnoorssttw",
+    "maxScore": 290
+  },
+  "1071": {
+    "number": 1071,
+    "letters": "aaccdeeefhhiijllmnnorstuw",
+    "maxScore": 290
+  },
+  "1072": {
+    "number": 1072,
+    "letters": "aacdeeefhhiilmnnoorssttuw",
+    "maxScore": 290
+  },
+  "1073": {
+    "number": 1073,
+    "letters": "aabcdeeefghhiilnnooorsttu",
+    "maxScore": 290
+  },
+  "1074": {
+    "number": 1074,
+    "letters": "aacdeeehiijklmnnoorssttuw",
+    "maxScore": 290
+  },
+  "1075": {
+    "number": 1075,
+    "letters": "aaceeehhiilnnnooqrsssttvw",
+    "maxScore": 290
+  },
+  "1076": {
+    "number": 1076,
+    "letters": "aaccddeeghhiilmnnnoorsttu",
+    "maxScore": 290
+  },
+  "1077": {
+    "number": 1077,
+    "letters": "aacdeeeffghhiilnnorsttuwy",
+    "maxScore": 290
+  },
+  "1078": {
+    "number": 1078,
+    "letters": "aabcdeeffghhiimnoprrsttux",
+    "maxScore": 290
+  },
+  "1079": {
+    "number": 1079,
+    "letters": "aaacdeeghhiilmnnooprssttu",
+    "maxScore": 290
+  },
+  "1080": {
+    "number": 1080,
+    "letters": "aacdeeefghhiilnnoorssttuw",
+    "maxScore": 290
+  },
+  "1081": {
+    "number": 1081,
+    "letters": "accdeeehiilmnnoooprsstttt",
+    "maxScore": 290
+  },
+  "1082": {
+    "number": 1082,
+    "letters": "acdeeefghhijmnnooprsstuvw",
+    "maxScore": 292
+  },
+  "1083": {
+    "number": 1083,
+    "letters": "aceeegghhiilmnnoorsssttuz",
+    "maxScore": 292
+  },
+  "1084": {
+    "number": 1084,
+    "letters": "aacdeeefghiiklmnnoorrsttu",
+    "maxScore": 292
+  },
+  "1085": {
+    "number": 1085,
+    "letters": "aacdeeefghiilmnnoorrsttuw",
+    "maxScore": 292
+  },
+  "1086": {
+    "number": 1086,
+    "letters": "aadeeeefgiimnnnoorrssttuv",
+    "maxScore": 296
+  },
+  "1087": {
+    "number": 1087,
+    "letters": "aaccddeeefhilnnnooorsstty",
+    "maxScore": 296
+  },
+  "1088": {
+    "number": 1088,
+    "letters": "aacdeeefhiilmnnoorrsttuww",
+    "maxScore": 297
+  },
+  "1089": {
+    "number": 1089,
+    "letters": "aaddeeefghiikllmnnnrsstuw",
+    "maxScore": 297
+  },
+  "1090": {
+    "number": 1090,
+    "letters": "aacdeeeghhiiilnnoprssttuw",
+    "maxScore": 297
+  },
+  "1091": {
+    "number": 1091,
+    "letters": "aabcdeeeghhiilmnnnoprsstw",
+    "maxScore": 301
+  },
+  "1092": {
+    "number": 1092,
+    "letters": "aacdeeefghiilmnnoorssttuz",
+    "maxScore": 301
+  },
+  "1093": {
+    "number": 1093,
+    "letters": "aaccdeeeghhiiklmnnossttuw",
+    "maxScore": 301
+  },
+  "1094": {
+    "number": 1094,
+    "letters": "aacddeeeghhiilnnorrssttuw",
+    "maxScore": 301
+  },
+  "1095": {
+    "number": 1095,
+    "letters": "aaceeefhhiilnnoorssstttvw",
+    "maxScore": 301
+  },
+  "1096": {
+    "number": 1096,
+    "letters": "aacdeefhiiilmnnnoorssttuw",
+    "maxScore": 305
+  },
+  "1097": {
+    "number": 1097,
+    "letters": "acdeefgghhiiiilnnnorssttw",
+    "maxScore": 305
+  },
+  "1098": {
+    "number": 1098,
+    "letters": "adeeghhiilmnnooprssssttux",
+    "maxScore": 305
+  },
+  "1099": {
+    "number": 1099,
+    "letters": "acdeeeghhiillmnoooprssttw",
+    "maxScore": 306
+  },
+  "1100": {
+    "number": 1100,
+    "letters": "aacdeeeefghhiilnorsssttuu",
+    "maxScore": 306
   }
 }

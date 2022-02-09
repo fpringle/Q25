@@ -17,7 +17,9 @@ state = {
 }
 */
 
-
+for (let num in levelData) {
+  levelData[num]
+}
 
 // actions
 const UPDATE_USER_PROGRESS = 'levels/update_progress';

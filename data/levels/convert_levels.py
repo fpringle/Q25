@@ -19,14 +19,13 @@ for number, puzzle in enumerate(puzzles, idx):
 
 cleaned = {}
 for puzzle in puzzles:
-    print(puzzle)
+    #print(puzzle)
     cleaned[puzzle["number"]] = {
         "number": puzzle["number"],
         "letters": puzzle["letters"],
         "maxScore": puzzle["maxScore"],
-        "bestUserScore": 0,
-        "bestUserSolution": [],
     }
+    #print(cleaned[puzzle["number"]])
 
-#with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "all_levels.json"), "w") as f:
-#    json.dump(cleaned, f, indent=2)
+with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "all_levels.json"), "w") as f:
+    json.dump(cleaned, f, indent=2)

@@ -88,7 +88,11 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   const levelData = [];
   for (let i=1; i<=state.levels.numLevels; i++) {
-    levelData.push(state.levels.levels[i]);
+    levelData.push({
+      bestUserScore: 0,
+      bestUserSolution: [],
+      ...state.levels.levels[i],
+    });
   }
   return {
     theme: state.settings.theme.current,

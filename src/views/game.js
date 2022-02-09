@@ -310,7 +310,11 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state, ownProps) => {
   const level = ownProps.route.params.level;
-  const levelData = state.levels.levels[level];
+  const levelData = {
+    bestUserScore: 0,
+    bestUserSolution: [],
+    ...state.levels.levels[level],
+  };
   return {
     theme: state.settings.theme.current,
     levelData,
