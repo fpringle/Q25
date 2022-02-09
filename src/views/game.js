@@ -128,6 +128,7 @@ function Game(props) {
       headerLeft: () => (
         <HeaderBackButton
           onPress={() => leave()}
+          tintColor={foregroundColor}
         />
       ),
     });

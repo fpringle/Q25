@@ -26,6 +26,7 @@ function Levels(props) {
       headerLeft: () => (
         <HeaderBackButton
           onPress={() => props.navigation.popToTop()}
+          tintColor={foregroundColor}
         />
       ),
     });

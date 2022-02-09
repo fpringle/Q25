@@ -13,14 +13,14 @@ export const colors = {
 
 export const themes = {
   classic: {
-    backgroundColor: colors.darkGrey,
-    backgroundColorTransparent: colors.darkGreyTransparent,
-    foregroundColor: colors.lightGrey,
-  },
-  inverted: {
     backgroundColor: colors.lightGrey,
     backgroundColorTransparent: colors.lightGreyTransparent,
     foregroundColor: colors.darkGrey,
+  },
+  inverted: {
+    backgroundColor: colors.darkGrey,
+    backgroundColorTransparent: colors.darkGreyTransparent,
+    foregroundColor: colors.lightGrey,
   },
   matrix: {
     backgroundColor: colors.matrixBlack,
