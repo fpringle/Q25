@@ -7,10 +7,10 @@ import { connect } from 'react-redux';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
-import { LetterBar, BottomBar, ButtonBar, WordBar } from '../components/bars';
+import { LetterBar, ButtonBar, WordBar } from '../components/bars';
 import { themes } from '../styles';
 import { points, isValid } from '../backend';
-import LetterButton from '../components/button';
+import Q25Button from '../components/button';
 import { doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
 
@@ -79,9 +79,10 @@ function Game(props) {
     tryLoadGame();
   }, []);
 
+  let subscription = useRef(null);
 
   useEffect(() => {
-    const subscription = AppState.addEventListener("change", function (nextAppState) {
+    subscription.current = AppState.addEventListener("change", function (nextAppState) {
       if (
         appState.current === 'active' &&
         nextAppState.match(/inactive|background/)
@@ -94,7 +95,10 @@ function Game(props) {
     });
 
     return () => {
-      subscription.remove();
+      if (subscription.current) {
+        subscription.current.remove();
+        subscription.current = null;
+      }
     };
   }, []);
 
@@ -133,11 +137,11 @@ function Game(props) {
       ),
       headerRight: () => {
         return (
-          <LetterButton
-            letter={'?'}
-            style={{flex:0, aspectRatio: 1, fontSize: 14, height: '300%', backgroundColor, borderColor: foregroundColor}}
-            textColor={foregroundColor}
-            onPress={() => {}}
+          <Q25Button
+            text={'?'}
+            style={styles.helpButton}
+            foregroundColor={foregroundColor}
+            backgroundColor={backgroundColor}
           />
         )
       },
@@ -223,6 +227,28 @@ function Game(props) {
     props.updateUserProgress(level, score, sortedWords);
   };
 
+  const modalButtonData = [
+    {
+      text: 'Pick level',
+      onPress: () => {
+        props.navigation.navigate('Levels');
+      },
+    },
+    {
+      text: 'Improve',
+      onPress: () => {
+        setEndModalVisible(false);
+      },
+    },
+    {
+      text: 'Next level',
+      onPress: () => {
+        setEndModalVisible(false);
+        props.navigation.push('Play', {level: level + 1});
+      },
+    },
+  ];
+
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <Modal
@@ -233,37 +259,22 @@ function Game(props) {
       >
         <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
           <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
-            <View style={{flex: 1, justifyContent: 'center'}}>
-              <Text style={{color: foregroundColor, fontSize: 24}}>
+            <View style={styles.modalTitleContainer}>
+              <Text style={[styles.modalTitle, {color: foregroundColor}]}>
                 {'Level cleared'.toUpperCase()}
               </Text>
             </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1, width: '100%'}}>
-              <LetterButton
-                letter={'Pick level'}
-                onPress={() => {
-                  props.navigation.navigate('Levels');
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
-              <LetterButton
-                letter={'Improve'}
-                onPress={() => {
-                  setEndModalVisible(false);
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
-              <LetterButton
-                letter={'Next level'}
-                onPress={() => {
-                  setEndModalVisible(false);
-                  props.navigation.push('Play', {level: level + 1});
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
+            <View style={styles.modalButtonContainer}>
+              {modalButtonData.map(({text, onPress}) => (
+                <Q25Button
+                  key={text}
+                  text={text}
+                  onPress={onPress}
+                  style={styles.modalButton}
+                  foregroundColor={foregroundColor}
+                  backgroundColor={backgroundColor}
+                />
+              ))}
             </View>
           </View>
         </View>
@@ -272,22 +283,26 @@ function Game(props) {
         columns={5}
         rows={5}
         letters={letters}
-        style={{width:'100%', aspectRatio: 1, foregroundColor, backgroundColor}}
+        style={[styles.grid, {foregroundColor, backgroundColor}]}
         onLetterPress={onLetterPress}
         pressedButtons={pressedButtons}
       />
       <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
       <ButtonBar
-        onUndo={() => undo()}
-        onClearWord={() => clearWord()}
-        onSaveWord={() => saveWord()}
+        data={[
+          { text: 'Undo', onPress: undo },
+          { text: 'Clear word', onPress: clearWord },
+          { text: 'Save word', onPress: saveWord },
+        ]}
         style={{foregroundColor, backgroundColor}}
       />
       <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
-      <BottomBar
-        onSubmit={() => submit()}
-        onScramble={() => scramble()}
-        onReset={() => reset()}
+      <ButtonBar
+        data={[
+          { text: 'Scramble', onPress: scramble },
+          { text: 'Reset', onPress: reset },
+          { text: 'Finish', onPress: submit },
+        ]}
         style={{foregroundColor, backgroundColor}}
       />
     </View>
@@ -304,6 +319,10 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingTop: 0,
   },
+  grid: {
+    width: '100%',
+    aspectRatio: 1,
+  },
   modalStyle: {
     flex: 1,
     justifyContent: 'center',
@@ -315,6 +334,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '75%',
     aspectRatio: 2.5,
+  },
+  modalButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1,
+    width: '100%',
+  },
+  modalButton: {
+    fontSize: 10,
+    margin: '4%',
+  },
+  helpButton: {
+    flex: 0,
+    aspectRatio: 1,
+    fontSize: 14,
+    height: '300%',   // TODO fix this
+    marginRight: 10,
+  },
+  modalTitleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 24,
   },
 });
 

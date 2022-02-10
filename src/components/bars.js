@@ -12,7 +12,6 @@ export function LetterBar(props) {
   };
   return (
     <View style={[styles.letterBar, style]}>
-      {/*<BarGradient letters={props.letters}/>*/}
       {props.letters.map((l, i) => (
         <View key={i}>
           <Text style={{fontSize: 32, color: foregroundColor}}>
@@ -26,6 +25,7 @@ export function LetterBar(props) {
 
 function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
+  // these should be Q25Buttons
   return (
     <TouchableOpacity style={[styles.button, {borderColor: foregroundColor}]} onPress={props.onPress}>
       <Text style={{color: foregroundColor, fontSize: 12}}>
@@ -38,9 +38,9 @@ function ButtonBarButton(props) {
 export function ButtonBar(props) {
   return (
     <View style={styles.buttonBar}>
-      <ButtonBarButton text={"Undo"} onPress={props.onUndo} style={props.style}/>
-      <ButtonBarButton text={"Clear word"} onPress={props.onClearWord} style={props.style}/>
-      <ButtonBarButton text={"Save word"} onPress={props.onSaveWord} style={props.style}/>
+      {props.data.map(({text, onPress}, idx) => (
+        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style}/>
+      ))}
     </View>
   );
 };
@@ -51,7 +51,7 @@ export function WordBar(props) {
     <View style={styles.wordBar}>
       {props.words.map(([word, wordScore], idx) => (
         <View key={idx} style={{flexDirection: 'row'}}>
-          <View style={{marginRight: 5, width: '60%'}}>
+          <View style={styles.wordContainer}>
             <Text style={{color: foregroundColor}}>
               {word.toUpperCase()}
             </Text>
@@ -66,19 +66,6 @@ export function WordBar(props) {
     </View>
   )
 };
-
-export function BottomBar(props) {
-  const { backgroundColor, foregroundColor } = props.style;
-
-  return (
-    <View style={styles.bottomBar}>
-      <ButtonBarButton text={"Scramble"} onPress={props.onScramble} style={props.style}/>
-      <ButtonBarButton text={"Reset"} onPress={props.onReset} style={props.style}/>
-      <ButtonBarButton text={"Finish"} onPress={props.onSubmit} style={props.style}/>
-    </View>
-  )
-};
-
 
 
 const styles = StyleSheet.create({
@@ -120,5 +107,9 @@ const styles = StyleSheet.create({
     padding: 5,
     width: '30%',
     alignItems:'center',
-  }
+  },
+  wordContainer: {
+    marginRight: 5,
+    width: '60%',
+  },
 });

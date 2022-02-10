@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
 
 import Text from '../components/text';
-import LetterButton from '../components/button';
+import Q25Button from '../components/button';
 import { themes } from '../styles';
 import { doChangeTheme } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
@@ -45,22 +45,27 @@ function Settings(props) {
   };
 
   const SettingsPicker = ({label, current, options, dispatcher}) => (
-    <View style={{flexDirection: 'row', borderWidth: 0, borderColor: foregroundColor, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{color: foregroundColor, flex:1}}>
+    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
+      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
         {label}
       </Text>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 0, borderColor: foregroundColor, display: 'flex'}}>
+      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
         <Picker
           mode={'dropdown'}
           selectedValue={current}
           onValueChange={(itemValue) => {
             dispatcher(itemValue);
           }}
-          style={{width: '100%'}}
+          style={styles.picker}
           dropdownIconColor={foregroundColor}
         >
           {options.map(option => (
-            <Picker.Item key={option} label={capitalize(option)} value={option} style={{color: foregroundColor, backgroundColor}}/>
+            <Picker.Item
+              key={option}
+              label={capitalize(option)}
+              value={option}
+              style={{color: foregroundColor, backgroundColor}}
+            />
           ))}
         </Picker>
       </View>
@@ -76,10 +81,11 @@ function Settings(props) {
         dispatcher={val => props.changeTheme(val)}
       />
       <View style={{height: '15%', width: '100%', padding: 10}}>
-        <LetterButton
-          letter={'Reset progress'}
-          style={{fontSize: 20, backgroundColor, borderColor: foregroundColor}}
-          textColor={foregroundColor}
+        <Q25Button
+          text={'Reset progress'}
+          style={styles.bigButton}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
           onPress={() => resetProgressDialog()}
         />
       </View>
@@ -99,14 +105,34 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    //borderWidth: 1,
   },
   button: {
     aspectRatio: 3,
     margin: 10,
-    //borderWidth: 1,
     fontSize: 24,
-  }
+  },
+  settingsPicker: {
+    flexDirection: 'row',
+    borderWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  settingsPickerLabel: {
+    flex: 1,
+  },
+  pickerContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 0,
+    display: 'flex',
+  },
+  picker: {
+    width: '100%',
+  },
+  bigButton: {
+    fontSize: 20,
+  },
 });
 
 const mapStateToProps = state => {

@@ -4,3 +4,6 @@
 - rank levels by difficulty?
 - fix svg generation
 - monetization
+- tutorial modal
+- unlock levels
+- type checking
