@@ -16,17 +16,23 @@ import {
   doUpdateGame,
   doDeleteGame,
 } from './features/game';
+import {
+  adsReducer,
+  doDecrementLevels,
+  doResetLevels,
+} from './features/ads';
 
 const rootReducer = combineReducers({
   levels: levelsReducer,
   settings: settingsReducer,
   game: gameReducer,
+  ads: adsReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['game'],
+  blacklist: ['game', 'ads'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

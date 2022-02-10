@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { AppState, BackHandler, Modal, StyleSheet, View } from 'react-native';
+import { AppState, BackHandler, Button, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { AdMobInterstitial, setTestDeviceIDAsync } from 'expo-ads-admob';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
@@ -13,6 +14,9 @@ import { points, isValid } from '../backend';
 import LetterButton from '../components/button';
 import { doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
+import { doDecrementLevels, doResetLevels } from '../storage/features/ads';
+import { TEST_AD_UNIT_IDS, REAL_AD_UNIT_IDS } from '../ads/ids';
+import { INTERSTITIAL_FREQUENCY } from '../ads/config';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
@@ -26,6 +30,11 @@ const scrambleArray = (array) => {
   return arr;
 };
 
+(async () => {
+  await setTestDeviceIDAsync('EMULATOR');
+  await AdMobInterstitial.setAdUnitID(TEST_AD_UNIT_IDS.interstitial);
+})();
+
 function Game(props) {
 
   const level = props.route.params.level;
@@ -34,6 +43,10 @@ function Game(props) {
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
   const appState = useRef(AppState.currentState);
+  useEffect(() => {
+    console.log('levels until ad:', props.levelsUntilNextAd);
+    console.log('play ad at the end of this level?', props.playAdAtFinish);
+  }, []);
 
   const [letters, setLetters] = useState(origLetters);
   const [bar, setBar] = useState([]);
@@ -42,6 +55,8 @@ function Game(props) {
   const [score, setScore] = useState(0);
   const [endModalVisible, setEndModalVisible] = useState(false);
   const [appStateVisible, setAppStateVisible] = useState(appState.current);
+
+  const adReady = useRef(false);
 
   const saveGameState = () => {
     props.updateGame(
@@ -79,9 +94,22 @@ function Game(props) {
     tryLoadGame();
   }, []);
 
+  useEffect(() => {
+    if (props.playAdAtFinish) {
+      (async () => {
+        await AdMobInterstitial.requestAdAsync();
+        const readyStart = Date.now();
+        const isReady = await AdMobInterstitial.getIsReadyAsync();
+        console.log('is ad ready?', isReady, `(${Date.now() - readyStart} ms)`);
+        adReady.current = isReady;
+      })();
+    }
+  }, [props.playAdAtFinish]);
+
+  let subscription = null;
 
   useEffect(() => {
-    const subscription = AppState.addEventListener("change", function (nextAppState) {
+    subscription = AppState.addEventListener("change", function (nextAppState) {
       if (
         appState.current === 'active' &&
         nextAppState.match(/inactive|background/)
@@ -94,7 +122,10 @@ function Game(props) {
     });
 
     return () => {
-      subscription.remove();
+      if (subscription) {
+        subscription.remove();
+        subscription = null;
+      }
     };
   }, []);
 
@@ -205,7 +236,7 @@ function Game(props) {
     setLetters(scrambleArray(letters));
   };
 
-  const submit = () => {
+  const submit = async () => {
     setEndModalVisible(true);
     if (score <= levelData.bestUserScore) return;
     const sortedWords = words.slice();
@@ -232,6 +263,7 @@ function Game(props) {
               <LetterButton
                 letter={'Pick level'}
                 onPress={() => {
+                  props.deleteGame();
                   props.navigation.navigate('Levels');
                 }}
                 style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
@@ -247,8 +279,17 @@ function Game(props) {
               />
               <LetterButton
                 letter={'Next level'}
-                onPress={() => {
+                onPress={async () => {
+                  props.deleteGame();
                   setEndModalVisible(false);
+                  if (props.playAdAtFinish) {
+                    if (adReady.current) {
+                      await AdMobInterstitial.showAdAsync();
+                      props.resetLevelsUntilNextAd();
+                    }
+                  } else {
+                    props.decrementLevelsUntilNextAd();
+                  }
                   props.navigation.push('Play', {level: level + 1});
                 }}
                 style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
@@ -275,7 +316,7 @@ function Game(props) {
       />
       <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
       <BottomBar
-        onSubmit={() => submit()}
+        onSubmit={submit}
         onScramble={() => scramble()}
         onReset={() => reset()}
         style={{foregroundColor, backgroundColor}}
@@ -315,11 +356,14 @@ const mapStateToProps = (state, ownProps) => {
     bestUserSolution: [],
     ...state.levels.levels[level],
   };
+  //console.log(state.ads);
   return {
     theme: state.settings.theme.current,
     levelData,
     gameInProgress: state.game.gameInProgress,
     gameState: state.game.currentGame,
+    levelsUntilNextAd: state.ads.levelsUntilNextAd,
+    playAdAtFinish: state.ads.levelsUntilNextAd == 1,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -327,6 +371,8 @@ const mapDispatchToProps = (dispatch) => {
     updateUserProgress: doUpdateUserProgress,
     updateGame: doUpdateGame,
     deleteGame: doDeleteGame,
+    decrementLevelsUntilNextAd: doDecrementLevels,
+    resetLevelsUntilNextAd: doResetLevels,
   }, dispatch);
 };
 
