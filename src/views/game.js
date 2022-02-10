@@ -11,7 +11,7 @@ import { LetterBar, ButtonBar, WordBar } from '../components/bars';
 import { themes } from '../styles';
 import { points, isValid } from '../backend';
 import Q25Button from '../components/button';
-import { doUpdateUserProgress } from '../storage/features/levels';
+import { doUnlockLevel, doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
 
 // random integer in [0, lim]
@@ -27,7 +27,6 @@ const scrambleArray = (array) => {
 };
 
 function Game(props) {
-
   const level = props.route.params.level;
   const levelData = props.levelData;
   const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
@@ -221,10 +220,12 @@ function Game(props) {
 
   const submit = () => {
     setEndModalVisible(true);
-    if (score <= levelData.bestUserScore) return;
-    const sortedWords = words.slice();
-    sortedWords.sort((x,y) => x.length - y.length);
-    props.updateUserProgress(level, score, sortedWords);
+    if (score > levelData.bestUserScore) {
+      const sortedWords = words.slice();
+      sortedWords.sort((x,y) => x.length - y.length);
+      props.updateUserProgress(level, score, sortedWords);
+    }
+    props.unlockLevel(level + 1);
   };
 
   const modalButtonData = [
@@ -283,9 +284,11 @@ function Game(props) {
         columns={5}
         rows={5}
         letters={letters}
-        style={[styles.grid, {foregroundColor, backgroundColor}]}
+        style={styles.grid}
         onLetterPress={onLetterPress}
         pressedButtons={pressedButtons}
+        foregroundColor={foregroundColor}
+        backgroundColor={backgroundColor}
       />
       <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
       <ButtonBar
@@ -378,6 +381,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateUserProgress: doUpdateUserProgress,
+    unlockLevel: doUnlockLevel,
     updateGame: doUpdateGame,
     deleteGame: doDeleteGame,
   }, dispatch);

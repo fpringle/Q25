@@ -7,6 +7,7 @@ import { Picker } from '@react-native-picker/picker';
 import Text from '../components/text';
 import Q25Button from '../components/button';
 import { themes } from '../styles';
+import { doResetRedux, persistor } from '../storage/storage';
 import { doChangeTheme } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
 
@@ -36,6 +37,27 @@ function Settings(props) {
         {
           text: 'Reset',
           onPress: () => props.resetProgress(),
+        }
+      ],
+      {
+        cancelable: true,
+      },
+    );
+  };
+
+  const purgeStoreDialog = () => {
+    Alert.alert(
+      'WARNING',
+      'This will wipe all the data associated with this game. Are you sure?',
+      [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Reset',
+          onPress: () => {
+            persistor.purge().then(() => props.resetReduxStore());
+          },
         }
       ],
       {
@@ -87,6 +109,15 @@ function Settings(props) {
           foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
           onPress={() => resetProgressDialog()}
+        />
+      </View>
+      <View style={{height: '15%', width: '100%', padding: 10}}>
+        <Q25Button
+          text={'Reset everything'}
+          style={styles.bigButton}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          onPress={() => purgeStoreDialog()}
         />
       </View>
     </View>
@@ -145,6 +176,7 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     changeTheme: doChangeTheme,
     resetProgress: doResetUserProgress,
+    resetReduxStore: doResetRedux,
   }, dispatch);
 };
 

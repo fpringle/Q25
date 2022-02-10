@@ -5,8 +5,9 @@ import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
 
 import Text from '../components/text';
-import Q25Button, { Q25ButtonSvg } from '../components/button';
+import Q25Button, { Q25ButtonSvg, LockButton } from '../components/button';
 import { themes } from '../styles';
+
 
 function Levels(props) {
   const { theme, levelData } = props;
@@ -47,16 +48,24 @@ function Levels(props) {
 
   const renderItem = ({ item }) => (
     <View style={styles.levelButtonContainer}>
-      <Q25ButtonSvg
-        onPress={() => props.navigation.push('Play', {level: item.number})}
-        style={styles.levelButton}
-        text={item.number}
-        foregroundColor={foregroundColor}
-        backgroundColor={backgroundColor}
-        maxScore={item.maxScore}
-        score={item.bestUserScore}
-        passingScore={item.passingScore}
-      />
+      {item.unlocked ? (
+        <Q25ButtonSvg
+          onPress={() => props.navigation.push('Play', {level: item.number})}
+          style={styles.levelButton}
+          text={item.number}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          maxScore={item.maxScore}
+          score={item.bestUserScore}
+          passingScore={item.passingScore}
+        />
+      ) : (
+        <LockButton
+          style={styles.levelButton}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+        />
+      )}
     </View>
   );
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Svg, { Line, Circle, Rect, Path, SvgXml } from 'react-native-svg';
 
 import Text from './text';
@@ -15,8 +15,25 @@ export default function Q25Button(props) {
       disabled={props.disabled || false}
     >
       <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
-        {props.text.toString().toUpperCase()}
+        {props.text ? props.text.toString().toUpperCase() : props.icon ? props.icon : null}
       </Text>
+    </TouchableOpacity>
+  );
+}
+
+export function LockButton(props) {
+  const {backgroundColor, foregroundColor} = props;
+  return (
+    <TouchableOpacity
+      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      disabled={props.disabled || false}
+    >
+      <Image
+        style={{width: '40%', height:'40%'}}
+        source={require('../../assets/images/lock96.png')}
+        tintColor={foregroundColor}
+      />
     </TouchableOpacity>
   );
 }

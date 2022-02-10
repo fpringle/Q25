@@ -1,11 +1,13 @@
-import { combineReducers, createStore, bindActionCreators } from 'redux';
+import { combineReducers, compose, createStore, bindActionCreators } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
+import reduxReset from 'redux-reset';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   levelsReducer,
   doUpdateUserProgress,
-  doResetUserProgress
+  doResetUserProgress,
+  doUnlockLevel,
 } from './features/levels';
 import {
   settingsReducer,
@@ -31,13 +33,22 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer);
+const enhanceCreateStore = compose(reduxReset())(createStore);
+
+export const store = enhanceCreateStore(persistedReducer);
 export const persistor = persistStore(store);
+
+export const doResetRedux = () => {
+  return {
+    type: 'RESET',
+  };
+};
 
 export const boundLevelActions = bindActionCreators(
   {
     update: doUpdateUserProgress,
     reset: doResetUserProgress,
+    unlock: doUnlockLevel,
   },
   store.dispatch,
 );
