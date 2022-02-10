@@ -68,7 +68,7 @@ function WordBarRow(props) {
   }
   return (
     <TouchableOpacity
-      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor}}
+      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor, borderRadius: 10}}
       onLongPress={onLongPress}
       delayLongPress={delayLongPress}
       onPressIn={onPressIn}

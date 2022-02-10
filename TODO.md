@@ -9,4 +9,3 @@
     - word list (scowl)
 - explanation when user tries to click a locked level
 - linting
-- scramble should reset pressed indices (or re-calculate them)
