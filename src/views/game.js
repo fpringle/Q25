@@ -173,7 +173,7 @@ function Game(props) {
   const saveWord = () => {
     if (bar.length === 0) return;
     const word = bar.join('');
-    if (!isValid(word)) return;
+    //if (!isValid(word)) return;
     const wordScore = points(word)
     const newScore = score + wordScore;
     const newWords = words.slice();
@@ -193,6 +193,19 @@ function Game(props) {
     if (bar.length === 0) return;
     setBar([]);
     setPressedButtons([]);
+  };
+
+  const removeSavedWord = (idx) => {
+    if (idx < 0 || idx >= words.length) return;
+    const newLetters = letters.slice();
+    const newWords = words.slice();
+    const [[word, wordScore]] = newWords.splice(idx, 1);
+    for (let c of word) newLetters.push(c);
+    const newScore = score - wordScore;
+
+    setLetters(newLetters);
+    setWords(newWords);
+    setScore(score);
   };
 
   const reset = () => {
@@ -299,7 +312,11 @@ function Game(props) {
         ]}
         style={{foregroundColor, backgroundColor}}
       />
-      <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
+      <WordBar
+        words={words}
+        style={{foregroundColor, backgroundColor}}
+        removeWord={idx => removeSavedWord(idx)}
+      />
       <ButtonBar
         data={[
           { text: 'Scramble', onPress: scramble },

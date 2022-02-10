@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import Text from './text';
 import { themes } from '../styles';
@@ -54,23 +54,55 @@ export function ButtonBar(props) {
   );
 };
 
+function WordBarRow(props) {
+  const {onLongPress, delayLongPress, word, wordScore} = props;
+  const [backgroundColor, setBackgroundColor] = useState(props.backgroundColor);
+  const [foregroundColor, setForegroundColor] = useState(props.foregroundColor);
+  const onPressIn = () => {
+    setBackgroundColor(props.foregroundColor);
+    setForegroundColor(props.backgroundColor);
+  }
+  const onPressOut = () => {
+    setBackgroundColor(props.backgroundColor);
+    setForegroundColor(props.foregroundColor);
+  }
+  return (
+    <TouchableOpacity
+      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor}}
+      onLongPress={onLongPress}
+      delayLongPress={delayLongPress}
+      onPressIn={onPressIn}
+      onPressOut={onPressOut}
+      activeOpacity={1}
+    >
+      <View style={styles.wordContainer}>
+        <Text style={{color: foregroundColor}}>
+          {word.toUpperCase()}
+        </Text>
+      </View>
+      <View>
+        <Text style={{color: foregroundColor}}>
+          {wordScore + ' points'}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  )
+};
+
 export function WordBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
   return (
     <View style={styles.wordBar}>
       {props.words.map(([word, wordScore], idx) => (
-        <View key={idx} style={{flexDirection: 'row'}}>
-          <View style={styles.wordContainer}>
-            <Text style={{color: foregroundColor}}>
-              {word.toUpperCase()}
-            </Text>
-          </View>
-          <View>
-            <Text style={{color: foregroundColor}}>
-              {wordScore + ' points'}
-            </Text>
-          </View>
-        </View>
+        <WordBarRow
+          key={idx}
+          onLongPress={() => props.removeWord(idx)}
+          delayLongPress={500}
+          word={word}
+          wordScore={wordScore}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+        />
       ))}
     </View>
   )
