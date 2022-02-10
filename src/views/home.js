@@ -3,63 +3,71 @@ import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 
 import Text from '../components/text';
-import LetterButton from '../components/button';
+import Q25Button from '../components/button';
 import { themes } from '../styles';
 
 
 function Home(props) {
   const theme = props.theme;
   const { backgroundColor, foregroundColor } = themes[theme];
+
+  const buttonData = [
+    {
+      text: 'Play',
+      onPress: () => {
+        let level = 1;
+        if (props.gameInProgress) {
+          level = props.gameState.number;
+        } else {
+          for (let i=0; i<props.levelData.length; i++) {
+            if (props.levelData[i].bestUserScore == 0) {
+              level = props.levelData[i].number;
+              break;
+            }
+          }
+        }
+        props.navigation.navigate('Play', { level });
+      },
+    },
+    {
+      text: 'Levels',
+      onPress: () => {
+        props.navigation.navigate('Levels', { level: 1 });
+      },
+    },
+    {
+      text: 'Settings',
+      onPress: () => {
+        props.navigation.navigate('Settings');
+      },
+    },
+  ];
+
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <View style={styles.title}>
         {['Q', '2', '5'].map((l,i) => (
-          <LetterButton
+          <Q25Button
             key={i}
             disabled={true}
-            letter={l}
-            style={{aspectRatio: 1, margin: 10, borderWidth: 2, backgroundColor, borderColor: foregroundColor}}
-            textColor={foregroundColor}
+            text={l}
+            style={styles.titleButton}
+            foregroundColor={foregroundColor}
+            backgroundColor={backgroundColor}
           />
         ))}
       </View>
-      <View style={styles.buttonContainer}>
-        <LetterButton
-          letter={'Play'}
-          style={[styles.button, {backgroundColor, backgroundColor, borderColor: foregroundColor}]}
-          onPress={() => {
-            let level = 1;
-            if (props.gameInProgress) {
-              level = props.gameState.number;
-            } else {
-              for (let i=0; i<props.levelData.length; i++) {
-                if (props.levelData[i].bestUserScore == 0) {
-                  level = props.levelData[i].number;
-                  break;
-                }
-              }
-            }
-            props.navigation.navigate('Play', { level });
-          }}
-          textColor={foregroundColor}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <LetterButton
-          letter={'Levels'}
-          style={[styles.button, {backgroundColor, backgroundColor, borderColor: foregroundColor}]}
-          onPress={() => props.navigation.navigate('Levels', { level: 1 })}
-          textColor={foregroundColor}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <LetterButton
-          letter={'Settings'}
-          style={[styles.button, {backgroundColor, backgroundColor, borderColor: foregroundColor}]}
-          onPress={()=>{props.navigation.navigate('Settings')}}
-          textColor={foregroundColor}
-        />
-      </View>
+      {buttonData.map(({text, onPress}) => (
+        <View key={text} style={styles.buttonContainer}>
+          <Q25Button
+            text={text}
+            style={styles.button}
+            onPress={onPress}
+            foregroundColor={foregroundColor}
+            backgroundColor={backgroundColor}
+          />
+        </View>
+      ))}
     </View>
   )
 };
@@ -78,18 +86,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 5,
     alignItems: 'center',
-    //borderWidth: 1,
   },
   buttonContainer: {
     flex: 1,
-    //borderWidth: 1,
   },
   button: {
     aspectRatio: 4,
     margin: 10,
-    //borderWidth: 1,
-    fontSize: 24,
-  }
+    fontSize: 32,
+  },
+  titleButton: {
+    aspectRatio: 1,
+    margin: 10,
+    borderWidth: 2,
+  },
 });
 
 const mapStateToProps = state => {

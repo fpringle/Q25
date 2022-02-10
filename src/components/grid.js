@@ -2,31 +2,30 @@ import React, { Component } from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import Text from './text';
-import LetterButton from './button';
+import Q25Button from './button';
 import { colors } from '../styles';
 
 
 export default function Grid(props) {
-  const {backgroundColor, foregroundColor} = props.style;
+  const {backgroundColor, foregroundColor} = props;
   const data = props.letters.map((l, idx) => ({
     letter: l,
     index: idx,
     pressed: false,
   }));
-  for (let idx of props.pressedButtons) data[idx].pressed = true;
+  for (let idx of props.pressedButtons) {
+    data[idx].pressed = true;
+  }
   const renderItem = ({ item }) => {
-    const style = {
-      backgroundColor: item.pressed ? foregroundColor : backgroundColor,
-      margin: '5%',
-      borderColor: foregroundColor,
-    };
     return(
-      <View style={{flex: 1/5, aspectRatio: 1}}>
-        <LetterButton
+      <View style={styles.gridButtonContainer}>
+        <Q25Button
+          idx={item.index}
           onPress={() => props.onLetterPress(item.index)}
-          style={style}
-          textColor={item.pressed ? backgroundColor : foregroundColor}
-          letter={item.letter}
+          style={[styles.gridButton, {borderColor: foregroundColor}]}
+          backgroundColor={item.pressed ? foregroundColor : backgroundColor}
+          foregroundColor={item.pressed ? backgroundColor : foregroundColor}
+          text={item.letter}
         />
       </View>
     );
@@ -34,8 +33,8 @@ export default function Grid(props) {
 
   return (
     <FlatList
-      style={{flex: 1, width: '90%'}}
-      contentContainerStyle={{justifyContent: 'center', flex: 1}}
+      style={styles.grid}
+      contentContainerStyle={styles.gridContentContainer}
       data={data}
       renderItem={renderItem}
       keyExtractor={item => item.index}
@@ -46,4 +45,19 @@ export default function Grid(props) {
 };
 
 const styles = StyleSheet.create({
+  grid: {
+    flex: 1,
+    width: '90%',
+  },
+  gridContentContainer: {
+    justifyContent: 'center',
+    flex: 1,
+  },
+  gridButtonContainer: {
+    flex: 1/5,
+    aspectRatio: 1,
+  },
+  gridButton: {
+    margin: '5%',
+  },
 });

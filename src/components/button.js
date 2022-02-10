@@ -1,21 +1,39 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Svg, { Line, Circle, Rect, Path, SvgXml } from 'react-native-svg';
 
 import Text from './text';
 import { colors } from '../styles';
 import svgPathString from '../svg';
 
-export default function LetterButton(props) {
+export default function Q25Button(props) {
+  const {backgroundColor, foregroundColor} = props;
   return (
     <TouchableOpacity
-      style={[styles.letterButton, props.style]}
-      onPress={() => props.onPress()}
+      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
       disabled={props.disabled || false}
     >
-      <Text style={{fontSize: props.style?.fontSize || 32, color: props.textColor || colors.lightGrey}}>
-        {props.letter.toString().toUpperCase()}
+      <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
+        {props.text ? props.text.toString().toUpperCase() : props.icon ? props.icon : null}
       </Text>
+    </TouchableOpacity>
+  );
+}
+
+export function LockButton(props) {
+  const {backgroundColor, foregroundColor} = props;
+  return (
+    <TouchableOpacity
+      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      disabled={props.disabled || false}
+    >
+      <Image
+        style={{width: '40%', height:'40%'}}
+        source={require('../../assets/images/lock96.png')}
+        tintColor={foregroundColor}
+      />
     </TouchableOpacity>
   );
 }
@@ -23,7 +41,13 @@ export default function LetterButton(props) {
 function CustomXml(props) {
   const pathString = svgPathString(props.size, props.borderRadius, props.centerRadius, props.score, props.maxScore);
   return (
-    <Svg height={props.size} width={props.size} style={{borderWidth: 1, borderColor: props.foregroundColor, borderRadius: props.borderRadius, }}
+    <Svg
+      height={props.size}
+      width={props.size}
+      style={[
+        styles.svg,
+        {borderColor: props.foregroundColor, borderRadius: props.borderRadius}
+      ]}
     >
       <Path
         d={pathString}
@@ -60,27 +84,28 @@ function CustomXml(props) {
   )
 };
 
-export function LetterButtonSvg(props) {
+export function Q25ButtonSvg(props) {
+  const {backgroundColor, foregroundColor} = props;
   const [size, setSize] = useState(50);
   const onLayout = (e) => {
     setSize(e.nativeEvent.layout.height);
   }
   return (
     <TouchableOpacity
-      style={[styles.letterButton, props.style, {borderWidth: 0}]}
+      style={[styles.q25Button, props.style, {borderWidth: 0}]}
       onPress={() => props.onPress()}
       disabled={props.disabled || false}
       onLayout={e => onLayout(e)}
     >
       <CustomXml
-        backgroundColor={props.style.backgroundColor}
-        foregroundColor={props.style.foregroundColor}
+        backgroundColor={backgroundColor}
+        foregroundColor={foregroundColor}
         borderRadius={props.style.borderRadius}
         size={size}
         centerRadius={size / 3}
         score={props.score}
         maxScore={props.maxScore}
-        levelNumber={props.letter}
+        levelNumber={props.text}
         fontSize={props.style.fontSize}
       />
     </TouchableOpacity>
@@ -89,16 +114,16 @@ export function LetterButtonSvg(props) {
 
 
 const styles = StyleSheet.create({
-  letterButton: {
+  q25Button: {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    backgroundColor: colors.darkGrey,
     borderRadius: 5,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: colors.lightGrey,
     padding: 0,
-//    margin: '5px',
+  },
+  svg: {
+    borderWidth: 1,
   },
 });

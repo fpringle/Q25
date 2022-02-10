@@ -1,6 +1,11 @@
 
 
-- min score to pass each level
-- rank levels by difficulty?
 - fix svg generation
 - monetization
+- tutorial modal
+- type checking
+- acknowledgements
+    - lock icon     <a href="https://www.freeiconspng.com/img/29056">Lock Icon Vector</a>
+    - word list (scowl)
+- explanation when user tries to click a locked level
+- linting

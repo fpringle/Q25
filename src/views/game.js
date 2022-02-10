@@ -8,11 +8,11 @@ import { AdMobInterstitial, setTestDeviceIDAsync } from 'expo-ads-admob';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
-import { LetterBar, BottomBar, ButtonBar, WordBar } from '../components/bars';
+import { LetterBar, ButtonBar, WordBar } from '../components/bars';
 import { themes } from '../styles';
 import { points, isValid } from '../backend';
-import LetterButton from '../components/button';
-import { doUpdateUserProgress } from '../storage/features/levels';
+import Q25Button from '../components/button';
+import { doUnlockLevel, doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
 import { doDecrementLevels, doResetLevels } from '../storage/features/ads';
 import { TEST_AD_UNIT_IDS, REAL_AD_UNIT_IDS } from '../ads/ids';
@@ -36,7 +36,6 @@ const scrambleArray = (array) => {
 })();
 
 function Game(props) {
-
   const level = props.route.params.level;
   const levelData = props.levelData;
   const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
@@ -94,6 +93,8 @@ function Game(props) {
     tryLoadGame();
   }, []);
 
+  let subscription = useRef(null);
+
   useEffect(() => {
     if (props.playAdAtFinish) {
       (async () => {
@@ -106,10 +107,8 @@ function Game(props) {
     }
   }, [props.playAdAtFinish]);
 
-  let subscription = null;
-
   useEffect(() => {
-    subscription = AppState.addEventListener("change", function (nextAppState) {
+    subscription.current = AppState.addEventListener("change", function (nextAppState) {
       if (
         appState.current === 'active' &&
         nextAppState.match(/inactive|background/)
@@ -122,9 +121,9 @@ function Game(props) {
     });
 
     return () => {
-      if (subscription) {
-        subscription.remove();
-        subscription = null;
+      if (subscription.current) {
+        subscription.current.remove();
+        subscription.current = null;
       }
     };
   }, []);
@@ -162,6 +161,16 @@ function Game(props) {
           tintColor={foregroundColor}
         />
       ),
+      headerRight: () => {
+        return (
+          <Q25Button
+            text={'?'}
+            style={styles.helpButton}
+            foregroundColor={foregroundColor}
+            backgroundColor={backgroundColor}
+          />
+        )
+      },
     });
   });
 
@@ -213,13 +222,26 @@ function Game(props) {
     setPressedButtons([]);
   };
 
+  const removeSavedWord = (idx) => {
+    if (idx < 0 || idx >= words.length) return;
+    const newLetters = letters.slice();
+    const newWords = words.slice();
+    const [[word, wordScore]] = newWords.splice(idx, 1);
+    for (let c of word) newLetters.push(c);
+    const newScore = score - wordScore;
+
+    setLetters(newLetters);
+    setWords(newWords);
+    setScore(score);
+  };
+
   const reset = () => {
     setLetters(origLetters.slice());
     setBar([]);
     setPressedButtons([]);
     setWords([]);
     setScore(0);
-    deleteGame();
+    props.deleteGame();
   };
 
   const undo = () => {
@@ -233,16 +255,60 @@ function Game(props) {
   };
 
   const scramble = () => {
-    setLetters(scrambleArray(letters));
+    const lettersWithIndices = letters.map((l, i) => [l, i]);
+    const scrambledLettersWithIndices = scrambleArray(lettersWithIndices);
+    const newLetters = [];
+    const newIndices = [];
+    scrambledLettersWithIndices.forEach(([l, i]) => {
+      newLetters.push(l);
+      newIndices.push(i);
+    });
+    const newPressedButtons = pressedButtons.map(idx => newIndices.indexOf(idx));
+
+    setLetters(newLetters);
+    setPressedButtons(newPressedButtons);
   };
 
-  const submit = async () => {
+  const submit = () => {
     setEndModalVisible(true);
-    if (score <= levelData.bestUserScore) return;
-    const sortedWords = words.slice();
-    sortedWords.sort((x,y) => x.length - y.length);
-    props.updateUserProgress(level, score, sortedWords);
+    if (score > levelData.bestUserScore) {
+      const sortedWords = words.slice();
+      sortedWords.sort((x,y) => x.length - y.length);
+      props.updateUserProgress(level, score, sortedWords);
+    }
+    props.unlockLevel(level + 1);
   };
+
+  const modalButtonData = [
+    {
+      text: 'Pick level',
+      onPress: () => {
+        props.navigation.navigate('Levels');
+      },
+    },
+    {
+      text: 'Improve',
+      onPress: () => {
+        setEndModalVisible(false);
+      },
+    },
+    {
+      text: 'Next level',
+      onPress: async () => {
+        props.deleteGame();
+        setEndModalVisible(false);
+        if (props.playAdAtFinish) {
+          if (adReady.current) {
+            await AdMobInterstitial.showAdAsync();
+            props.resetLevelsUntilNextAd();
+          }
+        } else {
+          props.decrementLevelsUntilNextAd();
+        }
+        props.navigation.push('Play', {level: level + 1});
+      },
+    },
+  ];
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
@@ -254,47 +320,22 @@ function Game(props) {
       >
         <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
           <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
-            <View style={{flex: 1, justifyContent: 'center'}}>
-              <Text style={{color: foregroundColor, fontSize: 24}}>
+            <View style={styles.modalTitleContainer}>
+              <Text style={[styles.modalTitle, {color: foregroundColor}]}>
                 {'Level cleared'.toUpperCase()}
               </Text>
             </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1, width: '100%'}}>
-              <LetterButton
-                letter={'Pick level'}
-                onPress={() => {
-                  props.deleteGame();
-                  props.navigation.navigate('Levels');
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
-              <LetterButton
-                letter={'Improve'}
-                onPress={() => {
-                  setEndModalVisible(false);
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
-              <LetterButton
-                letter={'Next level'}
-                onPress={async () => {
-                  props.deleteGame();
-                  setEndModalVisible(false);
-                  if (props.playAdAtFinish) {
-                    if (adReady.current) {
-                      await AdMobInterstitial.showAdAsync();
-                      props.resetLevelsUntilNextAd();
-                    }
-                  } else {
-                    props.decrementLevelsUntilNextAd();
-                  }
-                  props.navigation.push('Play', {level: level + 1});
-                }}
-                style={{fontSize: 10, margin: '4%', backgroundColor, borderColor: foregroundColor}}
-                textColor={foregroundColor}
-              />
+            <View style={styles.modalButtonContainer}>
+              {modalButtonData.map(({text, onPress}) => (
+                <Q25Button
+                  key={text}
+                  text={text}
+                  onPress={onPress}
+                  style={styles.modalButton}
+                  foregroundColor={foregroundColor}
+                  backgroundColor={backgroundColor}
+                />
+              ))}
             </View>
           </View>
         </View>
@@ -303,22 +344,32 @@ function Game(props) {
         columns={5}
         rows={5}
         letters={letters}
-        style={{width:'100%', aspectRatio: 1, foregroundColor, backgroundColor}}
+        style={styles.grid}
         onLetterPress={onLetterPress}
         pressedButtons={pressedButtons}
+        foregroundColor={foregroundColor}
+        backgroundColor={backgroundColor}
       />
       <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
       <ButtonBar
-        onUndo={() => undo()}
-        onClearWord={() => clearWord()}
-        onSaveWord={() => saveWord()}
+        data={[
+          { text: 'Undo', onPress: undo },
+          { text: 'Clear word', onPress: clearWord },
+          { text: 'Save word', onPress: saveWord },
+        ]}
         style={{foregroundColor, backgroundColor}}
       />
-      <WordBar words={words} style={{foregroundColor, backgroundColor}}/>
-      <BottomBar
-        onSubmit={submit}
-        onScramble={() => scramble()}
-        onReset={() => reset()}
+      <WordBar
+        words={words}
+        style={{foregroundColor, backgroundColor}}
+        removeWord={idx => removeSavedWord(idx)}
+      />
+      <ButtonBar
+        data={[
+          { text: 'Scramble', onPress: scramble },
+          { text: 'Reset', onPress: reset },
+          { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
+        ]}
         style={{foregroundColor, backgroundColor}}
       />
     </View>
@@ -335,6 +386,10 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingTop: 0,
   },
+  grid: {
+    width: '100%',
+    aspectRatio: 1,
+  },
   modalStyle: {
     flex: 1,
     justifyContent: 'center',
@@ -346,6 +401,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '75%',
     aspectRatio: 2.5,
+  },
+  modalButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1,
+    width: '100%',
+  },
+  modalButton: {
+    fontSize: 10,
+    margin: '4%',
+  },
+  helpButton: {
+    flex: 0,
+    aspectRatio: 1,
+    fontSize: 14,
+    height: '300%',   // TODO fix this
+    marginRight: 10,
+  },
+  modalTitleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 24,
   },
 });
 
@@ -369,6 +448,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateUserProgress: doUpdateUserProgress,
+    unlockLevel: doUnlockLevel,
     updateGame: doUpdateGame,
     deleteGame: doDeleteGame,
     decrementLevelsUntilNextAd: doDecrementLevels,

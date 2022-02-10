@@ -5,8 +5,9 @@ import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
 
 import Text from '../components/text';
-import LetterButton, { LetterButtonSvg } from '../components/button';
+import Q25Button, { Q25ButtonSvg, LockButton } from '../components/button';
 import { themes } from '../styles';
+
 
 function Levels(props) {
   const { theme, levelData } = props;
@@ -46,23 +47,32 @@ function Levels(props) {
   );
 
   const renderItem = ({ item }) => (
-    <View style={{width: '100%', aspectRatio: 1, flex:1/5}}>
-      <LetterButtonSvg
-        onPress={() => props.navigation.push('Play', {level: item.number})}
-        style={{fontSize: 12, width: '100%', aspectRatio: 1, margin: '5%', backgroundColor, borderColor: foregroundColor, borderRadius: 5, foregroundColor}}
-        letter={item.number}
-        textColor={foregroundColor}
-        maxScore={item.maxScore}
-        score={item.bestUserScore}
-        passingScore={item.passingScore}
-      />
+    <View style={styles.levelButtonContainer}>
+      {item.unlocked ? (
+        <Q25ButtonSvg
+          onPress={() => props.navigation.push('Play', {level: item.number})}
+          style={styles.levelButton}
+          text={item.number}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          maxScore={item.maxScore}
+          score={item.bestUserScore}
+          passingScore={item.passingScore}
+        />
+      ) : (
+        <LockButton
+          style={styles.levelButton}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+        />
+      )}
     </View>
   );
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <FlatList
-        style={{width: '100%', marginTop: 5}}
+        style={styles.flatList}
         data={levelData}
         renderItem={renderItem}
         keyExtractor={item => item.number}
@@ -82,6 +92,22 @@ const styles = StyleSheet.create({
     padding: '10%',
     //paddingBottom: 0,
     paddingTop: 0,
+  },
+  levelButtonContainer: {
+    width: '100%',
+    aspectRatio: 1,
+    flex: 1/5,
+  },
+  levelButton: {
+    fontSize: 12,
+    width: '100%',
+    aspectRatio: 1,
+    margin: '5%',
+    borderRadius: 5,
+  },
+  flatList: {
+    width: '100%',
+    marginTop: 5,
   },
 });
 

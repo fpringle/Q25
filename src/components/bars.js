@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import Text from './text';
 import { themes } from '../styles';
@@ -12,7 +12,6 @@ export function LetterBar(props) {
   };
   return (
     <View style={[styles.letterBar, style]}>
-      {/*<BarGradient letters={props.letters}/>*/}
       {props.letters.map((l, i) => (
         <View key={i}>
           <Text style={{fontSize: 32, color: foregroundColor}}>
@@ -26,9 +25,19 @@ export function LetterBar(props) {
 
 function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
+  let [background, foreground] = [backgroundColor, foregroundColor];
+  if (props.disabled) {
+    background = foregroundColor;
+    foreground = backgroundColor;
+  }
+  // these should be Q25Buttons
   return (
-    <TouchableOpacity style={[styles.button, {borderColor: foregroundColor}]} onPress={props.onPress}>
-      <Text style={{color: foregroundColor, fontSize: 12}}>
+    <TouchableOpacity
+      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
+      onPress={props.onPress}
+      disabled={props.disabled}
+    >
+      <Text style={{color: foreground, fontSize: 12}}>
         {props.text}
       </Text>
     </TouchableOpacity>
@@ -38,11 +47,46 @@ function ButtonBarButton(props) {
 export function ButtonBar(props) {
   return (
     <View style={styles.buttonBar}>
-      <ButtonBarButton text={"Undo"} onPress={props.onUndo} style={props.style}/>
-      <ButtonBarButton text={"Clear word"} onPress={props.onClearWord} style={props.style}/>
-      <ButtonBarButton text={"Save word"} onPress={props.onSaveWord} style={props.style}/>
+      {props.data.map(({text, onPress, disabled}, idx) => (
+        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style} disabled={disabled}/>
+      ))}
     </View>
   );
+};
+
+function WordBarRow(props) {
+  const {onLongPress, delayLongPress, word, wordScore} = props;
+  const [backgroundColor, setBackgroundColor] = useState(props.backgroundColor);
+  const [foregroundColor, setForegroundColor] = useState(props.foregroundColor);
+  const onPressIn = () => {
+    setBackgroundColor(props.foregroundColor);
+    setForegroundColor(props.backgroundColor);
+  }
+  const onPressOut = () => {
+    setBackgroundColor(props.backgroundColor);
+    setForegroundColor(props.foregroundColor);
+  }
+  return (
+    <TouchableOpacity
+      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor, borderRadius: 10}}
+      onLongPress={onLongPress}
+      delayLongPress={delayLongPress}
+      onPressIn={onPressIn}
+      onPressOut={onPressOut}
+      activeOpacity={1}
+    >
+      <View style={styles.wordContainer}>
+        <Text style={{color: foregroundColor}}>
+          {word.toUpperCase()}
+        </Text>
+      </View>
+      <View>
+        <Text style={{color: foregroundColor}}>
+          {wordScore + ' points'}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  )
 };
 
 export function WordBar(props) {
@@ -50,35 +94,19 @@ export function WordBar(props) {
   return (
     <View style={styles.wordBar}>
       {props.words.map(([word, wordScore], idx) => (
-        <View key={idx} style={{flexDirection: 'row'}}>
-          <View style={{marginRight: 5, width: '60%'}}>
-            <Text style={{color: foregroundColor}}>
-              {word.toUpperCase()}
-            </Text>
-          </View>
-          <View>
-            <Text style={{color: foregroundColor}}>
-              {wordScore + ' points'}
-            </Text>
-          </View>
-        </View>
+        <WordBarRow
+          key={idx}
+          onLongPress={() => props.removeWord(idx)}
+          delayLongPress={500}
+          word={word}
+          wordScore={wordScore}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+        />
       ))}
     </View>
   )
 };
-
-export function BottomBar(props) {
-  const { backgroundColor, foregroundColor } = props.style;
-
-  return (
-    <View style={styles.bottomBar}>
-      <ButtonBarButton text={"Scramble"} onPress={props.onScramble} style={props.style}/>
-      <ButtonBarButton text={"Reset"} onPress={props.onReset} style={props.style}/>
-      <ButtonBarButton text={"Finish"} onPress={props.onSubmit} style={props.style}/>
-    </View>
-  )
-};
-
 
 
 const styles = StyleSheet.create({
@@ -120,5 +148,9 @@ const styles = StyleSheet.create({
     padding: 5,
     width: '30%',
     alignItems:'center',
-  }
+  },
+  wordContainer: {
+    marginRight: 5,
+    width: '60%',
+  },
 });
