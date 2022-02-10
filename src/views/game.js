@@ -160,14 +160,32 @@ function Game(props) {
     }, [])
   );
 
-  const onLetterPress = idx => {
-    if (pressedButtons.includes(idx)) return;
+  const removeLetterFromWord = (idx) => {
+    const index = pressedButtons.indexOf(idx);
+    if (index === -1) return;
     const newBar = bar.slice();
-    const newButtons = pressedButtons.slice();
-    newBar.push(letters[idx]);
-    newButtons.push(idx);
+    const newPressedButtons = pressedButtons.slice();
+    newBar.splice(index, 1);
+    newPressedButtons.splice(index, 1);
     setBar(newBar);
-    setPressedButtons(newButtons);
+    setPressedButtons(newPressedButtons);
+  };
+
+  const addLetterToWord = (idx) => {
+    const newBar = bar.slice();
+    const newPressedButtons = pressedButtons.slice();
+    newBar.push(letters[idx]);
+    newPressedButtons.push(idx);
+    setBar(newBar);
+    setPressedButtons(newPressedButtons);
+  }
+
+  const onLetterPress = (idx) => {
+    if (pressedButtons.includes(idx)) {
+      removeLetterFromWord(idx);
+    } else {
+      addLetterToWord(idx);
+    }
   }
 
   const saveWord = () => {
