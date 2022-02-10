@@ -201,7 +201,7 @@ function Game(props) {
     setPressedButtons([]);
     setWords([]);
     setScore(0);
-    deleteGame();
+    props.deleteGame();
   };
 
   const undo = () => {
