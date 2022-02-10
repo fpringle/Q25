@@ -10,7 +10,7 @@ export default function LetterButton(props) {
   return (
     <TouchableOpacity
       style={[styles.letterButton, props.style]}
-      onPress={() => props.onPress()}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
       disabled={props.disabled || false}
     >
       <Text style={{fontSize: props.style?.fontSize || 32, color: props.textColor || colors.lightGrey}}>

@@ -131,6 +131,16 @@ function Game(props) {
           tintColor={foregroundColor}
         />
       ),
+      headerRight: () => {
+        return (
+          <LetterButton
+            letter={'?'}
+            style={{flex:0, aspectRatio: 1, fontSize: 14, height: '300%', backgroundColor, borderColor: foregroundColor}}
+            textColor={foregroundColor}
+            onPress={() => {}}
+          />
+        )
+      },
     });
   });
 
