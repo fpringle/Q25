@@ -304,7 +304,7 @@ function Game(props) {
         data={[
           { text: 'Scramble', onPress: scramble },
           { text: 'Reset', onPress: reset },
-          { text: 'Finish', onPress: submit },
+          { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
         ]}
         style={{foregroundColor, backgroundColor}}
       />

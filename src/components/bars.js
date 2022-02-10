@@ -25,10 +25,19 @@ export function LetterBar(props) {
 
 function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
+  let [background, foreground] = [backgroundColor, foregroundColor];
+  if (props.disabled) {
+    background = foregroundColor;
+    foreground = backgroundColor;
+  }
   // these should be Q25Buttons
   return (
-    <TouchableOpacity style={[styles.button, {borderColor: foregroundColor}]} onPress={props.onPress}>
-      <Text style={{color: foregroundColor, fontSize: 12}}>
+    <TouchableOpacity
+      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
+      onPress={props.onPress}
+      disabled={props.disabled}
+    >
+      <Text style={{color: foreground, fontSize: 12}}>
         {props.text}
       </Text>
     </TouchableOpacity>
@@ -38,8 +47,8 @@ function ButtonBarButton(props) {
 export function ButtonBar(props) {
   return (
     <View style={styles.buttonBar}>
-      {props.data.map(({text, onPress}, idx) => (
-        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style}/>
+      {props.data.map(({text, onPress, disabled}, idx) => (
+        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style} disabled={disabled}/>
       ))}
     </View>
   );
