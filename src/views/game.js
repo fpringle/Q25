@@ -173,7 +173,7 @@ function Game(props) {
   const saveWord = () => {
     if (bar.length === 0) return;
     const word = bar.join('');
-    //if (!isValid(word)) return;
+    if (!isValid(word)) return;
     const wordScore = points(word)
     const newScore = score + wordScore;
     const newWords = words.slice();
@@ -228,7 +228,18 @@ function Game(props) {
   };
 
   const scramble = () => {
-    setLetters(scrambleArray(letters));
+    const lettersWithIndices = letters.map((l, i) => [l, i]);
+    const scrambledLettersWithIndices = scrambleArray(lettersWithIndices);
+    const newLetters = [];
+    const newIndices = [];
+    scrambledLettersWithIndices.forEach(([l, i]) => {
+      newLetters.push(l);
+      newIndices.push(i);
+    });
+    const newPressedButtons = pressedButtons.map(idx => newIndices.indexOf(idx));
+
+    setLetters(newLetters);
+    setPressedButtons(newPressedButtons);
   };
 
   const submit = () => {
