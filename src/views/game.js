@@ -223,7 +223,7 @@ function Game(props) {
 
     setLetters(newLetters);
     setWords(newWords);
-    setScore(score);
+    setScore(newScore);
   };
 
   const reset = () => {
