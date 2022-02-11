@@ -11,7 +11,7 @@ export function LetterBar(props) {
     borderBottomColor: foregroundColor,
   };
   return (
-    <View style={[styles.letterBar, style]}>
+    <View style={[styles.letterBar, style, props.style]}>
       {props.letters.map((l, i) => (
         <View key={i}>
           <Text style={{fontSize: 32, color: foregroundColor}}>
@@ -45,10 +45,11 @@ function ButtonBarButton(props) {
 }
 
 export function ButtonBar(props) {
+  const {foregroundColor, backgroundColor} = props;
   return (
-    <View style={styles.buttonBar}>
+    <View style={[styles.buttonBar, props.style]}>
       {props.data.map(({text, onPress, disabled}, idx) => (
-        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style} disabled={disabled}/>
+        <ButtonBarButton key={idx} text={text} onPress={onPress} style={{foregroundColor, backgroundColor}} disabled={disabled}/>
       ))}
     </View>
   );
@@ -92,7 +93,7 @@ function WordBarRow(props) {
 export function WordBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
   return (
-    <View style={styles.wordBar}>
+    <View style={[styles.wordBar, props.style]}>
       {props.words.map(([word, wordScore], idx) => (
         <WordBarRow
           key={idx}
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     aspectRatio: 6,
-    marginTop: 10,
+//    marginTop: 10,
   },
   wordBar: {
     flexDirection: 'column',
@@ -126,13 +127,15 @@ const styles = StyleSheet.create({
     height: '25%',
     //borderColor: 'black',
     //borderWidth: 1,
+    paddingTop: 10,
   },
   buttonBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    aspectRatio: 6,
+    width: '105%',
+    paddingHorizontal: 5,
+    aspectRatio: 5.7,
   },
   bottomBar: {
     flexDirection: 'row',

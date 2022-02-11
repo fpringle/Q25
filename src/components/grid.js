@@ -33,7 +33,7 @@ export default function Grid(props) {
 
   return (
     <FlatList
-      style={styles.grid}
+      style={[styles.grid, props.style]}
       contentContainerStyle={styles.gridContentContainer}
       data={data}
       renderItem={renderItem}
@@ -47,7 +47,7 @@ export default function Grid(props) {
 const styles = StyleSheet.create({
   grid: {
     flex: 1,
-    width: '90%',
+    width: '85%',
   },
   gridContentContainer: {
     justifyContent: 'center',

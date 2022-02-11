@@ -10,3 +10,4 @@
 - explanation when user tries to click a locked level
 - linting
 - disable submit button until valid word (could be a setting?)
+- navigation animation type
