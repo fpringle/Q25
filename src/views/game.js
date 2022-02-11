@@ -65,14 +65,14 @@ function GameLayout(props) {
           columns={5}
           foregroundColor={foregroundColor}
           letters={letters}
-          onLetterPress={onLetterPress || (() => {})}
+          onLetterPress={onLetterPress}
           pressedButtons={pressedButtons}
           rows={5}
         />
       </View>
       <View style={[styles.letterBarContainer, {borderColor: highlights?.lettersBar ? foregroundColor : backgroundColor}]}>
         <LetterBar letters={bar}
-          style={{foregroundColor, backgroundColor}}
+          style={{foregroundColor}}
         />
       </View>
       <ButtonBar

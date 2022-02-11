@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import PropTypes from 'prop-types';
 import Svg, { Line, Circle, Path } from 'react-native-svg';
 
 import Text from './text';
@@ -11,22 +12,33 @@ export default function Q25Button(props) {
   return (
     <TouchableOpacity
       disabled={props.disabled || false}
-      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      onPress={props.onPress}
       style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
       <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
-        {props.text ? props.text.toString().toUpperCase() : props.icon ? props.icon : null}
+        {props.text.toString().toUpperCase()}
       </Text>
     </TouchableOpacity>
   );
 }
+
+Q25Button.propTypes = {
+  style: PropTypes.shape({
+    fontSize: PropTypes.number
+  }).isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  text: PropTypes.string.isRequired,
+};
 
 export function LockButton(props) {
   const {backgroundColor, foregroundColor} = props;
   return (
     <TouchableOpacity
       disabled={props.disabled || false}
-      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      onPress={props.onPress}
       style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
       <Image
@@ -37,6 +49,14 @@ export function LockButton(props) {
     </TouchableOpacity>
   );
 }
+
+LockButton.propTypes = {
+  style: PropTypes.shape({}),
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+};
 
 function CustomXml(props) {
   const pathString = svgPathString(props.size, props.borderRadius, props.centerRadius, props.score, props.maxScore);
@@ -84,6 +104,18 @@ function CustomXml(props) {
   )
 }
 
+CustomXml.propTypes = {
+  size: PropTypes.number.isRequired,
+  borderRadius: PropTypes.number.isRequired,
+  centerRadius: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+  maxScore: PropTypes.number.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  fontSize: PropTypes.number.isRequired,
+  levelNumber: PropTypes.number.isRequired,
+}
+
 export function Q25ButtonSvg(props) {
   const {backgroundColor, foregroundColor} = props;
   const [size, setSize] = useState(50);
@@ -94,7 +126,7 @@ export function Q25ButtonSvg(props) {
     <TouchableOpacity
       disabled={props.disabled || false}
       onLayout={e => onLayout(e)}
-      onPress={() => props.onPress()}
+      onPress={props.onPress}
       style={[styles.q25Button, styles.q25ButtonSvg, props.style]}
     >
       <CustomXml
@@ -112,6 +144,19 @@ export function Q25ButtonSvg(props) {
   );
 }
 
+Q25ButtonSvg.propTypes = {
+  style: PropTypes.shape({
+    borderRadius: PropTypes.number.isRequired,
+    fontSize: PropTypes.number.isRequired,
+  }).isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  text: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  maxScore: PropTypes.number.isRequired,
+};
 
 const styles = StyleSheet.create({
   q25Button: {

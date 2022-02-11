@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Q25Button from './button';
 
@@ -22,7 +23,7 @@ export default function Grid(props) {
           foregroundColor={item.pressed ? backgroundColor : foregroundColor}
           idx={item.index}
           onPress={() => props.onLetterPress(item.index)}
-          style={[styles.gridButton, {borderColor: foregroundColor}]}
+          style={{...styles.gridButton, borderColor: foregroundColor}}
           text={item.letter}
         />
       </View>
@@ -41,6 +42,15 @@ export default function Grid(props) {
     />
   );
 }
+
+Grid.propTypes = {
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pressedButtons: PropTypes.arrayOf(PropTypes.number).isRequired,
+  onLetterPress: PropTypes.func,
+  style: PropTypes.shape({}),
+};
 
 const styles = StyleSheet.create({
   grid: {

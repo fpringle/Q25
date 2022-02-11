@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Text from './text';
 
@@ -22,6 +23,13 @@ export function LetterBar(props) {
   );
 }
 
+LetterBar.propTypes = {
+  letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  style: PropTypes.exact({
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
   let [background, foreground] = [backgroundColor, foregroundColor];
@@ -43,6 +51,16 @@ function ButtonBarButton(props) {
   )
 }
 
+ButtonBarButton.propTypes = {
+  style: PropTypes.exact({
+    foregroundColor: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  text: PropTypes.string.isRequired,
+};
+
 export function ButtonBar(props) {
   const {foregroundColor, backgroundColor} = props;
   return (
@@ -59,6 +77,19 @@ export function ButtonBar(props) {
     </View>
   );
 }
+
+ButtonBar.propTypes = {
+  style: PropTypes.exact({
+    borderColor: PropTypes.string.isRequired,
+  }).isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.exact({
+    text: PropTypes.string.isRequired,
+    onPress: PropTypes.func,
+    disabled: PropTypes.bool,
+  })),
+};
 
 function WordBarRow(props) {
   const {onLongPress, delayLongPress, word, wordScore} = props;
@@ -95,6 +126,15 @@ function WordBarRow(props) {
   )
 }
 
+WordBarRow.propTypes = {
+  foregroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  onLongPress: PropTypes.func,
+  delayLongPress: PropTypes.number,
+  word: PropTypes.string.isRequired,
+  wordScore: PropTypes.number.isRequired,
+};
+
 export function WordBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
   return (
@@ -114,6 +154,14 @@ export function WordBar(props) {
   )
 }
 
+WordBar.propTypes = {
+  style: PropTypes.shape({
+    foregroundColor: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  removeWord: PropTypes.func,
+  words: PropTypes.arrayOf(PropTypes.array).isRequired,
+};
 
 const styles = StyleSheet.create({
   letterBar: {
