@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BackHandler, FlatList, StyleSheet, View } from 'react-native';
+import { BackHandler, FlatList, Modal, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
@@ -12,6 +12,9 @@ import { themes } from '../styles';
 function Levels(props) {
   const { theme, levelData } = props;
   const { backgroundColor, foregroundColor } = themes[theme];
+
+  const [lockModalVisible, setLockModalVisible] = useState(false);
+  const [lockModalLevel, setLockModalLevel] = useState(null);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -64,6 +67,10 @@ function Levels(props) {
           style={styles.levelButton}
           foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          onPress={() => {
+            setLockModalLevel(item.number);
+            setLockModalVisible(true);
+          }}
         />
       )}
     </View>
@@ -71,6 +78,37 @@ function Levels(props) {
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
+      <Modal
+        animationType={'none'}
+        transparent={true}
+        visible={lockModalVisible}
+        onRequestClose={() => setLockModalVisible(false)}
+      >
+        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+            <View style={[styles.modalTitleContainer, {borderWidth: 0}]}>
+              <Text style={[styles.modalTitle, {color: foregroundColor, borderWidth: 0}]}>
+                {'Level locked'.toUpperCase()}
+              </Text>
+            </View>
+            <Text style={[styles.modalText, {color: foregroundColor, textAlign: 'center', borderWidth: 0}]}>
+              {`Level ${lockModalLevel} is still locked. Complete the earlier levels to unlock this level.`}
+            </Text>
+            <View style={styles.modalButtonContainer}>
+              {[{text: 'Close', onPress:()=>setLockModalVisible(false)}].map(({text, onPress}) => (
+                <Q25Button
+                  key={text}
+                  text={text}
+                  onPress={onPress}
+                  style={styles.modalButton}
+                  foregroundColor={foregroundColor}
+                  backgroundColor={backgroundColor}
+                />
+              ))}
+            </View>
+          </View>
+        </View>
+      </Modal>
       <FlatList
         style={styles.flatList}
         data={levelData}
@@ -108,6 +146,42 @@ const styles = StyleSheet.create({
   flatList: {
     width: '100%',
     marginTop: 5,
+  },
+  modalStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalBoxStyle: {
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '85%',
+    paddingTop: 10,
+    aspectRatio: 2,
+  },
+  modalButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1,
+    width: '30%',
+    aspectRatio: 2.5,
+    marginTop: 10,
+  },
+  modalButton: {
+    fontSize: 10,
+    margin: '4%',
+    
+  },
+  modalTitleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 24,
+  },
+  modalText: {
+    fontSize: 16,
   },
 });
 
