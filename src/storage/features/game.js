@@ -43,7 +43,7 @@ export function doUpdateGame(
       endModalVisible,
     },
   };
-};
+}
 export function doDeleteGame() {
   return {
     type: DELETE_GAME,

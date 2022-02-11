@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
-import Svg, { Line, Circle, Rect, Path, SvgXml } from 'react-native-svg';
+import Svg, { Line, Circle, Path } from 'react-native-svg';
 
 import Text from './text';
 import { colors } from '../styles';
@@ -10,9 +10,9 @@ export default function Q25Button(props) {
   const {backgroundColor, foregroundColor} = props;
   return (
     <TouchableOpacity
-      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
-      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
       disabled={props.disabled || false}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
       <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
         {props.text ? props.text.toString().toUpperCase() : props.icon ? props.icon : null}
@@ -25,13 +25,13 @@ export function LockButton(props) {
   const {backgroundColor, foregroundColor} = props;
   return (
     <TouchableOpacity
-      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
-      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
       disabled={props.disabled || false}
+      onPress={props.onPress ? (() => props.onPress()) : (() => {})}
+      style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
       <Image
-        style={{width: '40%', height:'40%'}}
         source={require('../../assets/images/lock96.png')}
+        style={styles.lockImage}
         tintColor={foregroundColor}
       />
     </TouchableOpacity>
@@ -43,11 +43,11 @@ function CustomXml(props) {
   return (
     <Svg
       height={props.size}
-      width={props.size}
       style={[
         styles.svg,
         {borderColor: props.foregroundColor, borderRadius: props.borderRadius}
       ]}
+      width={props.size}
     >
       <Path
         d={pathString}
@@ -58,31 +58,31 @@ function CustomXml(props) {
         <Circle
           cx={props.size / 2}
           cy={props.size / 2}
-          r={props.centerRadius}
           fill={props.backgroundColor}
+          r={props.centerRadius}
           stroke="none"
         />
       ) : null}
       <Line
-        x1={props.size/2}
-        y1={props.size/2+props.centerRadius}
-        x2={props.size/2}
-        y2={props.size}
         stroke={(props.score * 2 > props.maxScore) ? props.backgroundColor : props.foregroundColor}
         strokeWidth="1"
+        x1={props.size/2}
+        x2={props.size/2}
+        y1={props.size/2+props.centerRadius}
+        y2={props.size}
       />
 
-      <View style={{height: '100%', width: '100%', borderWidth: 0, borderColor: 'red', justifyContent: 'center'}}>
+      <View style={styles.svgButtonTextContainer}>
         <Text
-          style={{color: props.foregroundColor, borderWidth: 0, width: '100%', textAlign: 'center', fontFamily:"monospace"}}
           fontSize={props.fontSize}
+          style={[styles.svgButtonText, {color: props.foregroundColor}]}
         >
           {props.levelNumber.toString()}
         </Text>
       </View>
     </Svg>
   )
-};
+}
 
 export function Q25ButtonSvg(props) {
   const {backgroundColor, foregroundColor} = props;
@@ -92,25 +92,25 @@ export function Q25ButtonSvg(props) {
   }
   return (
     <TouchableOpacity
-      style={[styles.q25Button, props.style, {borderWidth: 0}]}
-      onPress={() => props.onPress()}
       disabled={props.disabled || false}
       onLayout={e => onLayout(e)}
+      onPress={() => props.onPress()}
+      style={[styles.q25Button, styles.q25ButtonSvg, props.style]}
     >
       <CustomXml
         backgroundColor={backgroundColor}
-        foregroundColor={foregroundColor}
         borderRadius={props.style.borderRadius}
-        size={size}
         centerRadius={size / 3}
-        score={props.score}
-        maxScore={props.maxScore}
-        levelNumber={props.text}
         fontSize={props.style.fontSize}
+        foregroundColor={foregroundColor}
+        levelNumber={props.text}
+        maxScore={props.maxScore}
+        score={props.score}
+        size={size}
       />
     </TouchableOpacity>
   );
-};
+}
 
 
 const styles = StyleSheet.create({
@@ -123,7 +123,25 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     padding: 0,
   },
+  q25ButtonSvg: {
+    borderWidth: 0,
+  },
   svg: {
     borderWidth: 1,
+  },
+  svgButtonTextContainer: {
+    height: '100%',
+    width: '100%',
+    justifyContent: 'center',
+  },
+  svgButtonText: {
+    borderWidth: 0,
+    width: '100%',
+    textAlign: 'center',
+    fontFamily: 'monospace',
+  },
+  lockImage: {
+    width: '40%',
+    height:'40%',
   },
 });

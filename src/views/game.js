@@ -59,51 +59,42 @@ function GameLayout(props) {
   return (
     <View style={[styles.container, {backgroundColor}]}>
       {modal}
-      <View style={{flex: 0.95, borderWidth: 2, aspectRatio: 1, justifyContent: 'center', alignItems: 'center', borderColor: highlights?.grid ? foregroundColor : backgroundColor}}>
+      <View style={[styles.gridContainer, {borderColor: highlights?.grid ? foregroundColor : backgroundColor}]}>
         <Grid
+          backgroundColor={backgroundColor}
           columns={5}
-          rows={5}
+          foregroundColor={foregroundColor}
           letters={letters}
           onLetterPress={onLetterPress || (() => {})}
           pressedButtons={pressedButtons}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
+          rows={5}
         />
       </View>
-      <View style={{
-        width: '105%',
-        borderWidth: 2,
-        borderColor: highlights?.lettersBar ? foregroundColor : backgroundColor,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-      }}>
-        <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
+      <View style={[styles.letterBarContainer, {borderColor: highlights?.lettersBar ? foregroundColor : backgroundColor}]}>
+        <LetterBar letters={bar}
+          style={{foregroundColor, backgroundColor}}
+        />
       </View>
       <ButtonBar
-        data={buttonBar1Data}
-        style={{borderWidth: 2, borderColor: highlights?.buttonBar1 ? foregroundColor : backgroundColor}}
-        foregroundColor={foregroundColor}
         backgroundColor={backgroundColor}
+        data={buttonBar1Data}
+        foregroundColor={foregroundColor}
+        style={{borderColor: highlights?.buttonBar1 ? foregroundColor : backgroundColor}}
       />
       <WordBar
-        words={words}
+        removeWord={removeWord || (() => {})}
         style={{
           foregroundColor,
           backgroundColor,
-          borderWidth: 2,
           borderColor: highlights?.wordBar ? foregroundColor : backgroundColor,
         }}
-        removeWord={removeWord || (() => {})}
+        words={words}
       />
       <ButtonBar
-        data={buttonBar2Data}
-        style={{
-          borderWidth: 2,
-          borderColor: highlights?.buttonBar2 ? foregroundColor : backgroundColor
-        }}
-        foregroundColor={foregroundColor}
         backgroundColor={backgroundColor}
+        data={buttonBar2Data}
+        foregroundColor={foregroundColor}
+        style={{borderColor: highlights?.buttonBar2 ? foregroundColor : backgroundColor}}
       />
     </View>
   );
@@ -117,16 +108,6 @@ const tutorialPhases = {
   TITLE: 4,
   BUTTON_BAR_2: 5,
 };
-
-const tutorialPhaseOrder = [
-  tutorialPhases.GRID,
-  tutorialPhases.LETTERS_BAR,
-  tutorialPhases.BUTTON_BAR_1,
-  tutorialPhases.WORD_BAR,
-  tutorialPhases.TITLE,
-  tutorialPhases.BUTTON_BAR_2,
-];
-
 
 function ModalBox(props) {
   const {
@@ -148,41 +129,41 @@ function ModalBox(props) {
     width: '25%',
   };
   return (
-    <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor, width: '90%', paddingHorizontal: 15, flexDirection: 'column', aspectRatio: null, paddingBottom: 10, paddingTop: 10}]}>
-      <View style={{borderWidth: 0, width: '100%', justifyContent: 'space-between', flexDirection: 'row', padding: 0}}>
+    <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+      <View style={styles.modalBoxTitleContainer}>
         <Q25Button
-          text={''}
-          style={{flex: 0, fontSize: 10, aspectRatio: 1}}
-          foregroundColor={backgroundColor}
           backgroundColor={backgroundColor}
-          disabled={true}
+          disabled
+          foregroundColor={backgroundColor}
+          style={{flex: 0, fontSize: 10, aspectRatio: 1}}
+          text={''}
         />
         <Text style={[styles.modalTitle, {color: foregroundColor}]}>
           {title}
         </Text>
         <Q25Button
-          text={'X'}
-          style={{flex: 0, fontSize: 20, aspectRatio: 1, padding:0}}
-          onPress={onExit}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={onExit}
+          style={styles.closeModalButton}
+          text={'X'}
         />
       </View>
-      <Text style={[styles.modalText, {color: foregroundColor, textAlign: 'center'}]}>
+      <Text style={[styles.modalText, {color: foregroundColor}]}>
         {text}
       </Text>
-      <View style={{marginTop: 5, flexDirection: 'row', justifyContent: 'space-around', width: '100%'}}>
+      <View style={styles.modalBoxButtonContainer}>
         {backDisabled ? (
           <View
             style={buttonStyle}
           />
         ) : (
           <Q25Button
-            text={'Back'}
-            style={buttonStyle}
-            onPress={onBack}
-            foregroundColor={foregroundColor}
             backgroundColor={backgroundColor}
+            foregroundColor={foregroundColor}
+            onPress={onBack}
+            style={buttonStyle}
+            text={'Back'}
           />
         )}
         {nextDisabled ? (
@@ -191,11 +172,11 @@ function ModalBox(props) {
           />
         ) : (
           <Q25Button
-            text={final ? 'End' : 'Next'}
-            style={buttonStyle}
-            onPress={onNext}
-            foregroundColor={foregroundColor}
             backgroundColor={backgroundColor}
+            foregroundColor={foregroundColor}
+            onPress={onNext}
+            style={buttonStyle}
+            text={final ? 'End' : 'Next'}
           />
         )}
       </View>
@@ -251,19 +232,19 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <ModalBox
-              foregroundColor={foregroundColor}
+              backDisabled
               backgroundColor={backgroundColor}
-              backDisabled={true}
-              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              foregroundColor={foregroundColor}
               onExit={endTutorial}
-              title={'Grid'}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               text={`The letter grid contains the letters that are available to you this level. Clicking on a letter will add it to the bar.`}
+              title={'Grid'}
             />
             <View style={{height: '20%', width:'100%'}}/>
           </View>
@@ -283,19 +264,19 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <ModalBox
-              foregroundColor={foregroundColor}
               backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
               onBack={() => setTutorialPhase(tutorialPhase - 1)}
-              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               onExit={endTutorial}
-              title={'Bar'}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               text={`The word you're currently building. Longer words get more points!\n`}
+              title={'Bar'}
             />
             <View style={{height: '15%', width:'100%'}}/>
           </View>
@@ -314,19 +295,19 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <ModalBox
-              foregroundColor={foregroundColor}
               backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
               onBack={() => setTutorialPhase(tutorialPhase - 1)}
-              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               onExit={endTutorial}
-              title={'Buttons'}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               text={`You can remove the last letter with 'Undo', or clear the bar with 'Clear'. Click 'Save' to start working on the next word.`}
+              title={'Buttons'}
             />
             <View style={{height: '3%', width:'100%'}}/>
           </View>
@@ -345,19 +326,19 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <ModalBox
-              foregroundColor={foregroundColor}
               backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
               onBack={() => setTutorialPhase(tutorialPhase - 1)}
-              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               onExit={endTutorial}
-              title={'Saved words'}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               text={`These are the words you've built so far, along with the score for each one. You can hold down on one of them to remove it.`}
+              title={'Saved words'}
             />
             <View style={{height: '33%', width:'100%'}}/>
           </View>
@@ -376,11 +357,11 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <View style={{height: '5%', width: '100%', flexDirection: 'row', justifyContent: 'flex-start'}}>
               <View style={{width: '35%'}}/>
               <View
@@ -388,13 +369,13 @@ function HelpScreen(props) {
               />
             </View>
             <ModalBox
-              foregroundColor={foregroundColor}
               backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
               onBack={() => setTutorialPhase(tutorialPhase - 1)}
-              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               onExit={endTutorial}
-              title={'Points'}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
               text={`Your current points, your personal best score on this level, and the maximum possible score on this level.`}
+              title={'Points'}
             />
             <View style={{height: '65%', width:'100%'}}/>
           </View>
@@ -413,20 +394,20 @@ function HelpScreen(props) {
       modal = (
         <Modal
           animationType={'none'}
-          transparent={true}
-          visible={true}
           onRequestClose={endTutorial}
+          transparent
+          visible
         >
-          <View style={[styles.modalStyle, {justifyContent: 'flex-end'}]}>
+          <View style={styles.modalStyle}>
             <ModalBox
-              foregroundColor={foregroundColor}
               backgroundColor={backgroundColor}
+              final
+              foregroundColor={foregroundColor}
               onBack={() => setTutorialPhase(tutorialPhase - 1)}
-              onNext={endTutorial}
               onExit={endTutorial}
-              title={'More buttons'}
+              onNext={endTutorial}
               text={`Click 'Scramble' to re-order the grid, 'Reset' to start the level fresh, or 'Finish' once you've got enough points.`}
-              final={true}
+              title={'More buttons'}
             />
             <View style={{height: '15%', width:'100%'}}/>
           </View>
@@ -444,14 +425,14 @@ function HelpScreen(props) {
 
   return (
     <GameLayout
-      style={{foregroundColor, backgroundColor}}
-      grid={{letters, pressedButtons}}
-      modal={modal}
-      letterBar={{bar}}
       buttonBar1Data={buttonBar1Data}
       buttonBar2Data={buttonBar2Data}
-      wordBar={{words: wordBar}}
+      grid={{letters, pressedButtons}}
       highlights={highlights}
+      letterBar={{bar}}
+      modal={modal}
+      style={{foregroundColor, backgroundColor}}
+      wordBar={{words: wordBar}}
     />
   );
 }
@@ -460,7 +441,7 @@ function HelpScreen(props) {
 function Game(props) {
   const level = props.route.params.level;
   const levelData = props.levelData;
-  const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
+  const [origLetters] = useState(scrambleArray(levelData.letters.split('')));
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
   const appState = useRef(AppState.currentState);
@@ -471,7 +452,7 @@ function Game(props) {
   const [words, setWords] = useState([]);
   const [score, setScore] = useState(0);
   const [endModalVisible, setEndModalVisible] = useState(false);
-  const [appStateVisible, setAppStateVisible] = useState(appState.current);
+  const [, setAppStateVisible] = useState(appState.current);
 
   const [helpScreenVisible, setHelpScreenVisible] = useState(false);
 
@@ -557,18 +538,6 @@ function Game(props) {
   };
 
   useEffect(() => {
-    let headerRight;
-    if (!helpScreenVisible) {
-      headerRight = () => (
-        <Q25Button
-          text={'?'}
-          style={styles.helpButton}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
-          onPress={() => setHelpScreenVisible(true)}
-        />
-      );
-    }
     props.navigation.setOptions({
       headerLeft: () => (
         <HeaderBackButton
@@ -576,7 +545,16 @@ function Game(props) {
           tintColor={foregroundColor}
         />
       ),
-      headerRight,
+      headerRight: helpScreenVisible ? null : () => (
+        <Q25Button
+          backgroundColor={backgroundColor}
+          displayName={'headerRight'}
+          foregroundColor={foregroundColor}
+          onPress={() => setHelpScreenVisible(true)}
+          style={styles.helpButton}
+          text={'?'}
+        />
+      ),
     });
   }, [helpScreenVisible]);
 
@@ -728,32 +706,43 @@ function Game(props) {
   if (helpScreenVisible) {
     return (
       <HelpScreen
-        style={{foregroundColor, backgroundColor}}
-        endTutorial={() => {
-          setHelpScreenVisible(false);
-          updateTitle();
-        }}
         changeTitle={title => {
           props.navigation.setOptions({
             title,
           });
         }}
+        endTutorial={() => {
+          setHelpScreenVisible(false);
+          updateTitle();
+        }}
+        style={{foregroundColor, backgroundColor}}
       />
     );
   }
 
   return (
     <GameLayout
-      style={{foregroundColor, backgroundColor}}
+      buttonBar1Data={[
+        { text: 'Undo', onPress: undo },
+        { text: 'Clear word', onPress: clearWord },
+        { text: 'Save word', onPress: saveWord },
+      ]}
+      buttonBar2Data={[
+          { text: 'Scramble', onPress: scramble },
+          { text: 'Reset', onPress: reset },
+          { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
+        ]}
+      grid={{letters, onLetterPress, pressedButtons}}
+      letterBar={{bar}}
       modal={(
         <Modal
           animationType={'fade'}
-          transparent={true}
-          visible={endModalVisible}
           onRequestClose={() => setEndModalVisible(false)}
+          transparent
+          visible={endModalVisible}
         >
-          <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
-            <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+          <View style={[styles.endModalStyle, backgroundColor: backgroundColorTransparent]}>
+            <View style={[styles.endModalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
               <View style={styles.modalTitleContainer}>
                 <Text style={[styles.modalTitle, {color: foregroundColor}]}>
                   {'Level cleared'.toUpperCase()}
@@ -762,12 +751,12 @@ function Game(props) {
               <View style={styles.modalButtonContainer}>
                 {modalButtonData.map(({text, onPress}) => (
                   <Q25Button
+                    backgroundColor={backgroundColor}
+                    foregroundColor={foregroundColor}
                     key={text}
-                    text={text}
                     onPress={onPress}
                     style={styles.modalButton}
-                    foregroundColor={foregroundColor}
-                    backgroundColor={backgroundColor}
+                    text={text}
                   />
                 ))}
               </View>
@@ -775,19 +764,8 @@ function Game(props) {
           </View>
         </Modal>
       )}
-      grid={{letters, onLetterPress, pressedButtons}}
-      letterBar={{bar}}
-      buttonBar1Data={[
-        { text: 'Undo', onPress: undo },
-        { text: 'Clear word', onPress: clearWord },
-        { text: 'Save word', onPress: saveWord },
-      ]}
+      style={{foregroundColor, backgroundColor}}
       wordBar={{words, removeWord: removeSavedWord}}
-      buttonBar2Data={[
-          { text: 'Scramble', onPress: scramble },
-          { text: 'Reset', onPress: reset },
-          { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
-        ]}
     />
   );
 }
@@ -803,16 +781,42 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingTop: 0,
   },
-  grid: {
-    width: '100%',
+  gridContainer: {
+    flex: 0.95,
+    borderWidth: 2,
     aspectRatio: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  modalStyle: {
+  letterBarContainer: {
+    width: '105%',
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  endModalStyle: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  modalStyle: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
   modalBoxStyle: {
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+    paddingHorizontal: 15,
+    flexDirection: 'column',
+    aspectRatio: null,
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  endModalBoxStyle: {
     borderWidth: 3,
     justifyContent: 'center',
     alignItems: 'center',
@@ -823,6 +827,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flex: 1,
+    width: '100%',
+  },
+  modalBoxButtonContainer: {
+    marginTop: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     width: '100%',
   },
   modalButton: {
@@ -845,6 +855,20 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontSize: 16,
+    textAlign: 'center',
+  },
+  closeModalButton: {
+    flex: 0,
+    fontSize: 20,
+    aspectRatio: 1,
+    padding: 0,
+  },
+  modalBoxTitleContainer: {
+    borderWidth: 0,
+    width: '100%',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    padding: 0,
   },
 });
 

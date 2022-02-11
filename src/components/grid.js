@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
 
-import Text from './text';
 import Q25Button from './button';
-import { colors } from '../styles';
 
 
 export default function Grid(props) {
@@ -20,11 +18,11 @@ export default function Grid(props) {
     return(
       <View style={styles.gridButtonContainer}>
         <Q25Button
+          backgroundColor={item.pressed ? foregroundColor : backgroundColor}
+          foregroundColor={item.pressed ? backgroundColor : foregroundColor}
           idx={item.index}
           onPress={() => props.onLetterPress(item.index)}
           style={[styles.gridButton, {borderColor: foregroundColor}]}
-          backgroundColor={item.pressed ? foregroundColor : backgroundColor}
-          foregroundColor={item.pressed ? backgroundColor : foregroundColor}
           text={item.letter}
         />
       </View>
@@ -33,16 +31,16 @@ export default function Grid(props) {
 
   return (
     <FlatList
-      style={[styles.grid, props.style]}
       contentContainerStyle={styles.gridContentContainer}
       data={data}
-      renderItem={renderItem}
-      keyExtractor={item => item.index}
       horizontal={false}
+      keyExtractor={item => item.index}
       numColumns={5}
+      renderItem={renderItem}
+      style={[styles.grid, props.style]}
     />
   );
-};
+}
 
 const styles = StyleSheet.create({
   grid: {

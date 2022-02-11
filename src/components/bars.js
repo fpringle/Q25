@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import Text from './text';
-import { themes } from '../styles';
 
 export function LetterBar(props) {
-  const { backgroundColor, foregroundColor } = props.style;
+  const { foregroundColor } = props.style;
   const style = {
     borderTopColor: foregroundColor,
     borderBottomColor: foregroundColor,
@@ -14,14 +13,14 @@ export function LetterBar(props) {
     <View style={[styles.letterBar, style, props.style]}>
       {props.letters.map((l, i) => (
         <View key={i}>
-          <Text style={{fontSize: 32, color: foregroundColor}}>
+          <Text style={[styles.letterBarText, {color: foregroundColor}]}>
             {l.toUpperCase()}
           </Text>
         </View>
       ))}
     </View>
   );
-};
+}
 
 function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
@@ -30,14 +29,14 @@ function ButtonBarButton(props) {
     background = foregroundColor;
     foreground = backgroundColor;
   }
-  // these should be Q25Buttons
+  // TODO these should be Q25Buttons
   return (
     <TouchableOpacity
-      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
-      onPress={props.onPress}
       disabled={props.disabled}
+      onPress={props.onPress}
+      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
     >
-      <Text style={{color: foreground, fontSize: 12}}>
+      <Text style={[styles.buttonBarButtonText, {color: foreground}]}>
         {props.text}
       </Text>
     </TouchableOpacity>
@@ -49,11 +48,17 @@ export function ButtonBar(props) {
   return (
     <View style={[styles.buttonBar, props.style]}>
       {props.data.map(({text, onPress, disabled}, idx) => (
-        <ButtonBarButton key={idx} text={text} onPress={onPress} style={{foregroundColor, backgroundColor}} disabled={disabled}/>
+        <ButtonBarButton
+          disabled={disabled}
+          key={idx}
+          onPress={onPress}
+          style={{foregroundColor, backgroundColor}}
+          text={text}
+        />
       ))}
     </View>
   );
-};
+}
 
 function WordBarRow(props) {
   const {onLongPress, delayLongPress, word, wordScore} = props;
@@ -69,12 +74,12 @@ function WordBarRow(props) {
   }
   return (
     <TouchableOpacity
-      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor, borderRadius: 10}}
-      onLongPress={onLongPress}
+      activeOpacity={1}
       delayLongPress={delayLongPress}
+      onLongPress={onLongPress}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
-      activeOpacity={1}
+      style={[styles.wordBarRow, {backgroundColor}]}
     >
       <View style={styles.wordContainer}>
         <Text style={{color: foregroundColor}}>
@@ -88,7 +93,7 @@ function WordBarRow(props) {
       </View>
     </TouchableOpacity>
   )
-};
+}
 
 export function WordBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
@@ -96,18 +101,18 @@ export function WordBar(props) {
     <View style={[styles.wordBar, props.style]}>
       {props.words.map(([word, wordScore], idx) => (
         <WordBarRow
+          backgroundColor={backgroundColor}
+          delayLongPress={500}
+          foregroundColor={foregroundColor}
           key={idx}
           onLongPress={() => props.removeWord(idx)}
-          delayLongPress={500}
           word={word}
           wordScore={wordScore}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
         />
       ))}
     </View>
   )
-};
+}
 
 
 const styles = StyleSheet.create({
@@ -121,13 +126,24 @@ const styles = StyleSheet.create({
     aspectRatio: 6,
 //    marginTop: 10,
   },
+  letterBarText: {
+    fontSize: 32,
+  },
+  buttonBarButtonText: {
+    fontSize: 12,
+  },
   wordBar: {
     flexDirection: 'column',
     width: '100%',
     height: '25%',
-    //borderColor: 'black',
-    //borderWidth: 1,
+    borderWidth: 2,
     paddingTop: 10,
+  },
+  wordBarRow: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    justifyContent: 'space-between',
+    borderRadius: 10,
   },
   buttonBar: {
     flexDirection: 'row',
@@ -136,13 +152,7 @@ const styles = StyleSheet.create({
     width: '105%',
     paddingHorizontal: 5,
     aspectRatio: 5.7,
-  },
-  bottomBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    aspectRatio: 6,
+    borderWidth: 2,
   },
   button: {
     borderRadius: 5,

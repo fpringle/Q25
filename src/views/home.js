@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import Text from '../components/text';
 import Q25Button from '../components/button';
 import { themes } from '../styles';
 
@@ -48,29 +47,32 @@ function Home(props) {
       <View style={styles.title}>
         {['Q', '2', '5'].map((l,i) => (
           <Q25Button
-            key={i}
-            disabled={true}
-            text={l}
-            style={styles.titleButton}
-            foregroundColor={foregroundColor}
             backgroundColor={backgroundColor}
+            disabled
+            foregroundColor={foregroundColor}
+            key={i}
+            style={styles.titleButton}
+            text={l}
           />
         ))}
       </View>
       {buttonData.map(({text, onPress}) => (
-        <View key={text} style={styles.buttonContainer}>
+        <View
+          key={text}
+          style={styles.buttonContainer}
+        >
           <Q25Button
-            text={text}
-            style={styles.button}
-            onPress={onPress}
-            foregroundColor={foregroundColor}
             backgroundColor={backgroundColor}
+            foregroundColor={foregroundColor}
+            onPress={onPress}
+            style={styles.button}
+            text={text}
           />
         </View>
       ))}
     </View>
   )
-};
+}
 
 
 const styles = StyleSheet.create({

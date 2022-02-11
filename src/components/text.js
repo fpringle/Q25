@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 
@@ -9,7 +10,7 @@ export default function Q25Text(props) {
       {props.children}
     </Text>
   );
-};
+}
 
 
 const styles = StyleSheet.create({

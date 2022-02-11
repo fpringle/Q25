@@ -11,7 +11,7 @@ import { themes } from '../styles';
 
 function Levels(props) {
   const { theme, levelData } = props;
-  const { backgroundColor, foregroundColor } = themes[theme];
+  const { backgroundColor, backgroundColorTransparent, foregroundColor } = themes[theme];
 
   const [lockModalVisible, setLockModalVisible] = useState(false);
   const [lockModalLevel, setLockModalLevel] = useState(null);
@@ -53,24 +53,24 @@ function Levels(props) {
     <View style={styles.levelButtonContainer}>
       {item.unlocked ? (
         <Q25ButtonSvg
+          backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          maxScore={item.maxScore}
           onPress={() => props.navigation.push('Play', {level: item.number})}
+          passingScore={item.passingScore}
+          score={item.bestUserScore}
           style={styles.levelButton}
           text={item.number}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
-          maxScore={item.maxScore}
-          score={item.bestUserScore}
-          passingScore={item.passingScore}
         />
       ) : (
         <LockButton
-          style={styles.levelButton}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
           onPress={() => {
             setLockModalLevel(item.number);
             setLockModalVisible(true);
           }}
+          style={styles.levelButton}
         />
       )}
     </View>
@@ -80,29 +80,29 @@ function Levels(props) {
     <View style={[styles.container, {backgroundColor}]}>
       <Modal
         animationType={'none'}
-        transparent={true}
-        visible={lockModalVisible}
         onRequestClose={() => setLockModalVisible(false)}
+        transparent
+        visible={lockModalVisible}
       >
         <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
           <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
-            <View style={[styles.modalTitleContainer, {borderWidth: 0}]}>
-              <Text style={[styles.modalTitle, {color: foregroundColor, borderWidth: 0}]}>
+            <View style={styles.modalTitleContainer}>
+              <Text style={[styles.modalTitle, {color: foregroundColor}]}>
                 {'Level locked'.toUpperCase()}
               </Text>
             </View>
-            <Text style={[styles.modalText, {color: foregroundColor, textAlign: 'center', borderWidth: 0}]}>
+            <Text style={[styles.modalText, {color: foregroundColor}]}>
               {`Level ${lockModalLevel} is still locked. Complete the earlier levels to unlock this level.`}
             </Text>
             <View style={styles.modalButtonContainer}>
               {[{text: 'Close', onPress:()=>setLockModalVisible(false)}].map(({text, onPress}) => (
                 <Q25Button
+                  backgroundColor={backgroundColor}
+                  foregroundColor={foregroundColor}
                   key={text}
-                  text={text}
                   onPress={onPress}
                   style={styles.modalButton}
-                  foregroundColor={foregroundColor}
-                  backgroundColor={backgroundColor}
+                  text={text}
                 />
               ))}
             </View>
@@ -110,16 +110,16 @@ function Levels(props) {
         </View>
       </Modal>
       <FlatList
-        style={styles.flatList}
         data={levelData}
-        renderItem={renderItem}
         keyExtractor={item => item.number}
         numColumns={5}
+        renderItem={renderItem}
         showsVerticalScrollIndicator={false}
+        style={styles.flatList}
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -171,7 +171,6 @@ const styles = StyleSheet.create({
   modalButton: {
     fontSize: 10,
     margin: '4%',
-    
   },
   modalTitleContainer: {
     flex: 1,
@@ -182,6 +181,7 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontSize: 16,
+    textAlign: 'center',
   },
 });
 
