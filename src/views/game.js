@@ -474,7 +474,6 @@ function Game(props) {
   const [appStateVisible, setAppStateVisible] = useState(appState.current);
 
   const [helpScreenVisible, setHelpScreenVisible] = useState(false);
-  console.log('helpScreenVisible?', helpScreenVisible);
 
   const saveGameState = () => {
     props.updateGame(
@@ -558,6 +557,18 @@ function Game(props) {
   };
 
   useEffect(() => {
+    let headerRight;
+    if (!helpScreenVisible) {
+      headerRight = () => (
+        <Q25Button
+          text={'?'}
+          style={styles.helpButton}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          onPress={() => setHelpScreenVisible(true)}
+        />
+      );
+    }
     props.navigation.setOptions({
       headerLeft: () => (
         <HeaderBackButton
@@ -565,19 +576,9 @@ function Game(props) {
           tintColor={foregroundColor}
         />
       ),
-      headerRight: () => {
-        return (
-          <Q25Button
-            text={'?'}
-            style={styles.helpButton}
-            foregroundColor={foregroundColor}
-            backgroundColor={backgroundColor}
-            onPress={() => setHelpScreenVisible(true)}
-          />
-        )
-      },
+      headerRight,
     });
-  });
+  }, [helpScreenVisible]);
 
   useFocusEffect(
     useCallback(() => {

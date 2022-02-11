@@ -2,7 +2,6 @@
 
 - fix svg generation
 - monetization
-- tutorial modal
 - type checking
 - acknowledgements
     - lock icon     <a href="https://www.freeiconspng.com/img/29056">Lock Icon Vector</a>
