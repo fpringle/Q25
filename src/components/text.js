@@ -14,8 +14,8 @@ export default function Q25Text(props) {
 }
 
 Q25Text.propTypes = {
-  style: PropTypes.shape({}),
-  children: PropTypes.arrayOf(PropTypes.node),
+  children: PropTypes.node,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 const styles = StyleSheet.create({

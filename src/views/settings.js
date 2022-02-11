@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
@@ -11,7 +12,53 @@ import { doResetRedux, persistor } from '../storage/storage';
 import { doChangeTheme } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
 
+
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
+
+
+function SettingsPicker(props) {
+  const {label, current, options, dispatcher, foregroundColor, backgroundColor} = props;
+  return (
+    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
+      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
+        {label}
+      </Text>
+      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
+        <Picker
+          dropdownIconColor={foregroundColor}
+          mode={'dropdown'}
+          onValueChange={(itemValue) => {
+            dispatcher(itemValue);
+          }}
+          selectedValue={current}
+          style={styles.picker}
+        >
+          {options.map(option => (
+            <Picker.Item
+              key={option}
+              label={capitalize(option)}
+              style={{color: foregroundColor, backgroundColor}}
+              value={option}
+            />
+          ))}
+        </Picker>
+      </View>
+    </View>
+  );
+}
+
+SettingsPicker.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  current: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  dispatcher: PropTypes.func.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  options: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.number),
+  ]).isRequired,
+};
+
 
 function Settings(props) {
   let { theme, themeOptions } = props;
@@ -66,39 +113,13 @@ function Settings(props) {
     );
   };
 
-  const SettingsPicker = ({label, current, options, dispatcher}) => (
-    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
-      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
-        {label}
-      </Text>
-      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
-        <Picker
-          dropdownIconColor={foregroundColor}
-          mode={'dropdown'}
-          onValueChange={(itemValue) => {
-            dispatcher(itemValue);
-          }}
-          selectedValue={current}
-          style={styles.picker}
-        >
-          {options.map(option => (
-            <Picker.Item
-              key={option}
-              label={capitalize(option)}
-              style={{color: foregroundColor, backgroundColor}}
-              value={option}
-            />
-          ))}
-        </Picker>
-      </View>
-    </View>
-  );
-
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <SettingsPicker
+        backgroundColor={backgroundColor}
         current={theme}
         dispatcher={val => props.changeTheme(val)}
+        foregroundColor={foregroundColor}
         label={'Theme'}
         options={themeOptions}
       />
@@ -124,6 +145,16 @@ function Settings(props) {
   )
 }
 
+Settings.propTypes = {
+  changeTheme: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    setOptions: PropTypes.func.isRequired,
+  }),
+  resetProgress: PropTypes.func.isRequired,
+  resetReduxStore: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
+  themeOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {

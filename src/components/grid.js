@@ -44,11 +44,11 @@ export default function Grid(props) {
 }
 
 Grid.propTypes = {
-  foregroundColor: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
   letters: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pressedButtons: PropTypes.arrayOf(PropTypes.number).isRequired,
   onLetterPress: PropTypes.func,
+  pressedButtons: PropTypes.arrayOf(PropTypes.number).isRequired,
   style: PropTypes.shape({}),
 };
 

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { BackHandler, FlatList, Modal, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
@@ -120,6 +121,23 @@ function Levels(props) {
     </View>
   );
 }
+
+Levels.propTypes = {
+  levelData: PropTypes.arrayOf(PropTypes.exact({
+    bestUserScore: PropTypes.number.isRequired,
+    bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
+    letters: PropTypes.string.isRequired,
+    maxScore: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+    unlocked: PropTypes.bool,
+  })).isRequired,
+  navigation: PropTypes.shape({
+    popToTop: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
+    setOptions: PropTypes.func.isRequired,
+  }).isRequired,
+  theme: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {

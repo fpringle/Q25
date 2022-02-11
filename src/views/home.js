@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Q25Button from '../components/button';
@@ -71,9 +72,33 @@ function Home(props) {
         </View>
       ))}
     </View>
-  )
+  );
 }
 
+Home.propTypes = {
+  gameInProgress: PropTypes.bool.isRequired,
+  gameState: PropTypes.exact({
+    bar: PropTypes.arrayOf(PropTypes.string),
+    endModalVisible: PropTypes.bool.isRequired,
+    letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    number: PropTypes.number.isRequired,
+    origLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    pressedButtons: PropTypes.arrayOf(PropTypes.number),
+    words: PropTypes.arrayOf(PropTypes.array).isRequired,
+  }),
+  levelData: PropTypes.arrayOf(PropTypes.exact({
+    bestUserScore: PropTypes.number.isRequired,
+    bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
+    letters: PropTypes.string.isRequired,
+    maxScore: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+    unlocked: PropTypes.bool,
+  })).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+  theme: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {

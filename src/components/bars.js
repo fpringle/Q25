@@ -52,12 +52,12 @@ function ButtonBarButton(props) {
 }
 
 ButtonBarButton.propTypes = {
-  style: PropTypes.exact({
-    foregroundColor: PropTypes.string.isRequired,
-    backgroundColor: PropTypes.string.isRequired,
-  }).isRequired,
   disabled: PropTypes.bool,
   onPress: PropTypes.func,
+  style: PropTypes.exact({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
   text: PropTypes.string.isRequired,
 };
 
@@ -79,16 +79,16 @@ export function ButtonBar(props) {
 }
 
 ButtonBar.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.exact({
+    disabled: PropTypes.bool,
+    onPress: PropTypes.func,
+    text: PropTypes.string.isRequired,
+  })),
+  foregroundColor: PropTypes.string.isRequired,
   style: PropTypes.exact({
     borderColor: PropTypes.string.isRequired,
   }).isRequired,
-  foregroundColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf(PropTypes.exact({
-    text: PropTypes.string.isRequired,
-    onPress: PropTypes.func,
-    disabled: PropTypes.bool,
-  })),
 };
 
 function WordBarRow(props) {
@@ -127,10 +127,10 @@ function WordBarRow(props) {
 }
 
 WordBarRow.propTypes = {
-  foregroundColor: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
-  onLongPress: PropTypes.func,
   delayLongPress: PropTypes.number,
+  foregroundColor: PropTypes.string.isRequired,
+  onLongPress: PropTypes.func,
   word: PropTypes.string.isRequired,
   wordScore: PropTypes.number.isRequired,
 };
@@ -155,11 +155,11 @@ export function WordBar(props) {
 }
 
 WordBar.propTypes = {
-  style: PropTypes.shape({
-    foregroundColor: PropTypes.string.isRequired,
-    backgroundColor: PropTypes.string.isRequired,
-  }).isRequired,
   removeWord: PropTypes.func,
+  style: PropTypes.shape({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
   words: PropTypes.arrayOf(PropTypes.array).isRequired,
 };
 

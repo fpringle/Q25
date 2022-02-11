@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { AppState, BackHandler, Modal, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
@@ -100,6 +101,36 @@ function GameLayout(props) {
   );
 }
 
+GameLayout.propTypes = {
+  buttonBar1Data: ButtonBar.propTypes.data,
+  buttonBar2Data: ButtonBar.propTypes.data,
+  grid: PropTypes.exact({
+    letters: Grid.propTypes.letters,
+    onLetterPress: Grid.propTypes.onLetterPress,
+    pressedButtons: Grid.propTypes.pressedButtons,
+  }).isRequired,
+  highlights: PropTypes.exact({
+    buttonBar1: PropTypes.bool,
+    buttonBar2: PropTypes.bool,
+    grid: PropTypes.bool,
+    lettersBar: PropTypes.bool,
+    title: PropTypes.bool,
+    wordBar: PropTypes.bool,
+  }),
+  letterBar: PropTypes.exact({
+    bar: LetterBar.propTypes.letters,
+  }).isRequired,
+  modal: PropTypes.node,
+  style: PropTypes.exact({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  wordBar: PropTypes.exact({
+    removeWord: WordBar.propTypes.removeWord,
+    words: WordBar.propTypes.words,
+  }).isRequired,
+};
+
 const tutorialPhases = {
   GRID: 0,
   LETTERS_BAR: 1,
@@ -183,6 +214,19 @@ function ModalBox(props) {
     </View>
   );
 }
+
+ModalBox.propTypes = {
+  backDisabled: PropTypes.bool,
+  backgroundColor: PropTypes.string.isRequired,
+  final: PropTypes.bool,
+  foregroundColor: PropTypes.string.isRequired,
+  nextDisabled: PropTypes.bool,
+  onBack: PropTypes.func,
+  onExit: PropTypes.func,
+  onNext: PropTypes.func,
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 function HelpScreen(props) {
   const {foregroundColor, backgroundColor} = props.style;
@@ -437,6 +481,14 @@ function HelpScreen(props) {
   );
 }
 
+HelpScreen.propTypes = {
+  changeTitle: PropTypes.func.isRequired,
+  endTutorial: PropTypes.func.isRequired,
+  style: PropTypes.shape({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+}
 
 function Game(props) {
   const level = props.route.params.level;
@@ -674,7 +726,7 @@ function Game(props) {
   const submit = () => {
     setEndModalVisible(true);
     if (score > levelData.bestUserScore) {
-      const sortedWords = words.slice();
+      const sortedWords = words.map(pair => pair[0]);
       sortedWords.sort((x,y) => x.length - y.length);
       props.updateUserProgress(level, score, sortedWords);
     }
@@ -770,6 +822,42 @@ function Game(props) {
   );
 }
 
+Game.propTypes = {
+  deleteGame: PropTypes.func.isRequired,
+  gameInProgress: PropTypes.bool.isRequired,
+  gameState: PropTypes.exact({
+    bar: PropTypes.arrayOf(PropTypes.string),
+    endModalVisible: PropTypes.bool.isRequired,
+    letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    number: PropTypes.number.isRequired,
+    origLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    pressedButtons: PropTypes.arrayOf(PropTypes.number),
+    words: PropTypes.arrayOf(PropTypes.array).isRequired,
+  }),
+  levelData: PropTypes.exact({
+    bestUserScore: PropTypes.number.isRequired,
+    bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
+    letters: PropTypes.string.isRequired,
+    maxScore: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+    unlocked: PropTypes.bool,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+    popToTop: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
+    setOptions: PropTypes.func.isRequired,
+  }).isRequired,
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      level: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  theme: PropTypes.string.isRequired,
+  unlockLevel: PropTypes.func.isRequired,
+  updateGame: PropTypes.func.isRequired,
+  updateUserProgress: PropTypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -23,13 +23,13 @@ export default function Q25Button(props) {
 }
 
 Q25Button.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  foregroundColor: PropTypes.string.isRequired,
+  onPress: PropTypes.func,
   style: PropTypes.shape({
     fontSize: PropTypes.number
   }).isRequired,
-  foregroundColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
-  onPress: PropTypes.func,
   text: PropTypes.string.isRequired,
 };
 
@@ -51,11 +51,11 @@ export function LockButton(props) {
 }
 
 LockButton.propTypes = {
-  style: PropTypes.shape({}),
-  foregroundColor: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
+  foregroundColor: PropTypes.string.isRequired,
   onPress: PropTypes.func,
+  style: PropTypes.shape({}),
 };
 
 function CustomXml(props) {
@@ -105,15 +105,15 @@ function CustomXml(props) {
 }
 
 CustomXml.propTypes = {
-  size: PropTypes.number.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
   borderRadius: PropTypes.number.isRequired,
   centerRadius: PropTypes.number.isRequired,
-  score: PropTypes.number.isRequired,
-  maxScore: PropTypes.number.isRequired,
-  foregroundColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
   fontSize: PropTypes.number.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
   levelNumber: PropTypes.number.isRequired,
+  maxScore: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+  size: PropTypes.number.isRequired,
 }
 
 export function Q25ButtonSvg(props) {
@@ -145,17 +145,17 @@ export function Q25ButtonSvg(props) {
 }
 
 Q25ButtonSvg.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  foregroundColor: PropTypes.string.isRequired,
+  maxScore: PropTypes.number.isRequired,
+  onPress: PropTypes.func,
+  score: PropTypes.number.isRequired,
   style: PropTypes.shape({
     borderRadius: PropTypes.number.isRequired,
     fontSize: PropTypes.number.isRequired,
   }).isRequired,
-  foregroundColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
-  onPress: PropTypes.func,
-  text: PropTypes.string.isRequired,
-  score: PropTypes.number.isRequired,
-  maxScore: PropTypes.number.isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 const styles = StyleSheet.create({
