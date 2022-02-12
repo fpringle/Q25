@@ -3,13 +3,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import { AdMobInterstitial, AdMobRewarded, setTestDeviceIDAsync } from 'expo-ads-admob';
 
 import { store, persistor } from './storage/storage';
+import { TEST_AD_UNIT_IDS, REAL_AD_UNIT_IDS } from './ads/ids';
 
 import Home from './views/home';
 import Game from './views/game';
 import Levels from './views/levels';
 import Settings from './views/settings';
+
+(async () => {
+  await setTestDeviceIDAsync('EMULATOR');
+  await AdMobInterstitial.setAdUnitID(TEST_AD_UNIT_IDS.interstitial);
+  await AdMobRewarded.setAdUnitID(TEST_AD_UNIT_IDS.rewarded);
+})();
 
 const Stack = createNativeStackNavigator();
 

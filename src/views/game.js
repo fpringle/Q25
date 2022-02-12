@@ -5,7 +5,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AdMobInterstitial, setTestDeviceIDAsync } from 'expo-ads-admob';
+import { AdMobInterstitial } from 'expo-ads-admob';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
@@ -16,8 +16,6 @@ import Q25Button from '../components/button';
 import { doUnlockLevel, doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
 import { doDecrementLevels, doResetLevels } from '../storage/features/ads';
-import { TEST_AD_UNIT_IDS, REAL_AD_UNIT_IDS } from '../ads/ids';
-import { INTERSTITIAL_FREQUENCY } from '../ads/config';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
@@ -30,11 +28,6 @@ const scrambleArray = (array) => {
   }
   return arr;
 };
-
-(async () => {
-  await setTestDeviceIDAsync('EMULATOR');
-  await AdMobInterstitial.setAdUnitID(TEST_AD_UNIT_IDS.interstitial);
-})();
 
 const makeTitle = (score, bestUserScore, maxScore, level) => {
   const f = s => s.toString().padStart(3, ' ');
@@ -559,19 +552,37 @@ function Game(props) {
     tryLoadGame();
   }, []);
 
-  let subscription = useRef(null);
+  const nextLevel = () => props.navigation.push('Play', {level: level + 1});
+
+  const onAdLoad = () => {
+    adReady.current = true;
+  };
+
+  const onAdClose = () => {
+    nextLevel();
+  };
+
+  useEffect(() => {
+    AdMobInterstitial.addEventListener('interstitialDidLoad', onAdLoad);
+    return () => {
+      AdMobInterstitial.removeEventListener('interstitialDidLoad', onAdLoad);
+    };
+  }, []);
+
+  useEffect(() => {
+    AdMobInterstitial.addEventListener('interstitialDidClose', onAdClose);
+    return () => {
+      AdMobInterstitial.removeEventListener('interstitialDidClose', onAdClose);
+    };
+  }, []);
 
   useEffect(() => {
     if (props.playAdAtFinish) {
-      (async () => {
-        await AdMobInterstitial.requestAdAsync();
-        const readyStart = Date.now();
-        const isReady = await AdMobInterstitial.getIsReadyAsync();
-        console.log('is ad ready?', isReady, `(${Date.now() - readyStart} ms)`);
-        adReady.current = isReady;
-      })();
+      AdMobInterstitial.requestAdAsync();
     }
   }, [props.playAdAtFinish]);
+
+  let subscription = useRef(null);
 
   useEffect(() => {
     subscription.current = AppState.addEventListener("change", function (nextAppState) {
@@ -778,15 +789,19 @@ function Game(props) {
       onPress: async () => {
         props.deleteGame();
         setEndModalVisible(false);
+
         if (props.playAdAtFinish) {
           if (adReady.current) {
             await AdMobInterstitial.showAdAsync();
             props.resetLevelsUntilNextAd();
+          } else {
+            // freebie
+            nextLevel();
           }
         } else {
           props.decrementLevelsUntilNextAd();
+          nextLevel();
         }
-        props.navigation.push('Play', {level: level + 1});
       },
     },
   ];
@@ -859,6 +874,7 @@ function Game(props) {
 }
 
 Game.propTypes = {
+  decrementLevelsUntilNextAd: PropTypes.func.isRequired,
   deleteGame: PropTypes.func.isRequired,
   gameInProgress: PropTypes.bool.isRequired,
   gameState: PropTypes.exact({
@@ -878,12 +894,15 @@ Game.propTypes = {
     number: PropTypes.number.isRequired,
     unlocked: PropTypes.bool,
   }).isRequired,
+  levelsUntilNextAd: PropTypes.number.isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
     popToTop: PropTypes.func.isRequired,
     push: PropTypes.func.isRequired,
     setOptions: PropTypes.func.isRequired,
   }).isRequired,
+  playAdAtFinish: PropTypes.bool.isRequired,
+  resetLevelsUntilNextAd: PropTypes.func.isRequired,
   route: PropTypes.shape({
     params: PropTypes.shape({
       level: PropTypes.number.isRequired,
