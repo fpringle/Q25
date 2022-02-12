@@ -1,26 +1,33 @@
 import React, { useState } from 'react';
-import { Button, Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Text from './text';
-import { themes } from '../styles';
 
 export function LetterBar(props) {
-  const { backgroundColor, foregroundColor } = props.style;
+  const { foregroundColor } = props.style;
   const style = {
     borderTopColor: foregroundColor,
     borderBottomColor: foregroundColor,
   };
   return (
-    <View style={[styles.letterBar, style]}>
+    <View style={[styles.letterBar, style, props.style]}>
       {props.letters.map((l, i) => (
         <View key={i}>
-          <Text style={{fontSize: 32, color: foregroundColor}}>
+          <Text style={[styles.letterBarText, {color: foregroundColor}]}>
             {l.toUpperCase()}
           </Text>
         </View>
       ))}
     </View>
   );
+}
+
+LetterBar.propTypes = {
+  letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  style: PropTypes.exact({
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 function ButtonBarButton(props) {
@@ -30,28 +37,58 @@ function ButtonBarButton(props) {
     background = foregroundColor;
     foreground = backgroundColor;
   }
-  // these should be Q25Buttons
+  // TODO these should be Q25Buttons
   return (
     <TouchableOpacity
-      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
-      onPress={props.onPress}
       disabled={props.disabled}
+      onPress={props.onPress}
+      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
     >
-      <Text style={{color: foreground, fontSize: 12}}>
+      <Text style={[styles.buttonBarButtonText, {color: foreground}]}>
         {props.text}
       </Text>
     </TouchableOpacity>
   )
 }
 
+ButtonBarButton.propTypes = {
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  style: PropTypes.exact({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  text: PropTypes.string.isRequired,
+};
+
 export function ButtonBar(props) {
+  const {foregroundColor, backgroundColor} = props;
   return (
-    <View style={styles.buttonBar}>
+    <View style={[styles.buttonBar, props.style]}>
       {props.data.map(({text, onPress, disabled}, idx) => (
-        <ButtonBarButton key={idx} text={text} onPress={onPress} style={props.style} disabled={disabled}/>
+        <ButtonBarButton
+          disabled={disabled}
+          key={idx}
+          onPress={onPress}
+          style={{foregroundColor, backgroundColor}}
+          text={text}
+        />
       ))}
     </View>
   );
+}
+
+ButtonBar.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.exact({
+    disabled: PropTypes.bool,
+    onPress: PropTypes.func,
+    text: PropTypes.string.isRequired,
+  })),
+  foregroundColor: PropTypes.string.isRequired,
+  style: PropTypes.exact({
+    borderColor: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 function WordBarRow(props) {
@@ -68,12 +105,12 @@ function WordBarRow(props) {
   }
   return (
     <TouchableOpacity
-      style={{flexDirection: 'row', paddingHorizontal: 20, justifyContent: 'space-between', backgroundColor, borderRadius: 10}}
-      onLongPress={onLongPress}
+      activeOpacity={1}
       delayLongPress={delayLongPress}
+      onLongPress={onLongPress}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
-      activeOpacity={1}
+      style={[styles.wordBarRow, {backgroundColor}]}
     >
       <View style={styles.wordContainer}>
         <Text style={{color: foregroundColor}}>
@@ -87,27 +124,44 @@ function WordBarRow(props) {
       </View>
     </TouchableOpacity>
   )
+}
+
+WordBarRow.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  delayLongPress: PropTypes.number,
+  foregroundColor: PropTypes.string.isRequired,
+  onLongPress: PropTypes.func,
+  word: PropTypes.string.isRequired,
+  wordScore: PropTypes.number.isRequired,
 };
 
 export function WordBar(props) {
   const { backgroundColor, foregroundColor } = props.style;
   return (
-    <View style={styles.wordBar}>
+    <View style={[styles.wordBar, props.style]}>
       {props.words.map(([word, wordScore], idx) => (
         <WordBarRow
+          backgroundColor={backgroundColor}
+          delayLongPress={500}
+          foregroundColor={foregroundColor}
           key={idx}
           onLongPress={() => props.removeWord(idx)}
-          delayLongPress={500}
           word={word}
           wordScore={wordScore}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
         />
       ))}
     </View>
   )
-};
+}
 
+WordBar.propTypes = {
+  removeWord: PropTypes.func,
+  style: PropTypes.shape({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  words: PropTypes.arrayOf(PropTypes.array).isRequired,
+};
 
 const styles = StyleSheet.create({
   letterBar: {
@@ -118,28 +172,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     aspectRatio: 6,
-    marginTop: 10,
+//    marginTop: 10,
+  },
+  letterBarText: {
+    fontSize: 32,
+  },
+  buttonBarButtonText: {
+    fontSize: 12,
   },
   wordBar: {
     flexDirection: 'column',
     width: '100%',
     height: '25%',
-    //borderColor: 'black',
-    //borderWidth: 1,
+    borderWidth: 2,
+    paddingTop: 10,
+  },
+  wordBarRow: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    justifyContent: 'space-between',
+    borderRadius: 10,
   },
   buttonBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    aspectRatio: 6,
-  },
-  bottomBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    aspectRatio: 6,
+    width: '105%',
+    paddingHorizontal: 5,
+    aspectRatio: 5.7,
+    borderWidth: 2,
   },
   button: {
     borderRadius: 5,

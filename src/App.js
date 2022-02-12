@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
@@ -17,17 +16,19 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={null}
+        persistor={persistor}
+      >
         <NavigationContainer>
           <Stack.Navigator initialRouteName={'Home'}>
             <Stack.Screen
-              name='Home'
               component={Home}
+              name="Home"
               options={{headerShown: false}}
             />
             <Stack.Screen
-              name='Levels'
               component={Levels}
+              name="Levels"
               options={{
                 headerShown: true,
                 title: '',
@@ -35,9 +36,9 @@ export default function App() {
               }}
             />
             <Stack.Screen
-              name='Play'
               component={Game}
-              options={({navigation}) => {
+              name="Play"
+              options={() => {
                 return {
                   headerShown: true,
                   title: '',
@@ -50,8 +51,8 @@ export default function App() {
               }}
             />
             <Stack.Screen
-              name='Settings'
               component={Settings}
+              name="Settings"
               options={{
                 headerShown: true,
                 title: '',

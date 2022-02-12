@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BackHandler, FlatList, StyleSheet, View } from 'react-native';
+import { BackHandler, FlatList, Modal, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { connect } from 'react-redux';
@@ -11,7 +12,10 @@ import { themes } from '../styles';
 
 function Levels(props) {
   const { theme, levelData } = props;
-  const { backgroundColor, foregroundColor } = themes[theme];
+  const { backgroundColor, backgroundColorTransparent, foregroundColor } = themes[theme];
+
+  const [lockModalVisible, setLockModalVisible] = useState(false);
+  const [lockModalLevel, setLockModalLevel] = useState(null);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -50,20 +54,24 @@ function Levels(props) {
     <View style={styles.levelButtonContainer}>
       {item.unlocked ? (
         <Q25ButtonSvg
+          backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          maxScore={item.maxScore}
           onPress={() => props.navigation.push('Play', {level: item.number})}
+          passingScore={item.passingScore}
+          score={item.bestUserScore}
           style={styles.levelButton}
           text={item.number}
-          foregroundColor={foregroundColor}
-          backgroundColor={backgroundColor}
-          maxScore={item.maxScore}
-          score={item.bestUserScore}
-          passingScore={item.passingScore}
         />
       ) : (
         <LockButton
-          style={styles.levelButton}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={() => {
+            setLockModalLevel(item.number);
+            setLockModalVisible(true);
+          }}
+          style={styles.levelButton}
         />
       )}
     </View>
@@ -71,16 +79,64 @@ function Levels(props) {
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
+      <Modal
+        animationType={'none'}
+        onRequestClose={() => setLockModalVisible(false)}
+        transparent
+        visible={lockModalVisible}
+      >
+        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+            <View style={styles.modalTitleContainer}>
+              <Text style={[styles.modalTitle, {color: foregroundColor}]}>
+                {'Level locked'.toUpperCase()}
+              </Text>
+            </View>
+            <Text style={[styles.modalText, {color: foregroundColor}]}>
+              {`Level ${lockModalLevel} is still locked. Complete the earlier levels to unlock this level.`}
+            </Text>
+            <View style={styles.modalButtonContainer}>
+              {[{text: 'Close', onPress:()=>setLockModalVisible(false)}].map(({text, onPress}) => (
+                <Q25Button
+                  backgroundColor={backgroundColor}
+                  foregroundColor={foregroundColor}
+                  key={text}
+                  onPress={onPress}
+                  style={styles.modalButton}
+                  text={text}
+                />
+              ))}
+            </View>
+          </View>
+        </View>
+      </Modal>
       <FlatList
-        style={styles.flatList}
         data={levelData}
-        renderItem={renderItem}
         keyExtractor={item => item.number}
         numColumns={5}
+        renderItem={renderItem}
         showsVerticalScrollIndicator={false}
+        style={styles.flatList}
       />
     </View>
   );
+}
+
+Levels.propTypes = {
+  levelData: PropTypes.arrayOf(PropTypes.exact({
+    bestUserScore: PropTypes.number.isRequired,
+    bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
+    letters: PropTypes.string.isRequired,
+    maxScore: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+    unlocked: PropTypes.bool,
+  })).isRequired,
+  navigation: PropTypes.shape({
+    popToTop: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
+    setOptions: PropTypes.func.isRequired,
+  }).isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -108,6 +164,42 @@ const styles = StyleSheet.create({
   flatList: {
     width: '100%',
     marginTop: 5,
+  },
+  modalStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalBoxStyle: {
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '85%',
+    paddingTop: 10,
+    aspectRatio: 2,
+  },
+  modalButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1,
+    width: '30%',
+    aspectRatio: 2.5,
+    marginTop: 10,
+  },
+  modalButton: {
+    fontSize: 10,
+    margin: '4%',
+  },
+  modalTitleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 24,
+  },
+  modalText: {
+    fontSize: 16,
+    textAlign: 'center',
   },
 });
 

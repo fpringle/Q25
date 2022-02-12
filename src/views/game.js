@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { AppState, BackHandler, Button, Modal, StyleSheet, View } from 'react-native';
+import { AppState, BackHandler, Modal, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
@@ -35,10 +36,473 @@ const scrambleArray = (array) => {
   await AdMobInterstitial.setAdUnitID(TEST_AD_UNIT_IDS.interstitial);
 })();
 
+const makeTitle = (score, bestUserScore, maxScore, level) => {
+  const f = s => s.toString().padStart(3, ' ');
+  return `${level} - ${f(score)} / ${f(bestUserScore)} / ${f(maxScore)}`;
+};
+
+
+
+function GameLayout(props) {
+  const {
+    style: {
+      backgroundColor,
+      foregroundColor,
+    },
+    modal,
+    grid: {
+      letters,
+      onLetterPress,
+      pressedButtons,
+    },
+    letterBar: {
+      bar,
+    },
+    buttonBar1Data,
+    wordBar: {
+      words,
+      removeWord,
+    },
+    buttonBar2Data,
+    highlights,
+  } = props;
+  return (
+    <View style={[styles.container, {backgroundColor}]}>
+      {modal}
+      <View style={[styles.gridContainer, {borderColor: highlights?.grid ? foregroundColor : backgroundColor}]}>
+        <Grid
+          backgroundColor={backgroundColor}
+          columns={5}
+          foregroundColor={foregroundColor}
+          letters={letters}
+          onLetterPress={onLetterPress}
+          pressedButtons={pressedButtons}
+          rows={5}
+        />
+      </View>
+      <View style={[styles.letterBarContainer, {borderColor: highlights?.lettersBar ? foregroundColor : backgroundColor}]}>
+        <LetterBar letters={bar}
+          style={{foregroundColor}}
+        />
+      </View>
+      <ButtonBar
+        backgroundColor={backgroundColor}
+        data={buttonBar1Data}
+        foregroundColor={foregroundColor}
+        style={{borderColor: highlights?.buttonBar1 ? foregroundColor : backgroundColor}}
+      />
+      <WordBar
+        removeWord={removeWord || (() => {})}
+        style={{
+          foregroundColor,
+          backgroundColor,
+          borderColor: highlights?.wordBar ? foregroundColor : backgroundColor,
+        }}
+        words={words}
+      />
+      <ButtonBar
+        backgroundColor={backgroundColor}
+        data={buttonBar2Data}
+        foregroundColor={foregroundColor}
+        style={{borderColor: highlights?.buttonBar2 ? foregroundColor : backgroundColor}}
+      />
+    </View>
+  );
+}
+
+GameLayout.propTypes = {
+  buttonBar1Data: ButtonBar.propTypes.data,
+  buttonBar2Data: ButtonBar.propTypes.data,
+  grid: PropTypes.exact({
+    letters: Grid.propTypes.letters,
+    onLetterPress: Grid.propTypes.onLetterPress,
+    pressedButtons: Grid.propTypes.pressedButtons,
+  }).isRequired,
+  highlights: PropTypes.exact({
+    buttonBar1: PropTypes.bool,
+    buttonBar2: PropTypes.bool,
+    grid: PropTypes.bool,
+    lettersBar: PropTypes.bool,
+    title: PropTypes.bool,
+    wordBar: PropTypes.bool,
+  }),
+  letterBar: PropTypes.exact({
+    bar: LetterBar.propTypes.letters,
+  }).isRequired,
+  modal: PropTypes.node,
+  style: PropTypes.exact({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+  wordBar: PropTypes.exact({
+    removeWord: WordBar.propTypes.removeWord,
+    words: WordBar.propTypes.words,
+  }).isRequired,
+};
+
+const tutorialPhases = {
+  GRID: 0,
+  LETTERS_BAR: 1,
+  BUTTON_BAR_1: 2,
+  WORD_BAR: 3,
+  TITLE: 4,
+  BUTTON_BAR_2: 5,
+};
+
+function ModalBox(props) {
+  const {
+    foregroundColor,
+    backgroundColor,
+    onBack,
+    onNext,
+    onExit,
+    backDisabled,
+    nextDisabled,
+    title,
+    text,
+    final,
+  } = props;
+  const buttonStyle = {
+    ...styles.modalText,
+    padding: 3,
+    flex:0,
+    width: '25%',
+  };
+  return (
+    <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+      <View style={styles.modalBoxTitleContainer}>
+        <Q25Button
+          backgroundColor={backgroundColor}
+          disabled
+          foregroundColor={backgroundColor}
+          style={{flex: 0, fontSize: 10, aspectRatio: 1}}
+          text={''}
+        />
+        <Text style={[styles.modalTitle, {color: foregroundColor}]}>
+          {title}
+        </Text>
+        <Q25Button
+          backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={onExit}
+          style={styles.closeModalButton}
+          text={'X'}
+        />
+      </View>
+      <Text style={[styles.modalText, {color: foregroundColor}]}>
+        {text}
+      </Text>
+      <View style={styles.modalBoxButtonContainer}>
+        {backDisabled ? (
+          <View
+            style={buttonStyle}
+          />
+        ) : (
+          <Q25Button
+            backgroundColor={backgroundColor}
+            foregroundColor={foregroundColor}
+            onPress={onBack}
+            style={buttonStyle}
+            text={'Back'}
+          />
+        )}
+        {nextDisabled ? (
+          <View
+            style={buttonStyle}
+          />
+        ) : (
+          <Q25Button
+            backgroundColor={backgroundColor}
+            foregroundColor={foregroundColor}
+            onPress={onNext}
+            style={buttonStyle}
+            text={final ? 'End' : 'Next'}
+          />
+        )}
+      </View>
+    </View>
+  );
+}
+
+ModalBox.propTypes = {
+  backDisabled: PropTypes.bool,
+  backgroundColor: PropTypes.string.isRequired,
+  final: PropTypes.bool,
+  foregroundColor: PropTypes.string.isRequired,
+  nextDisabled: PropTypes.bool,
+  onBack: PropTypes.func,
+  onExit: PropTypes.func,
+  onNext: PropTypes.func,
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+function HelpScreen(props) {
+  const {foregroundColor, backgroundColor} = props.style;
+  const {endTutorial} = props;
+  const origLetters = 'abcdefghijklmnopqrstuvwxy'.split('');
+  const emptyPressedButtons = [];
+  const noOpButtonBar1Data = [
+    { text: 'Undo' },
+    { text: 'Clear word' },
+    { text: 'Save word' },
+  ];
+  const noOpButtonBar2Data = [
+    { text: 'Scramble' },
+    { text: 'Reset' },
+    { text: 'Finish' },
+  ]
+  const emptyLetterBar = [];
+  const emptyWordBar = [];
+
+  const [tutorialPhase, setTutorialPhase] = useState(0);
+
+  useEffect(() => {
+    let _score = tutorialPhase < tutorialPhases.WORD_BAR ? 0 : 16;
+    props.changeTitle(makeTitle(_score, 0, 185, 'Tutorial'));
+  }, [tutorialPhase]);
+
+  const highlights = {
+    grid: false,
+    lettersBar: false,
+    buttonBar1: false,
+    wordBar: false,
+    buttonBar2: false,
+    title: false,
+  };
+
+  let modal;
+  let letters;
+  let pressedButtons;
+  let bar;
+  let buttonBar1Data;
+  let buttonBar2Data;
+  let wordBar;
+
+  switch (tutorialPhase) {
+    case tutorialPhases.GRID: {
+      highlights.grid = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <ModalBox
+              backDisabled
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onExit={endTutorial}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              text={`The letter grid contains the letters that are available to you this level. Clicking on a letter will add it to the bar.`}
+              title={'Grid'}
+            />
+            <View style={{height: '20%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = origLetters,
+      pressedButtons = emptyPressedButtons;
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = emptyLetterBar;
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = emptyWordBar;
+      highlights.grid = true;
+      break;
+    }
+    case tutorialPhases.LETTERS_BAR: {
+      highlights.lettersBar = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <ModalBox
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onBack={() => setTutorialPhase(tutorialPhase - 1)}
+              onExit={endTutorial}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              text={`The word you're currently building. Longer words get more points!\n`}
+              title={'Bar'}
+            />
+            <View style={{height: '15%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = origLetters,
+      pressedButtons = [7, 0, 13, 3];
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = ['H', 'A', 'N', 'D'];
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = emptyWordBar;
+      break;
+    }
+    case tutorialPhases.BUTTON_BAR_1: {
+      highlights.buttonBar1 = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <ModalBox
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onBack={() => setTutorialPhase(tutorialPhase - 1)}
+              onExit={endTutorial}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              text={`You can remove the last letter with 'Undo', or clear the bar with 'Clear'. Click 'Save' to start working on the next word.`}
+              title={'Buttons'}
+            />
+            <View style={{height: '3%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = origLetters,
+      pressedButtons = [7, 0, 13, 3];
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = ['H', 'A', 'N', 'D'];
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = emptyWordBar;
+      break;
+    }
+    case tutorialPhases.WORD_BAR: {
+      highlights.wordBar = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <ModalBox
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onBack={() => setTutorialPhase(tutorialPhase - 1)}
+              onExit={endTutorial}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              text={`These are the words you've built so far, along with the score for each one. You can hold down on one of them to remove it.`}
+              title={'Saved words'}
+            />
+            <View style={{height: '33%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = 'bcefgijklmopqrstuvwxy'.split(''),
+      pressedButtons = [];
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = [];
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = [['hand', 16]];
+      break;
+    }
+    case tutorialPhases.TITLE: {
+      highlights.title = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <View style={{height: '5%', width: '100%', flexDirection: 'row', justifyContent: 'flex-start'}}>
+              <View style={{width: '35%'}}/>
+              <View
+                style={{height: '5%', width: '38%', borderColor: foregroundColor, borderTopWidth: 1}}
+              />
+            </View>
+            <ModalBox
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onBack={() => setTutorialPhase(tutorialPhase - 1)}
+              onExit={endTutorial}
+              onNext={() => setTutorialPhase(tutorialPhase + 1)}
+              text={`Your current points, your personal best score on this level, and the maximum possible score on this level.`}
+              title={'Points'}
+            />
+            <View style={{height: '65%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = 'bcefgijklmopqrstuvwxy'.split(''),
+      pressedButtons = [];
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = [];
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = [['hand', 16]];
+      break;
+    }
+    case tutorialPhases.BUTTON_BAR_2: {
+      highlights.buttonBar2 = true;
+      modal = (
+        <Modal
+          animationType={'none'}
+          onRequestClose={endTutorial}
+          transparent
+          visible
+        >
+          <View style={styles.modalStyle}>
+            <ModalBox
+              backgroundColor={backgroundColor}
+              final
+              foregroundColor={foregroundColor}
+              onBack={() => setTutorialPhase(tutorialPhase - 1)}
+              onExit={endTutorial}
+              onNext={endTutorial}
+              text={`Click 'Scramble' to re-order the grid, 'Reset' to start the level fresh, or 'Finish' once you've got enough points.`}
+              title={'More buttons'}
+            />
+            <View style={{height: '15%', width:'100%'}}/>
+          </View>
+        </Modal>
+      );
+      letters = 'bcefgijklmopqrstuvwxy'.split(''),
+      pressedButtons = [];
+      buttonBar1Data = noOpButtonBar1Data;
+      bar = [];
+      buttonBar2Data = noOpButtonBar2Data;
+      wordBar = [['hand', 16]];
+      break;
+    }
+  }
+
+  return (
+    <GameLayout
+      buttonBar1Data={buttonBar1Data}
+      buttonBar2Data={buttonBar2Data}
+      grid={{letters, pressedButtons}}
+      highlights={highlights}
+      letterBar={{bar}}
+      modal={modal}
+      style={{foregroundColor, backgroundColor}}
+      wordBar={{words: wordBar}}
+    />
+  );
+}
+
+HelpScreen.propTypes = {
+  changeTitle: PropTypes.func.isRequired,
+  endTutorial: PropTypes.func.isRequired,
+  style: PropTypes.shape({
+    backgroundColor: PropTypes.string.isRequired,
+    foregroundColor: PropTypes.string.isRequired,
+  }).isRequired,
+}
+
 function Game(props) {
   const level = props.route.params.level;
   const levelData = props.levelData;
-  const [origLetters, setOrigLetters] = useState(scrambleArray(levelData.letters.split('')));
+  const [origLetters] = useState(scrambleArray(levelData.letters.split('')));
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
   const appState = useRef(AppState.currentState);
@@ -53,7 +517,9 @@ function Game(props) {
   const [words, setWords] = useState([]);
   const [score, setScore] = useState(0);
   const [endModalVisible, setEndModalVisible] = useState(false);
-  const [appStateVisible, setAppStateVisible] = useState(appState.current);
+  const [, setAppStateVisible] = useState(appState.current);
+
+  const [helpScreenVisible, setHelpScreenVisible] = useState(false);
 
   const adReady = useRef(false);
 
@@ -137,16 +603,13 @@ function Game(props) {
     });
   });
 
-  const makeTitle = () => {
-    const f = s => s.toString().padStart(3, ' ');
-    return `Level ${level} - ${f(score)} / ${f(levelData.bestUserScore)} / ${f(levelData.maxScore)}`;
-  };
-
-  useEffect(() => {
+  const updateTitle = () => {
     props.navigation.setOptions({
-      title: makeTitle(),
+      title: makeTitle(score, levelData.bestUserScore, levelData.maxScore, `Level ${level}`),
     });
-  }, [score, levelData.bestUserScore]);
+  }
+
+  useEffect(updateTitle, [score, levelData.bestUserScore]);
 
   const leave = () => {
     saveGameState();
@@ -161,18 +624,18 @@ function Game(props) {
           tintColor={foregroundColor}
         />
       ),
-      headerRight: () => {
-        return (
-          <Q25Button
-            text={'?'}
-            style={styles.helpButton}
-            foregroundColor={foregroundColor}
-            backgroundColor={backgroundColor}
-          />
-        )
-      },
+      headerRight: helpScreenVisible ? null : () => (
+        <Q25Button
+          backgroundColor={backgroundColor}
+          displayName={'headerRight'}
+          foregroundColor={foregroundColor}
+          onPress={() => setHelpScreenVisible(true)}
+          style={styles.helpButton}
+          text={'?'}
+        />
+      ),
     });
-  });
+  }, [helpScreenVisible]);
 
   useFocusEffect(
     useCallback(() => {
@@ -187,14 +650,32 @@ function Game(props) {
     }, [])
   );
 
-  const onLetterPress = idx => {
-    if (pressedButtons.includes(idx)) return;
+  const removeLetterFromWord = (idx) => {
+    const index = pressedButtons.indexOf(idx);
+    if (index === -1) return;
     const newBar = bar.slice();
-    const newButtons = pressedButtons.slice();
-    newBar.push(letters[idx]);
-    newButtons.push(idx);
+    const newPressedButtons = pressedButtons.slice();
+    newBar.splice(index, 1);
+    newPressedButtons.splice(index, 1);
     setBar(newBar);
-    setPressedButtons(newButtons);
+    setPressedButtons(newPressedButtons);
+  };
+
+  const addLetterToWord = (idx) => {
+    const newBar = bar.slice();
+    const newPressedButtons = pressedButtons.slice();
+    newBar.push(letters[idx]);
+    newPressedButtons.push(idx);
+    setBar(newBar);
+    setPressedButtons(newPressedButtons);
+  }
+
+  const onLetterPress = (idx) => {
+    if (pressedButtons.includes(idx)) {
+      removeLetterFromWord(idx);
+    } else {
+      addLetterToWord(idx);
+    }
   }
 
   const saveWord = () => {
@@ -272,7 +753,7 @@ function Game(props) {
   const submit = () => {
     setEndModalVisible(true);
     if (score > levelData.bestUserScore) {
-      const sortedWords = words.slice();
+      const sortedWords = words.map(pair => pair[0]);
       sortedWords.sort((x,y) => x.length - y.length);
       props.updateUserProgress(level, score, sortedWords);
     }
@@ -310,71 +791,109 @@ function Game(props) {
     },
   ];
 
+  if (helpScreenVisible) {
+    return (
+      <HelpScreen
+        changeTitle={title => {
+          props.navigation.setOptions({
+            title,
+          });
+        }}
+        endTutorial={() => {
+          setHelpScreenVisible(false);
+          updateTitle();
+        }}
+        style={{foregroundColor, backgroundColor}}
+      />
+    );
+  }
+
   return (
-    <View style={[styles.container, {backgroundColor}]}>
-      <Modal
-        animationType={'fade'}
-        transparent={true}
-        visible={endModalVisible}
-        onRequestClose={() => setEndModalVisible(false)}
-      >
-        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
-          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
-            <View style={styles.modalTitleContainer}>
-              <Text style={[styles.modalTitle, {color: foregroundColor}]}>
-                {'Level cleared'.toUpperCase()}
-              </Text>
-            </View>
-            <View style={styles.modalButtonContainer}>
-              {modalButtonData.map(({text, onPress}) => (
-                <Q25Button
-                  key={text}
-                  text={text}
-                  onPress={onPress}
-                  style={styles.modalButton}
-                  foregroundColor={foregroundColor}
-                  backgroundColor={backgroundColor}
-                />
-              ))}
-            </View>
-          </View>
-        </View>
-      </Modal>
-      <Grid
-        columns={5}
-        rows={5}
-        letters={letters}
-        style={styles.grid}
-        onLetterPress={onLetterPress}
-        pressedButtons={pressedButtons}
-        foregroundColor={foregroundColor}
-        backgroundColor={backgroundColor}
-      />
-      <LetterBar letters={bar} style={{foregroundColor, backgroundColor}}/>
-      <ButtonBar
-        data={[
-          { text: 'Undo', onPress: undo },
-          { text: 'Clear word', onPress: clearWord },
-          { text: 'Save word', onPress: saveWord },
-        ]}
-        style={{foregroundColor, backgroundColor}}
-      />
-      <WordBar
-        words={words}
-        style={{foregroundColor, backgroundColor}}
-        removeWord={idx => removeSavedWord(idx)}
-      />
-      <ButtonBar
-        data={[
+    <GameLayout
+      buttonBar1Data={[
+        { text: 'Undo', onPress: undo },
+        { text: 'Clear word', onPress: clearWord },
+        { text: 'Save word', onPress: saveWord },
+      ]}
+      buttonBar2Data={[
           { text: 'Scramble', onPress: scramble },
           { text: 'Reset', onPress: reset },
           { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
         ]}
-        style={{foregroundColor, backgroundColor}}
-      />
-    </View>
+      grid={{letters, onLetterPress, pressedButtons}}
+      letterBar={{bar}}
+      modal={(
+        <Modal
+          animationType={'fade'}
+          onRequestClose={() => setEndModalVisible(false)}
+          transparent
+          visible={endModalVisible}
+        >
+          <View style={[styles.endModalStyle, backgroundColor: backgroundColorTransparent]}>
+            <View style={[styles.endModalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
+              <View style={styles.modalTitleContainer}>
+                <Text style={[styles.modalTitle, {color: foregroundColor}]}>
+                  {'Level cleared'.toUpperCase()}
+                </Text>
+              </View>
+              <View style={styles.modalButtonContainer}>
+                {modalButtonData.map(({text, onPress}) => (
+                  <Q25Button
+                    backgroundColor={backgroundColor}
+                    foregroundColor={foregroundColor}
+                    key={text}
+                    onPress={onPress}
+                    style={styles.modalButton}
+                    text={text}
+                  />
+                ))}
+              </View>
+            </View>
+          </View>
+        </Modal>
+      )}
+      style={{foregroundColor, backgroundColor}}
+      wordBar={{words, removeWord: removeSavedWord}}
+    />
   );
 }
+
+Game.propTypes = {
+  deleteGame: PropTypes.func.isRequired,
+  gameInProgress: PropTypes.bool.isRequired,
+  gameState: PropTypes.exact({
+    bar: PropTypes.arrayOf(PropTypes.string),
+    endModalVisible: PropTypes.bool.isRequired,
+    letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    number: PropTypes.number.isRequired,
+    origLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    pressedButtons: PropTypes.arrayOf(PropTypes.number),
+    words: PropTypes.arrayOf(PropTypes.array).isRequired,
+  }),
+  levelData: PropTypes.exact({
+    bestUserScore: PropTypes.number.isRequired,
+    bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
+    letters: PropTypes.string.isRequired,
+    maxScore: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+    unlocked: PropTypes.bool,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+    popToTop: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
+    setOptions: PropTypes.func.isRequired,
+  }).isRequired,
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      level: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  theme: PropTypes.string.isRequired,
+  unlockLevel: PropTypes.func.isRequired,
+  updateGame: PropTypes.func.isRequired,
+  updateUserProgress: PropTypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -386,16 +905,42 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingTop: 0,
   },
-  grid: {
-    width: '100%',
+  gridContainer: {
+    flex: 0.95,
+    borderWidth: 2,
     aspectRatio: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  modalStyle: {
+  letterBarContainer: {
+    width: '105%',
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  endModalStyle: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  modalStyle: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
   modalBoxStyle: {
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+    paddingHorizontal: 15,
+    flexDirection: 'column',
+    aspectRatio: null,
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  endModalBoxStyle: {
     borderWidth: 3,
     justifyContent: 'center',
     alignItems: 'center',
@@ -406,6 +951,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flex: 1,
+    width: '100%',
+  },
+  modalBoxButtonContainer: {
+    marginTop: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     width: '100%',
   },
   modalButton: {
@@ -425,6 +976,23 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 24,
+  },
+  modalText: {
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  closeModalButton: {
+    flex: 0,
+    fontSize: 20,
+    aspectRatio: 1,
+    padding: 0,
+  },
+  modalBoxTitleContainer: {
+    borderWidth: 0,
+    width: '100%',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    padding: 0,
   },
 });
 

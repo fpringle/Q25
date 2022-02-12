@@ -108,4 +108,4 @@ export function levelsReducer(state=initialState, action) {
     default:
       return state;
   }
-};
+}

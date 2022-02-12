@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 
-import Text from './text';
 import Q25Button from './button';
-import { colors } from '../styles';
 
 
 export default function Grid(props) {
@@ -20,11 +19,11 @@ export default function Grid(props) {
     return(
       <View style={styles.gridButtonContainer}>
         <Q25Button
-          idx={item.index}
-          onPress={() => props.onLetterPress(item.index)}
-          style={[styles.gridButton, {borderColor: foregroundColor}]}
           backgroundColor={item.pressed ? foregroundColor : backgroundColor}
           foregroundColor={item.pressed ? backgroundColor : foregroundColor}
+          idx={item.index}
+          onPress={() => props.onLetterPress(item.index)}
+          style={{...styles.gridButton, borderColor: foregroundColor}}
           text={item.letter}
         />
       </View>
@@ -33,21 +32,30 @@ export default function Grid(props) {
 
   return (
     <FlatList
-      style={styles.grid}
       contentContainerStyle={styles.gridContentContainer}
       data={data}
-      renderItem={renderItem}
-      keyExtractor={item => item.index}
       horizontal={false}
+      keyExtractor={item => item.index}
       numColumns={5}
+      renderItem={renderItem}
+      style={[styles.grid, props.style]}
     />
   );
+}
+
+Grid.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  letters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLetterPress: PropTypes.func,
+  pressedButtons: PropTypes.arrayOf(PropTypes.number).isRequired,
+  style: PropTypes.shape({}),
 };
 
 const styles = StyleSheet.create({
   grid: {
     flex: 1,
-    width: '90%',
+    width: '85%',
   },
   gridContentContainer: {
     justifyContent: 'center',

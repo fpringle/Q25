@@ -2,11 +2,8 @@
 
 export default function svgPathString ( size, cornerRadius, centerRadius, score, maxScore ) {
   // rel coords: normal xy, origin at center
-  const relToAbs = (x, y) => [size / 2 + x, size / 2 - y];
   // abs coords: svg format
-  const absToRel = (x, y) => [x - size / 2, size / 2 - y];
-
-  const [cx, cy] = relToAbs(0, 0);
+  const relToAbs = (x, y) => [size / 2 + x, size / 2 - y];
 
   if (score === 0) {
     return "";
@@ -82,7 +79,7 @@ export default function svgPathString ( size, cornerRadius, centerRadius, score,
   const absTheta = Math.PI / 2 - theta - refTheta;
   const t = Math.tan(absTheta);
   let x,y;
-  const c = s - r + r / Math.sqrt(2);
+  //const c = s - r + r / Math.sqrt(2);
   switch (lineIndex) {
     case 2: [x, y] = [s, s * t]; break;
     case 4: [x, y] = [-s / t, -s]; break;

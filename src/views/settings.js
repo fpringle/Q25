@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
@@ -11,10 +12,56 @@ import { doResetRedux, persistor } from '../storage/storage';
 import { doChangeTheme } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
 
+
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
+
+function SettingsPicker(props) {
+  const {label, current, options, dispatcher, foregroundColor, backgroundColor} = props;
+  return (
+    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
+      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
+        {label}
+      </Text>
+      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
+        <Picker
+          dropdownIconColor={foregroundColor}
+          mode={'dropdown'}
+          onValueChange={(itemValue) => {
+            dispatcher(itemValue);
+          }}
+          selectedValue={current}
+          style={styles.picker}
+        >
+          {options.map(option => (
+            <Picker.Item
+              key={option}
+              label={capitalize(option)}
+              style={{color: foregroundColor, backgroundColor}}
+              value={option}
+            />
+          ))}
+        </Picker>
+      </View>
+    </View>
+  );
+}
+
+SettingsPicker.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  current: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  dispatcher: PropTypes.func.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  options: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.number),
+  ]).isRequired,
+};
+
+
 function Settings(props) {
-  let { theme, themeOptions, dispatch } = props;
+  let { theme, themeOptions } = props;
   const { backgroundColor, foregroundColor } = themes[theme];
 
   useEffect(() => {
@@ -66,64 +113,48 @@ function Settings(props) {
     );
   };
 
-  const SettingsPicker = ({label, current, options, dispatcher}) => (
-    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
-      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
-        {label}
-      </Text>
-      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
-        <Picker
-          mode={'dropdown'}
-          selectedValue={current}
-          onValueChange={(itemValue) => {
-            dispatcher(itemValue);
-          }}
-          style={styles.picker}
-          dropdownIconColor={foregroundColor}
-        >
-          {options.map(option => (
-            <Picker.Item
-              key={option}
-              label={capitalize(option)}
-              value={option}
-              style={{color: foregroundColor, backgroundColor}}
-            />
-          ))}
-        </Picker>
-      </View>
-    </View>
-  );
-
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <SettingsPicker
-        label={'Theme'}
+        backgroundColor={backgroundColor}
         current={theme}
-        options={themeOptions}
         dispatcher={val => props.changeTheme(val)}
+        foregroundColor={foregroundColor}
+        label={'Theme'}
+        options={themeOptions}
       />
-      <View style={{height: '15%', width: '100%', padding: 10}}>
+      <View style={styles.bigButtonContainer}>
         <Q25Button
-          text={'Reset progress'}
-          style={styles.bigButton}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
           onPress={() => resetProgressDialog()}
+          style={styles.bigButton}
+          text={'Reset progress'}
         />
       </View>
-      <View style={{height: '15%', width: '100%', padding: 10}}>
+      <View style={styles.bigButtonContainer}>
         <Q25Button
-          text={'Reset everything'}
-          style={styles.bigButton}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
           onPress={() => purgeStoreDialog()}
+          style={styles.bigButton}
+          text={'Reset everything'}
         />
       </View>
     </View>
   )
-};
+}
 
+Settings.propTypes = {
+  changeTheme: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    setOptions: PropTypes.func.isRequired,
+  }),
+  resetProgress: PropTypes.func.isRequired,
+  resetReduxStore: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
+  themeOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -133,14 +164,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     padding: '10%',
     paddingBottom: '25%'
-  },
-  buttonContainer: {
-    flex: 1,
-  },
-  button: {
-    aspectRatio: 3,
-    margin: 10,
-    fontSize: 24,
   },
   settingsPicker: {
     flexDirection: 'row',
@@ -163,6 +186,11 @@ const styles = StyleSheet.create({
   },
   bigButton: {
     fontSize: 20,
+  },
+  bigButtonContainer: {
+    height: '15%',
+    width: '100%',
+    padding: 10,
   },
 });
 
