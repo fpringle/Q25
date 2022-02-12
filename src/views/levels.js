@@ -22,6 +22,7 @@ function Levels(props) {
   const { backgroundColor, backgroundColorTransparent, foregroundColor } = themes[theme];
 
   const [lockModalVisible, setLockModalVisible] = useState(false);
+  const [explanationModalVisible, setExplanationModalVisible] = useState(false);
   const [lockModalLevel, setLockModalLevel] = useState(null);
   const [adLoading, setAdLoading] = useState(false);
 
@@ -33,6 +34,20 @@ function Levels(props) {
       headerTintColor: foregroundColor,
     });
   });
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerRight: explanationModalVisible ? null : () => (
+        <Q25Button
+          backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={() => setExplanationModalVisible(true)}
+          style={styles.helpButton}
+          text={'?'}
+        />
+      ),
+    });
+  }, [explanationModalVisible]);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -138,11 +153,18 @@ function Levels(props) {
     disabled: true,
   };
 
-  let modalButtonsData =  [
+  const lockModalButtonsData =  [
     leftButton,
     {
       text: 'Close',
       onPress: () => setLockModalVisible(false),
+    },
+  ];
+
+  const explanationModalButtonsData = [
+    {
+      text: 'Close',
+      onPress: () => setExplanationModalVisible(false),
     },
   ];
 
@@ -193,13 +215,39 @@ function Levels(props) {
               {`Level ${lockModalLevel} is still locked. Complete the level ${lockModalLevel - 1} to unlock this level.`}
             </Text>
             <View style={styles.modalButtonContainer}>
-              {modalButtonsData.map(({text, onPress, disabled}) => (
+              {lockModalButtonsData.map(({text, onPress, disabled}) => (
                 <Q25Button
                   backgroundColor={disabled ? foregroundColor : backgroundColor}
                   foregroundColor={disabled ? backgroundColor : foregroundColor}
                   key={text}
                   onPress={disabled ? null : onPress}
                   style={styles.modalButton}
+                  text={text}
+                />
+              ))}
+            </View>
+          </View>
+        </View>
+      </Modal>
+      <Modal
+        animationType={'none'}
+        onRequestClose={() => setLockModalVisible(false)}
+        transparent
+        visible={explanationModalVisible}
+      >
+        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor, aspectRatio: 1.6}]}>
+            <Text style={[styles.modalText, {color: foregroundColor}]}>
+              {`This screen shows the levels you've completed, and how well you've done on each one. Some levels are locked - to unlock them you have to complete the previous levels, use an unlock token (${props.numUnlocks} remaining), or watch an advert.`}
+            </Text>
+            <View style={[styles.modalButtonContainer, {justifyContent: 'center'}]}>
+              {explanationModalButtonsData.map(({text, onPress, disabled}) => (
+                <Q25Button
+                  backgroundColor={disabled ? foregroundColor : backgroundColor}
+                  foregroundColor={disabled ? backgroundColor : foregroundColor}
+                  key={text}
+                  onPress={disabled ? null : onPress}
+                  style={{...styles.modalButton, maxWidth: '25%', aspectRatio: 3, marginTop: 0}}
                   text={text}
                 />
               ))}
@@ -251,6 +299,13 @@ const styles = StyleSheet.create({
     //paddingBottom: 0,
     paddingTop: 0,
   },
+  helpButton: {
+    flex: 0,
+    aspectRatio: 1,
+    fontSize: 14,
+    height: '300%',   // TODO fix this
+    marginRight: 10,
+  },
   levelButtonContainer: {
     width: '100%',
     aspectRatio: 1,
@@ -279,6 +334,8 @@ const styles = StyleSheet.create({
     width: '85%',
     paddingTop: 10,
     aspectRatio: 2,
+    padding: '3%',
+    paddingBottom: 0,
   },
   modalButtonContainer: {
     flexDirection: 'row',

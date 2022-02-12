@@ -35,7 +35,6 @@ const makeTitle = (score, bestUserScore, maxScore, level) => {
 };
 
 
-
 function GameLayout(props) {
   const {
     style: {
@@ -638,7 +637,6 @@ function Game(props) {
       headerRight: helpScreenVisible ? null : () => (
         <Q25Button
           backgroundColor={backgroundColor}
-          displayName={'headerRight'}
           foregroundColor={foregroundColor}
           onPress={() => setHelpScreenVisible(true)}
           style={styles.helpButton}
