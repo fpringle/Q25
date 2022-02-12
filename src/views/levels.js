@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BackHandler, FlatList, Modal, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
@@ -15,7 +15,7 @@ function Levels(props) {
   const { backgroundColor, backgroundColorTransparent, foregroundColor } = themes[theme];
 
   const [lockModalVisible, setLockModalVisible] = useState(false);
-  const [lockModalLevel, setLockModalLevel] = useState(null);
+  const lockModalLevel = useRef(null);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -68,7 +68,7 @@ function Levels(props) {
           backgroundColor={backgroundColor}
           foregroundColor={foregroundColor}
           onPress={() => {
-            setLockModalLevel(item.number);
+            lockModalLevel.current = item.number;
             setLockModalVisible(true);
           }}
           style={styles.levelButton}
@@ -93,7 +93,7 @@ function Levels(props) {
               </Text>
             </View>
             <Text style={[styles.modalText, {color: foregroundColor}]}>
-              {`Level ${lockModalLevel} is still locked. Complete the earlier levels to unlock this level.`}
+              {`Level ${lockModalLevel.current} is still locked. Complete level ${lockModalLevel.current-1} to unlock this level.`}
             </Text>
             <View style={styles.modalButtonContainer}>
               {[{text: 'Close', onPress:()=>setLockModalVisible(false)}].map(({text, onPress}) => (
