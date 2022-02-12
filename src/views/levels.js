@@ -3,12 +3,19 @@ import { BackHandler, FlatList, Modal, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { AdMobRewarded } from 'expo-ads-admob';
 
 import Text from '../components/text';
 import Q25Button, { Q25ButtonSvg, LockButton } from '../components/button';
 import { themes } from '../styles';
+import { doConsumeUnlock } from '../storage/features/perks';
+import { doUnlockLevel } from '../storage/features/levels';
+import { doSetRewardedAdLoaded } from '../storage/features/ads';
 
+
+// console.log = () => {};
 
 function Levels(props) {
   const { theme, levelData } = props;
@@ -16,6 +23,8 @@ function Levels(props) {
 
   const [lockModalVisible, setLockModalVisible] = useState(false);
   const lockModalLevel = useRef(null);
+  const [explanationModalVisible, setExplanationModalVisible] = useState(false);
+  const [adLoading, setAdLoading] = useState(false);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -25,6 +34,20 @@ function Levels(props) {
       headerTintColor: foregroundColor,
     });
   });
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerRight: explanationModalVisible ? null : () => (
+        <Q25Button
+          backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={() => setExplanationModalVisible(true)}
+          style={styles.helpButton}
+          text={'?'}
+        />
+      ),
+    });
+  }, [explanationModalVisible]);
 
   useEffect(() => {
     props.navigation.setOptions({
@@ -50,6 +73,101 @@ function Levels(props) {
     }, [])
   );
 
+  const loadAd = async () => {
+    console.log('loading ad');
+    setAdLoading(true);
+    await AdMobRewarded.requestAdAsync();
+  }
+
+  const tryLoadAd = async () => {
+    if (!(props.isRewardedAdLoaded || adLoading)) {
+      await loadAd();
+    }
+  };
+
+  useEffect(() => {
+    tryLoadAd();
+  }, []);
+
+  const onAdLoad = () => {
+    console.log('ad loaded - props.setRewardedAdLoaded(true); setAdLoading(false)')
+    props.setRewardedAdLoaded(true);
+    setAdLoading(false);
+  };
+
+  const useUnlock = () => {
+    props.consumeUnlock();
+    props.unlockLevel(lockModalLevel);
+    setLockModalVisible(false);
+  };
+
+  const onDismiss = async () => {
+    // user dismissed ad without reward
+    console.log('user dismissed ad - props.setRewardedAdLoaded(false); loadAd()')
+    props.setRewardedAdLoaded(false);
+    setAdLoading(false);
+    await loadAd();
+  };
+
+  const onEarnReward = () => {
+    setLockModalVisible(false);
+    console.log(`User finished ad, unlock level ${lockModalLevel}`);
+    props.unlockLevel(lockModalLevel);
+  };
+
+  useEffect(() => {
+    AdMobRewarded.addEventListener('rewardedVideoDidLoad', onAdLoad);
+    return () => {
+      AdMobRewarded.removeEventListener('rewardedVideoDidLoad', onAdLoad);
+    };
+  }, []);
+
+  useEffect(() => {
+    AdMobRewarded.addEventListener('rewardedVideoDidDismiss', onDismiss);
+    return () => {
+      AdMobRewarded.removeEventListener('rewardedVideoDidDismiss', onDismiss);
+    };
+  }, []);
+
+  useEffect(() => {
+    AdMobRewarded.addEventListener('rewardedVideoUserDidEarnReward', onEarnReward);
+    return () => {
+      AdMobRewarded.removeEventListener('rewardedVideoUserDidEarnReward', onEarnReward);
+    }
+  }, [lockModalLevel]);
+
+  useEffect(() => {
+    return AdMobRewarded.removeAllListeners;
+  }, []);
+
+  const leftButton = props.numUnlocks > 0 ? {
+    text: `Unlock (${props.numUnlocks} remaining)`,
+    onPress: useUnlock,
+  } : props.isRewardedAdLoaded ? {
+    text: `Watch ad to unlock`,
+    onPress: async () => {
+      await AdMobRewarded.showAdAsync();
+    },
+  } : {
+    text: `Ad loading`,
+    disabled: true,
+  };
+
+  const lockModalButtonsData =  [
+    leftButton,
+    {
+      text: 'Close',
+      onPress: () => setLockModalVisible(false),
+    },
+  ];
+
+  const explanationModalButtonsData = [
+    {
+      text: 'Close',
+      onPress: () => setExplanationModalVisible(false),
+    },
+  ];
+
   const renderItem = ({ item }) => (
     <View style={styles.levelButtonContainer}>
       {item.unlocked ? (
@@ -67,9 +185,10 @@ function Levels(props) {
         <LockButton
           backgroundColor={backgroundColor}
           foregroundColor={foregroundColor}
-          onPress={() => {
+          onPress={async () => {
             lockModalLevel.current = item.number;
             setLockModalVisible(true);
+            await tryLoadAd();
           }}
           style={styles.levelButton}
         />
@@ -96,13 +215,39 @@ function Levels(props) {
               {`Level ${lockModalLevel.current} is still locked. Complete level ${lockModalLevel.current-1} to unlock this level.`}
             </Text>
             <View style={styles.modalButtonContainer}>
-              {[{text: 'Close', onPress:()=>setLockModalVisible(false)}].map(({text, onPress}) => (
+              {lockModalButtonsData.map(({text, onPress, disabled}) => (
                 <Q25Button
-                  backgroundColor={backgroundColor}
-                  foregroundColor={foregroundColor}
+                  backgroundColor={disabled ? foregroundColor : backgroundColor}
+                  foregroundColor={disabled ? backgroundColor : foregroundColor}
                   key={text}
-                  onPress={onPress}
+                  onPress={disabled ? null : onPress}
                   style={styles.modalButton}
+                  text={text}
+                />
+              ))}
+            </View>
+          </View>
+        </View>
+      </Modal>
+      <Modal
+        animationType={'none'}
+        onRequestClose={() => setLockModalVisible(false)}
+        transparent
+        visible={explanationModalVisible}
+      >
+        <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor, aspectRatio: 1.6}]}>
+            <Text style={[styles.modalText, {color: foregroundColor}]}>
+              {`This screen shows the levels you've completed, and how well you've done on each one. Some levels are locked - to unlock them you have to complete the previous levels, use an unlock token (${props.numUnlocks} remaining), or watch an advert.`}
+            </Text>
+            <View style={[styles.modalButtonContainer, {justifyContent: 'center'}]}>
+              {explanationModalButtonsData.map(({text, onPress, disabled}) => (
+                <Q25Button
+                  backgroundColor={disabled ? foregroundColor : backgroundColor}
+                  foregroundColor={disabled ? backgroundColor : foregroundColor}
+                  key={text}
+                  onPress={disabled ? null : onPress}
+                  style={{...styles.modalButton, maxWidth: '25%', aspectRatio: 3, marginTop: 0}}
                   text={text}
                 />
               ))}
@@ -123,6 +268,8 @@ function Levels(props) {
 }
 
 Levels.propTypes = {
+  consumeUnlock: PropTypes.func.isRequired,
+  isRewardedAdLoaded: PropTypes.bool.isRequired,
   levelData: PropTypes.arrayOf(PropTypes.exact({
     bestUserScore: PropTypes.number.isRequired,
     bestUserSolution: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -136,7 +283,10 @@ Levels.propTypes = {
     push: PropTypes.func.isRequired,
     setOptions: PropTypes.func.isRequired,
   }).isRequired,
+  numUnlocks: PropTypes.number.isRequired,
+  setRewardedAdLoaded: PropTypes.func.isRequired,
   theme: PropTypes.string.isRequired,
+  unlockLevel: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -148,6 +298,13 @@ const styles = StyleSheet.create({
     padding: '10%',
     //paddingBottom: 0,
     paddingTop: 0,
+  },
+  helpButton: {
+    flex: 0,
+    aspectRatio: 1,
+    fontSize: 14,
+    height: '300%',   // TODO fix this
+    marginRight: 10,
   },
   levelButtonContainer: {
     width: '100%',
@@ -177,18 +334,20 @@ const styles = StyleSheet.create({
     width: '85%',
     paddingTop: 10,
     aspectRatio: 2,
+    padding: '3%',
+    paddingBottom: 0,
   },
   modalButtonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     flex: 1,
-    width: '30%',
-    aspectRatio: 2.5,
+    width: '100%',
     marginTop: 10,
   },
   modalButton: {
     fontSize: 10,
     margin: '4%',
+    flex: 1,
   },
   modalTitleContainer: {
     flex: 1,
@@ -215,6 +374,15 @@ const mapStateToProps = state => {
   return {
     theme: state.settings.theme.current,
     levelData,
+    numUnlocks: state.perks.numUnlocks,
+    isRewardedAdLoaded: state.ads.isRewardedAdLoaded,
   };
-}
-export default connect(mapStateToProps)(Levels);
+};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    consumeUnlock: doConsumeUnlock,
+    setRewardedAdLoaded: doSetRewardedAdLoaded,
+    unlockLevel: doUnlockLevel,
+  }, dispatch);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Levels);

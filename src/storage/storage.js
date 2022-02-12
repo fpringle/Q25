@@ -1,34 +1,46 @@
-import { combineReducers, compose, createStore, bindActionCreators } from 'redux';
+import { combineReducers, compose, createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import reduxReset from 'redux-reset';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   levelsReducer,
-  doUpdateUserProgress,
-  doResetUserProgress,
-  doUnlockLevel,
+  //doUpdateUserProgress,
+  //doResetUserProgress,
+  //doUnlockLevel,
 } from './features/levels';
 import {
   settingsReducer,
-  doChangeTheme,
+  //doChangeTheme,
 } from './features/settings';
 import {
   gameReducer,
-  doUpdateGame,
-  doDeleteGame,
+  //doUpdateGame,
+  //doDeleteGame,
 } from './features/game';
+import {
+  adsReducer,
+  //doDecrementLevels,
+  //doResetLevels,
+} from './features/ads';
+import {
+  perksReducer,
+  //doConsumeUnlock,
+  //doAddUnlocks,
+} from './features/perks';
 
 const rootReducer = combineReducers({
   levels: levelsReducer,
   settings: settingsReducer,
   game: gameReducer,
+  ads: adsReducer,
+  perks: perksReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['game'],
+  blacklist: ['game', 'ads'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -43,7 +55,7 @@ export const doResetRedux = () => {
     type: 'RESET',
   };
 };
-
+/*
 export const boundLevelActions = bindActionCreators(
   {
     update: doUpdateUserProgress,
@@ -65,3 +77,4 @@ export const boundGameActions = bindActionCreators(
   },
   store.dispatch
 );
+*/

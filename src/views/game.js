@@ -5,6 +5,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { AdMobInterstitial } from 'expo-ads-admob';
 
 import Grid from '../components/grid';
 import Text from '../components/text';
@@ -14,6 +15,7 @@ import { points, isValid } from '../backend';
 import Q25Button from '../components/button';
 import { doUnlockLevel, doUpdateUserProgress } from '../storage/features/levels';
 import { doDeleteGame, doUpdateGame } from '../storage/features/game';
+import { doDecrementLevels, doResetLevels } from '../storage/features/ads';
 
 // random integer in [0, lim]
 const randInt = (lim) => Math.floor(Math.random() * (lim + 1));
@@ -31,7 +33,6 @@ const makeTitle = (score, bestUserScore, maxScore, level) => {
   const f = s => s.toString().padStart(3, ' ');
   return `${level} - ${f(score)} / ${f(bestUserScore)} / ${f(maxScore)}`;
 };
-
 
 
 function GameLayout(props) {
@@ -497,6 +498,10 @@ function Game(props) {
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
   const appState = useRef(AppState.currentState);
+  useEffect(() => {
+    console.log('levels until ad:', props.levelsUntilNextAd);
+    console.log('play ad at the end of this level?', props.playAdAtFinish);
+  }, []);
 
   const [letters, setLetters] = useState(origLetters);
   const [bar, setBar] = useState([]);
@@ -507,6 +512,8 @@ function Game(props) {
   const [, setAppStateVisible] = useState(appState.current);
 
   const [helpScreenVisible, setHelpScreenVisible] = useState(false);
+
+  const adReady = useRef(false);
 
   const saveGameState = () => {
     props.updateGame(
@@ -543,6 +550,36 @@ function Game(props) {
   useEffect(() => {
     tryLoadGame();
   }, []);
+
+  const nextLevel = () => props.navigation.push('Play', {level: level + 1});
+
+  const onAdLoad = () => {
+    adReady.current = true;
+  };
+
+  const onAdClose = () => {
+    nextLevel();
+  };
+
+  useEffect(() => {
+    AdMobInterstitial.addEventListener('interstitialDidLoad', onAdLoad);
+    return () => {
+      AdMobInterstitial.removeEventListener('interstitialDidLoad', onAdLoad);
+    };
+  }, []);
+
+  useEffect(() => {
+    AdMobInterstitial.addEventListener('interstitialDidClose', onAdClose);
+    return () => {
+      AdMobInterstitial.removeEventListener('interstitialDidClose', onAdClose);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (props.playAdAtFinish) {
+      AdMobInterstitial.requestAdAsync();
+    }
+  }, [props.playAdAtFinish]);
 
   let subscription = useRef(null);
 
@@ -600,7 +637,6 @@ function Game(props) {
       headerRight: helpScreenVisible ? null : () => (
         <Q25Button
           backgroundColor={backgroundColor}
-          displayName={'headerRight'}
           foregroundColor={foregroundColor}
           onPress={() => setHelpScreenVisible(true)}
           style={styles.helpButton}
@@ -748,9 +784,22 @@ function Game(props) {
     },
     {
       text: 'Next level',
-      onPress: () => {
+      onPress: async () => {
+        props.deleteGame();
         setEndModalVisible(false);
-        props.navigation.push('Play', {level: level + 1});
+
+        if (props.playAdAtFinish) {
+          if (adReady.current) {
+            await AdMobInterstitial.showAdAsync();
+            props.resetLevelsUntilNextAd();
+          } else {
+            // freebie
+            nextLevel();
+          }
+        } else {
+          props.decrementLevelsUntilNextAd();
+          nextLevel();
+        }
       },
     },
   ];
@@ -823,6 +872,7 @@ function Game(props) {
 }
 
 Game.propTypes = {
+  decrementLevelsUntilNextAd: PropTypes.func.isRequired,
   deleteGame: PropTypes.func.isRequired,
   gameInProgress: PropTypes.bool.isRequired,
   gameState: PropTypes.exact({
@@ -842,12 +892,15 @@ Game.propTypes = {
     number: PropTypes.number.isRequired,
     unlocked: PropTypes.bool,
   }).isRequired,
+  levelsUntilNextAd: PropTypes.number.isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
     popToTop: PropTypes.func.isRequired,
     push: PropTypes.func.isRequired,
     setOptions: PropTypes.func.isRequired,
   }).isRequired,
+  playAdAtFinish: PropTypes.bool.isRequired,
+  resetLevelsUntilNextAd: PropTypes.func.isRequired,
   route: PropTypes.shape({
     params: PropTypes.shape({
       level: PropTypes.number.isRequired,
@@ -967,11 +1020,14 @@ const mapStateToProps = (state, ownProps) => {
     bestUserSolution: [],
     ...state.levels.levels[level],
   };
+  //console.log(state.ads);
   return {
     theme: state.settings.theme.current,
     levelData,
     gameInProgress: state.game.gameInProgress,
     gameState: state.game.currentGame,
+    levelsUntilNextAd: state.ads.levelsUntilNextAd,
+    playAdAtFinish: state.ads.levelsUntilNextAd == 1,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -980,6 +1036,8 @@ const mapDispatchToProps = (dispatch) => {
     unlockLevel: doUnlockLevel,
     updateGame: doUpdateGame,
     deleteGame: doDeleteGame,
+    decrementLevelsUntilNextAd: doDecrementLevels,
+    resetLevelsUntilNextAd: doResetLevels,
   }, dispatch);
 };
 
