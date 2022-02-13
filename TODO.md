@@ -6,5 +6,4 @@
     - word list (scowl)
 - navigation animation type
 - fix switches in settings
-- settings explanations
 - reset interstitial countdown when user wathces a rewarded ad?

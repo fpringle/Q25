@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Alert, SectionList, StyleSheet, View } from 'react-native';
+import { Alert, useWindowDimensions, SectionList, StyleSheet, View } from 'react-native';
+import { Tooltip } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -17,7 +18,16 @@ const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
 
 function SettingsPicker(props) {
-  const {label, current, options, dispatcher, foregroundColor, backgroundColor} = props;
+  const {
+    label,
+    current,
+    options,
+    dispatcher,
+    foregroundColor,
+    backgroundColor,
+    tooltipText,
+  } = props;
+  const { width } = useWindowDimensions();
   return (
     <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
       <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
@@ -41,6 +51,23 @@ function SettingsPicker(props) {
           ))}
         </Picker>
       </View>
+      {tooltipText ? (
+        <Tooltip
+          popover={
+            <Text style={{color: backgroundColor}}>
+              {tooltipText}
+            </Text>
+          }
+          backgroundColor={foregroundColor}
+          width={width*0.85}
+          height={100}
+        >
+          <Text
+            style={{borderWidth:2, borderColor: foregroundColor, color:foregroundColor, textAlign: 'center', aspectRatio: 1, borderRadius: 20}}
+          >{'?'}</Text>
+        </Tooltip>
+      ) : null
+      }
     </View>
   );
 }
@@ -55,11 +82,20 @@ SettingsPicker.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.number),
   ]).isRequired,
+  tooltipText: PropTypes.string,
 };
 
 
 function SettingsSwitch(props) {
-  const {label, current, dispatcher, foregroundColor, backgroundColor} = props;
+  const {
+    label,
+    current,
+    dispatcher,
+    foregroundColor,
+    backgroundColor,
+    tooltipText,
+  } = props;
+  const { width } = useWindowDimensions();
   return (
     <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
       <Text style={[styles.settingsPickerLabel, {color: foregroundColor, flex: 5}]}>
@@ -78,6 +114,23 @@ function SettingsSwitch(props) {
           thumbColor={foregroundColor}
         />
       </View>
+      {tooltipText ? (
+        <Tooltip
+          popover={
+            <Text style={{color: backgroundColor}}>
+              {tooltipText}
+            </Text>
+          }
+          backgroundColor={foregroundColor}
+          width={width*0.85}
+          height={100}
+        >
+          <Text
+            style={{borderWidth:2, borderColor: foregroundColor, color:foregroundColor, textAlign: 'center', aspectRatio: 1, borderRadius: 20, marginLeft: 10}}
+          >{'?'}</Text>
+        </Tooltip>
+      ) : null
+      }
     </View>
   );
 }
@@ -88,6 +141,7 @@ SettingsSwitch.propTypes = {
   dispatcher: PropTypes.func.isRequired,
   foregroundColor: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  tooltipText: PropTypes.string,
 };
 
 
@@ -162,13 +216,15 @@ function Settings(props) {
       data: [
         {
           type: 'switch',
-          label: 'Block submit button until I\'m over the passing score threshold?',
+          label: 'Block finish',
+          help: `If selected, the 'Finish' button will be blocked until you're over the passing score threshold.`,
           current: props.gameplay.blockSubmit,
           dispatcher: props.setBlockSubmit,
         },
         {
           type: 'switch',
-          label: 'Block save button until I\'ve built a valid word?',
+          label: 'Block save',
+          help: `If selected, the 'Save word' button will be blocked until the word you're building is valid.`,
           current: props.gameplay.blockSave,
           dispatcher: props.setBlockSave,
         },
@@ -202,6 +258,7 @@ function Settings(props) {
             foregroundColor={foregroundColor}
             label={item.label}
             options={item.options}
+            tooltipText={item.help}
           />
         );
       }
@@ -213,6 +270,7 @@ function Settings(props) {
             dispatcher={item.dispatcher}
             foregroundColor={foregroundColor}
             label={item.label}
+            tooltipText={item.help}
           />
         );
       }
@@ -262,7 +320,6 @@ function Settings(props) {
         sections={sectionData}
         style={{borderWidth: 0, margin: 0, flex:1, width: '100%'}}
         SectionSeparatorComponent={(_props) => {
-          console.log('props:', _props);
           const {leadingItem, trailingItem, leadingSection, trailingSection} = _props;
           if (leadingItem) {
             return (
