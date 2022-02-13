@@ -8,4 +8,3 @@
 - fix switches in settings
 - settings explanations
 - reset interstitial countdown when user wathces a rewarded ad?
-- divide settings page into sections

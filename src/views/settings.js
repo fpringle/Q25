@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
+import { Alert, SectionList, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -62,10 +62,10 @@ function SettingsSwitch(props) {
   const {label, current, dispatcher, foregroundColor, backgroundColor} = props;
   return (
     <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
-      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
+      <Text style={[styles.settingsPickerLabel, {color: foregroundColor, flex: 5}]}>
         {label}
       </Text>
-      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
+      <View style={[styles.pickerContainer]}>
         <Switch
           onValueChange={dispatcher}
           value={current}
@@ -144,48 +144,134 @@ function Settings(props) {
     );
   };
 
+  const sectionData = [
+    {
+      title: 'Appearance',
+      data: [
+        {
+          type: 'picker',
+          label: 'Theme',
+          current: theme,
+          dispatcher: props.changeTheme,
+          options: themeOptions,
+        },
+      ],
+    },
+    {
+      title: 'Gameplay',
+      data: [
+        {
+          type: 'switch',
+          label: 'Block submit button until I\'m over the passing score threshold?',
+          current: props.gameplay.blockSubmit,
+          dispatcher: props.setBlockSubmit,
+        },
+        {
+          type: 'switch',
+          label: 'Block save button until I\'ve built a valid word?',
+          current: props.gameplay.blockSave,
+          dispatcher: props.setBlockSave,
+        },
+      ],
+    },
+    {
+      title: 'DANGER ZONE',
+      data: [
+        {
+          type: 'button',
+          label: 'Reset progress',
+          onPress: resetProgressDialog,
+        },
+        {
+          type: 'button',
+          label: 'Reset everything',
+          onPress: purgeStoreDialog,
+        },
+      ],
+    },
+  ];
+
+  const renderItem = ({item}) => {
+    switch (item.type) {
+      case 'picker': {
+        return (
+          <SettingsPicker
+            backgroundColor={backgroundColor}
+            current={item.current}
+            dispatcher={item.dispatcher}
+            foregroundColor={foregroundColor}
+            label={item.label}
+            options={item.options}
+          />
+        );
+      }
+      case 'switch': {
+        return (
+          <SettingsSwitch
+            backgroundColor={backgroundColor}
+            current={item.current}
+            dispatcher={item.dispatcher}
+            foregroundColor={foregroundColor}
+            label={item.label}
+          />
+        );
+      }
+      case 'button': {
+        return (
+          <View style={styles.bigButtonContainer}>
+            <Q25Button
+              backgroundColor={backgroundColor}
+              foregroundColor={foregroundColor}
+              onPress={item.onPress}
+              style={styles.bigButton}
+              text={item.label}
+            />
+          </View>
+        );
+      }
+    }
+  };
+
+  const renderSectionHeader = ({section: { title }}) => (
+    <Text
+      style={{fontSize: 24, color: foregroundColor}}
+    >
+      {title}
+    </Text>
+  );
+
+  const Separator = () => (
+    <View
+      style={{
+        height: 1,
+        borderTopWidth: 1,
+        borderColor: foregroundColor,
+        marginTop: 10,
+        marginBottom: 10,
+        width: '100%',
+      }}
+    />
+  );
+
   return (
     <View style={[styles.container, {backgroundColor}]}>
-      <SettingsPicker
-        backgroundColor={backgroundColor}
-        current={theme}
-        dispatcher={props.changeTheme}
-        foregroundColor={foregroundColor}
-        label={'Theme'}
-        options={themeOptions}
+      <SectionList
+        keyExtractor={(item) => item.label}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        sections={sectionData}
+        style={{borderWidth: 0, margin: 0, flex:1, width: '100%'}}
+        SectionSeparatorComponent={(_props) => {
+          console.log('props:', _props);
+          const {leadingItem, trailingItem, leadingSection, trailingSection} = _props;
+          if (leadingItem) {
+            return (
+              <Separator/>
+            );
+          } else return null;
+        }}
+        ListHeaderComponent={Separator}
       />
-      <SettingsSwitch
-        backgroundColor={backgroundColor}
-        current={props.gameplay.blockSubmit}
-        dispatcher={props.setBlockSubmit}
-        foregroundColor={foregroundColor}
-        label={'Block submit'}
-      />
-      <SettingsSwitch
-        backgroundColor={backgroundColor}
-        current={props.gameplay.blockSave}
-        dispatcher={props.setBlockSave}
-        foregroundColor={foregroundColor}
-        label={'Block save'}
-      />
-      <View style={styles.bigButtonContainer}>
-        <Q25Button
-          backgroundColor={backgroundColor}
-          foregroundColor={foregroundColor}
-          onPress={() => resetProgressDialog()}
-          style={styles.bigButton}
-          text={'Reset progress'}
-        />
-      </View>
-      <View style={styles.bigButtonContainer}>
-        <Q25Button
-          backgroundColor={backgroundColor}
-          foregroundColor={foregroundColor}
-          onPress={() => purgeStoreDialog()}
-          style={styles.bigButton}
-          text={'Reset everything'}
-        />
-      </View>
     </View>
   )
 }
@@ -239,8 +325,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   bigButtonContainer: {
-    height: '15%',
-    width: '100%',
+    flex: 1,
     padding: 10,
   },
 });
