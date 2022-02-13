@@ -10,7 +10,7 @@ import Text from '../components/text';
 import Q25Button from '../components/button';
 import { themes } from '../styles';
 import { doResetRedux, persistor } from '../storage/storage';
-import { doChangeTheme, doSetBlockSubmit } from '../storage/features/settings';
+import { doChangeTheme, doSetBlockSubmit, doSetBlockSave } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
 
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
@@ -161,6 +161,13 @@ function Settings(props) {
         foregroundColor={foregroundColor}
         label={'Block submit'}
       />
+      <SettingsSwitch
+        backgroundColor={backgroundColor}
+        current={props.gameplay.blockSave}
+        dispatcher={props.setBlockSave}
+        foregroundColor={foregroundColor}
+        label={'Block save'}
+      />
       <View style={styles.bigButtonContainer}>
         <Q25Button
           backgroundColor={backgroundColor}
@@ -186,6 +193,7 @@ function Settings(props) {
 Settings.propTypes = {
   changeTheme: PropTypes.func.isRequired,
   gameplay: PropTypes.exact({
+    blockSave: PropTypes.bool.isRequired,
     blockSubmit: PropTypes.bool.isRequired,
   }).isRequired,
   navigation: PropTypes.shape({
@@ -193,6 +201,8 @@ Settings.propTypes = {
   }),
   resetProgress: PropTypes.func.isRequired,
   resetReduxStore: PropTypes.func.isRequired,
+  setBlockSave: PropTypes.func.isRequired,
+  setBlockSubmit: PropTypes.func.isRequired,
   theme: PropTypes.string.isRequired,
   themeOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
@@ -247,7 +257,8 @@ const mapDispatchToProps = (dispatch) => {
     changeTheme: doChangeTheme,
     resetProgress: doResetUserProgress,
     resetReduxStore: doResetRedux,
-    setBlockSubmit: doSetBlockSubmit
+    setBlockSubmit: doSetBlockSubmit,
+    setBlockSave: doSetBlockSave,
   }, dispatch);
 };
 

@@ -40,7 +40,8 @@ function themeReducer(state=initialThemeState, action) {
 // gameplay
 
 // actions
-const SET_BLOCK_SUBMIT = 'settings/gameplay/change';
+const SET_BLOCK_SUBMIT = 'settings/gameplay/set_block_submit';
+const SET_BLOCK_SAVE = 'settings/gameplay/set_block_save';
 
 // action creators
 export function doSetBlockSubmit(blockSubmit) {
@@ -51,11 +52,21 @@ export function doSetBlockSubmit(blockSubmit) {
     }
   };
 }
+export function doSetBlockSave(blockSave) {
+  return {
+    type: SET_BLOCK_SAVE,
+    payload: {
+      blockSave,
+    }
+  };
+}
 
 // initial state
 const initialGameplayState = {
   // stop the user from submitting before they've reached the score threshold?
   blockSubmit: false,
+  // stop the user from saving a word before it's valid?
+  blockSave: false,
 };
 
 // reducer
@@ -67,6 +78,14 @@ function gameplayReducer(state=initialGameplayState, action) {
       return {
         ...state,
         blockSubmit,
+      };
+    }
+    case SET_BLOCK_SAVE: {
+      const { blockSave } = action.payload;
+      if (blockSave === state.blockSave) return state;
+      return {
+        ...state,
+        blockSave,
       };
     }
     default:

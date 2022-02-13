@@ -831,7 +831,7 @@ function Game(props) {
       buttonBar1Data={[
         { text: 'Undo', onPress: undo },
         { text: 'Clear word', onPress: clearWord },
-        { text: 'Save word', onPress: saveWord },
+        { text: 'Save word', onPress: saveWord, disabled: props.blockSave && (!isValid(bar.join(''))) },
       ]}
       buttonBar2Data={[
           { text: 'Scramble', onPress: scramble },
@@ -880,6 +880,7 @@ function Game(props) {
 }
 
 Game.propTypes = {
+  blockSave: PropTypes.bool.isRequired,
   blockSubmit: PropTypes.bool.isRequired,
   decrementLevelsUntilNextAd: PropTypes.func.isRequired,
   deleteGame: PropTypes.func.isRequired,
@@ -1038,6 +1039,7 @@ const mapStateToProps = (state, ownProps) => {
     levelsUntilNextAd: state.ads.levelsUntilNextAd,
     playAdAtFinish: state.ads.levelsUntilNextAd == 1,
     blockSubmit: state.settings.gameplay.blockSubmit,
+    blockSave: state.settings.gameplay.blockSave,
   };
 };
 const mapDispatchToProps = (dispatch) => {
