@@ -86,8 +86,10 @@ function Levels(props) {
   };
 
   useEffect(() => {
-    tryLoadAd();
-  }, []);
+    if (props.numUnlocks < 1) {
+      tryLoadAd();
+    }
+  }, [props.numUnlocks]);
 
   const onAdLoad = () => {
     console.log('ad loaded - props.setRewardedAdLoaded(true); setAdLoading(false)')

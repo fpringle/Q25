@@ -7,4 +7,5 @@
 - navigation animation type
 - fix switches in settings
 - settings explanations
-- only load ad when user has no unlocks remaining
+- reset interstitial countdown when user wathces a rewarded ad?
+- divide settings page into sections
