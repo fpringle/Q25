@@ -239,18 +239,18 @@ function Levels(props) {
         visible={explanationModalVisible}
       >
         <View style={[styles.modalStyle, backgroundColor: backgroundColorTransparent]}>
-          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor, aspectRatio: 1.6}]}>
+          <View style={[styles.modalBoxStyle, {borderColor: foregroundColor, backgroundColor}, styles.modalBoxStyle2]}>
             <Text style={[styles.modalText, {color: foregroundColor}]}>
               {`This screen shows the levels you've completed, and how well you've done on each one. Some levels are locked - to unlock them you have to complete the previous levels, use an unlock token (${props.numUnlocks} remaining), or watch an advert.`}
             </Text>
-            <View style={[styles.modalButtonContainer, {justifyContent: 'center'}]}>
+            <View style={[styles.modalButtonContainer, styles.modalButtonContainer2]}>
               {explanationModalButtonsData.map(({text, onPress, disabled}) => (
                 <Q25Button
                   backgroundColor={disabled ? foregroundColor : backgroundColor}
                   foregroundColor={disabled ? backgroundColor : foregroundColor}
                   key={text}
                   onPress={disabled ? null : onPress}
-                  style={{...styles.modalButton, maxWidth: '25%', aspectRatio: 3, marginTop: 0}}
+                  style={{...styles.modalButton, ...styles.modalButton2}}
                   text={text}
                 />
               ))}
@@ -340,6 +340,9 @@ const styles = StyleSheet.create({
     padding: '3%',
     paddingBottom: 0,
   },
+  modalBoxStyle2: {
+    aspectRatio: 1.6,
+  },
   modalButtonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -347,10 +350,18 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 10,
   },
+  modalButtonContainer2: {
+    justifyContent: 'center',
+  },
   modalButton: {
     fontSize: 10,
     margin: '4%',
     flex: 1,
+  },
+  modalButton2: {
+    maxWidth: '25%',
+    aspectRatio: 3,
+    marginTop: 0,
   },
   modalTitleContainer: {
     flex: 1,

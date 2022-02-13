@@ -53,17 +53,17 @@ function SettingsPicker(props) {
       </View>
       {tooltipText ? (
         <Tooltip
+          backgroundColor={foregroundColor}
+          height={100}
           popover={
             <Text style={{color: backgroundColor}}>
               {tooltipText}
             </Text>
           }
-          backgroundColor={foregroundColor}
           width={width*0.85}
-          height={100}
         >
           <Text
-            style={{borderWidth:2, borderColor: foregroundColor, color:foregroundColor, textAlign: 'center', aspectRatio: 1, borderRadius: 20}}
+            style={[styles.tooltip, {borderColor: foregroundColor, color: foregroundColor}]}
           >{'?'}</Text>
         </Tooltip>
       ) : null
@@ -98,13 +98,12 @@ function SettingsSwitch(props) {
   const { width } = useWindowDimensions();
   return (
     <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
-      <Text style={[styles.settingsPickerLabel, {color: foregroundColor, flex: 5}]}>
+      <Text style={[styles.settingsSwitchLabel, {color: foregroundColor}]}>
         {label}
       </Text>
-      <View style={[styles.pickerContainer]}>
+      <View style={styles.pickerContainer}>
         <Switch
           onValueChange={dispatcher}
-          value={current}
           style={{backgroundColor}}
           theme={{
             colors: {
@@ -112,21 +111,22 @@ function SettingsSwitch(props) {
             }
           }}
           thumbColor={foregroundColor}
+          value={current}
         />
       </View>
       {tooltipText ? (
         <Tooltip
+          backgroundColor={foregroundColor}
+          height={100}
           popover={
             <Text style={{color: backgroundColor}}>
               {tooltipText}
             </Text>
           }
-          backgroundColor={foregroundColor}
           width={width*0.85}
-          height={100}
         >
           <Text
-            style={{borderWidth:2, borderColor: foregroundColor, color:foregroundColor, textAlign: 'center', aspectRatio: 1, borderRadius: 20, marginLeft: 10}}
+            style={[styles.tooltip, {borderColor: foregroundColor, color: foregroundColor}]}
           >{'?'}</Text>
         </Tooltip>
       ) : null
@@ -292,7 +292,7 @@ function Settings(props) {
 
   const renderSectionHeader = ({section: { title }}) => (
     <Text
-      style={{fontSize: 24, color: foregroundColor}}
+      style={[styles.sectionHeader, {color: foregroundColor}]}
     >
       {title}
     </Text>
@@ -300,34 +300,26 @@ function Settings(props) {
 
   const Separator = () => (
     <View
-      style={{
-        height: 1,
-        borderTopWidth: 1,
-        borderColor: foregroundColor,
-        marginTop: 10,
-        marginBottom: 10,
-        width: '100%',
-      }}
+      style={[styles.separator, {borderColor: foregroundColor}]}
     />
   );
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <SectionList
-        keyExtractor={(item) => item.label}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        sections={sectionData}
-        style={{borderWidth: 0, margin: 0, flex:1, width: '100%'}}
-        SectionSeparatorComponent={(_props) => {
-          const {leadingItem, trailingItem, leadingSection, trailingSection} = _props;
+        ListHeaderComponent={Separator}
+        SectionSeparatorComponent={({leadingItem}) => {
           if (leadingItem) {
             return (
               <Separator/>
             );
           } else return null;
         }}
-        ListHeaderComponent={Separator}
+        keyExtractor={(item) => item.label}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        sections={sectionData}
+        style={styles.sectionList}
       />
     </View>
   )
@@ -378,12 +370,38 @@ const styles = StyleSheet.create({
   picker: {
     width: '100%',
   },
+  settingsSwitchLabel: {
+    flex: 5,
+  },
   bigButton: {
     fontSize: 20,
   },
   bigButtonContainer: {
     flex: 1,
     padding: 10,
+  },
+  tooltip: {
+    borderWidth: 2,
+    textAlign: 'center',
+    aspectRatio: 1,
+    borderRadius: 20,
+    marginLeft: 10,
+  },
+  sectionHeader: {
+    fontSize: 24,
+  },
+  separator: {
+    height: 1,
+    borderTopWidth: 1,
+    marginTop: 10,
+    marginBottom: 10,
+    width: '100%',
+  },
+  sectionList: {
+    borderWidth: 0,
+    margin: 0,
+    flex: 1,
+    width: '100%',
   },
 });
 
