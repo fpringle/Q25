@@ -97,7 +97,8 @@ function Levels(props) {
 
   const useUnlock = () => {
     props.consumeUnlock();
-    props.unlockLevel(lockModalLevel);
+    console.log(`Unlock level ${lockModalLevel.current}`)
+    props.unlockLevel(lockModalLevel.current);
     setLockModalVisible(false);
   };
 
@@ -111,8 +112,8 @@ function Levels(props) {
 
   const onEarnReward = () => {
     setLockModalVisible(false);
-    console.log(`User finished ad, unlock level ${lockModalLevel}`);
-    props.unlockLevel(lockModalLevel);
+    console.log(`User finished ad, unlock level ${lockModalLevel.current}`);
+    props.unlockLevel(lockModalLevel.current);
   };
 
   useEffect(() => {
