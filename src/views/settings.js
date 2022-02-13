@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Picker } from '@react-native-picker/picker';
+import { Switch } from 'react-native-paper';
 
 import Text from '../components/text';
 import Q25Button from '../components/button';
 import { themes } from '../styles';
 import { doResetRedux, persistor } from '../storage/storage';
-import { doChangeTheme } from '../storage/features/settings';
+import { doChangeTheme, doSetBlockSubmit } from '../storage/features/settings';
 import { doResetUserProgress } from '../storage/features/levels';
-
 
 const capitalize = s => s[0].toUpperCase() + s.slice(1).toLowerCase();
 
@@ -27,9 +27,7 @@ function SettingsPicker(props) {
         <Picker
           dropdownIconColor={foregroundColor}
           mode={'dropdown'}
-          onValueChange={(itemValue) => {
-            dispatcher(itemValue);
-          }}
+          onValueChange={dispatcher}
           selectedValue={current}
           style={styles.picker}
         >
@@ -57,6 +55,39 @@ SettingsPicker.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.number),
   ]).isRequired,
+};
+
+
+function SettingsSwitch(props) {
+  const {label, current, dispatcher, foregroundColor, backgroundColor} = props;
+  return (
+    <View style={[styles.settingsPicker, {borderColor: foregroundColor}]}>
+      <Text style={[styles.settingsPickerLabel, {color: foregroundColor}]}>
+        {label}
+      </Text>
+      <View style={[styles.pickerContainer, {borderColor: foregroundColor}]}>
+        <Switch
+          onValueChange={dispatcher}
+          value={current}
+          style={{backgroundColor}}
+          theme={{
+            colors: {
+              accent: foregroundColor,
+            }
+          }}
+          thumbColor={foregroundColor}
+        />
+      </View>
+    </View>
+  );
+}
+
+SettingsSwitch.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  current: PropTypes.bool.isRequired,
+  dispatcher: PropTypes.func.isRequired,
+  foregroundColor: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 
@@ -118,10 +149,17 @@ function Settings(props) {
       <SettingsPicker
         backgroundColor={backgroundColor}
         current={theme}
-        dispatcher={val => props.changeTheme(val)}
+        dispatcher={props.changeTheme}
         foregroundColor={foregroundColor}
         label={'Theme'}
         options={themeOptions}
+      />
+      <SettingsSwitch
+        backgroundColor={backgroundColor}
+        current={props.gameplay.blockSubmit}
+        dispatcher={props.setBlockSubmit}
+        foregroundColor={foregroundColor}
+        label={'Block submit'}
       />
       <View style={styles.bigButtonContainer}>
         <Q25Button
@@ -147,6 +185,9 @@ function Settings(props) {
 
 Settings.propTypes = {
   changeTheme: PropTypes.func.isRequired,
+  gameplay: PropTypes.exact({
+    blockSubmit: PropTypes.bool.isRequired,
+  }).isRequired,
   navigation: PropTypes.shape({
     setOptions: PropTypes.func.isRequired,
   }),
@@ -198,6 +239,7 @@ const mapStateToProps = state => {
   return {
     theme: state.settings.theme.current,
     themeOptions: state.settings.theme.options,
+    gameplay: state.settings.gameplay,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -205,6 +247,7 @@ const mapDispatchToProps = (dispatch) => {
     changeTheme: doChangeTheme,
     resetProgress: doResetUserProgress,
     resetReduxStore: doResetRedux,
+    setBlockSubmit: doSetBlockSubmit
   }, dispatch);
 };
 

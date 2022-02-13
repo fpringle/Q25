@@ -36,9 +36,43 @@ function themeReducer(state=initialThemeState, action) {
 }
 
 
+////////////////////////////
+// gameplay
 
+// actions
+const SET_BLOCK_SUBMIT = 'settings/gameplay/change';
 
+// action creators
+export function doSetBlockSubmit(blockSubmit) {
+  return {
+    type: SET_BLOCK_SUBMIT,
+    payload: {
+      blockSubmit,
+    }
+  };
+}
 
+// initial state
+const initialGameplayState = {
+  // stop the user from submitting before they've reached the score threshold?
+  blockSubmit: false,
+};
+
+// reducer
+function gameplayReducer(state=initialGameplayState, action) {
+  switch (action.type) {
+    case SET_BLOCK_SUBMIT: {
+      const { blockSubmit } = action.payload;
+      if (blockSubmit === state.blockSubmit) return state;
+      return {
+        ...state,
+        blockSubmit,
+      };
+    }
+    default:
+      return state;
+  }
+}
 
 
 ////////////////////////////
@@ -46,5 +80,5 @@ function themeReducer(state=initialThemeState, action) {
 
 export const settingsReducer = combineReducers({
   theme: themeReducer,
+  gameplay: gameplayReducer,
 });
-

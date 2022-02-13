@@ -766,7 +766,9 @@ function Game(props) {
       sortedWords.sort((x,y) => x.length - y.length);
       props.updateUserProgress(level, score, sortedWords);
     }
-    props.unlockLevel(level + 1);
+    if (2 * score >= levelData.maxScore) {
+      props.unlockLevel(level + 1);
+    }
   };
 
   const modalButtonData = [
@@ -782,7 +784,10 @@ function Game(props) {
         setEndModalVisible(false);
       },
     },
-    {
+  ];
+
+  if (2 * score >= levelData.maxScore) {
+    modalButtonData.push({
       text: 'Next level',
       onPress: async () => {
         props.deleteGame();
@@ -801,8 +806,8 @@ function Game(props) {
           nextLevel();
         }
       },
-    },
-  ];
+    });
+  }
 
   if (helpScreenVisible) {
     return (
@@ -831,7 +836,7 @@ function Game(props) {
       buttonBar2Data={[
           { text: 'Scramble', onPress: scramble },
           { text: 'Reset', onPress: reset },
-          { text: 'Finish', onPress: submit, disabled: 2 * score < levelData.maxScore },
+          { text: 'Finish', onPress: submit, disabled: props.blockSubmit && (2 * score < levelData.maxScore) },
         ]}
       grid={{letters, onLetterPress, pressedButtons}}
       letterBar={{bar}}
@@ -845,8 +850,11 @@ function Game(props) {
           <View style={[styles.endModalStyle, backgroundColor: backgroundColorTransparent]}>
             <View style={[styles.endModalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
               <View style={styles.modalTitleContainer}>
-                <Text style={[styles.modalTitle, {color: foregroundColor}]}>
-                  {'Level cleared'.toUpperCase()}
+                <Text style={[2 * score < levelData.maxScore ? styles.modalText : styles.modalTitle, {color: foregroundColor}]}>
+                  {
+                    2 * score < levelData.maxScore ? `Not bad! Try to get to a score of ${Math.ceil(levelData.maxScore / 2)} to clear this level.` :
+                    'Level cleared'.toUpperCase()
+                  }
                 </Text>
               </View>
               <View style={styles.modalButtonContainer}>
@@ -872,6 +880,7 @@ function Game(props) {
 }
 
 Game.propTypes = {
+  blockSubmit: PropTypes.bool.isRequired,
   decrementLevelsUntilNextAd: PropTypes.func.isRequired,
   deleteGame: PropTypes.func.isRequired,
   gameInProgress: PropTypes.bool.isRequired,
@@ -1028,6 +1037,7 @@ const mapStateToProps = (state, ownProps) => {
     gameState: state.game.currentGame,
     levelsUntilNextAd: state.ads.levelsUntilNextAd,
     playAdAtFinish: state.ads.levelsUntilNextAd == 1,
+    blockSubmit: state.settings.gameplay.blockSubmit,
   };
 };
 const mapDispatchToProps = (dispatch) => {
