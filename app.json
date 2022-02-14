@@ -2,7 +2,7 @@
   "expo": {
     "name": "Q25",
     "slug": "Q25",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -16,6 +16,18 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "frederick-pringle",
+            "project": "q25",
+            "authToken": "9a845143a7b64deb9da7162f8d1e0f86dc351acf8f9c447f917b64c49ba338c7"
+          }
+        }
+      ]
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.fpringle.q25"
@@ -33,6 +45,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "sentry-expo"
+    ]
   }
 }

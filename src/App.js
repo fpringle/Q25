@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { AdMobInterstitial, AdMobRewarded, setTestDeviceIDAsync } from 'expo-ads-admob';
+import * as Sentry from 'sentry-expo';
 
 import { store, persistor } from './storage/storage';
 import { TEST_AD_UNIT_IDS, REAL_AD_UNIT_IDS } from './ads/ids';
@@ -12,6 +13,12 @@ import Home from './views/home';
 import Game from './views/game';
 import Levels from './views/levels';
 import Settings from './views/settings';
+
+Sentry.init({
+  dsn: 'https://07fbbe671eac4813a95af7ea6b222526@o1143685.ingest.sentry.io/6204565',
+  enableInExpoDevelopment: true,
+  debug: true,
+});
 
 (async () => {
   await setTestDeviceIDAsync('EMULATOR');
