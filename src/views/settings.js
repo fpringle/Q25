@@ -101,7 +101,11 @@ function SettingsSwitch(props) {
       <Text style={[styles.settingsSwitchLabel, {color: foregroundColor}]}>
         {label}
       </Text>
-      <View style={styles.pickerContainer}>
+      <View
+        accessibilityLabel={label + ' ' + current}
+        accessible
+        style={styles.pickerContainer}
+      >
         <Switch
           onValueChange={dispatcher}
           style={{backgroundColor}}

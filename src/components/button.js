@@ -37,6 +37,8 @@ export function LockButton(props) {
   const {backgroundColor, foregroundColor} = props;
   return (
     <TouchableOpacity
+      accessibilityLabel={'Locked level'}
+      accessible
       disabled={props.disabled || false}
       onPress={props.onPress}
       style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
