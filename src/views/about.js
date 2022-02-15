@@ -151,7 +151,6 @@ About.propTypes = {
     setOptions: PropTypes.func.isRequired,
   }),
   theme: PropTypes.string.isRequired,
-  themeOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const styles = StyleSheet.create({

@@ -96,7 +96,7 @@ function GameLayout(props) {
         props.pointsLeft != null ? (
           <View style={{flexDirection: 'row', justifyContent: 'flex-end', width: '100%'}}>
             <Text style={{color: foregroundColor}}>
-              {'points needed to clear level: ' + props.pointsLeft.toString().padStart(3, ' ')}
+              {'Points needed to clear level: ' + props.pointsLeft.toString().padStart(3, ' ')}
             </Text>
           </View>
         ) : null
@@ -841,17 +841,19 @@ function Game(props) {
     );
   }
 
+  const blockSave = props.blockSave && (!isValid(bar.join('')));
+  const blockSubmit = props.blockSubmit && (2 * score < levelData.maxScore);
   return (
     <GameLayout
       buttonBar1Data={[
         { text: 'Undo', onPress: undo },
         { text: 'Clear word', onPress: clearWord },
-        { text: 'Save word', onPress: saveWord, disabled: props.blockSave && (!isValid(bar.join(''))) },
+        { text: blockSave ? '' : 'Save word', onPress: saveWord, disabled: blockSave },
       ]}
       buttonBar2Data={[
           { text: 'Scramble', onPress: scramble },
           { text: 'Reset', onPress: reset },
-          { text: 'Finish', onPress: submit, disabled: props.blockSubmit && (2 * score < levelData.maxScore) },
+          { text: blockSubmit ? '' : 'Finish', onPress: submit, disabled: blockSubmit },
         ]}
       grid={{letters, onLetterPress, pressedButtons}}
       letterBar={{bar}}

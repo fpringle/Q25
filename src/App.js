@@ -17,7 +17,6 @@ import About from './views/about';
 
 Sentry.init({
   dsn: 'https://07fbbe671eac4813a95af7ea6b222526@o1143685.ingest.sentry.io/6204565',
-  enableInExpoDevelopment: true,
   debug: true,
 });
 

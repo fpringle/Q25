@@ -24,7 +24,7 @@ export default function Grid(props) {
           idx={item.index}
           onPress={() => props.onLetterPress(item.index)}
           style={{...styles.gridButton, borderColor: foregroundColor}}
-          text={item.letter}
+          text={item.letter.toUpperCase()}
         />
       </View>
     );

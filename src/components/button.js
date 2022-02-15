@@ -15,8 +15,8 @@ export default function Q25Button(props) {
       onPress={props.onPress}
       style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
-      <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
-        {props.upperCase === false ? props.text.toString() : props.text.toString().toUpperCase()}
+      <Text style={[styles.q25buttonText, {fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}]}>
+        {props.upperCase ? props.text.toString().toUpperCase() : props.text.toString()}
       </Text>
     </TouchableOpacity>
   );
@@ -191,5 +191,8 @@ const styles = StyleSheet.create({
   lockImage: {
     width: '40%',
     height:'40%',
+  },
+  q25buttonText: {
+    textAlign: 'center',
   },
 });

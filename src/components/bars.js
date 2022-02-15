@@ -35,8 +35,8 @@ function ButtonBarButton(props) {
   const { backgroundColor, foregroundColor } = props.style;
   let [background, foreground] = [backgroundColor, foregroundColor];
   if (props.disabled) {
-    background = foregroundColor;
-    foreground = backgroundColor;
+    //background = foregroundColor;
+    //foreground = backgroundColor;
   }
   return (
     <Q25Button

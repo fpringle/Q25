@@ -142,10 +142,10 @@ function Levels(props) {
   }, []);
 
   const leftButton = props.numUnlocks > 0 ? {
-    text: `Unlock (${props.numUnlocks} remaining)`,
+    text: `Unlock\n(${props.numUnlocks} remaining)`,
     onPress: useUnlock,
   } : props.isRewardedAdLoaded ? {
-    text: `Watch ad to unlock`,
+    text: `Watch ad\nto unlock`,
     onPress: async () => {
       await AdMobRewarded.showAdAsync();
     },
@@ -224,6 +224,7 @@ function Levels(props) {
                   onPress={disabled ? null : onPress}
                   style={styles.modalButton}
                   text={text}
+                  upperCase={false}
                 />
               ))}
             </View>
@@ -352,9 +353,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   modalButton: {
-    fontSize: 10,
-    margin: '4%',
+    fontSize: 12,
+    marginHorizontal: '4%',
+    marginBottom: '2%',
     flex: 1,
+    textAlign: 'center',
   },
   modalButton2: {
     maxWidth: '25%',
