@@ -310,6 +310,7 @@ function Settings(props) {
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
+      <View style={{flex: 5, width: '100%'}}>
       <SectionList
         ListHeaderComponent={Separator}
         SectionSeparatorComponent={({leadingItem}) => {
@@ -325,6 +326,17 @@ function Settings(props) {
         sections={sectionData}
         style={styles.sectionList}
       />
+      </View>
+      <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+        <Q25Button
+          onPress={() => props.navigation.push('About')}
+          text={'About Q25'}
+          style={{maxHeight: '40%', fontSize: 16, aspectRatio: 4}}
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          upperCase={false}
+        />
+      </View>
     </View>
   )
 }
@@ -353,7 +365,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     display: 'flex',
     padding: '10%',
-    paddingBottom: '25%'
   },
   settingsPicker: {
     flexDirection: 'row',
@@ -404,7 +415,7 @@ const styles = StyleSheet.create({
   sectionList: {
     borderWidth: 0,
     margin: 0,
-    flex: 1,
+    flex: 5,
     width: '100%',
   },
 });

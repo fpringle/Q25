@@ -13,6 +13,7 @@ import Home from './views/home';
 import Game from './views/game';
 import Levels from './views/levels';
 import Settings from './views/settings';
+import About from './views/about';
 
 Sentry.init({
   dsn: 'https://07fbbe671eac4813a95af7ea6b222526@o1143685.ingest.sentry.io/6204565',
@@ -72,6 +73,19 @@ export default function App() {
                 headerShown: true,
                 title: '',
                 headerShadowVisible: false,
+              }}
+            />
+            <Stack.Screen
+              component={About}
+              name="About"
+              options={{
+                headerShown: true,
+                title: '',
+                headerShadowVisible: false,
+                headerTitleStyle: {
+                  fontSize: 14,
+                  fontFamily: 'monospace',
+                },
               }}
             />
           </Stack.Navigator>
