@@ -16,7 +16,7 @@ export default function Q25Button(props) {
       style={[styles.q25Button, {borderColor: foregroundColor, backgroundColor}, props.style]}
     >
       <Text style={{fontSize: props.style?.fontSize || 32, color: foregroundColor || colors.darkGrey}}>
-        {props.text.toString().toUpperCase()}
+        {props.upperCase === false ? props.text.toString() : props.text.toString().toUpperCase()}
       </Text>
     </TouchableOpacity>
   );
@@ -31,6 +31,7 @@ Q25Button.propTypes = {
     fontSize: PropTypes.number
   }).isRequired,
   text: PropTypes.string.isRequired,
+  upperCase: PropTypes.bool,
 };
 
 export function LockButton(props) {

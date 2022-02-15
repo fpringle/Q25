@@ -167,7 +167,7 @@ function ModalBox(props) {
           backgroundColor={backgroundColor}
           disabled
           foregroundColor={backgroundColor}
-          style={{flex: 0, fontSize: 10, aspectRatio: 1}}
+          style={{flex: 0, aspectRatio: 1}}
           text={''}
         />
         <Text style={[styles.modalTitle, {color: foregroundColor}]}>
@@ -847,7 +847,7 @@ function Game(props) {
           transparent
           visible={endModalVisible}
         >
-          <View style={[styles.endModalStyle, backgroundColor: backgroundColorTransparent]}>
+          <View style={[styles.endModalStyle, {backgroundColor: backgroundColorTransparent}]}>
             <View style={[styles.endModalBoxStyle, {borderColor: foregroundColor, backgroundColor}]}>
               <View style={styles.modalTitleContainer}>
                 <Text style={[2 * score < levelData.maxScore ? styles.modalText : styles.modalTitle, {color: foregroundColor}]}>

@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Text from './text';
+import Q25Button from './button';
 
 export function LetterBar(props) {
   const { foregroundColor } = props.style;
@@ -37,18 +38,16 @@ function ButtonBarButton(props) {
     background = foregroundColor;
     foreground = backgroundColor;
   }
-  // TODO these should be Q25Buttons
   return (
-    <TouchableOpacity
+    <Q25Button
+      backgroundColor={background}
       disabled={props.disabled}
+      foregroundColor={foreground}
       onPress={props.onPress}
-      style={[styles.button, {borderColor: foreground, backgroundColor: background}]}
-    >
-      <Text style={[styles.buttonBarButtonText, {color: foreground}]}>
-        {props.text}
-      </Text>
-    </TouchableOpacity>
-  )
+      style={styles.button}
+      text={props.text}
+    />
+  );
 }
 
 ButtonBarButton.propTypes = {
@@ -172,13 +171,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     aspectRatio: 6,
-//    marginTop: 10,
   },
   letterBarText: {
     fontSize: 32,
-  },
-  buttonBarButtonText: {
-    fontSize: 12,
   },
   wordBar: {
     flexDirection: 'column',
@@ -209,6 +204,8 @@ const styles = StyleSheet.create({
     padding: 5,
     width: '30%',
     alignItems:'center',
+    fontSize: 12,
+    maxWidth: '30%',
   },
   wordContainer: {
     marginRight: 5,

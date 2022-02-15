@@ -5,10 +5,10 @@ export const colors = {
   darkGrey: '#737373',
   darkGreyTransparent: 'rgba(100, 100, 100, 0.84)',
   lightGrey: '#fafafa',
-  lightGreyTransparent: 'rgba(250, 250, 250, 0.84)',
+  lightGreyTransparent: 'rgba(250, 250, 250, 0.6)',
   matrixBlack: '#0D0208',
   matrixGreen: '#008F11',
-  matrixBlackTransparent: 'rgba(13, 2, 8, 0.84)',
+  matrixBlackTransparent: 'rgba(13, 2, 8, 0.4)',
 };
 
 export const themes = {
