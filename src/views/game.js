@@ -92,6 +92,15 @@ function GameLayout(props) {
         }}
         words={words}
       />
+      {
+        props.pointsLeft != null ? (
+          <View style={{flexDirection: 'row', justifyContent: 'flex-end', width: '100%'}}>
+            <Text style={{color: foregroundColor}}>
+              {'points needed to clear level: ' + props.pointsLeft.toString().padStart(3, ' ')}
+            </Text>
+          </View>
+        ) : null
+      }
       <ButtonBar
         backgroundColor={backgroundColor}
         data={buttonBar2Data}
@@ -468,6 +477,8 @@ function HelpScreen(props) {
     }
   }
 
+  let _score = tutorialPhase < tutorialPhases.WORD_BAR ? 0 : 16;
+
   return (
     <GameLayout
       buttonBar1Data={buttonBar1Data}
@@ -478,6 +489,7 @@ function HelpScreen(props) {
       modal={modal}
       style={{foregroundColor, backgroundColor}}
       wordBar={{words: wordBar}}
+      pointsLeft={Math.max(93 - _score, 0)}
     />
   );
 }
@@ -873,6 +885,7 @@ function Game(props) {
           </View>
         </Modal>
       )}
+      pointsLeft={Math.max(Math.ceil(levelData.maxScore / 2) - score, 0)}
       style={{foregroundColor, backgroundColor}}
       wordBar={{words, removeWord: removeSavedWord}}
     />

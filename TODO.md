@@ -9,4 +9,3 @@
 - reset interstitial countdown when user wathces a rewarded ad?
 - accessibility labels
 - test layouts on different screen sizes
-- text over finish button "X points to next level"
