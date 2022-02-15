@@ -131,6 +131,7 @@ GameLayout.propTypes = {
     bar: LetterBar.propTypes.letters,
   }).isRequired,
   modal: PropTypes.node,
+  pointsLeft: PropTypes.number,
   style: PropTypes.exact({
     backgroundColor: PropTypes.string.isRequired,
     foregroundColor: PropTypes.string.isRequired,
@@ -487,9 +488,9 @@ function HelpScreen(props) {
       highlights={highlights}
       letterBar={{bar}}
       modal={modal}
+      pointsLeft={Math.max(93 - _score, 0)}
       style={{foregroundColor, backgroundColor}}
       wordBar={{words: wordBar}}
-      pointsLeft={Math.max(93 - _score, 0)}
     />
   );
 }
@@ -510,10 +511,12 @@ function Game(props) {
   const theme = props.theme;
   const { backgroundColor, foregroundColor, backgroundColorTransparent } = themes[theme];
   const appState = useRef(AppState.currentState);
+  /*
   useEffect(() => {
     console.log('levels until ad:', props.levelsUntilNextAd);
     console.log('play ad at the end of this level?', props.playAdAtFinish);
   }, []);
+  */
 
   const [letters, setLetters] = useState(origLetters);
   const [bar, setBar] = useState([]);
@@ -1043,7 +1046,7 @@ const mapStateToProps = (state, ownProps) => {
     bestUserSolution: [],
     ...state.levels.levels[level],
   };
-  //console.log(state.ads);
+
   return {
     theme: state.settings.theme.current,
     levelData,

@@ -310,30 +310,30 @@ function Settings(props) {
 
   return (
     <View style={[styles.container, {backgroundColor}]}>
-      <View style={{flex: 5, width: '100%'}}>
-      <SectionList
-        ListHeaderComponent={Separator}
-        SectionSeparatorComponent={({leadingItem}) => {
-          if (leadingItem) {
-            return (
-              <Separator/>
-            );
-          } else return null;
-        }}
-        keyExtractor={(item) => item.label}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        sections={sectionData}
-        style={styles.sectionList}
-      />
+      <View style={styles.sectionListContainer}>
+        <SectionList
+          ListHeaderComponent={Separator}
+          SectionSeparatorComponent={({leadingItem}) => {
+            if (leadingItem) {
+              return (
+                <Separator/>
+              );
+            } else return null;
+          }}
+          keyExtractor={(item) => item.label}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          sections={sectionData}
+          style={styles.sectionList}
+        />
       </View>
-      <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.aboutButtonContainer}>
         <Q25Button
-          onPress={() => props.navigation.push('About')}
-          text={'About Q25'}
-          style={{maxHeight: '40%', fontSize: 16, aspectRatio: 4}}
-          foregroundColor={foregroundColor}
           backgroundColor={backgroundColor}
+          foregroundColor={foregroundColor}
+          onPress={() => props.navigation.push('About')}
+          style={styles.aboutButton}
+          text={'About Q25'}
           upperCase={false}
         />
       </View>
@@ -349,6 +349,7 @@ Settings.propTypes = {
   }).isRequired,
   navigation: PropTypes.shape({
     setOptions: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
   }),
   resetProgress: PropTypes.func.isRequired,
   resetReduxStore: PropTypes.func.isRequired,
@@ -417,6 +418,21 @@ const styles = StyleSheet.create({
     margin: 0,
     flex: 5,
     width: '100%',
+  },
+  sectionListContainer: {
+    flex: 5,
+    width: '100%',
+  },
+  aboutButtonContainer: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  aboutButton: {
+    maxHeight: '40%',
+    fontSize: 16,
+    aspectRatio: 4,
   },
 });
 

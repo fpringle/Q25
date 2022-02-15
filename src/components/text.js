@@ -14,20 +14,26 @@ export default function Q25Text(props) {
   );
 }
 
+Q25Text.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
+
 export function URLText(props) {
   return (
     <Q25Text
-      style={[styles.urlText, props.style]}
       onPress={() => Linking.openURL(props.url)}
+      style={[styles.urlText, props.style]}
     >
       {props.children}
     </Q25Text>
   );
 }
 
-Q25Text.propTypes = {
+URLText.propTypes = {
   children: PropTypes.node,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  url: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({

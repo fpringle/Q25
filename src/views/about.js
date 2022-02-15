@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Alert, useWindowDimensions, SectionList, StyleSheet, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Constants from 'expo-constants';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Text, { URLText } from '../components/text';
-import Q25Button from '../components/button';
 import { themes } from '../styles';
 
 
@@ -21,8 +19,14 @@ function Url(props) {
   );
 }
 
+Url.propTypes = {
+  color: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+
 function About(props) {
-  let { theme, themeOptions } = props;
+  let { theme } = props;
   const { backgroundColor, foregroundColor } = themes[theme];
 
   const version = Constants.manifest.version;
@@ -54,8 +58,8 @@ function About(props) {
     librariesNodes.push('\n');
     librariesNodes.push((
       <Url
-        key={name}
         color={foregroundColor}
+        key={name}
         text={name}
         url={url}
       />
@@ -178,7 +182,6 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   return {
     theme: state.settings.theme.current,
-    themeOptions: state.settings.theme.options,
   };
 };
 

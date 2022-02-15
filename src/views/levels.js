@@ -15,8 +15,6 @@ import { doUnlockLevel } from '../storage/features/levels';
 import { doSetRewardedAdLoaded } from '../storage/features/ads';
 
 
-// console.log = () => {};
-
 function Levels(props) {
   const { theme, levelData } = props;
   const { backgroundColor, backgroundColorTransparent, foregroundColor } = themes[theme];
@@ -74,7 +72,7 @@ function Levels(props) {
   );
 
   const loadAd = async () => {
-    console.log('loading ad');
+    // console.log('loading ad');
     setAdLoading(true);
     await AdMobRewarded.requestAdAsync();
   }
@@ -92,21 +90,21 @@ function Levels(props) {
   }, [props.numUnlocks]);
 
   const onAdLoad = () => {
-    console.log('ad loaded - props.setRewardedAdLoaded(true); setAdLoading(false)')
+    // console.log('ad loaded - props.setRewardedAdLoaded(true); setAdLoading(false)')
     props.setRewardedAdLoaded(true);
     setAdLoading(false);
   };
 
   const useUnlock = () => {
     props.consumeUnlock();
-    console.log(`Unlock level ${lockModalLevel.current}`)
+    // console.log(`Unlock level ${lockModalLevel.current}`)
     props.unlockLevel(lockModalLevel.current);
     setLockModalVisible(false);
   };
 
   const onDismiss = async () => {
     // user dismissed ad without reward
-    console.log('user dismissed ad - props.setRewardedAdLoaded(false); loadAd()')
+    // console.log('user dismissed ad - props.setRewardedAdLoaded(false); loadAd()')
     props.setRewardedAdLoaded(false);
     setAdLoading(false);
     await loadAd();
@@ -114,7 +112,7 @@ function Levels(props) {
 
   const onEarnReward = () => {
     setLockModalVisible(false);
-    console.log(`User finished ad, unlock level ${lockModalLevel.current}`);
+    // console.log(`User finished ad, unlock level ${lockModalLevel.current}`);
     props.unlockLevel(lockModalLevel.current);
   };
 
