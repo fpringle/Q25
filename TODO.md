@@ -5,3 +5,5 @@
 - fix switches in settings
 - reset interstitial countdown when user wathces a rewarded ad?
 - test layouts on different screen sizes
+- clean up tutorial a bit
+- updated screenshots
