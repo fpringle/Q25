@@ -7,10 +7,10 @@ The aim of the game is to build words from a grid of 25 letters, without reusing
 # Gallery
 
 <div style="justify-content: space-between; flex-direction: row; display: flex; align-items: center; align-content: center">
-<img src="img/Screenshot1.png" title="Longer words earn more points" width="33%">
-<img src="img/Screenshot6.png" title="Play with different themes!" width="33%">
-<img src="img/Screenshot3.png" title="See the in-game tutorial for more details" width="33%">
-<img src="img/Screenshot4.png" title="There's a score threshold for each level..." width="33%">
-<img src="img/Screenshot5.png" title="... which lets you unlock higher levels" width="33%">
-<img src="img/Screenshot7.png" title="Play with different themes!" width="33%">
+<img src="img/Screenshot1.png" title="Longer words earn more points" width="30%">
+<img src="img/Screenshot6.png" title="Play with different themes!" width="30%">
+<img src="img/Screenshot3.png" title="See the in-game tutorial for more details" width="30%">
+<img src="img/Screenshot4.png" title="There's a score threshold for each level..." width="30%">
+<img src="img/Screenshot5.png" title="... which lets you unlock higher levels" width="30%">
+<img src="img/Screenshot7.png" title="Play with different themes!" width="30%">
 </div>
